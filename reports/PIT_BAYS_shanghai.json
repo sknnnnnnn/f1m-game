@@ -1,6 +1,6 @@
 {
   "track": "shanghai",
-  "time": 38.78333333333333,
+  "time": 39.45,
   "stop": null,
   "rejections": 0,
   "stopped": [
@@ -12,55 +12,55 @@
     6
   ],
   "intrusions": [],
-  "footprintChecks": 279240,
+  "footprintChecks": 284040,
   "events": [
     {
       "kind": "PIT_STOP",
       "car": 1,
       "time": 18,
       "tick": 1080,
-      "speed": 0.000006222301528423602,
-      "stationError": -0.040281070167111466
+      "speed": 0.000010807955659870566,
+      "stationError": -0.10602380908039777
     },
     {
       "kind": "PIT_STOP",
       "car": 3,
-      "time": 22,
-      "tick": 1320,
-      "speed": 0.005257377896182881,
-      "stationError": -0.014469802697021805
+      "time": 22.45,
+      "tick": 1347,
+      "speed": 0.018604285555248973,
+      "stationError": -0.0974068559889929
     },
     {
       "kind": "PIT_STOP",
       "car": 2,
       "time": 26.2,
       "tick": 1572,
-      "speed": 0.00000955311951191668,
-      "stationError": -0.0274751830202149
+      "speed": 0.000006567852292109102,
+      "stationError": -0.08660278475326777
     },
     {
       "kind": "PIT_STOP",
       "car": 4,
-      "time": 30.2,
-      "tick": 1812,
-      "speed": 0.00011909676758210175,
-      "stationError": -0.047517756277557055
+      "time": 30.65,
+      "tick": 1839,
+      "speed": 0.000003215632668008609,
+      "stationError": -0.10383914667727367
     },
     {
       "kind": "PIT_STOP",
       "car": 5,
-      "time": 30.583333333333332,
-      "tick": 1835,
-      "speed": 0.029380763004879365,
-      "stationError": -0.031488481593441975
+      "time": 31.233333333333334,
+      "tick": 1874,
+      "speed": 0.055186243064228604,
+      "stationError": -0.09657793778387713
     },
     {
       "kind": "PIT_STOP",
       "car": 6,
-      "time": 38.78333333333333,
-      "tick": 2327,
-      "speed": 0.0000789449031491747,
-      "stationError": -0.033854642455480644
+      "time": 39.45,
+      "tick": 2367,
+      "speed": 0.00006403662857959988,
+      "stationError": -0.0908264174750002
     }
   ],
   "scope": "Six real integrated cars approach their own bays concurrently; oriented footprint against every other work area. No pose writes after initialization."

@@ -11,10 +11,14 @@
     },
     {
       "gap": 3.01,
-      "allowed": false
+      "allowed": true
     },
     {
       "gap": 5,
+      "allowed": true
+    },
+    {
+      "gap": 5.01,
       "allowed": false
     },
     {

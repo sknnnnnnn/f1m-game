@@ -1,5 +1,5 @@
 import {circuit,clamp,mod,wrap} from '../tracks/track.js';
-export const PIT={entry:circuit.data33?.pit.entry??circuit.length-420,limit:80/3.6,target:19,mergeWait:circuit.data33?.pit.mergeWait??circuit.length+420,exit:circuit.data33?.pit.exit??circuit.length+560,serviceSeconds:3.2,width:7};
+export const PIT={entry:circuit.data33?.pit.entry??circuit.length-420,limit:80/3.6,target:80/3.6-.45,mergeWait:circuit.data33?.pit.mergeWait??circuit.length+420,exit:circuit.data33?.pit.exit??circuit.length+560,serviceSeconds:3.2,width:7};
 const smooth=t=>{t=clamp(t,0,1);return t*t*t*(10+t*(-15+6*t));};
 export const stallStation=id=>circuit.length+70+(id-1)*23;
 export const pitStopStation=id=>stallStation(id)-1;
@@ -19,3 +19,12 @@ export function canMerge(car,field){
  for(const other of field){if(other.id===car.id||other.pit?.active)continue;const p=circuit.project(other.state.X,other.state.Y,other.state.psi),gap=circuit.delta(p.s,own.s),speed=Math.hypot(other.state.u,other.state.v);if(gap>=0&&gap<55)return false;if(gap<0&&-gap<Math.max(80,(speed-12)*duration+65))return false;}
  return true;
 }
+
+let limitLines;
+// Start the limiter only once the pit corridor separates from the race road.
+export function pitSpeedLimitLines(){
+ if(limitLines)return limitLines;let start=PIT.entry+180;
+ for(let s=PIT.entry+10;s<Math.min(circuit.length,stallStation(1)-100);s+=2){const q=pitRoad(1).at(s);if(Math.abs(circuit.project(q.x,q.y).d)>=circuit.width/2+PIT.width/2){start=s;break;}}
+ return limitLines=Object.freeze({start,end:PIT.mergeWait});
+}
+export function pitRouteSpeedCap(station){const lines=pitSpeedLimitLines(),distance=station<lines.start?lines.start-station:station>lines.end?station-lines.end:0;return Math.min(60,Math.sqrt(PIT.target**2+8*distance));}

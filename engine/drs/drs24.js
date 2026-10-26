@@ -9,7 +9,7 @@ export function drsZones24(track=defaultCircuit){
  for(let j=1;j<=N+1;j++){const i=(cut+j)%N,yes=j<=N&&flat[i];if(yes&&first===null)first=j;if(!yes&&first!==null){const length=(j-first)*step;if(length>=450){const s=mod((cut+first)*step,track.length);runs.push({id:'STRAIGHT-'+runs.length,name:'ทางตรง '+(runs.length+1),detect:mod(s-55,track.length),start:mod(s+15,track.length),end:mod(s+length-120,track.length),length});}first=null;}}
  return runs.filter(z=>{const psi=track.at(z.start).psi,length=mod(z.end-z.start,track.length);let lo=0,hi=0;for(let ds=0;ds<=length;ds+=10){const d=track.at(z.start+ds).psi-psi,a=Math.atan2(Math.sin(d),Math.cos(d));lo=Math.min(lo,a);hi=Math.max(hi,a);}return hi-lo<.26;}).sort((a,b)=>b.length-a.length).slice(0,3).sort((a,b)=>a.start-b.start);
 }
-export const DRS_GAP_SECONDS=3;
+export const DRS_GAP_SECONDS=5;
 const zoneCache=new WeakMap();export function zonesFor24(track=defaultCircuit){if(!zoneCache.has(track))zoneCache.set(track,drsZones24(track));return zoneCache.get(track);}
 export function inDRSZone24(s,z,track=defaultCircuit){return mod(s-z.start,track.length)<=mod(z.end-z.start,track.length);}
 function detection(r,car,track){let closest=null;const s=car.projection.s;for(const other of r.cars){if(other.id===car.id||other.pit?.active||other.finishedAt!==null)continue;const station=other.projection?.s??mod(other.progress,track.length),gap=mod(station-s,track.length);if(gap<=0||closest&&gap>=closest.metres)continue;closest={id:other.id,metres:gap,seconds:gap/Math.max(15,other.state?.u??car.state.u)};}return {allowed:!!closest&&closest.seconds<=DRS_GAP_SECONDS,gap:closest?.seconds??null,target:closest?.id??null};}

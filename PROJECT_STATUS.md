@@ -1,3 +1,5 @@
+Latest milestone: sustained driving, pit-lane 80 km/h and 5-second DRS (2f0da8eb579c21dd). See [results](reports/ATTACK2_DRIVING_TH.md). Android validation pending.
+
 Latest milestone: Shanghai spatial racing path (7d46953990b00bbd), 2026-10-27.
 
 See [measured results and limits](reports/SHANGHAI_RACING_PATH_TH.md). Android validation remains pending.
