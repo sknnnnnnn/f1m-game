@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';import {circuit} from '../engine/tracks/track.js';import {racingOffset} from '../engine/tracks/racing-line.js';import {Race} from '../engine/race/engine.js';import {makeReference,validatePlan} from '../engine/physics/reference-adapter.js';import {initial} from '../racing/runtime/frozen/physics.js';
+assert.equal(circuit.key,'shanghai');const r=new Race(),a=r.cars[0].agent,c=r.config;a.config=c;a.targetSpeed=94;let checked=0;
+for(const wear of [0,.65])for(const lane of [-2,0,2])for(let s=0;s<circuit.length;s+=20){const q=circuit.point(s,lane),st=initial(c,{X:q.x,Y:q.y,psi:q.psi,u:50});for(const w of st.wheels){w.Ts=90;w.wear=wear;}a.targetLane=lane;a.curve={t0:0,T:1,c:[lane]};a.freeLine=true;const p=makeReference(c,st,a);assert.equal(validatePlan(c,st,p),null,`s=${s}, wear=${wear}, lane=${lane}`);assert(Math.abs(racingOffset(s))<=3.1);checked++;}
+console.log(JSON.stringify({checked,validPlans:true,boundedLine:true}));
