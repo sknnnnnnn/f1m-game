@@ -59,3 +59,9 @@
 ## Browser pause acknowledgement
 
 การทดสอบ browser เดิมอ่าน tick ทันทีหลังคลิกพัก ซึ่งยังอาจมี physics batch ที่กำลังเสร็จอยู่ จึงเปลี่ยนให้รอ runtime.running=false ที่ worker ยืนยันก่อนอ่าน tick แล้วตรวจว่าคงเดิมหลัง 200 ms. ยังตรวจ pause behavior จริง ไม่มีการลบ assertion เรื่องหยุดเวลา
+
+## ตรวจหน้าเว็บที่เผยแพร่แล้ว
+
+เปิด GitHub Pages ใน Chrome Preview, เริ่มแข่งและขับได้ถึง 00:57.383 แล้วพักเกมได้ UI แสดง build 7d46953990b00bbd และออฟไลน์พร้อม. นี่เป็น cloud Chrome Preview ไม่ใช่ผลวัด Android/GPU
+
+![Live Chrome Preview build verification](SHANGHAI_LIVE_CHROME_PREVIEW.jpg)
