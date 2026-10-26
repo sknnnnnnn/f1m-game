@@ -55,3 +55,7 @@
 - `F1M_TRACK23=shanghai node tests/shanghai-envelope.mjs`
 - สร้าง candidate ใหม่: `python tools/optimise-shanghai-curvature.py` (ต้องมี numpy/scipy และ Node). Solver เริ่มจาก candidate ปัจจุบัน; ผลใหม่ต้องทดสอบซ้ำก่อนใช้
 - บันทึก/วาดเส้นรถจริง: `F1M_TRACK23=shanghai node tools/trace-shanghai-line.mjs`, แล้ว `python tools/plot-shanghai-line.py` (matplotlib/numpy)
+
+## Browser pause acknowledgement
+
+การทดสอบ browser เดิมอ่าน tick ทันทีหลังคลิกพัก ซึ่งยังอาจมี physics batch ที่กำลังเสร็จอยู่ จึงเปลี่ยนให้รอ runtime.running=false ที่ worker ยืนยันก่อนอ่าน tick แล้วตรวจว่าคงเดิมหลัง 200 ms. ยังตรวจ pause behavior จริง ไม่มีการลบ assertion เรื่องหยุดเวลา
