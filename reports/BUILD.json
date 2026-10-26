@@ -1,9 +1,9 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "0b48ecee592c1915",
-  "sourceRevision": "0b48ecee592c1915076e585a7e0dfc655875165eca1846d90ea9720eb12c5fbd",
+  "version": "69cb878ded0866f3",
+  "sourceRevision": "69cb878ded0866f35d2095de6da8a95193a53a0e8a93c92150c0a13f269ab758",
   "inputs": {
-    "build.mjs": "b5976f3040dd7a919a6f6e3c5cc8bc3335c1214ac5ee227db8bdbbf1ca1c3371",
+    "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "7c3988713ece41ca5672caeb509be4800c784bb9081a839239fec0d4d662ddd8",
     "engine/ai/battle-camera.js": "78e583678411f244786fbd09fed4e9a75ddba56a8a3592545b6dbfda795346b0",
     "engine/ai/battle-planner.js": "a9fd5256743be01592701f6471dedb68b2b1afc2587cf55ce9936131c31558e7",
@@ -75,10 +75,10 @@
     "engine/race/weekend-save.js": "939fbe6d21c58b7ae5d3b339d42f4681c9e49422e9ece27325d9a452dd7e5bc0",
     "engine/race/weekend-session.js": "2fb2b79df13bc7da81bdbb22880a89ab6128418fd4a46dc0bc1d14a25288ab8c",
     "engine/race/weekend.js": "5988be2c1181e348945ce64a37219f9bba1584297cd5825b2a94c915fdc1b39c",
-    "engine/rendering/app.js": "05f52655c3d4749b2dadd668ae0eb6bc1581052037d173ac6fa201ad6c82fbf5",
+    "engine/rendering/app.js": "10d2af4be5afa1ba57f3bd5e565bf3dce8ddf31b479b7bfc74d0ff537f6e1d98",
     "engine/rendering/bahrain-scene30.js": "e0dc40600c840273c89488bb6e879df06115107943215e8b84986713c125d3ed",
     "engine/rendering/broadcast.js": "2cb43804911640e619ba25aca88a2663b2b546f77886245ff5aa704835400e38",
-    "engine/rendering/camera-safety30.js": "4148d86c5c59cdd4f61f0f8988d53f5530a8ec0d7b00436f1a9668c130eb5684",
+    "engine/rendering/camera-safety30.js": "32d1c6af6c08ad9658a8eac5f1ad0b8c9dc32f5e0a7ca26b363513dee2075321",
     "engine/rendering/cameras.js": "83211df95ca1df65381ae7c28313e72deec2216c7cc802eb68917ca6eb193d0d",
     "engine/rendering/circuit-finish.js": "3d6d9c9c9cd431f53562a731b74c388cc4f4d6ecaedb092b921f490b543e556f",
     "engine/rendering/cpu-track-renderer.js": "93d7b83675a165f7d7897a1b37982d84afe364f319f595b43673c6efcd8a4f63",
@@ -90,6 +90,7 @@
     "engine/rendering/imported-scene33.js": "64d7daa6e7c1925b47dfd70eb97d97809a7468820322d70ee1b5df9201655664",
     "engine/rendering/living-scene26.js": "faf428d893ef22c548fb1b5085ea08fc93a2f5b87a113799295708a6a7d868b4",
     "engine/rendering/minimap24.js": "75b93c8d231d58bb0638a4716401173693d201202dc5b6e288ec8735d492f935",
+    "engine/rendering/obstacle-grid.js": "871280ac1882970b17b90c3fcab05a144f268a0c9e4ce06a68a841f5bcea49d3",
     "engine/rendering/occlusion.js": "2984a9d00fe58a300b5155b0e262fcec7c96a0d9a959ce2b454729043d49d6e6",
     "engine/rendering/particles23.js": "99b47b4fe06a22d19cc48cb284ffe8b9ca281a185394fd0ff0eb66d075f0d9a9",
     "engine/rendering/particles24.js": "1eaad239927ea4b7097b7d77ccceaf9de80ced6429816e1bd72bffe731d5fad3",
@@ -157,7 +158,7 @@
     "public/icons/maskable-512.png": "5daa2ce2fe0e3fc78b08084d05dd898e2f5808ee3a0743486f036014c4c854d7",
     "public/manifest.webmanifest": "d00afe884bc8a47499dbe133a441006e109c1e4371b045ad20202159f419b3a1",
     "public/mobile.css": "f0810315631c2bc633349f20a808564644f5e1fd3a61a4038ece279713ca68a3",
-    "public/mobile.js": "52963938f9bc01a0f473c9b06446b6c1f2086d4353bf8d026c690144e6f42c74",
+    "public/mobile.js": "711a5074078ed7a0c08527c6360149dbae986eba45a84f0463c06049d802224e",
     "public/sw.js": "22be9ca04be9e924c8e01ef5403f3f4cc75eb2c8dfd553b03af52936896fa910",
     "racing/runtime/config.js": "ca6edd83ccadd1022d26505f3c4c0e22dae6dbc271e6531c4373196a472c709b",
     "racing/runtime/frozen/config.js": "f6ef0ce66ab4c27e48955013207f39826a427b3e076fd8e83bf2af943b56b560",
@@ -178,8 +179,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 1259853,
-      "sha256": "d82f9656cce5e3e27a1babe460b30ccd6ae4e6e5eb2f4d909eb2df3706a1197c"
+      "bytes": 983119,
+      "sha256": "bb06b4de67239e5a0f458408315405b8803a72efda3150bdb906ffde9dc0b1e8"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -198,16 +199,16 @@
       "sha256": "ed97b8308af35b9454855a0b8e01f9342c89e2e3e3319b8ac58d6c41289e85a6"
     },
     "assets/mobile.js": {
-      "bytes": 6479,
-      "sha256": "52963938f9bc01a0f473c9b06446b6c1f2086d4353bf8d026c690144e6f42c74"
+      "bytes": 6685,
+      "sha256": "711a5074078ed7a0c08527c6360149dbae986eba45a84f0463c06049d802224e"
     },
     "assets/rig.js": {
       "bytes": 24557,
       "sha256": "59b22d81aa6838b585c4ea4e429f66b259423d0e420afa6a2e7a1b5e80bdbd59"
     },
     "build.json": {
-      "bytes": 17833,
-      "sha256": "bd808cc858930531085b56e97acff3a077e0373ec650d54419f555335fb701d5"
+      "bytes": 17942,
+      "sha256": "fb373eb3c5682340019410fea820d1eec79bfc5cb9fc055fa7b954b221d8f7cb"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -238,16 +239,16 @@
       "sha256": "c1fdbd7fcdf937ecef9a5229134e8d584dd633a65843d90ecaa923586b0bf1f8"
     },
     "workers/physics-worker.js": {
-      "bytes": 601469,
-      "sha256": "91bd3028e2a5a2587293c62784ef2e8154bf9c7f30e859136d1ba1ba6b7fdc93"
+      "bytes": 534975,
+      "sha256": "9dd7716e07674eaa83f5102c46129144fbd17b2510c19e33fcfb363e66fbec21"
     },
     "workers/race-worker.js": {
-      "bytes": 914621,
-      "sha256": "411a07d0dab32dba09a05175ea50c7cf06261de3eff71de2345bbabe4be621d1"
+      "bytes": 750649,
+      "sha256": "c5af6bb4f5e1f3f51f1e8e1b641dc0db2b91ebb5bd17886a6a584430a86d04b4"
     },
     "sw.js": {
       "bytes": 1299,
-      "sha256": "b451ac8aba46512f482ea0b5e4e7563fd7ba858b3685f63f3b94dc003003c160"
+      "sha256": "ebb1f3e5d0ed2595a9a2938b8fc33ade1ee51117dfad227d2fe99655ae6ba0df"
     }
   }
 }
