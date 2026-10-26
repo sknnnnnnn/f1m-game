@@ -24,10 +24,12 @@ export class StrategyRace extends WeekendRace {
  thinkCar(car,field,c){
   const pit=car.pit;
   if(pit?.active){car.agent.state='PIT_'+pit.phase;car.agent.reason=PHASES[pit.phase];car.agent.plan=makePitPlan(c,car.state,car,this.cars);car.agent.lastThoughtTick=this.tick;return {state:car.agent.state};}
+  car.agent.pitApproach=pit?.phase==='APPROACH';
   const decision=super.thinkCar(car,field,c);
   if(pit?.phase==='APPROACH'){
+   car.agent.freeLine=false;
    const own=car.projection,others=field.filter(o=>o.id!==car.id&&!o.pit?.active),candidate=connectLane(car.agent.curve,car.state.time,0,3),safe=others.every(o=>{const gap=circuit.delta(o.projection.s,own.s),relative=Math.hypot(o.state.u,o.state.v)-Math.hypot(car.state.u,car.state.v);for(let j=0;j<=14;j++){const t=j*.25,n=laneAt(candidate,car.state.time+t).d,otherN=o.intent?.curve?laneAt(o.intent.curve,car.state.time+t).d:o.projection.d;if(Math.abs(gap+relative*t)<10+1.4*t*t&&Math.abs(n-otherN)<3.2)return false;}return true;});
-   if(safe&&Math.abs(car.agent.targetLane)>.1){car.agent.curve=connectLane(car.agent.curve,car.state.time,0,3);car.agent.targetLane=0;car.agent.commitUntil=car.state.time+3;}
+   if(safe&&(car.agent.curve.racing||Math.abs(car.agent.targetLane)>.1)){car.agent.curve=connectLane(car.agent.curve,car.state.time,0,3);car.agent.targetLane=0;car.agent.commitUntil=car.state.time+3;}
    car.agent.maneuverLimit=Math.min(car.agent.maneuverLimit??Infinity,24);car.agent.state='PIT_APPROACH';car.agent.reason='BOX / ชะลอเข้าพิต';car.agent.plan=makeReference(c,car.state,car.agent);
   }
   return decision;

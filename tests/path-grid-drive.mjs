@@ -1,0 +1,11 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {LivingSession26} from '../engine/race/living-session26.js';import {circuit} from '../engine/tracks/track.js';
+const r=new LivingSession26().race;r.seed=Number(process.env.AUDIT_SEED??19);r.reset();r.laps=Number(process.env.AUDIT_LAPS??1);r.prepare();let maxCornerOffset=0,pathTicks=0,activeTicks=0,reason=null;const samples=[];
+for(let n=0;n<Number(process.env.AUDIT_TICKS??30000)&&!r.finished&&!r.stop;n++){
+ r.advance();for(const c of r.cars){if(c.agent.curve.racing)pathTicks++;activeTicks++;}
+ if(n%1800===0)console.log(JSON.stringify({time:r.time,progress:r.cars.map(c=>Math.round(c.progress)),rejections:r.controllerRejections}));
+ if(r.controllerRejections){reason={kind:'REJECTION',time:r.time,cars:r.cars.filter(c=>c.lastController?.rejection).map(c=>({id:c.id,s:c.projection.s,n:c.projection.d,mode:c.agent.state,reason:c.lastController.rejection,curve:c.agent.curve}))};break;}
+ if(n%6===0)for(const c of r.cars){if(c.pit.active||c.finishedAt!==null||c.live26?.retired)continue;for(const along of [-r.config.length/2,r.config.length/2])for(const across of [-r.config.width/2,r.config.width/2]){const s=c.state,x=s.X+along*Math.cos(s.psi)-across*Math.sin(s.psi),y=s.Y+along*Math.sin(s.psi)+across*Math.cos(s.psi),d=Math.abs(circuit.project(x,y).d);maxCornerOffset=Math.max(maxCornerOffset,d);if(d>circuit.width/2+.05){reason={kind:'ROAD_BOUNDARY',time:r.time,id:c.id,s:c.projection.s,d,center:c.projection.d,mode:c.agent.state};break;}}if(reason)break;}
+ if(reason)break;
+ if(n%60===0)samples.push({time:r.time,cars:r.cars.map(c=>({id:c.id,s:c.projection.s,n:c.projection.d,v:c.state.u*3.6,mode:c.agent.state,path:!!c.agent.curve.racing}))});
+}
+const result={seed:r.seed,laps:r.laps,time:r.time,finished:r.finished,stop:r.stop,rejections:r.controllerRejections,maxCornerOffset,overtakes:r.overtakes,pathFraction:pathTicks/activeTicks,reason,allCarsFinished:r.cars.every(c=>c.finishedAt!==null),retired:r.cars.filter(c=>c.live26?.retired).map(c=>c.id),samples};fs.writeFileSync(process.env.AUDIT_OUT??'reports/PATH_GRID_TRIAL.json',JSON.stringify(result,null,2));console.log(JSON.stringify({...result,samples:undefined}));assert.equal(reason,null);assert.equal(r.stop,null);assert(r.finished&&result.allCarsFinished);assert.deepEqual(result.retired,[]);

@@ -1,3 +1,4 @@
+import {pathOffset,pathLaneAt} from '../tracks/racing-path.js';
 import {isAttackConfig} from './attack-drive.js';
 import {lateralDemandFactor,brakingBudget,trafficCaution,brakingTrafficCaution,approachDemand} from './speed-envelope.js';
 import {racingOffset,smooth} from '../tracks/racing-line.js';
@@ -9,11 +10,26 @@ import {circuit,clamp,wrap} from '../tracks/track.js';
 import * as P1 from '../../racing/runtime/frozen/reference.js';
 const road=p=>p.route==='P2-BAHRAIN-GP'?circuit:p.route==='P2-BAHRAIN-PIT'?pitRoad(p.stallId):P1.road(p);
 function offsetAt(p,t){if(p.route==='P2-BAHRAIN-PIT')return {d:0,vd:0,ad:0};if(p.route!=='P2-BAHRAIN-GP')return P1.offsetAt(p,t);return laneAt(p.laneCurve,t);}
-function laneAt(curve,t){const z=clamp(t-curve.t0,0,curve.T),c=curve.c;return{d:c.reduce((v,a,j)=>v+a*z**j,0),vd:z>=curve.T?0:c.reduce((v,a,j)=>v+(j?j*a*z**(j-1):0),0),ad:z>=curve.T?0:c.reduce((v,a,j)=>v+(j>1?j*(j-1)*a*z**(j-2):0),0)};}
-function connectLane(old,t,target,T=3.4){const a=laneAt(old,t),D=target-a.d,v=a.vd,b=a.ad;return{t0:t,T,c:[a.d,v,b/2,10*D/T**3-6*v/T**2-1.5*b/T,-15*D/T**4+8*v/T**3+1.5*b/T**2,6*D/T**5-3*v/T**4-.5*b/T**3]};}
+function laneAt(curve,t){if(curve.racing)return pathLaneAt(curve,t);const z=clamp(t-curve.t0,0,curve.T),c=curve.c;return{d:c.reduce((v,a,j)=>v+a*z**j,0),vd:z>=curve.T?0:c.reduce((v,a,j)=>v+(j?j*a*z**(j-1):0),0),ad:z>=curve.T?0:c.reduce((v,a,j)=>v+(j>1?j*(j-1)*a*z**(j-2):0),0)};}
+function connectLane(old,t,target,T=3.4){
+ const a=laneAt(old,t),D=target-a.d;let v=a.vd,b=a.ad;
+ if(old.racing){v=clamp(v,-1.5,1.5);b=clamp(b,-1.5,1.5);}
+ let result;
+ for(let attempt=0;attempt<10;attempt++){
+  result={t0:t,T,c:[a.d,v,b/2,10*D/T**3-6*v/T**2-1.5*b/T,-15*D/T**4+8*v/T**3+1.5*b/T**2,6*D/T**5-3*v/T**4-.5*b/T**3]};
+  if(!old.racing||Array.from({length:41},(_,i)=>laneAt(result,t+i*T/40).d).every(d=>Math.abs(d)<=Math.max(6,Math.abs(a.d),Math.abs(target))+.001))break;
+  v*=.5;b*=.5;
+ }
+ return result;
+}
 function tyreFactor(s){const tf=T=>T<=20?.55:T<=60?.55+(T-20)*.3/40:T<=90?.85+(T-60)*.15/30:T<=110?1-(T-90)*.08/20:T<=140?.92-(T-110)*.27/30:T<=180?.65-(T-140)*.3/40:.35;return Math.min(...s.wheels.map(w=>tf(w.Ts)*Math.max(.4,1-.4*w.wear)*Math.max(.3,1-.5*w.damage)));}
 function makeReference(c,s,agent){const at=circuit.project(s.X,s.Y,s.psi),speed=agent.targetSpeed,p={schema:'P1-Trajectory/1.0',id:`P2-${agent.id}-${s.tick}`,inputTick:s.tick,expires:s.tick+15,modelVersion:c.version,routeVersion:'P2-BAHRAIN-GP/2',route:'P2-BAHRAIN-GP',direction:1,speed,offset:agent.targetLane,createdTime:s.time,recovery:agent.recovery??null,corridor:{halfWidth:circuit.width/2,margin:.35},knots:[],laneCurve:agent.curve};
-  const point=(ds)=>{const tm=s.time+ds/Math.max(5,Math.hypot(s.u,s.v)),a=circuit.at(at.s+ds),o=laneAt(agent.curve,tm),blend=agent.freeLine?smooth((ds-Math.max(20,Math.hypot(s.u,s.v)*.5))/90):0,n=blend?o.d+(racingOffset(at.s+ds)-o.d)*blend:o.d;return{x:a.x-n*Math.sin(a.psi),y:a.y+n*Math.cos(a.psi)};};
+  const point=(ds)=>{
+   const a=circuit.at(at.s+ds);let n;
+   if(agent.curve.racing)n=pathOffset(agent.curve,at.s+ds);
+   else{const tm=s.time+ds/Math.max(5,Math.hypot(s.u,s.v)),o=laneAt(agent.curve,tm),blend=agent.freeLine?smooth((ds-Math.max(20,Math.hypot(s.u,s.v)*.5))/90):0;n=blend?o.d+(racingOffset(at.s+ds)-o.d)*blend:o.d;}
+   return{x:a.x-n*Math.sin(a.psi),y:a.y+n*Math.cos(a.psi)};
+  };
   // Shanghai flowing bends may use the actual vehicle grip. Fade back to the
   // proven tight-corner reserve above 0.012/m, reaching it at 0.047/m.
   // Recovery, safety car and caution plans keep their original envelope.
@@ -28,7 +44,7 @@ function makeReference(c,s,agent){const at=circuit.project(s.X,s.Y,s.psi),speed=
   // 110 m control corridor to the unchanged controller. Distant knots cannot
   // be nearest to this car during a 0.1 s plan lifetime on this compact circuit.
   p.previewMetres=900;p.controlLookaheadMetres=110;p.knots=p.knots.slice(0,20);
-  for(const knot of p.knots)Object.freeze(knot);Object.freeze(p.knots);Object.freeze(p.corridor);Object.freeze(p.laneCurve.c);Object.freeze(p.laneCurve);return Object.freeze(p);
+  for(const knot of p.knots)Object.freeze(knot);Object.freeze(p.knots);Object.freeze(p.corridor);Object.freeze(p.laneCurve.c);if(p.laneCurve.racing){if(p.laneCurve.racing.join)Object.freeze(p.laneCurve.racing.join);Object.freeze(p.laneCurve.racing);}Object.freeze(p.laneCurve);return Object.freeze(p);
 }
 const validationCache=new WeakMap();
 function validatePlan(c,s,p){if(p?.route==='P2-BAHRAIN-PIT')return validatePitPlan(c,s,p);if(p?.route!=='P2-BAHRAIN-GP')return P1.validatePlan(c,s,p);

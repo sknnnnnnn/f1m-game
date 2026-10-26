@@ -1,0 +1,12 @@
+{
+  "earlyLinearOnlyPath": {
+    "fullGridFinished": false,
+    "problem": "Unbounded residual join could put a future point outside the road corridor."
+  },
+  "fixes": [
+    "Bounded convex spatial join with limited initial slope",
+    "Consistent spatial-to-tactical lane transition",
+    "Pit approach explicitly exits spatial racing mode"
+  ],
+  "scope": "Development trials were not published to gh-pages."
+}

@@ -1,10 +1,10 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "55360261f03d23c7",
-  "sourceRevision": "55360261f03d23c748562762108116875bf6926e3d1bd71b625bc0c2b98af80f",
+  "version": "7d46953990b00bbd",
+  "sourceRevision": "7d46953990b00bbd60d227bb58f0d789822dc6aa0a704e207f4880eff4a3e3b2",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
-    "engine/ai/agent.js": "7c3988713ece41ca5672caeb509be4800c784bb9081a839239fec0d4d662ddd8",
+    "engine/ai/agent.js": "e93eb63a9ba5867d820fdfebbfb9e94711523f56af987bdc4e8a9bf44a355a89",
     "engine/ai/battle-camera.js": "78e583678411f244786fbd09fed4e9a75ddba56a8a3592545b6dbfda795346b0",
     "engine/ai/battle-planner.js": "a9fd5256743be01592701f6471dedb68b2b1afc2587cf55ce9936131c31558e7",
     "engine/ai/braking-zones.js": "113e74e885c188e223448fb5c6ddc6edb8a8d1c0af12823f0213876946d15d0f",
@@ -25,7 +25,7 @@
     "engine/physics/attack-drive.js": "117cf77b43c292307298d37f0ce4219fc33e991911f2c171d1055deb34a0030b",
     "engine/physics/collision.js": "3c788dba61f348e07f38b0f74b9c5ae8d8ee359584507c2cc00e386bf00f2dca",
     "engine/physics/pose-buffer.js": "c41906bda1e631fa90bd2435c4f1838385113bb56697927355bbea3e1b45c110",
-    "engine/physics/reference-adapter.js": "163965640f6e217b07aa93351617ff4f7d40e14b2536802a266b55c08a8fc112",
+    "engine/physics/reference-adapter.js": "886f6610f58d45e78bc674a9413d603aafbe0f73a292fde8c7dc037816d7310e",
     "engine/physics/speed-envelope.js": "b9a266ff440aa062bd39c3cf42fa6c7ba98d4f7ee98e1c05a13b1248092f235d",
     "engine/physics/tyres.js": "7cd1a8261c34410567c09a56d7d75df97e5fe93904f6cf941c678a57dd6a3191",
     "engine/physics/vehicle-preset.js": "7e77f04e69cb344f5826a9794cb794a110c299f67d3990c0b79ae49be8c036c1",
@@ -67,11 +67,11 @@
     "engine/race/race-resources.js": "d65baba100d1f2080844b814453e64beb428759526486faf6e89780db35ccfca",
     "engine/race/showtime22.js": "3f95249c112db4cae2611aff4c91130451748d26d8b2ae7fcdfb74b9390cceea",
     "engine/race/stability23.js": "5158f1e23898481b1eff7e70746f6a65f8a6760e74c7f0e4d26f774ecab211c6",
-    "engine/race/strategy-race.js": "ea40fa2bb6987b5fd13162b7ec70492dc7ae7e5bf2f25cf12f6826cb1e1a6cac",
+    "engine/race/strategy-race.js": "f038543aa133b70ffb48604e80425769ac19a4845cc6cd7bc05040ca0488eeb1",
     "engine/race/strategy.js": "a157813463786a5660d671d1ddb3cb784c0e54840d649ef8a15229a627ceea3b",
     "engine/race/team-engineer.js": "9d35e3d2fae9fdbe8cbc935b18f03d12335c7422c63f2569e16d0811c0acc803",
     "engine/race/weekend-environment.js": "9b942c1afc7165228c76ca5d3fb9edcf10a083e0c06bcb14350c76baa2b9966a",
-    "engine/race/weekend-race.js": "bbff793203d5d26e39c2767704d87a0d8a43ade95d55aa1164773742de160025",
+    "engine/race/weekend-race.js": "54c54997a6da4528c3a7efda4dc32344b503e8be0d41226d869add1948ea8dfd",
     "engine/race/weekend-save.js": "939fbe6d21c58b7ae5d3b339d42f4681c9e49422e9ece27325d9a452dd7e5bc0",
     "engine/race/weekend-session.js": "2fb2b79df13bc7da81bdbb22880a89ab6128418fd4a46dc0bc1d14a25288ab8c",
     "engine/race/weekend.js": "5988be2c1181e348945ce64a37219f9bba1584297cd5825b2a94c915fdc1b39c",
@@ -123,10 +123,11 @@
     "engine/tracks/imported-track33.js": "9f78927ae40e469b69e58a3ea0a09c92535cabbb6edc4ecf8429577588d2e5de",
     "engine/tracks/racing-line-data.js": "636ec1ad75fda6427d8939783277a3cd49ea8a66ccea0688f7a30349989ff593",
     "engine/tracks/racing-line.js": "d976898a54e857f7d4f736f514ae56b9ae7dcfa7ae2377a9487aac0f9093a414",
+    "engine/tracks/racing-path.js": "ba9a34183ab870e4b7a30e5cf15cf236d836e1ac578e20ba041495f9a76398e0",
     "engine/tracks/road-height33.js": "8be88cb49e093ee1c147cd0487e8bcd7642022c260fb750806d8fcec0ea2f2c5",
     "engine/tracks/scenery/shanghai.js": "1ff1fcce22f5b0cd08cfd0c1e63a2ced5b97a2ad822f82249bc541ec9975df8f",
     "engine/tracks/scenery/suzuka.js": "09a27c31f282b93383dbb20e7ced3a6f929bf3ebd93fd16da1fdfb6c05a1931c",
-    "engine/tracks/shanghai-line.js": "4ccab47493c905b9be6f7fb234f80c2a0d581d381398fc75c0cb008504aabed4",
+    "engine/tracks/shanghai-line.js": "c42d8ea2f1f5c4cfc2443e6f4387de4cb0a83e2c3ff26669deb02d38c8d03f9a",
     "engine/tracks/track-layout28.js": "9c0d2df2fbdb47d133e1d1456fb561d18ab5f63e192f6fe84b353b5ec526a01c",
     "engine/tracks/track.js": "188648ff74e1cca3437825c175d68a721c255551484c43cd1d1d46c77cf1e16f",
     "engine/ui/championship-ui23.js": "82a7902e37e7de19d3dac0a2f24a9d2056f962ae4b03941b6ef57eff02541fd0",
@@ -180,8 +181,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 991009,
-      "sha256": "b1304fc75d033817445d9dba0562d4f058e3afdc74861a5caf89737dcf6ce856"
+      "bytes": 992216,
+      "sha256": "447ec67e16cca6a4c1e3b39474c121fffab02342100c18de07aaf1998449a49a"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -208,8 +209,8 @@
       "sha256": "59b22d81aa6838b585c4ea4e429f66b259423d0e420afa6a2e7a1b5e80bdbd59"
     },
     "build.json": {
-      "bytes": 18048,
-      "sha256": "97f5919d2f864f694592850be34a20fdf3e6189bc595d68af8368574023dc7b4"
+      "bytes": 18152,
+      "sha256": "47c5f77de0160d3323418ed6531063bd88e872eaceb4beae747c6bd12ecbdbad"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -244,12 +245,12 @@
       "sha256": "9dd7716e07674eaa83f5102c46129144fbd17b2510c19e33fcfb363e66fbec21"
     },
     "workers/race-worker.js": {
-      "bytes": 758174,
-      "sha256": "65b057ef992bd3b926442a85db7e2b33a0d609e2c824cf079e0ee7b9fd4795ee"
+      "bytes": 761138,
+      "sha256": "6878f6898c69662b5376f14fc934df85554bda01e189e21c3ed207adf66a7113"
     },
     "sw.js": {
       "bytes": 1299,
-      "sha256": "4fe6372d48783e83fb52a925314cc50d1171c00a44f5366660ea2b6e0aea46c0"
+      "sha256": "1413f2587230447d9bbbf184eb0bbc525ef03eb5dabb2de54d291a5d06c8abc4"
     }
   }
 }

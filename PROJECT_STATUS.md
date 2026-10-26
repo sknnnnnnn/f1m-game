@@ -1,3 +1,7 @@
+Latest milestone: Shanghai spatial racing path (7d46953990b00bbd), 2026-10-27.
+
+See [measured results and limits](reports/SHANGHAI_RACING_PATH_TH.md). Android validation remains pending.
+
 # Current milestone: F1M Attack 1.1
 
 Build 0b48ecee592c1915. Current report: reports/ATTACK_1_1_TH.md. All three six-car one-lap integrations finish with zero retirement, guard stop or controller rejection. Physical straight 0–300 8.57 s; 300–0 2.88 s. DRS 3 seconds. Three circuit finish passes implemented and browser grid rendering inspected. Android GPU/FPS and multi-lap season remain unverified. Main unchanged; GitHub publication still blocked.
