@@ -22,10 +22,17 @@ function waypoint(a,b,o){
  if(segmentClear(a,b,o))return b;
  const corners=[V(-o.x-.035,0,o.center-o.z-.035),V(o.x+.035,0,o.center-o.z-.035),V(-o.x-.035,0,o.center+o.z+.035),V(o.x+.035,0,o.center+o.z+.035)];
  for(const r of o.props??[])for(const sx of [-1,1])for(const sz of [-1,1])corners.push(V(r.x+sx*(r.hx+RADIUS+.06),0,r.z+sz*(r.hz+RADIUS+.06)));
+ // Each destination-to-target visibility is invariant within this query.
+ // Reject routes that cannot improve the current winner before ray sampling.
+ const destinations=[b,...corners],toTarget=new Map();
  let best=null,cost=Infinity;
  for(const c of corners)if(segmentClear(a,c,o)){
-  for(const d of [b,...corners])if(segmentClear(c,d,o)&&segmentClear(d,b,o)){
-   const n=a.distanceTo(c)+c.distanceTo(d)+d.distanceTo(b);if(n<cost){cost=n;best=c;}
+  const startDistance=a.distanceTo(c);
+  for(const d of destinations){
+   const n=startDistance+c.distanceTo(d)+d.distanceTo(b);
+   if(n>=cost)continue;
+   if(!toTarget.has(d))toTarget.set(d,segmentClear(d,b,o));
+   if(toTarget.get(d)&&segmentClear(c,d,o)){cost=n;best=c;}
   }
  }
  return best??b;

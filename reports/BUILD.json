@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "19c7d176f7fc8405",
-  "sourceRevision": "19c7d176f7fc84057f2ee0682d5640ae01b33c9eabdf9a73b76c13e4836159e8",
+  "version": "50bc2a6ed90a5aab",
+  "sourceRevision": "50bc2a6ed90a5aab89f80372e89b2b9d1607dc80576193ab07ace38e10d9c4d0",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "7c3988713ece41ca5672caeb509be4800c784bb9081a839239fec0d4d662ddd8",
@@ -32,7 +32,7 @@
     "engine/pit/crew/brake-service.js": "441dc8b1ab3e1ff4d0ee83f334fa8e9ecd3495fd5391ed577d52ec1bbabb77fc",
     "engine/pit/crew/car-assembly.js": "a015fbbb104dfe3f12d6f65433748eb6c24c5d734d271f6de4b94881898956a2",
     "engine/pit/crew/contact-pose.js": "00ffa1c8f7f52c1416313b52550b7a84eb31b5f9d5fde1096eb34fea4f5ef356",
-    "engine/pit/crew/crew-motion.js": "e49006972a55c483a017ab3ad696badd38a36186595df53fd8b9728d9b22f514",
+    "engine/pit/crew/crew-motion.js": "1360195e57115bad0a190c9f586827f8f162f2b851fd820ad123f5c997e7d19b",
     "engine/pit/crew/crew-presentation.js": "bf6b7fd482d2d40c7ff51985dde3aa4fc551388f6d887039570eee9d9b4369a4",
     "engine/pit/crew/crew-rig.js": "7273f460f7853def57bf13c254af2baa02139e8640ea334ec05ceb00ed836aa0",
     "engine/pit/crew/crew-traffic.js": "3d2c57884ace568730f9b4d1c89e09a79f98448dae0fc4037335a95e9b6a0080",
@@ -179,8 +179,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 983475,
-      "sha256": "d58c16da0d7b7544a1387a42ae04cce3e8545ed92690bb825a528fe7dd50d9c2"
+      "bytes": 983527,
+      "sha256": "f7baf299f5b767309c7db241184c8a03ee10968dd7254c4c8b636ba1d4ab444b"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -208,7 +208,7 @@
     },
     "build.json": {
       "bytes": 17942,
-      "sha256": "2c9560b5e5a3ab02bfe4a07df9966d02b76cabc0dd173cee2435f34f12854829"
+      "sha256": "da05cdf29da5e397e6e3eef9aa19313045b57d4d4363f2b57a28b2cfebb2a09e"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -248,7 +248,7 @@
     },
     "sw.js": {
       "bytes": 1299,
-      "sha256": "1c5fb7d3b8331b2333a47551f381bcf1e1099276a572ad146960d17c75770190"
+      "sha256": "4453f8e9c20ef5bdec091b170ca11b868e3d8f9e9bbfb86fb3578386599321a5"
     }
   }
 }
