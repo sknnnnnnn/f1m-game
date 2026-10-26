@@ -1,0 +1,4 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {circuit} from '../engine/tracks/track.js';import {LivingSession26} from '../engine/race/living-session26.js';
+const r=new LivingSession26().race;r.seed=Number(process.env.AUDIT_SEED??19);r.reset();r.laps=1;r.prepare();for(let n=0;n<24000&&!r.finished&&!r.stop;n++)r.advance();const out={seed:r.seed,finished:r.finished,time:r.time,stop:r.stop,rejections:r.controllerRejections,maxLateral:r.maxLateral,retired:r.cars.filter(c=>c.live26?.retired).map(c=>c.id),allCarsFinished:r.cars.every(c=>c.finishedAt!==null)};fs.writeFileSync(process.env.AUDIT_OUT??'/tmp/china-fast-grid19.json',JSON.stringify(out,null,2));console.log(out);assert(out.finished&&out.allCarsFinished);assert.equal(out.stop,null);assert.equal(out.rejections,0);assert.deepEqual(out.retired,[]);
+
+assert(out.maxLateral+r.config.width/2<circuit.width/2,'Race car left the road');

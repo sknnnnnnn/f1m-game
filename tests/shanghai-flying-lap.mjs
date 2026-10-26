@@ -1,0 +1,5 @@
+import fs from 'node:fs';import path from 'node:path';import {pathToFileURL} from 'node:url';import assert from 'node:assert/strict';
+const root=path.resolve(process.env.AUDIT_ROOT??'.');const {Race}=await import(pathToFileURL(path.join(root,'engine/race/engine.js')));const {circuit}=await import(pathToFileURL(path.join(root,'engine/tracks/track.js')));
+const r=new Race({seed:7,laps:3});r.cars=r.cars.slice(0,1);r.prepare();const crossings=[];let nextGate=0;
+for(let n=0;n<40000&&!r.finished&&!r.stop;n++){const c=r.cars[0],before=c.progress,at=r.time;if(!r.advance())break;while(c.progress>=nextGate){const fraction=(nextGate-before)/(c.progress-before);crossings.push(at+fraction*r.config.dt);nextGate+=circuit.length;}}
+const out={crossings,laps:crossings.slice(1).map((t,i)=>t-crossings[i]),finished:r.finished,stop:r.stop,rejections:r.controllerRejections,maxLateral:r.maxLateral};fs.writeFileSync(process.env.AUDIT_OUT??'/tmp/china-flying-after.json',JSON.stringify(out,null,2));console.log(out);assert(out.finished);assert.equal(out.stop,null);assert.equal(out.rejections,0);assert(out.maxLateral+r.config.width/2+.35<circuit.width/2);
