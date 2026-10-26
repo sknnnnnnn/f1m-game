@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "19c7d176f7fc8405",
-  "sourceRevision": "19c7d176f7fc84057f2ee0682d5640ae01b33c9eabdf9a73b76c13e4836159e8",
+  "version": "50bc2a6ed90a5aab",
+  "sourceRevision": "50bc2a6ed90a5aab89f80372e89b2b9d1607dc80576193ab07ace38e10d9c4d0",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "7c3988713ece41ca5672caeb509be4800c784bb9081a839239fec0d4d662ddd8",
@@ -32,7 +32,7 @@
     "engine/pit/crew/brake-service.js": "441dc8b1ab3e1ff4d0ee83f334fa8e9ecd3495fd5391ed577d52ec1bbabb77fc",
     "engine/pit/crew/car-assembly.js": "a015fbbb104dfe3f12d6f65433748eb6c24c5d734d271f6de4b94881898956a2",
     "engine/pit/crew/contact-pose.js": "00ffa1c8f7f52c1416313b52550b7a84eb31b5f9d5fde1096eb34fea4f5ef356",
-    "engine/pit/crew/crew-motion.js": "e49006972a55c483a017ab3ad696badd38a36186595df53fd8b9728d9b22f514",
+    "engine/pit/crew/crew-motion.js": "1360195e57115bad0a190c9f586827f8f162f2b851fd820ad123f5c997e7d19b",
     "engine/pit/crew/crew-presentation.js": "bf6b7fd482d2d40c7ff51985dde3aa4fc551388f6d887039570eee9d9b4369a4",
     "engine/pit/crew/crew-rig.js": "7273f460f7853def57bf13c254af2baa02139e8640ea334ec05ceb00ed836aa0",
     "engine/pit/crew/crew-traffic.js": "3d2c57884ace568730f9b4d1c89e09a79f98448dae0fc4037335a95e9b6a0080",
