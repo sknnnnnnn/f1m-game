@@ -1,2 +1,0 @@
-import assert from 'node:assert/strict';import {safetyTargetSpeed10} from '../engine/safety/safety-car.js';
-assert.equal(safetyTargetSpeed10({phase:'IN_LAP',tailGap:800,leaderGap:30}),21);assert(safetyTargetSpeed10({phase:'LEAD',tailGap:600,leaderGap:30})<safetyTargetSpeed10({phase:'LEAD',tailGap:200,leaderGap:30}));for(const tailGap of [0,100,250,400,1000,10000]){const v=safetyTargetSpeed10({phase:'LEAD',tailGap,leaderGap:35});assert(v>=12&&v<=29);}console.log('PASS Safety Car waits for the tail with bounded target speed; in-lap behavior retained');

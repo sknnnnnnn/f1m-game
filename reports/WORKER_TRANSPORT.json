@@ -1,9 +1,0 @@
-{
-  "status": "PASS",
-  "cars": 6,
-  "messagesBefore": 6,
-  "messagesAfter": 2,
-  "environmentsClonedBefore": 6,
-  "environmentsClonedAfter": 2,
-  "allResultsCommittedAfterAwait": true
-}
