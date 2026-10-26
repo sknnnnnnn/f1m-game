@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "69cb878ded0866f3",
-  "sourceRevision": "69cb878ded0866f35d2095de6da8a95193a53a0e8a93c92150c0a13f269ab758",
+  "version": "19c7d176f7fc8405",
+  "sourceRevision": "19c7d176f7fc84057f2ee0682d5640ae01b33c9eabdf9a73b76c13e4836159e8",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "7c3988713ece41ca5672caeb509be4800c784bb9081a839239fec0d4d662ddd8",
@@ -51,7 +51,7 @@
     "engine/pit/pit-reference.js": "4d7052d3d46b4bece90f12a0cb7a097569d2327fe7c1cccb1156407756647947",
     "engine/pit/pit-scene.js": "f9467e8b277c63f6f8f12f9d170c376f0bcafa9c4210c3dde3e4a787df0f8ed1",
     "engine/pit/pit-scene27.js": "bf02f06bf2c2f2d2fe4fafa4d4f97c0b900178be158f242d1ccddc909aa00481",
-    "engine/pit/pit-scene28.js": "72938283f8b5543f952e0cf6ad476cd1ff046c492b07995f3f255b5977252374",
+    "engine/pit/pit-scene28.js": "5bc4cbb4958921f3b614416433348514a52bcb777381dbeaf3ce9725bae6e97f",
     "engine/pit/pit-traffic23.js": "5abfe1d8fb1a4719d6309a8cb3ae826bc30cf918d772554b60568ccb3a834978",
     "engine/pit/pit-traffic32.js": "d818d8c7dbb25f7b213c1e66b9f21b20c48b0ae1f5a11ad7118e05473693c559",
     "engine/pit/pit-ui31.js": "80a7b5c8b7050ecf21d0ce3aac9731b77d4b5a824b82067d01ec088d9f91fe64",
@@ -75,7 +75,7 @@
     "engine/race/weekend-save.js": "939fbe6d21c58b7ae5d3b339d42f4681c9e49422e9ece27325d9a452dd7e5bc0",
     "engine/race/weekend-session.js": "2fb2b79df13bc7da81bdbb22880a89ab6128418fd4a46dc0bc1d14a25288ab8c",
     "engine/race/weekend.js": "5988be2c1181e348945ce64a37219f9bba1584297cd5825b2a94c915fdc1b39c",
-    "engine/rendering/app.js": "10d2af4be5afa1ba57f3bd5e565bf3dce8ddf31b479b7bfc74d0ff537f6e1d98",
+    "engine/rendering/app.js": "62abf1b7312c0d807cf0d17080fd8d79485215ea78659a7e0792fd1bf7e326d5",
     "engine/rendering/bahrain-scene30.js": "e0dc40600c840273c89488bb6e879df06115107943215e8b84986713c125d3ed",
     "engine/rendering/broadcast.js": "2cb43804911640e619ba25aca88a2663b2b546f77886245ff5aa704835400e38",
     "engine/rendering/camera-safety30.js": "32d1c6af6c08ad9658a8eac5f1ad0b8c9dc32f5e0a7ca26b363513dee2075321",
@@ -179,8 +179,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 983119,
-      "sha256": "bb06b4de67239e5a0f458408315405b8803a72efda3150bdb906ffde9dc0b1e8"
+      "bytes": 983475,
+      "sha256": "d58c16da0d7b7544a1387a42ae04cce3e8545ed92690bb825a528fe7dd50d9c2"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -208,7 +208,7 @@
     },
     "build.json": {
       "bytes": 17942,
-      "sha256": "fb373eb3c5682340019410fea820d1eec79bfc5cb9fc055fa7b954b221d8f7cb"
+      "sha256": "2c9560b5e5a3ab02bfe4a07df9966d02b76cabc0dd173cee2435f34f12854829"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -248,7 +248,7 @@
     },
     "sw.js": {
       "bytes": 1299,
-      "sha256": "ebb1f3e5d0ed2595a9a2938b8fc33ade1ee51117dfad227d2fe99655ae6ba0df"
+      "sha256": "1c5fb7d3b8331b2333a47551f381bcf1e1099276a572ad146960d17c75770190"
     }
   }
 }

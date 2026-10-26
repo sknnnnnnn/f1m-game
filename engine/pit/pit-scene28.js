@@ -28,7 +28,7 @@ export function pitScene28(scene,camera){
   kits.set(id,{bay,work,dynamic,garage,craft,api,car,v,call:null,job:'tyres',lastService:null,returnAt:null,wasActive:false,completed:false});
  }return profiles;}
  function reset(){for(const k of kits.values()){k.call=null;k.job='tyres';k.lastService=null;k.returnAt=null;k.wasActive=false;k.completed=false;k.dynamic.visible=false;k.craft.sound.silence();k.work.position.set(0,0,0);k.work.quaternion.identity();k.work.scale.set(1,1,1);}}
- function restore(models){for(const m of models.values())for(const w of [...m.wheels,...m.low.wheels])w.spin.visible=true;}
+ function restore(models){for(const m of models.values())for(const wheels of [m.wheels,m.low.wheels])for(const w of wheels)w.spin.visible=true;}
  function update(p,cars,models,time,cpu,replay,audio,running){const proofs=[];if(p.generation!==generation||time<lastTime){reset();generation=p.generation;}lastTime=time;
   for(const [id,k] of kits){k.dynamic.visible=false;if(replay||p.ceremony26)continue;const c=cars.find(c=>c.id===id),m=models.get(id),pit=c?.pit,f=pit?.flow27;if(!c||!m)continue;
    const call=f?(f.cycleId??f.calledAt):null,active=!!(f||pit.active);
