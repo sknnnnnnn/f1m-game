@@ -1,0 +1,6 @@
+// Pit classification must not make a still-overlapping car disappear from
+// road drivers' perception. Authoritative car state and collision rules stay intact.
+export function visiblePitTraffic23(field,circuit){return field.map(car=>{if(!car.pit?.active||Math.abs(car.projection.d)>circuit.width/2+1.8)return car;return {...car,pit:{...car.pit,active:false},intent:null};});}
+// Cars crossing into pit lane can occupy the road for several seconds. Reserve
+// braking room for that crossing, rather than treating it as an ordinary pass.
+export function pitEntryReserve23(r,car,c,makeReference,circuit){if(car.pit.active)return;const speed=Math.hypot(car.state.u,car.state.v);let cap=Infinity;for(const other of r.cars){if(other.id===car.id||!['APPROACH','PIT_IN'].includes(other.pit.phase))continue;const p=circuit.project(other.state.X,other.state.Y,other.state.psi),gap=circuit.delta(p.s,car.projection.s);if(gap<=0||gap>Math.max(90,speed*4)||Math.abs(p.d)>circuit.width/2+1.8||car.projection.d>p.d+2.8)continue;cap=Math.min(cap,Math.sqrt(Math.max(0,other.state.u)**2+8*Math.max(0,gap-15)));}if(Number.isFinite(cap)){car.agent.maneuverLimit=Math.min(car.agent.maneuverLimit??Infinity,cap);car.agent.reason='PIT ENTRY / RESERVE CROSSING SPACE';car.agent.plan=makeReference(c,car.state,car.agent);}}

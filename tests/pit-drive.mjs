@@ -1,0 +1,9 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {StrategyRace} from '../engine/race/strategy-race.js';import {pitRoad,PIT} from '../engine/pit/pit-lane.js';
+const r=new StrategyRace({laps:5});r.prepare();let peak=0,maxLateral=0,maxLimited=0,maxServiceDrift=0,steps=0;const phases=new Set();
+for(let i=0;i<90000&&!r.finished&&!r.stop;i++){
+ if(!r.advance())break;steps++;
+ for(const c of r.cars){const v=Math.hypot(c.state.u,c.state.v);peak=Math.max(peak,v*3.6);maxLateral=Math.max(maxLateral,Math.abs(c.projection.d));phases.add(c.pit.phase);if(c.pit.active){const S=pitRoad(c.id).project(c.state.X,c.state.Y).s;if(S>PIT.entry+100&&S<PIT.mergeWait)maxLimited=Math.max(maxLimited,v*3.6);if(c.pit.phase==='SERVICE')maxServiceDrift=Math.max(maxServiceDrift,Math.hypot(c.state.X-c.pit.cycle.stopPose.X,c.state.Y-c.pit.cycle.stopPose.Y));}}
+ if(i%3600===3599)console.log(JSON.stringify({time:r.time,progress:r.cars.map(c=>Math.round(c.progress)),phases:r.cars.map(c=>c.pit.phase),wear:r.cars.map(c=>Math.round(Math.max(...c.state.wheels.map(w=>w.wear))*100)),stops:r.cars.map(c=>c.pit.stops),peak,stop:r.stop}));
+}
+const data={status:r.finished&&!r.stop&&r.controllerRejections===0?'PASS':'FAIL',time:r.time,steps,finished:r.finished,stop:r.stop,rejections:r.controllerRejections,peak,maxLateral,maxLimited,maxServiceDrift,phases:[...phases],overtakes:r.overtakes,results:r.results(),pitEvents:r.pitEvents,tyres:r.export().tyres,strategyChecks:r.strategyChecks};
+fs.writeFileSync('evidence/PIT_DRIVE_09.json',JSON.stringify(data,null,2));console.log(JSON.stringify(data));assert.equal(data.status,'PASS');assert(data.results.every(c=>c.finished&&c.completedLaps===5));assert(r.cars.every(c=>!c.pit.active),'Car finished inside pit cycle');assert(data.results.some(c=>c.stops>0),'No autonomous pit stop');assert(data.pitEvents.some(e=>e.kind==='PIT_EXIT'),'No completed pit cycle');assert(maxLimited<=80.5);assert(maxServiceDrift<.1);assert(peak>300);

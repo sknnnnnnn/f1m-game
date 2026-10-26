@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "DRS": [
+    {
+      "gap": 0.5,
+      "allowed": true
+    },
+    {
+      "gap": 3,
+      "allowed": true
+    },
+    {
+      "gap": 3.01,
+      "allowed": false
+    },
+    {
+      "gap": 5,
+      "allowed": false
+    },
+    {
+      "gap": 10,
+      "allowed": false
+    }
+  ],
+  "night": {
+    "stableSpotCount": 4,
+    "dayIntensity": 0,
+    "nightIntensity": 1400,
+    "scope": "Scene graph and light-state test; Android shader/GPU not tested"
+  },
+  "pit": {
+    "track": "shanghai",
+    "sweptCornerChecks": 32040,
+    "scope": "Geometric route footprint against neighboring bay work areas; physical entry/stop tested separately"
+  }
+}

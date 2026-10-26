@@ -1,0 +1,349 @@
+{
+  "edition": 33,
+  "date": "2026-10-26",
+  "baselineEdition": 32,
+  "passed": {
+    "shanghai": {
+      "DRIVE": {
+        "track": "shanghai",
+        "ticks": 12038,
+        "time": 200.63333333333333,
+        "finished": true,
+        "stop": null,
+        "rejections": 0,
+        "peak": 317.15782066217736,
+        "progress": [
+          {
+            "id": 1,
+            "station": 379.2094560384792,
+            "lateral": 0.0003815243637326166,
+            "speed": 27.75502601662208,
+            "progress": 5830.209207633643,
+            "retired": false,
+            "rejection": null
+          },
+          {
+            "id": 2,
+            "station": 718.951666808763,
+            "lateral": 0.03970901169445061,
+            "speed": 21.46524943133442,
+            "progress": 6169.951373613379,
+            "retired": false,
+            "rejection": null
+          },
+          {
+            "id": 3,
+            "station": 434.8997780651696,
+            "lateral": -0.0003297714831488026,
+            "speed": 21.28468700110075,
+            "progress": 5885.899944243284,
+            "retired": false,
+            "rejection": null
+          },
+          {
+            "id": 4,
+            "station": 543.6648615785176,
+            "lateral": 0.010207822230003192,
+            "speed": 21.95853538846608,
+            "progress": 5994.664902947826,
+            "retired": false,
+            "rejection": null
+          },
+          {
+            "id": 5,
+            "station": 0.7189623616340292,
+            "lateral": 0.0019425362457537196,
+            "speed": 56.23189303105047,
+            "progress": 5451.718806576637,
+            "retired": false,
+            "rejection": null
+          },
+          {
+            "id": 6,
+            "station": 198.99115920621372,
+            "lateral": 0.1656917869969035,
+            "speed": 43.83234231720981,
+            "progress": 5649.990782587317,
+            "retired": false,
+            "rejection": null
+          }
+        ],
+        "pit": {
+          "entry": 5162.3115384615385,
+          "exit": 6005.783076923077,
+          "stalls": [
+            {
+              "s": 5521,
+              "mainS": 70,
+              "x": -162.69373260588384,
+              "y": -88.24471087566599,
+              "height": 0,
+              "psi": 1.223489943904196,
+              "k": -0.0003651499999600723,
+              "width": 7
+            },
+            {
+              "s": 5636,
+              "mainS": 185,
+              "x": -122.10000585930044,
+              "y": 20.524587778072405,
+              "height": 0,
+              "psi": 1.2076093797843204,
+              "k": -9.744707269115167e-05,
+              "width": 7
+            }
+          ]
+        }
+      },
+      "PIT": {
+        "track": "shanghai",
+        "ticks": 1604,
+        "time": 26.733333333333334,
+        "stop": null,
+        "phase": "SERVICE",
+        "rejections": 0,
+        "speed": 0.008227266540758232,
+        "stationError": 0.12134649430481659,
+        "lateral": -0.002398231115149922,
+        "events": [
+          {
+            "kind": "PIT_ENTRY",
+            "car": 1,
+            "time": 4.616666666666666,
+            "tick": 277
+          },
+          {
+            "kind": "PIT_STOP",
+            "car": 1,
+            "time": 26.733333333333334,
+            "tick": 1604,
+            "speed": 0.008227267012703852,
+            "stationError": 0.12134649430481659
+          }
+        ]
+      },
+      "GRID": {
+        "track": "shanghai",
+        "actors": 18,
+        "allFacingCar": true,
+        "maxHandReachError": 0,
+        "clearedBeforeLights": true,
+        "reversedStartingOrderFollowsActualCar": true
+      },
+      "GEOMETRY": {
+        "track": "shanghai",
+        "maxProjectionError": 0,
+        "crossing": null,
+        "pitEntry": 5162.3115384615385,
+        "pitExit": 6005.783076923077,
+        "maxPitK": 0.053424528159559524
+      }
+    },
+    "suzuka": {
+      "DRIVE": {
+        "track": "suzuka",
+        "ticks": 12456,
+        "time": 207.6,
+        "finished": true,
+        "stop": null,
+        "rejections": 0,
+        "peak": 293.69642738970356,
+        "progress": [
+          {
+            "id": 1,
+            "station": 157.20367743692944,
+            "lateral": -0.16690948832634572,
+            "speed": 49.82232070868078,
+            "progress": 5964.2051898545305,
+            "retired": false,
+            "rejection": null
+          },
+          {
+            "id": 2,
+            "station": 695.7043037688686,
+            "lateral": -0.01637971168870846,
+            "speed": 20.644279231811804,
+            "progress": 6502.705915288581,
+            "retired": false,
+            "rejection": null
+          },
+          {
+            "id": 3,
+            "station": 567.897806319684,
+            "lateral": -6.950149265796593e-05,
+            "speed": 23.547567633840227,
+            "progress": 6374.899874242374,
+            "retired": false,
+            "rejection": null
+          },
+          {
+            "id": 4,
+            "station": 484.27149011224395,
+            "lateral": 2.6010058389535566,
+            "speed": 29.323318213444818,
+            "progress": 6291.2723098163315,
+            "retired": false,
+            "rejection": null
+          },
+          {
+            "id": 5,
+            "station": 278.1223386555229,
+            "lateral": 0.0041302598497664844,
+            "speed": 42.864526773250574,
+            "progress": 6085.127793052001,
+            "retired": false,
+            "rejection": null
+          },
+          {
+            "id": 6,
+            "station": 0.587082996128072,
+            "lateral": -0.5137156576441426,
+            "speed": 54.4612668356907,
+            "progress": 5807.584675299954,
+            "retired": false,
+            "rejection": null
+          }
+        ],
+        "pit": {
+          "entry": 5463.833300885376,
+          "exit": 6493.068836150899,
+          "stalls": [
+            {
+              "s": 5877.001488203915,
+              "mainS": 70,
+              "x": 569.630378435983,
+              "y": 52.67006304660595,
+              "height": 8.969216795870073,
+              "psi": -0.8918828478776363,
+              "k": -0.00033333517959164985,
+              "width": 7
+            },
+            {
+              "s": 5992.001488203915,
+              "mainS": 185,
+              "x": 641.521530581683,
+              "y": -35.422745497611736,
+              "height": 9.880879960447837,
+              "psi": -0.8996879767450259,
+              "k": 5.8363600650002965e-05,
+              "width": 7
+            }
+          ]
+        }
+      },
+      "PIT": {
+        "track": "suzuka",
+        "ticks": 1880,
+        "time": 31.333333333333332,
+        "stop": null,
+        "phase": "SERVICE",
+        "rejections": 0,
+        "speed": 0.05846106244590531,
+        "stationError": 0.1530683075707202,
+        "lateral": -0.029006381728172187,
+        "events": [
+          {
+            "kind": "PIT_ENTRY",
+            "car": 1,
+            "time": 5.95,
+            "tick": 357
+          },
+          {
+            "kind": "PIT_STOP",
+            "car": 1,
+            "time": 31.333333333333332,
+            "tick": 1880,
+            "speed": 0.058461062472132876,
+            "stationError": 0.1530683075707202
+          }
+        ]
+      },
+      "GRID": {
+        "track": "suzuka",
+        "actors": 18,
+        "allFacingCar": true,
+        "maxHandReachError": 0,
+        "clearedBeforeLights": true,
+        "reversedStartingOrderFollowsActualCar": true
+      },
+      "GEOMETRY": {
+        "track": "suzuka",
+        "maxProjectionError": 4.547473508864641e-13,
+        "crossing": {
+          "distance": 0.6088833875449887,
+          "heights": [
+            7.98450341,
+            21.1566068
+          ],
+          "stations": [
+            2547.82190295,
+            4926.87782515
+          ]
+        },
+        "pitEntry": 5463.833300885376,
+        "pitExit": 6493.068836150899,
+        "maxPitK": 0.06782288157205653
+      }
+    }
+  },
+  "limitations": [
+    "One lap per imported circuit, default seed 7; not all seeds or full multi-lap seasons.",
+    "Pit test is one-car entry/stop through SERVICE, not full physical crew release/merge.",
+    "Software WebGL browser loads both scenes without JavaScript errors, but the unchanged 250 ms heartbeat guard paused browser race-start attempts; real Android FPS remains unmeasured.",
+    "Legacy regression24 unavailable: original checkpoint lacks evidence/BASELINE_BUILD.json."
+  ],
+  "browser": [
+    {
+      "track": "shanghai",
+      "ready": true,
+      "renderer": "WebGL",
+      "errors": [],
+      "buildTested": "13e13c88362afe5cbf71d63892f4e8a1bf115e5e1fcfacf70bb68c2d3384e19f",
+      "batching": {
+        "source": "SHANGHAI_SCENE_02.mjs / PRESENTATION 02",
+        "staticMeshesBefore": 262,
+        "drawCallsSaved": 188
+      }
+    },
+    {
+      "track": "suzuka",
+      "ready": true,
+      "renderer": "WebGL",
+      "errors": [],
+      "buildTested": "293bcb8cec14a9fd39613aea890aae04572aa5792aaccfaccbc4ffc06e59fad2",
+      "batching": {
+        "source": "SUZUKA_SCENE_02.mjs / PRESENTATION 02",
+        "staticMeshesBefore": 200,
+        "drawCallsSaved": 153
+      }
+    }
+  ],
+  "frozen": {
+    "baselineEdition": 32,
+    "filesChecked": 21,
+    "allByteIdentical": true,
+    "files": [
+      "frozen/config/C0.json",
+      "frozen/config/P1Criteria-R1.json",
+      "frozen/src/config.ts",
+      "frozen/src/contracts.ts",
+      "frozen/src/controller.ts",
+      "frozen/src/geometry.ts",
+      "frozen/src/physics.ts",
+      "frozen/src/reference.ts",
+      "frozen/src/snapshot.ts",
+      "models/F1M_SafetyCar_SC1.glb",
+      "models/car163.glb",
+      "racing/runtime/config.js",
+      "racing/runtime/frozen/config.js",
+      "racing/runtime/frozen/contracts.js",
+      "racing/runtime/frozen/controller-p1.js",
+      "racing/runtime/frozen/controller.js",
+      "racing/runtime/frozen/geometry.js",
+      "racing/runtime/frozen/physics.js",
+      "racing/runtime/frozen/reference.js",
+      "racing/runtime/frozen/snapshot.js",
+      "src/wing-kits25.js"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "cachedAssets": 17,
+  "offlineNavigation": true,
+  "binaryModelsAndNestedWorkerCached": true,
+  "updatesRequireExplicitMessage": true,
+  "otherCachesPreserved": true,
+  "scope": "Service worker unit test with deterministic cache/fetch mocks; actual Android install/offline remains separate."
+}

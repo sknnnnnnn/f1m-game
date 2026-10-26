@@ -1,0 +1,5 @@
+
+const C0={"schema":"P1-IF01-09/1.0.0","version":"C0-P1-RECOVERED-R1","m":850,"Iz":1500,"a":1.65,"b":1.95,"h":0.32,"tf":1.65,"tr":1.6,"rollFront":0.55,"g":9.81,"length":5.5,"width":1.9,"R":0.34,"Iw":1.4,"CdA":1,"ClA":3,"aeroFront":0.45,"rho":1.2,"mu":1.55,"loadExp":-0.08,"tau":0,"steerMax":0.45,"steerRate":0.5,"steerLag":0.08,"pedalRate":4,"ratios":[3.3,2.7,2.25,1.9,1.65,1.45,1.3,1.18],"finalRatio":3,"driveEff":0.92,"enginePower":350000,"brakeF":1800,"brakeR":1400,"capacity":4000000,"deployW":120000,"regenW":100000,"motorTorque":250,"deployEff":0.9,"regenEff":0.85,"regenFraction":0.25,"auxW":500,"Cs":4000,"Cc":20000,"Hsc":80,"Hst":100,"Hca":10,"wearK":1e-9,"damageK":0.00002,"damageT":115,"dt":0.016666666666666666,"substeps":2,"contactE":0.05,"contactMu":0.4,"Kv":1,"Ki":0.2,"Kpsi":0.8,"Ky":0.6,"Kr":0.15,"feature":{"wake":false,"fade":false,"flight":false,"reverse":false,"grade":false},"airT":30,"trackT":35};
+
+
+export {C0};

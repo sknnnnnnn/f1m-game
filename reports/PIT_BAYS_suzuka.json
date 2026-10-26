@@ -1,0 +1,67 @@
+{
+  "track": "suzuka",
+  "time": 41.2,
+  "stop": null,
+  "rejections": 0,
+  "stopped": [
+    1,
+    3,
+    2,
+    4,
+    5,
+    6
+  ],
+  "intrusions": [],
+  "footprintChecks": 296640,
+  "events": [
+    {
+      "kind": "PIT_STOP",
+      "car": 1,
+      "time": 18,
+      "tick": 1080,
+      "speed": 0.000044410643380778765,
+      "stationError": -0.013933191599790007
+    },
+    {
+      "kind": "PIT_STOP",
+      "car": 3,
+      "time": 24.45,
+      "tick": 1467,
+      "speed": 0.007160616131529533,
+      "stationError": -0.021085182436763716
+    },
+    {
+      "kind": "PIT_STOP",
+      "car": 2,
+      "time": 26.2,
+      "tick": 1572,
+      "speed": 0.000039887496972999624,
+      "stationError": -0.026937005588479224
+    },
+    {
+      "kind": "PIT_STOP",
+      "car": 4,
+      "time": 32.65,
+      "tick": 1959,
+      "speed": 0.000031827844574326896,
+      "stationError": -0.03616270821021317
+    },
+    {
+      "kind": "PIT_STOP",
+      "car": 5,
+      "time": 33,
+      "tick": 1980,
+      "speed": 0.07116531481331884,
+      "stationError": 0.0026065750325869885
+    },
+    {
+      "kind": "PIT_STOP",
+      "car": 6,
+      "time": 41.2,
+      "tick": 2472,
+      "speed": 0.000008795282963243553,
+      "stationError": 0.001127407485000731
+    }
+  ],
+  "scope": "Six real integrated cars approach their own bays concurrently; oriented footprint against every other work area. No pose writes after initialization."
+}

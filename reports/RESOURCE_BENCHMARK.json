@@ -1,0 +1,23 @@
+{
+  "scope": "Node construction benchmark, seven original CrewBatch rigs; not mobile GPU FPS",
+  "before": {
+    "constructorMS": 123.75560500000003,
+    "uniqueGeometries": 210,
+    "uniqueTextures": 14,
+    "instancedVertices": 5422950,
+    "instances": 5550
+  },
+  "after": {
+    "constructorMS": 28.19390100000004,
+    "uniqueGeometries": 72,
+    "uniqueTextures": 2,
+    "instancedVertices": 5422950,
+    "instances": 5550
+  },
+  "bootHTMLBytes": {
+    "before": 12681004,
+    "after": 16958
+  },
+  "productionTotalBytes": 9513107,
+  "sameInstanceCountAndVertexCount": true
+}

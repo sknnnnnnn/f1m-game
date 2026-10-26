@@ -1,0 +1,71 @@
+{
+  "baseline": {
+    "status": "FAIL",
+    "stop": {
+      "kind": "ENVELOPE_STOP",
+      "tick": 3581,
+      "car": 3
+    },
+    "time": 59.68333333333333
+  },
+  "after": {
+    "status": "PASS",
+    "scope": "Actual seven-vehicle fixed-step integration from standing grid; no pose or velocity writes after initialization",
+    "time": 256.1166666666667,
+    "phases": [
+      {
+        "phase": "DEPLOY",
+        "time": 0.016666666666666666,
+        "s": 420.00016848917465,
+        "d": -9.149283503074606
+      },
+      {
+        "phase": "LEAD",
+        "time": 9.45,
+        "s": 557.1806355550207,
+        "d": -0.0033401049301494904
+      },
+      {
+        "phase": "IN_LAP",
+        "time": 190.73333333333332,
+        "s": 4632.677542558429,
+        "d": -0.003318462753769684
+      },
+      {
+        "phase": "RETURN",
+        "time": 207.91666666666666,
+        "s": 4992.628316406721,
+        "d": -0.04188572875781082
+      },
+      {
+        "phase": "PARKED",
+        "time": 256.1166666666667,
+        "s": 419.78731554578485,
+        "d": -9.174088818126418
+      }
+    ],
+    "greenAt": 224.08333333333334,
+    "peak": 111.83867715165327,
+    "maxStep": 0.5177715277904978,
+    "queueGap": 29.296166089904546,
+    "stop": null,
+    "controllerRejections": 0,
+    "scRejections": 0,
+    "loadedSC": true,
+    "gatheredEver": true,
+    "minLeaderGap": 18.588409299287378,
+    "overtakes": 4,
+    "penalties": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "changes": [
+    "Additional planning grip/braking margin under caution and for Safety Car; numerical solver unchanged.",
+    "Pace Safety Car from tail gap as well as leader gap."
+  ]
+}
