@@ -1,3 +1,4 @@
+import {tacticalLane26} from './tactical-lanes26.js';
 import {circuit,clamp} from '../tracks/track.js';
 import {RACE_STYLES} from './personality.js';
 export function upcomingBend(station,range=300){
@@ -19,7 +20,7 @@ export function racecraft(agent,state,p,safeLane,decision){
    choice=memory.lane;mode='FEINT';reason=`SHOW INSIDE / READ DEFENCE CAR ${rival.id}`;
    const reacted=(rival.lateral-memory.rivalLane)*memory.turn>.65;
    if(state.time>=agent.commitUntil&&state.time-memory.started>1.2){
-    const outside=-memory.turn*3.1;
+    const outside=tacticalLane26(-memory.turn*3.1);
     if(reacted&&Math.abs(outside-p.own.d)<=4.3&&Math.abs(outside-rival.lateral)>3.2&&safeLane(outside)){
      choice=outside;mode='OUTSIDE_SWITCH';reason=`DEFENCE COMMITTED / OUTSIDE CAR ${rival.id}`;memory.action='OUTSIDE_SWITCH';memory.lane=outside;memory.until=state.time+6;memory.switches++;
     }else if(state.time-memory.started>3.4){
@@ -32,7 +33,7 @@ export function racecraft(agent,state,p,safeLane,decision){
  }
  if(!['FEINT','OUTSIDE_SWITCH','COMMIT'].includes(memory.action)&&front&&(mode!=='DRAFT'||bend&&front.relativeSpeed< -1.5)&&!alongside&&state.time>=agent.commitUntil&&state.time>=memory.cooldown&&Math.abs(p.own.k)<.002&&front.relativeSpeed<.5&&front.gap<35+agent.personality.risk*30&&(!bend||bend.distance>Math.max(120,p.speed*4))){
   const turn=Math.sign(bend?.k??circuit.at(p.own.s+550).k)||1;
-  const lanes=[turn*3.5,-turn*3.5].filter(l=>Math.abs(l-front.lateral)>3.2&&Math.abs(l-p.own.d)<=4.3&&safeLane(l));
+  const lanes=[tacticalLane26(turn*3.5),tacticalLane26(-turn*3.5)].filter(l=>Math.abs(l-front.lateral)>3.2&&Math.abs(l-p.own.d)<=4.3&&safeLane(l));
   if(lanes.length){
    choice=lanes[0];memory.target=front.id;memory.lane=choice;memory.passLane=choice;memory.turn=turn;memory.rivalLane=front.lateral;memory.started=state.time;memory.until=state.time+8;memory.attempts++;
    if(style.feint>=.7&&bend&&front.gap>35&&Math.sign(choice)===turn&&Math.abs(p.own.d)<2.6&&safeLane(turn*1.1)){choice=turn*1.1;memory.lane=choice;memory.action='FEINT';memory.feints++;mode='FEINT';reason=`SHOW INSIDE / TEST CAR ${front.id}`;}

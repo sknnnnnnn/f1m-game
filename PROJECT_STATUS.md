@@ -1,3 +1,7 @@
+Current: Race package, build `0653e7d89b47091a`. See [changes, measured racing/pit results and limits](reports/RACE_PACKAGE_TH.md). F125 driving base, crew/terrain fix, frozen physics and models retained. Main unchanged; Android listening/visual/FPS validation remains pending.
+
+Historical milestone notes follow.
+
 Current: F1 25 driving calibration, build `ba525293537c4435`. [49-corner comparison and measured limits](reports/F125_DRIVING_TH.md). Solo lap-two speeds within ±20% in 46/49 corners versus 11/49 before. Six-car two-lap integrations pass all three circuits with zero retirement, guard stop or controller rejection and sampled body corners inside the road. Six-car Suzuka five-lap integration also passes. Frozen core/assets preserved; Android GPU/FPS remains unverified.
 
 Historical milestone notes follow.

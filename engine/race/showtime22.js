@@ -10,7 +10,7 @@ export function effectsTelemetry22(car,c){const s=car.state,speed=Math.hypot(s.u
  // Flat road solver has no vertical contact. This bounded visual clearance proxy
  // combines actual speed load, chassis acceleration, travel and positive kerb height.
  const compression=clamp(speed*speed*.000007,0,.045)+Math.max(0,-(s.lastAx??0))*.0006,clearance=.042-compression-Math.max(0,bump)*1.6,scrape=speed>36&&clearance<.016&&(car.surface?.kind==='KERB'||speed>60);
- return {speed,locks,smoke:Math.max(...locks),clearance,scrape,spark:scrape?clamp((.016-clearance)*75+.3,0,1):0,dust:['GRAVEL','SAND'].includes(car.surface?.kind)&&speed>8?clamp(speed/35,0,1):0,wing:car.show22?.wing??false,tyre:tyrePhase22(car)};}
+ return {speed,locks,smoke:Math.max(...locks),clearance,scrape,spark:scrape?clamp((.016-clearance)*75+.3,0,1)*(.4+.6*(.5+.5*Math.sin((s.time??0)*17+car.id*2.3))):0,dust:['GRAVEL','SAND'].includes(car.surface?.kind)&&speed>8?clamp(speed/35,0,1):0,wing:car.show22?.wing??false,tyre:tyrePhase22(car)};}
 export function battleBrief22(car){const a=car.agent??{},d=a.duel??{},p=a.personality??{},rival=d.counter?.id??d.pass?.id??d.exit?.id??a.perception?.leader?.id;return {rival:rival??null,phase:d.counter?'สวนคืน':d.exit?'วางทางออก':d.pass?'รักษาช่องแซง':a.state==='DRAFT'?'เตรียมจากลมดูด':'อ่านพื้นที่',style:p.risk>.72?'เบรกกล้า · ชอบบุก':p.defend>.7?'ป้องกันพื้นที่':(a.style?.tyreCare??0)>.75?'ถนอมยาง · เน้นทางออก':'ปรับไลน์ตามคู่แข่ง'};}
 
 export function freshTyreFactor22(car){return (car.tyres?.sets??1)>1?.96+.04*clamp((car.distance-car.tyres.fittedDistance)/450,0,1):1;}

@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "track": "bahrain",
+  "gridTraitsPreserved": true,
+  "emergencyBrakePriority": true,
+  "alongsideSpace": true,
+  "forecastCompoundConsistent": true,
+  "passingLanes": [
+    -3.3,
+    -2.6,
+    2.6,
+    3.3
+  ],
+  "progressivePassCommit": true,
+  "pitRoute": {
+    "metres": 984.8077056580523,
+    "transit": 61.7741989330338,
+    "loss": 41.85549974604193
+  },
+  "healthyStaysOut": true,
+  "wornCallsPit": true,
+  "audioNodes": 31,
+  "audioParameterUpdates": 2162,
+  "boundedCameraCue": {
+    "lens": 5,
+    "aim": -0.32,
+    "roll": -0.012
+  }
+}

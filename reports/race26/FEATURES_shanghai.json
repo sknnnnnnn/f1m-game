@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "track": "shanghai",
+  "gridTraitsPreserved": true,
+  "emergencyBrakePriority": true,
+  "alongsideSpace": true,
+  "forecastCompoundConsistent": true,
+  "passingLanes": [
+    -3.8,
+    -2.6,
+    2.6,
+    3.8
+  ],
+  "progressivePassCommit": true,
+  "pitRoute": {
+    "metres": 854.1854594021809,
+    "transit": 60.014415474093255,
+    "loss": 42.9933424176322
+  },
+  "healthyStaysOut": true,
+  "wornCallsPit": true,
+  "audioNodes": 31,
+  "audioParameterUpdates": 2162,
+  "boundedCameraCue": {
+    "lens": 5,
+    "aim": -0.32,
+    "roll": -0.012
+  }
+}

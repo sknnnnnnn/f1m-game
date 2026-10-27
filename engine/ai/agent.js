@@ -1,3 +1,4 @@
+import {passingLanes26} from './tactical-lanes26.js';
 import {cornerCommit25} from './corner-commit25.js';
 import {racingPath} from '../tracks/racing-path.js';
 import {corridorThreat} from './corridor-threat.js';
@@ -27,7 +28,7 @@ class Agent {
   // Check actual quintic corridors and allow opponent speed changes at turn-in.
   const safeLane=(lane)=>{if(entryCommit&&Math.abs(lane-entryCommit.lane)>.15)return false;if(Math.abs(lane)>(circuit.key==='bahrain'?3.3:circuit.width/2-1.7))return false;const candidate=Math.abs(lane-this.targetLane)>.6?connectLane(this.curve,state.time,lane,personality.commit+1.2):this.curve;return p.cars.every(o=>{for(let j=0;j<=14;j++){const t=j*.25,gap=o.gap+o.relativeSpeed*t,uncertainty=Math.min(4,.35*t*t),space=trafficSpace(this,state,o),otherN=o.intent?.curve?laneAt(o.intent.curve,state.time+t).d:o.lateral,ownN=laneAt(candidate,state.time+t).d;if(Math.abs(gap)<space.longitudinal+uncertainty&&Math.abs(otherN-ownN)<space.lateral)return false;}return true;});};
   if(ahead&&ahead.gap<155){mode='FOLLOW';reason=`CAR ${ahead.id} / gap ${ahead.gap.toFixed(1)}m`;
-   const candidates=[-3.8,-2.6,0,2.6,3.8].filter(n=>Math.abs(n-p.own.d)<=4.3&&Math.abs(n-ahead.lateral)>2.3&&safeLane(n));
+   const candidates=passingLanes26(p.own.d,ahead.lateral,safeLane);
    const closing=Math.max(0,-ahead.relativeSpeed),attackReach=ahead.gap<Math.min(65,Math.max(30,closing*5+15));
    // Hold the wake until enough speed is banked or a real pull-out deadline arrives.
    const pullOutGap=14+p.speed*.18+closing*(personality.commit+1.2);
@@ -48,6 +49,11 @@ class Agent {
   ({choice,pace,mode,reason}=racecraft(this,state,p,safeLane,{choice,pace,mode,reason,turn,corner,ideal}));
   ({choice,pace,mode,reason}=duelTactics(this,state,p,safeLane,{choice,pace,mode,reason,turn,corner,ideal}));
   ({choice,pace,mode,reason}=planBattle(this,state,p,safeLane,{choice,pace,mode,reason}));
+  // A tactical suggestion must never overwrite the immediate following brake.
+  if(ahead&&ahead.gap<6.15+Math.max(0,-ahead.relativeSpeed)*1.4){
+   pace=Math.min(pace,Math.max(0,ahead.speed-3));mode='BRAKE';choice=this.targetLane;reason='FRONT COLLISION RISK / YIELD';
+   this.battleCommit=null;if(this.duel)this.duel.pass=null;
+  }
   if(this.engineerOrder?.attack==='ABORT'&&!p.cars.some(o=>o.side)&&!['BRAKE','RECOVER','HOLD_SPACE','BOXED_IN'].includes(mode)){choice=this.targetLane;this.battleCommit=null;this.crossExit=null;if(this.duel){this.duel.pass=null;this.duel.exit=null;}mode='ABORT_ATTACK';reason='ENGINEER / HOLD SAFE CORRIDOR';if(ahead&&ahead.gap<80)pace=Math.min(pace,ahead.speed);}
   if(Math.abs(now.d)>circuit.width/2-(this.config?.width??1.9)/2-.7||Math.abs(state.v)>3){choice=clamp(now.d,-3,3);pace=Math.min(pace,9);mode='RECOVER';reason='ROAD EDGE / SIDESLIP';}
   this.freeLine=this.freeLine&&!['HOLD_SPACE','PASS_COMMIT','BRAKE_DUEL','EXIT_SETUP','EXIT_TARGET','BOXED_IN','RECOVER','FEINT','OUTSIDE_SWITCH'].includes(mode)&&state.time>=this.commitUntil;

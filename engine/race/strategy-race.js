@@ -35,7 +35,7 @@ export class StrategyRace extends WeekendRace {
   }
   return decision;
  }
- evaluatePitStrategy(car){return evaluateStrategy(car,this.cars,this.laps);}
+ evaluatePitStrategy(car){return evaluateStrategy(car,this.cars,this.laps,{service:this.serviceDuration(car)});}
  serviceAvailable(car){return true;}
  serviceDuration(car){return PIT.serviceSeconds;}
  releaseReady(car){return true;}

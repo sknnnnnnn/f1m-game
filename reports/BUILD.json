@@ -1,24 +1,26 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "580e30aa28a364a9",
-  "sourceRevision": "580e30aa28a364a96160f4395cf35c6a5b55bf7b8fac203be2ffa904150e46dd",
+  "version": "0653e7d89b47091a",
+  "sourceRevision": "0653e7d89b47091ae3f183b5f335238fc52b79db1fc5874975672aaaa7ae7d76",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
-    "engine/ai/agent.js": "1e65260f2cc6e0e38424b950888af79e94c0463e726741786b67dfb5dabf05e3",
+    "engine/ai/agent.js": "8f0e46c4ed3e16a71fcb31198ed252513c41fc402e624c2bfd71cdcedb69eeff",
     "engine/ai/battle-camera.js": "78e583678411f244786fbd09fed4e9a75ddba56a8a3592545b6dbfda795346b0",
-    "engine/ai/battle-planner.js": "a9fd5256743be01592701f6471dedb68b2b1afc2587cf55ce9936131c31558e7",
+    "engine/ai/battle-planner.js": "d9bf78b444520de6f002c7ecb851086b2d2ce8192bc91848093097f11a46e36e",
     "engine/ai/braking-zones.js": "113e74e885c188e223448fb5c6ddc6edb8a8d1c0af12823f0213876946d15d0f",
     "engine/ai/corner-commit25.js": "e1119bc3345f1dc229a1d0b187f0872572577aa705bde01e90a7dfe6416eee97",
     "engine/ai/corridor-threat.js": "7d66c9ea808886a802b1e426754e2b08457613f7e020d92e4ccd3a8bd8695fbc",
     "engine/ai/draft.js": "d291df87e4097cc86b2cae506a193b7ff3e8bfa0770412f5f3a737acebee3ab2",
-    "engine/ai/duel-tactics.js": "b7f6fcb33584f176ee0e5208237aa216e54cae690a661a1d6c698502eb2e87a4",
+    "engine/ai/duel-tactics.js": "5a4e5fae8aa30f8b6be85885c18cc61c926f73d2822909dfb0a903f2c79cfbff",
     "engine/ai/imported-circuits33.js": "c7a2af958cdf6d5cb1a581889b8e6226e8ec2c877eaf5538eb51e595899c6261",
+    "engine/ai/pass-progress26.js": "baf2cc0ac84c318c217fcc4bee73330bb07342709d4d97c991f530c9a31333c3",
     "engine/ai/personality.js": "1a6315310d129e156def1c3cd784c59c430fcf94c4c0116e9d8e67c278326c09",
-    "engine/ai/racecraft.js": "23b1dacc985742951c9e3a5a66df9f9588abc6f3d52e31e52e959311099a167e",
-    "engine/ai/rejoin-prediction.js": "2209ed39721fed02163100a217a401555bc86deae90b612065893189cc174372",
+    "engine/ai/racecraft.js": "ebada959c87fdcadc7c901d296bc3cd1f25d1ff62de3a778b39dd36a539f8d9a",
+    "engine/ai/rejoin-prediction.js": "eb259e883d69a6f4c0d309f0bbbf4958a2dfe7b13497cf8e4ffdabdd3e577e0e",
     "engine/ai/rival-memory.js": "13adb8a4e0e3d816be3799d04bcc1208e140e52395f781018644cd1dbccbd106",
+    "engine/ai/tactical-lanes26.js": "116e46ed44c4f7b47f797f23fe92ccd8ea97c6746345e95396323919a7c48c9c",
     "engine/ai/traffic-space.js": "2fdb651983974cc2f60ad697eb361422b6d97d7b19090bab9e691d486730a503",
-    "engine/audio/audio.js": "d884972f268774a58fbe6c4ca2c9cf95db110f2ad7d65731d3b7dc50df0c2f6a",
+    "engine/audio/audio.js": "419112cba53c83c1c80e19a1effdcc66b9370c1b0dce4d647078aee5886b5002",
     "engine/drs/drs24.js": "d1482d16e531fda365a2aaff3e72ff858141513cb0871ef0ce181b5f0cdaadd9",
     "engine/drs/rear-wing24.js": "da045012ee605e4aca873d3a9eeb2f1714f448aa6460710966a3d61ddac76d51",
     "engine/drs/wing-kits25.js": "54cafdbab7a624e5fac543f23f73c5d48be2d2e0a9e2799385ddc2d03a86ac6b",
@@ -51,6 +53,7 @@
     "engine/pit/crew/service-runtime28.js": "e5c7c95a9268e365434720d9563a83d8bf977b4e5633bc7f23a7944bf12e6604",
     "engine/pit/crew/tyre-clearance.js": "cf1b4e829549f43f477d3b8ce463c97cb89d06ca1846728a840b247ca5ed321d",
     "engine/pit/pit-cycle27.js": "39fd7584f12aac70b7906905eb5356f9daf7fa104c5d27d4adfefdac5458258d",
+    "engine/pit/pit-estimate26.js": "84eb44a46332b60eee3d93c8a2e676377fb62d32adf5b70617b765c81acdb83b",
     "engine/pit/pit-lane.js": "bc606a785d1bd8e27ff3ef432ddd3df1f560965a767ad302c1f1a138358a7317",
     "engine/pit/pit-reference.js": "0e788e534b03d89c27378a91f947eaa95a8d089435631e59d15d77f9dee099a8",
     "engine/pit/pit-scene.js": "f9467e8b277c63f6f8f12f9d170c376f0bcafa9c4210c3dde3e4a787df0f8ed1",
@@ -67,25 +70,26 @@
     "engine/race/living-session26.js": "b4a04133c28fa049294a4c1b9143c5949e8f9b70c3ddb6596fe87e1f63d21a2e",
     "engine/race/race-clock.js": "8f6100345a539e2095a7aad9b578553bb3e185cbca7163fe51af1a5d11c5e75b",
     "engine/race/race-format31.js": "b6c98e1bcddeebed2e526dc0ea12b710ec1da6129c8a01873d7d7d26f7e83729",
-    "engine/race/race-intelligence15.js": "e16543c630829a4e72cb92323a6a5fbf10df3b4aab7d83d8075cb78a7a08fe1a",
+    "engine/race/race-intelligence15.js": "c6880497b3c3f214bbc6545bc30a99ad77814b1781f6b78c958aaae36023c4e8",
     "engine/race/race-resources.js": "d65baba100d1f2080844b814453e64beb428759526486faf6e89780db35ccfca",
-    "engine/race/showtime22.js": "3f95249c112db4cae2611aff4c91130451748d26d8b2ae7fcdfb74b9390cceea",
+    "engine/race/showtime22.js": "8575b288bc7939fad2c7825d86ad270b48479165bded2105d126f63bc2583dd0",
     "engine/race/stability23.js": "5158f1e23898481b1eff7e70746f6a65f8a6760e74c7f0e4d26f774ecab211c6",
-    "engine/race/strategy-race.js": "973489dc0252f994d1f4c13272d4b3fd663dad3142688281716d61f0bb68c479",
-    "engine/race/strategy.js": "a157813463786a5660d671d1ddb3cb784c0e54840d649ef8a15229a627ceea3b",
-    "engine/race/team-engineer.js": "9d35e3d2fae9fdbe8cbc935b18f03d12335c7422c63f2569e16d0811c0acc803",
+    "engine/race/strategy-race.js": "fa45b013d26f4d235fd3ae1413fa8790e3408540ffd1ec480a5a7feeefd2dcd7",
+    "engine/race/strategy.js": "fcfe38b56351f4194ecbd65dd715d96a8eb88c085b5d82fe0902bc24079606a1",
+    "engine/race/team-engineer.js": "e12ad08dc993d11c595ba5790755a98362223acae58f06cea574174c2391ba07",
     "engine/race/weekend-environment.js": "9b942c1afc7165228c76ca5d3fb9edcf10a083e0c06bcb14350c76baa2b9966a",
     "engine/race/weekend-race.js": "510d37212df3614a14ccb19a47739295b5408f1ddec411b2cdecd02bcf88720a",
     "engine/race/weekend-save.js": "939fbe6d21c58b7ae5d3b339d42f4681c9e49422e9ece27325d9a452dd7e5bc0",
-    "engine/race/weekend-session.js": "2fb2b79df13bc7da81bdbb22880a89ab6128418fd4a46dc0bc1d14a25288ab8c",
+    "engine/race/weekend-session.js": "87e81f3ef17cf0842d2375b0a54630eb4985abd52cf55a1b88ef0a57d84f5772",
     "engine/race/weekend.js": "6b7293032e8c8b9a9ee59c3887db43d0a7a5818437e8b4410c3e2d77080bdb82",
     "engine/rendering/app.js": "62abf1b7312c0d807cf0d17080fd8d79485215ea78659a7e0792fd1bf7e326d5",
     "engine/rendering/bahrain-scene30.js": "e0dc40600c840273c89488bb6e879df06115107943215e8b84986713c125d3ed",
     "engine/rendering/broadcast.js": "2cb43804911640e619ba25aca88a2663b2b546f77886245ff5aa704835400e38",
     "engine/rendering/camera-safety30.js": "32d1c6af6c08ad9658a8eac5f1ad0b8c9dc32f5e0a7ca26b363513dee2075321",
-    "engine/rendering/cameras.js": "83211df95ca1df65381ae7c28313e72deec2216c7cc802eb68917ca6eb193d0d",
+    "engine/rendering/cameras.js": "5693bfeda7fa2fbb97661c287ce2782bafe3338deffb7d89d677a9a10f9608bf",
     "engine/rendering/circuit-finish.js": "3d6d9c9c9cd431f53562a731b74c388cc4f4d6ecaedb092b921f490b543e556f",
     "engine/rendering/cpu-track-renderer.js": "93d7b83675a165f7d7897a1b37982d84afe364f319f595b43673c6efcd8a4f63",
+    "engine/rendering/drive-cues26.js": "b62effe3194af3a2237b00541ee48dc296bdd6c17fea589767bfeeacd0e0f4d5",
     "engine/rendering/driver-rig.js": "59b22d81aa6838b585c4ea4e429f66b259423d0e420afa6a2e7a1b5e80bdbd59",
     "engine/rendering/dynamics.js": "aa5533d7dd262578de170b12a53a572cf6e6ba674cfa414eb2287d0b21abdb07",
     "engine/rendering/engine-entry.js": "5ae2aa6ea669a2ceda124dfe5877afcfb2a1ac1fe4de2c0ffc4554e9598f5e10",
@@ -198,8 +202,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 1027590,
-      "sha256": "ec17f660ff09dce2f259cb05c73eb631b9bff388236b03fcc54a8398a59a70ed"
+      "bytes": 1029280,
+      "sha256": "2cbf1797872ffb3186d66ac59793b3f43565273dbae4dd16efecf2e585135762"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -226,8 +230,8 @@
       "sha256": "59b22d81aa6838b585c4ea4e429f66b259423d0e420afa6a2e7a1b5e80bdbd59"
     },
     "build.json": {
-      "bytes": 20062,
-      "sha256": "11b9a2c4e0a922440136d28dc4eb1ce34dfa668b653228fa86145900b24d5000"
+      "bytes": 20483,
+      "sha256": "14e2cc79a21abf6936aabe424c12c6f92f45f6c60f021757a62a22bd713fef2a"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -262,12 +266,12 @@
       "sha256": "eb7f262d865084f1a20c7a3d986f401b10296fd4839640baa4aaf47a7271b259"
     },
     "workers/race-worker.js": {
-      "bytes": 785439,
-      "sha256": "1d470b75a3506dee2e8a26ea48b036c28f254ee82ce507b203a2d72b81634a24"
+      "bytes": 787681,
+      "sha256": "b23fd1e6a7d4019af3481f0b4265e25b6f41c6d4efa2a8b49353343ff9940f08"
     },
     "sw.js": {
       "bytes": 1299,
-      "sha256": "010b48e514acfffc77ca346a462b346bc49bab39ff64f4e9565053d9a69e4a26"
+      "sha256": "53b9da9ce340353618229e5e92ba92faf03177c4b0a2e48b9d93f9b56dfdca98"
     }
   }
 }

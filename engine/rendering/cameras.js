@@ -1,3 +1,4 @@
+import {driveCues26} from './drive-cues26.js';
 import {roadPose33} from '../tracks/road-height33.js';
 import {CameraSafety30} from './camera-safety30.js';
 import {cameraDepth} from './render-policy.js';
@@ -46,6 +47,9 @@ export class CameraDirector{
  if(this.mode==='cinema'){if(this.cut||this.effective!==mode){const safe=this.safety.resolve(pos,look,car,time,mode);this.shotClearance31=safe.clone().sub(pos);}pos.add(this.shotClearance31??new T.Vector3());}
  const shotEntry=this.cut||this.effective!==mode;const snap=shotEntry||['fps','nose','overview'].includes(mode),k=snap?1:1-Math.exp(-11*Math.min(dt,.1));
  if(!this.followOffset){this.followOffset=new T.Vector3();this.aimOffset=new T.Vector3();}this.followOffset.lerp(pos.clone().sub(p),k);this.aimOffset.lerp(look.clone().sub(p),k);this.camera.position.copy(p).add(this.followOffset);if(mode==='trackside')this.camera.position.copy(pos);this.target.copy(p).add(this.aimOffset);this.effective=mode;const depth=cameraDepth(mode);this.camera.near=depth.near;this.camera.far=depth.far;
- const desiredFov=fov+(mode==='chase'?Math.min(3,speed/35):0);const lensK=mode==='trackside'?1-Math.exp(-3.5*Math.min(dt,.1)):k;this.camera.fov=shotEntry?desiredFov:this.camera.fov+(desiredFov-this.camera.fov)*lensK;
- this.camera.up.set(0,1,0);this.camera.lookAt(this.target);this.camera.updateProjectionMatrix();this.cut=false;return this.camera;}
+ this.driveCue26=driveCues26(this.driveCue26,s,dt,shotEntry);
+ const cue=['chase','fps','nose'].includes(mode)&&!car.pit?.active?this.driveCue26:{lens:0,aim:0,roll:0};
+ this.target.y+=cue.aim;
+ const desiredFov=fov+cue.lens;const lensK=mode==='trackside'?1-Math.exp(-3.5*Math.min(dt,.1)):k;this.camera.fov=shotEntry?desiredFov:this.camera.fov+(desiredFov-this.camera.fov)*lensK;
+ this.camera.up.set(right.x*cue.roll,1,right.z*cue.roll).normalize();this.camera.lookAt(this.target);this.camera.updateProjectionMatrix();this.cut=false;return this.camera;}
 }

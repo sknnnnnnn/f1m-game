@@ -1,3 +1,4 @@
+import {tacticalLane26} from './tactical-lanes26.js';
 import {circuit,clamp,mod} from '../tracks/track.js';
 import {racingOffset,smooth} from '../tracks/racing-line.js';
 import {rivalSummary} from './rival-memory.js';
@@ -9,7 +10,7 @@ export function scoreLines(agent,state,p,safeLane){
  const turns=cornerHorizon(p.own.s),first=turns[0],c=agent.config??{mu:1.55,rho:1.2,ClA:3,m:850,g:9.81};
  if(!first)return null;const turn=Math.sign(first.k),rival=p.cars.filter(o=>!o.pit&&o.gap>12&&o.gap<110).sort((a,b)=>(agent.target23?.mode==='ATTACK'?Number(b.id===agent.target23.id)-Number(a.id===agent.target23.id):0)||a.gap-b.gap)[0],learned=rivalSummary(agent,rival?.id),grip=.68*c.mu*gripFactor(state)*(agent.personality.corner??1),aero=.5*c.rho*c.ClA/c.m;
  const end=Math.min(1300,turns.at(-1).distance+130),specs=[{kind:'INSIDE',label:'แซงไลน์ใน',lane:turn*3.4},{kind:'OUTSIDE',label:'รักษาความเร็วไลน์นอก',lane:-turn*3.4},{kind:'EXIT',label:'จัดรถสวนขาออก',lane:-turn*2.7}];
- const candidates=specs.map(spec=>{
+ const candidates=specs.map(raw=>{const spec={...raw,lane:tacticalLane26(raw.lane)};
   const lane=(ds)=>{const base=racingOffset(p.own.s+ds),entry=first.distance-100,apex=first.distance+15;
    const start=p.own.d+(spec.lane-p.own.d)*smooth(ds/Math.max(90,p.speed*(agent.personality.commit+1.2)));
    if(ds<apex)return start;

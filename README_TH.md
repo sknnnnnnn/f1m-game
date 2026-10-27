@@ -1,3 +1,7 @@
+Current: Race package, build `0653e7d89b47091a`. See [changes, measured racing/pit results and limits](reports/RACE_PACKAGE_TH.md). F125 driving base, crew/terrain fix, frozen physics and models retained. Main unchanged; Android listening/visual/FPS validation remains pending.
+
+Historical milestone notes follow.
+
 # F1M Attack 1.1
 
 เวอร์ชันล่าสุด `ba525293537c4435`: ปรับการขับตามฐาน F1 25 ทั้ง 49 โค้ง ถนนและไลน์ขับใหม่ การคุมแรงเกาะพวงมาลัย แผนเบรกที่คำนวณตามความเร็วจริง และยางที่คงสมรรถนะได้นานขึ้น ดู [ผลเทียบครบ 49 โค้งและผลทดสอบ](reports/F125_DRIVING_TH.md) คง DRS 5 วินาที และยังรอยืนยันสัมผัสการขับ/FPS บน Android

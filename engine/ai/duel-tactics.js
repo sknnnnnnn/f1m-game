@@ -1,3 +1,5 @@
+import {passProgress26} from './pass-progress26.js';
+import {tacticalLane26} from './tactical-lanes26.js';
 
 import {clamp} from '../tracks/track.js';
 // Event-driven tactical memory. This never writes a pose, command or race rank.
@@ -17,7 +19,7 @@ function duelTactics(agent,state,p,safeLane,decision){
  // Preserve the rival through a linked corner sequence; corridor checks still win.
  memory.sequence=memory.counter?{id:memory.counter.id,phase:corner?'SAVE_EXIT':'REBUILD_TOW',until:memory.counter.until}:memory.exit?{id:memory.exit.id,phase:'EXIT_SETUP'}:null;
  if(!memory.exit&&front&&front.gap>18&&front.gap<35&&agent.personality.risk<.75&&corner&&Math.sign(front.lateral)===turn&&Math.abs(front.lateral)>2.4&&state.time>=agent.commitUntil){
-  const outside=clamp(-turn*3.8,p.own.d-4,p.own.d+4);
+  const outside=clamp(tacticalLane26(-turn*3.8),p.own.d-4,p.own.d+4);
   if(safeLane(outside)){memory.exit={id:front.id,turn,peak:k,started:state.time,drive:false};choice=outside;pace=Math.min(pace,front.speed+1.5);mode='EXIT_SETUP';reason=`TRADE ENTRY FOR EXIT / CAR ${front.id}`;}
  }
  if(memory.exit){const plan=memory.exit;plan.peak=Math.max(plan.peak,k);if(state.time-plan.started>10||Math.sign(p.own.k)!==plan.turn&&k>.001){memory.exit=null;}
@@ -29,7 +31,8 @@ function duelTactics(agent,state,p,safeLane,decision){
  if(mode==='SLINGSHOT'&&!memory.pass&&p.leader&&p.leader.gap<65){memory.pass={id:p.leader.id,lane:choice,started:state.time};}
  if(['FEINT','OUTSIDE_SWITCH'].includes(mode))memory.pass=null;
  if(memory.pass){const pass=memory.pass,opponent=p.cars.find(c=>c.id===pass.id);
-  if(!opponent||opponent.gap< -13||opponent.gap>75||state.time-pass.started>8)memory.pass=null;
+  const progress=passProgress26(pass,opponent,state.time,agent.config?.length??5.5);
+  if(progress!=='HOLD'){memory.lastPass={id:pass.id,result:progress,time:state.time};memory.pass=null;}
   else if(safeLane(pass.lane)){choice=pass.lane;mode='PASS_COMMIT';reason=`COMPLETE PASS CAR ${pass.id} / HOLD CORRIDOR`;}
   else {memory.pass=null;reason+=' / PASS SPACE CLOSED';}
  }
