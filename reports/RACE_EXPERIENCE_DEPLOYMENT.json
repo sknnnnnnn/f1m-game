@@ -1,0 +1,64 @@
+{
+  "version": "60c921dd61b1beba",
+  "sourceCommit": "23c544c18de3e381ce5d90c0cb1f7d9766a0b1b6",
+  "sourceTree": "40d59b9d36cdc58a5b4bc377447e68c67c7bcaa3",
+  "pagesCommit": "f95ec8c9bfa3052d6cd71316e93a12cb638d9299",
+  "pagesTree": "2e1ee6381d64fe12453c09b8d20e883daab4d0a6",
+  "deployment": {
+    "run": 40596324073,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "url": "https://sknnnnnnn.github.io/f1m-game/",
+  "verifiedAtUtc": "2026-10-27T22:42:26.360247+00:00",
+  "assetHashes": {
+    "build.json": {
+      "match": true,
+      "sha256": "f9cdbbe0691396da65bfa7a2f47b412b0e338d8d344b29ccceac354af78800e6"
+    },
+    "assets/app.js": {
+      "match": true,
+      "sha256": "334edcea3d92a863f870125f3037b546010d59518ad2ea785658ec57da647bd9"
+    },
+    "assets/rig.js": {
+      "match": true,
+      "sha256": "b239c0dedb75388a8a36ac7913e7a12f175e8cd06a0cc20fb78f550520636b79"
+    },
+    "workers/race-worker.js": {
+      "match": true,
+      "sha256": "db1ebae77ddacaa2f7248f3e338ec3a5a5b92070facf9e6f11b03b57e74d329f"
+    },
+    "workers/physics-worker.js": {
+      "match": true,
+      "sha256": "eb7f262d865084f1a20c7a3d986f401b10296fd4839640baa4aaf47a7271b259"
+    },
+    "sw.js": {
+      "match": true,
+      "sha256": "1e9b8d4f2418c4e02d222367e20aabdf2be6fa057e7d405c470af0e0b70ef3a6"
+    }
+  },
+  "checks": {
+    "localMainSuiteJobs": 49,
+    "localMainSuite": "PASS",
+    "githubMainSuite": "PASS (test-build step npm test)",
+    "build": "PASS",
+    "pwa": "PASS",
+    "sixCarsThreeLapsThreeTracks": "PASS (54 car-laps)",
+    "sixCarsTwoLapsForcedSuriHardPit": "PASS (12 car-laps)",
+    "pitExitKPH": 79.83735675102255,
+    "driverVertexComparisons": 1135296,
+    "speechAbsent": true,
+    "liveBrowser": {
+      "buildShown": "60c921dd61b1beba",
+      "offlineReady": true,
+      "raceCentreDisplayed": true,
+      "selectedCarChangedToSuri": true,
+      "tyreTemperatureAndHealthShown": true,
+      "strategyPanelLink": "PASS; opens two-car plan",
+      "highlightsAndJournalSectionsDisplayed": true,
+      "scope": "Cloud Chrome CPU fallback (WebGL disabled), paused Shanghai grid. Does not verify Android FPS, live speech/audio quality or full race archive UI."
+    },
+    "android60FPS": "not tested"
+  },
+  "mainBranchUnchanged": true
+}
