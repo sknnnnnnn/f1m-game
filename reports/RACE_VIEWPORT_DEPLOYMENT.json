@@ -1,0 +1,35 @@
+{
+  "version": "93f5e627f88c8d5e",
+  "sourceCommit": "ce583a0bdf2b0750f766efa98ec0aec9e7b258ff",
+  "sourceTree": "e94e88b4f238e5a248ae6833762df8e970ea3113",
+  "pagesCommit": "49830161bfe93566576b53aa4e7e3824c561c0b2",
+  "pagesTree": "086a80cc295864c0a9ca6295346802a1de929fd4",
+  "deploymentRun": 40561642479,
+  "deploymentStatus": "success",
+  "liveHashes": {
+    "assets/app.js": "89da83d93a0d10a4081785b110f4af4205c5fede018e66c618930a8a5a4f7610",
+    "sw.js": "17317d459474040953e8606c578006b334d6269f120f591b55c5194baa858d33",
+    "build.json": "8a9a7d6f58d04a2b6e22ef037cc7ce16d6cd1137ffdce4c70b0958ad653d26ed"
+  },
+  "build": "PASS",
+  "pwa": "PASS",
+  "viewportHarness": "PASS",
+  "browserLayout": {
+    "status": "PASS",
+    "camera": "FPS",
+    "viewportWidth": 1363,
+    "viewportHeight": 936,
+    "stageBottom": 780,
+    "canvasBottom": 780,
+    "hudTop": 785.5,
+    "gap": 5.5,
+    "buttonHeights": [
+      45,
+      45,
+      45,
+      43
+    ],
+    "scope": "Live desktop Chrome CPU fallback; Android/GPU performance not tested"
+  },
+  "android": "not tested"
+}
