@@ -1,0 +1,171 @@
+{
+  "before": {
+    "raceSeconds": 152.13333333333333,
+    "finishTimes": [
+      {
+        "id": 1,
+        "time": 136.73745176177863,
+        "progress": 6190.202070498116
+      },
+      {
+        "id": 2,
+        "time": 127.01786130323,
+        "progress": 6410.045068653723
+      },
+      {
+        "id": 3,
+        "time": 148.47101905838235,
+        "progress": 5659.65106235119
+      },
+      {
+        "id": 4,
+        "time": 140.23517804682132,
+        "progress": 6065.745018394043
+      },
+      {
+        "id": 5,
+        "time": 144.76590760100157,
+        "progress": 5854.910159001155
+      },
+      {
+        "id": 6,
+        "time": 152.12985036860098,
+        "progress": 5451.2032860809495
+      }
+    ],
+    "finishSpreadSeconds": 25.111989065370977,
+    "rapidUnbrakedThrottleChanges": 32,
+    "T5_1240_to_1460m": [
+      {
+        "id": 1,
+        "minimumKPH": 101.74668879115724,
+        "maximumKPH": 227.18013673119626,
+        "brakeFraction": 0.49019607843137253,
+        "meanThrottle": 0.4052287581699346
+      },
+      {
+        "id": 2,
+        "minimumKPH": 213.22614517017118,
+        "maximumKPH": 266.2816478206879,
+        "brakeFraction": 0.03125,
+        "meanThrottle": 0.921875
+      },
+      {
+        "id": 3,
+        "minimumKPH": 93.39808836627478,
+        "maximumKPH": 197.7626801493769,
+        "brakeFraction": 0.6206896551724138,
+        "meanThrottle": 0.28160919540229884
+      },
+      {
+        "id": 4,
+        "minimumKPH": 99.04359149777383,
+        "maximumKPH": 218.77665604728932,
+        "brakeFraction": 0.5769230769230769,
+        "meanThrottle": 0.33012820512820507
+      },
+      {
+        "id": 5,
+        "minimumKPH": 117.29798738600212,
+        "maximumKPH": 243.51938220699523,
+        "brakeFraction": 0.391304347826087,
+        "meanThrottle": 0.5291262918008621
+      },
+      {
+        "id": 6,
+        "minimumKPH": 92.27619165867401,
+        "maximumKPH": 189.90831041041656,
+        "brakeFraction": 0.6101694915254238,
+        "meanThrottle": 0.28328253190967134
+      }
+    ],
+    "finished": true,
+    "stop": null,
+    "rejections": 0
+  },
+  "after": {
+    "raceSeconds": 142.51666666666665,
+    "finishTimes": [
+      {
+        "id": 1,
+        "time": 121.5790593541768,
+        "progress": 6353.624140459049
+      },
+      {
+        "id": 2,
+        "time": 127.42584465308563,
+        "progress": 6226.001662813334
+      },
+      {
+        "id": 3,
+        "time": 142.50506043282863,
+        "progress": 5451.7013967298635
+      },
+      {
+        "id": 4,
+        "time": 131.7187116912951,
+        "progress": 6071.731626675637
+      },
+      {
+        "id": 5,
+        "time": 138.92394538005294,
+        "progress": 5667.71960393402
+      },
+      {
+        "id": 6,
+        "time": 135.44290844299607,
+        "progress": 5870.744428270973
+      }
+    ],
+    "finishSpreadSeconds": 20.926001078651822,
+    "rapidUnbrakedThrottleChanges": 9,
+    "T5_1240_to_1460m": [
+      {
+        "id": 1,
+        "minimumKPH": 232.65775557255915,
+        "maximumKPH": 276.5296130138944,
+        "brakeFraction": 0.0,
+        "meanThrottle": 1.0
+      },
+      {
+        "id": 2,
+        "minimumKPH": 224.25849704415558,
+        "maximumKPH": 261.48512883783286,
+        "brakeFraction": 0.2727272727272727,
+        "meanThrottle": 0.6336766064621483
+      },
+      {
+        "id": 3,
+        "minimumKPH": 173.5936274680238,
+        "maximumKPH": 252.4906308715492,
+        "brakeFraction": 0.6388888888888888,
+        "meanThrottle": 0.33796296296296297
+      },
+      {
+        "id": 4,
+        "minimumKPH": 194.56269245177435,
+        "maximumKPH": 238.04960896451527,
+        "brakeFraction": 0.4722222222222222,
+        "meanThrottle": 0.411819315653894
+      },
+      {
+        "id": 5,
+        "minimumKPH": 193.94449091300973,
+        "maximumKPH": 246.372115883671,
+        "brakeFraction": 0.5142857142857142,
+        "meanThrottle": 0.29668710766653944
+      },
+      {
+        "id": 6,
+        "minimumKPH": 181.756188049877,
+        "maximumKPH": 237.37558485519173,
+        "brakeFraction": 0.5833333333333334,
+        "meanThrottle": 0.2138386493265401
+      }
+    ],
+    "finished": true,
+    "stop": null,
+    "rejections": 0
+  },
+  "scope": "Default production starting settings in each version, seed 19, six cars, China one lap. New default starts all six on Medium rather than M/S/M/S/H/H. Commands sampled at 0.1 s; no Android/FPS or five-lap guarantee."
+}

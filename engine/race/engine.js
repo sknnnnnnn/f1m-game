@@ -10,11 +10,11 @@ import {circuit,clamp} from '../tracks/track.js';
 import {Agent} from '../ai/agent.js';
 import {makeReference} from '../physics/reference-adapter.js';
 import {sweep,clearance} from '../physics/collision.js';
-import {DRIVERS} from './drivers.js';import {draftFactor} from '../ai/draft.js';
+import {DRIVERS,closeFieldTraits} from './drivers.js';import {draftFactor} from '../ai/draft.js';
 
 class Race {
  constructor({seed=7,laps=1}={}){this.seed=seed;this.laps=laps;this.config=highSpeedConfig(C0);validateConfig(this.config);this.reset();}
- reset(){this.tick=0;this.time=0;this.finished=false;this.stop=null;this.events=[];this.overlapStops=0;this.overtakes=0;this.minClearance=Infinity;this.maxStepDistance=0;this.maxLateral=0;this.controllerRejections=0;this.decisionCounts={};this.diagnostics={broadphaseSkips:0,sweptPairs:0,maxSolverError:0,maxTyreUtilisation:0,minWheelLoad:Infinity,maxAbsJerk:0,gearShifts:0,brakingTicks:0,maxBrake:0,maxSpeed:0};this.highSpeedLog=[];this.orderStability=new Map();this.cars=DRIVERS.map((d,k)=>{const station=circuit.gate-6-k*24,n=0,p=circuit.point(station,n),state=initial(this.config,{X:p.x,Y:p.y,psi:p.psi,u:45,v:0,r:45*p.k,gear:3,shiftTarget:3});return{id:k+1,...d,state,agent:new Agent(k+1,d.kind,n,this.seed,d.traits),projection:circuit.project(state.X,state.Y,state.psi),progress:station-circuit.gate,distance:0,lap:1,finishedAt:null,trace:[],lastCommand:null,lastController:null,peakKPH:162,gearbox:{lastShift:-1000}};});this.order=this.ranking().map(x=>x.id);}
+ reset(){this.tick=0;this.time=0;this.finished=false;this.stop=null;this.events=[];this.overlapStops=0;this.overtakes=0;this.minClearance=Infinity;this.maxStepDistance=0;this.maxLateral=0;this.controllerRejections=0;this.decisionCounts={};this.diagnostics={broadphaseSkips:0,sweptPairs:0,maxSolverError:0,maxTyreUtilisation:0,minWheelLoad:Infinity,maxAbsJerk:0,gearShifts:0,brakingTicks:0,maxBrake:0,maxSpeed:0};this.highSpeedLog=[];this.orderStability=new Map();this.cars=DRIVERS.map((d,k)=>{const station=circuit.gate-6-k*24,n=0,p=circuit.point(station,n),state=initial(this.config,{X:p.x,Y:p.y,psi:p.psi,u:45,v:0,r:45*p.k,gear:3,shiftTarget:3});return{id:k+1,...d,state,agent:new Agent(k+1,d.kind,n,this.seed,closeFieldTraits(d)),projection:circuit.project(state.X,state.Y,state.psi),progress:station-circuit.gate,distance:0,lap:1,finishedAt:null,trace:[],lastCommand:null,lastController:null,peakKPH:162,gearbox:{lastShift:-1000}};});this.order=this.ranking().map(x=>x.id);}
  isOnTrack(car){return true;}
  configuration(car){return this.config;}
  perceptionProjection(car){return car.projection;}

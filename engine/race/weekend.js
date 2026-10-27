@@ -1,3 +1,4 @@
+import {closeFieldTraits} from './drivers.js';
 import {gridSlot28} from '../tracks/track-layout28.js';
 import {VisualRace} from '../rendering/visual-race.js';
 import {initial} from '../../racing/runtime/frozen/physics.js';
@@ -6,7 +7,7 @@ import {circuit} from '../tracks/track.js';
 import {RaceClock} from './race-clock.js';
 export class WeekendRace extends VisualRace {
  reset(){super.reset();this.lapTiming=new Map();this.raceMoments=[];this.lastEventTick=-1;this.tacticalMoments=new Map();
-  for(const [i,car] of this.cars.entries()){const {station,lane:n}=gridSlot28(i,this.config.length),p=circuit.point(station,n);car.state=initial(this.config,{X:p.x,Y:p.y,psi:p.psi,u:0,v:0,r:0,gear:1,shiftTarget:1});car.agent=new Agent(car.id,car.kind,n,this.seed,car.traits);car.projection=circuit.project(p.x,p.y);car.progress=station-circuit.gate;car.peakKPH=0;this.lapTiming.set(car.id,{lastCrossing:0,laps:[],best:null});}
+  for(const [i,car] of this.cars.entries()){const {station,lane:n}=gridSlot28(i,this.config.length),p=circuit.point(station,n);car.state=initial(this.config,{X:p.x,Y:p.y,psi:p.psi,u:0,v:0,r:0,gear:1,shiftTarget:1});car.agent=new Agent(car.id,car.kind,n,this.seed,closeFieldTraits(car));car.projection=circuit.project(p.x,p.y);car.progress=station-circuit.gate;car.peakKPH=0;this.lapTiming.set(car.id,{lastCrossing:0,laps:[],best:null});}
  }
  commitAdvance(proposed){const before=this.cars.map(c=>({progress:c.progress,time:c.state.time}));const eventKeys=new Set(this.events.map(e=>e.kind+':'+e.tick+':'+e.by+':'+e.car));const ok=super.commitAdvance(proposed);if(!ok)return false;
   this.cars.forEach((car,i)=>{const timing=this.lapTiming.get(car.id),old=before[i];for(let lap=timing.laps.length+1;lap<=this.laps;lap++){const threshold=lap*circuit.length;if(car.progress<threshold)break;const at=old.time+this.config.dt*Math.max(0,Math.min(1,(threshold-old.progress)/Math.max(1e-9,car.progress-old.progress))),duration=at-timing.lastCrossing;timing.lastCrossing=at;timing.laps.push(duration);timing.best=timing.best===null?duration:Math.min(timing.best,duration);this.raceMoments.push({kind:'LAP',time:at,car:car.id,lap,duration});}});

@@ -1,0 +1,6 @@
+{
+  "plans": 1000,
+  "cpuMSPerPlan": 0.363965,
+  "spatial": true,
+  "scope": "Node process CPU time, 100 warm-up plans; not mobile FPS."
+}

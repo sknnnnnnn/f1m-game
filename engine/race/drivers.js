@@ -1,3 +1,4 @@
+import {RACE_STYLES} from '../ai/personality.js';
 
 const DRIVERS=[
 {name:'KAEW',kind:'DEFENDER',colour:'#b8a3ff',traits:{pace:88.5,headway:.65,risk:.62,braking:6.3,corner:0.985,exit:6.2,defend:.95,bias:0,commit:1.8}},
@@ -9,4 +10,10 @@ const DRIVERS=[
 ];
 
 
+// Sprint field: narrow mechanical pace differences, retain tactical identity.
+// Faster cars gain no hidden catch-up force and race position never enters it.
+export function closeFieldTraits(driver){
+ const p=driver.traits;
+ return {...p,corner:(1.008+(p.corner-.99)*.12)/(RACE_STYLES[driver.kind]?.cornerFactor??1),pace:91.5+(p.pace-91.5)*.15,braking:6.5+(p.braking-6.5)*.2,exit:6.6+(p.exit-6.6)*.2};
+}
 export {DRIVERS};

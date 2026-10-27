@@ -12,7 +12,7 @@ const active=phase=>['PIT_IN','SERVICE','RELEASE','PIT_OUT','YIELD','MERGE'].inc
 const PHASES={RACING:'กำลังแข่ง',BOOKED:'รอเข้าพิต',APPROACH:'เตรียมเข้าพิต',PIT_IN:'เข้าพิต',SERVICE:'เปลี่ยนยาง',RELEASE:'รอปล่อยรถ',PIT_OUT:'ออกพิต',YIELD:'รอช่องรวมสนาม',MERGE:'รวมกลับสนาม'};
 export class StrategyRace extends WeekendRace {
  reset(){super.reset();this.tyreConfigs=Object.fromEntries(Object.keys(COMPOUNDS).map(k=>[k,tyreConfig(this.config,k)]));this.pitEvents=[];this.strategyChecks=0;
-  for(const car of this.cars){const compound=['M','S','M','S','H','H'][car.id-1];car.tyres={compound,fittedDistance:0,sets:1};car.pit={phase:'RACING',active:false,stops:0,manual:false,requestedCompound:null,nextCompound:null,serviceElapsed:0,decision:null,enteredAt:null,cycle:null};}}
+  for(const car of this.cars){const compound='M';car.tyres={compound,fittedDistance:0,sets:1};car.pit={phase:'RACING',active:false,stops:0,manual:false,requestedCompound:null,nextCompound:null,serviceElapsed:0,decision:null,enteredAt:null,cycle:null};}}
  isOnTrack(car){return !car.pit?.active;}
  configuration(car){return this.tyreConfigs?.[car.tyres?.compound]??this.config;}
  perceptionProjection(car){return car.pit?.active?circuit.project(car.state.X,car.state.Y,car.state.psi):car.projection;}

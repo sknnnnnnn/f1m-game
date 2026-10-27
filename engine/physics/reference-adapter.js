@@ -1,3 +1,4 @@
+import {smoothWorldRoute} from './route-spline.js';
 import {pathOffset,pathLaneAt} from '../tracks/racing-path.js';
 import {isAttackConfig} from './attack-drive.js';
 import {lateralDemandFactor,brakingBudget,trafficCaution,brakingTrafficCaution,approachDemand} from './speed-envelope.js';
@@ -23,13 +24,14 @@ function connectLane(old,t,target,T=3.4){
  return result;
 }
 function tyreFactor(s){const tf=T=>T<=20?.55:T<=60?.55+(T-20)*.3/40:T<=90?.85+(T-60)*.15/30:T<=110?1-(T-90)*.08/20:T<=140?.92-(T-110)*.27/30:T<=180?.65-(T-140)*.3/40:.35;return Math.min(...s.wheels.map(w=>tf(w.Ts)*Math.max(.4,1-.4*w.wear)*Math.max(.3,1-.5*w.damage)));}
-function makeReference(c,s,agent){const at=circuit.project(s.X,s.Y,s.psi),speed=agent.targetSpeed,p={schema:'P1-Trajectory/1.0',id:`P2-${agent.id}-${s.tick}`,inputTick:s.tick,expires:s.tick+15,modelVersion:c.version,routeVersion:'P2-BAHRAIN-GP/2',route:'P2-BAHRAIN-GP',direction:1,speed,offset:agent.targetLane,createdTime:s.time,recovery:agent.recovery??null,corridor:{halfWidth:circuit.width/2,margin:.35},knots:[],laneCurve:agent.curve};
-  const point=(ds)=>{
+function makeReference(c,s,agent,routeFit=32){const at=circuit.project(s.X,s.Y,s.psi),speed=agent.targetSpeed,p={schema:'P1-Trajectory/1.0',id:`P2-${agent.id}-${s.tick}`,inputTick:s.tick,expires:s.tick+15,modelVersion:c.version,routeVersion:'P2-BAHRAIN-GP/2',route:'P2-BAHRAIN-GP',direction:1,speed,offset:agent.targetLane,createdTime:s.time,recovery:agent.recovery??null,corridor:{halfWidth:circuit.width/2,margin:.35+(circuit.key==='shanghai'&&routeFit>8?.10:0)},knots:[],laneCurve:agent.curve};
+  const rawPoint=(ds)=>{
    const a=circuit.at(at.s+ds);let n;
    if(agent.curve.racing)n=pathOffset(agent.curve,at.s+ds);
    else{const tm=s.time+ds/Math.max(5,Math.hypot(s.u,s.v)),o=laneAt(agent.curve,tm),blend=agent.freeLine?smooth((ds-Math.max(20,Math.hypot(s.u,s.v)*.5))/90):0;n=blend?o.d+(racingOffset(at.s+ds)-o.d)*blend:o.d;}
    return{x:a.x-n*Math.sin(a.psi),y:a.y+n*Math.cos(a.psi)};
   };
+  const point=circuit.key==='shanghai'?smoothWorldRoute(rawPoint,at.s,8,routeFit>8?circuit:null,routeFit,agent.curve.racing&&!agent.curve.racing.join?circuit:null):rawPoint;
   // Shanghai flowing bends may use the actual vehicle grip. Fade back to the
   // proven tight-corner reserve above 0.012/m, reaching it at 0.047/m.
   // Recovery, safety car and caution plans keep their original envelope.
@@ -44,7 +46,11 @@ function makeReference(c,s,agent){const at=circuit.project(s.X,s.Y,s.psi),speed=
   // 110 m control corridor to the unchanged controller. Distant knots cannot
   // be nearest to this car during a 0.1 s plan lifetime on this compact circuit.
   p.previewMetres=900;p.controlLookaheadMetres=110;p.knots=p.knots.slice(0,20);
-  for(const knot of p.knots)Object.freeze(knot);Object.freeze(p.knots);Object.freeze(p.corridor);Object.freeze(p.laneCurve.c);if(p.laneCurve.racing){if(p.laneCurve.racing.join)Object.freeze(p.laneCurve.racing.join);Object.freeze(p.laneCurve.racing);}Object.freeze(p.laneCurve);return Object.freeze(p);
+  for(const knot of p.knots)Object.freeze(knot);Object.freeze(p.knots);Object.freeze(p.corridor);Object.freeze(p.laneCurve.c);if(p.laneCurve.racing){if(p.laneCurve.racing.join)Object.freeze(p.laneCurve.racing.join);Object.freeze(p.laneCurve.racing);}Object.freeze(p.laneCurve);Object.freeze(p);
+  // Reuse the same validated geometry in the controller cache. A wide fit
+  // that leaves the road is discarded before it can become a drive command.
+  if(circuit.key==='shanghai'&&routeFit>8&&validatePlan(c,s,p)==='OUTSIDE_CORRIDOR')return makeReference(c,s,agent,8);
+  return p;
 }
 const validationCache=new WeakMap();
 function validatePlan(c,s,p){if(p?.route==='P2-BAHRAIN-PIT')return validatePitPlan(c,s,p);if(p?.route!=='P2-BAHRAIN-GP')return P1.validatePlan(c,s,p);

@@ -49,10 +49,20 @@ class Agent {
   if(this.engineerOrder?.attack==='ABORT'&&!p.cars.some(o=>o.side)&&!['BRAKE','RECOVER','HOLD_SPACE','BOXED_IN'].includes(mode)){choice=this.targetLane;this.battleCommit=null;this.crossExit=null;if(this.duel){this.duel.pass=null;this.duel.exit=null;}mode='ABORT_ATTACK';reason='ENGINEER / HOLD SAFE CORRIDOR';if(ahead&&ahead.gap<80)pace=Math.min(pace,ahead.speed);}
   if(Math.abs(now.d)>circuit.width/2-1.5||Math.abs(state.v)>3){choice=clamp(now.d,-3,3);pace=Math.min(pace,9);mode='RECOVER';reason='ROAD EDGE / SIDESLIP';}
   this.freeLine=this.freeLine&&!['HOLD_SPACE','PASS_COMMIT','BRAKE_DUEL','EXIT_SETUP','EXIT_TARGET','BOXED_IN','RECOVER','FEINT','OUTSIDE_SWITCH'].includes(mode)&&state.time>=this.commitUntil;
-  const followPath=circuit.key==='shanghai'&&this.id!==7&&!this.pitApproach&&['CRUISE','FOLLOW','DRAFT'].includes(mode)&&!this.recovery&&!p.cars.some(o=>!o.pit&&Math.abs(o.gap)<18&&Math.abs(o.lateral-now.d)>1.5);
+  const clearPath=p.cars.every(o=>o.pit||Math.abs(o.gap)>65+Math.abs(o.relativeSpeed)*4);
+  const bendAngle=Math.abs(Math.atan2(Math.sin(circuit.at(now.s+80).psi-circuit.at(now.s-80).psi),Math.cos(circuit.at(now.s+80).psi-circuit.at(now.s-80).psi)));
+  let flowPath=null;
+  if(circuit.key==='shanghai'&&!this.pitApproach&&!this.recovery&&bendAngle<.55&&['COUNTER','DEFEND','PASS_COMMIT','SLINGSHOT','EXIT_DRIVE','EXIT_SETUP','HOLD_SPACE','ABORT_ATTACK'].includes(mode)&&!p.cars.some(o=>!o.pit&&Math.abs(o.gap)<20)){
+   const candidate=racingPath(this.curve,state,now),safe=p.cars.every(o=>{if(o.pit)return true;const space=trafficSpace(this,state,o);for(let j=0;j<=14;j++){const t=j*.25,gap=o.gap+o.relativeSpeed*t,other=o.intent?.curve?laneAt(o.intent.curve,state.time+t).d:o.lateral,own=laneAt(candidate,state.time+t).d;if(Math.abs(gap)<space.longitudinal+.35*t*t+3&&Math.abs(other-own)<space.lateral+.35)return false;}return true;});
+   if(safe)flowPath=candidate;
+  }
+  const followPath=circuit.key==='shanghai'&&this.id!==7&&!this.pitApproach&&(!!flowPath||['CRUISE','FOLLOW','DRAFT'].includes(mode)||clearPath&&['COUNTER','ABORT_ATTACK','EXIT_DRIVE','EXIT_SETUP','HOLD_SPACE'].includes(mode))&&!this.recovery&&!p.cars.some(o=>!o.pit&&Math.abs(o.gap)<18&&Math.abs(o.lateral-now.d)>1.5);
   if(this.pitApproach)this.freeLine=false;
-  if(followPath){this.curve=racingPath(this.curve,state,now);this.targetLane=racingOffset(now.s);this.freeLine=true;}
+  if(followPath){this.curve=flowPath??racingPath(this.curve,state,now);this.targetLane=racingOffset(now.s);this.freeLine=true;}
   else if(this.curve.racing){this.curve=connectLane(this.curve,state.time,clamp(choice,-5.4,5.4),Math.max(3,personality.commit));this.targetLane=clamp(choice,-5.4,5.4);}
+  // Leave room to round a shallow bend while holding a passing lane. Never
+  // narrow an occupied corridor just to reach the faster nominal line.
+  if(!followPath&&circuit.key==='shanghai'&&Math.abs(choice)>3.8){const flowingLane=clamp(choice,-3.8,3.8);if(safeLane(flowingLane))choice=flowingLane;}
   choice=clamp(choice,-circuit.width/2+1.7,circuit.width/2-1.7);if(!followPath&&Math.abs(choice-this.targetLane)>.6){this.curve=connectLane(this.curve,state.time,choice,personality.commit+1.2);this.targetLane=choice;this.commitUntil=state.time+personality.commit;this.laneChanges++;}
   // Predictive following protects the corridor throughout a passing transition.
   for(const o of p.cars){const futureN=laneAt(this.curve,state.time+.8).d;if(o.gap>0&&o.gap<140&&(this.curve.racing&&o.intent?.curve?.racing||Math.min(Math.abs(o.lateral-now.d),Math.abs(o.lateral-futureN))<2.3)){const limit=launchLeadSpeed(o)+(o.gap-trafficSpace(this,state,o).reserve)*.75;if(limit<pace){pace=Math.max(0,limit);if(!['SLINGSHOT','DRAFT','SWITCHBACK','COUNTER','EXIT_SETUP','EXIT_DRIVE','HOLD_SPACE','BOXED_IN','PASS_COMMIT','THIRD_CAR_ATTACK','FEINT','OUTSIDE_SWITCH'].includes(mode)){mode=pace<p.speed-1?'BRAKE':'FOLLOW';reason=`PREDICTED GAP TO ${o.id}`;}}}}

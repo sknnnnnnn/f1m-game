@@ -41,7 +41,7 @@ export function brakingBudget(c,agent,tyre,k,v,curveV=v,caution=brakingTrafficCa
 export function approachDemand(profileA,allowedSpeed,actualSpeed,agent,caution=trafficCaution(agent),curvature=0){
  if(isAttackConfig(agent.config??{})&&agent.id!==7&&!['YELLOW','VSC'].includes(agent.state)){
   const margin=Math.max(.7,-Math.min(0,profileA)*(.1+1/(agent.config.pedalRate??16)));
-  const drive=Math.max(0,Math.min(14,(allowedSpeed-actualSpeed-.4)*5));
+  const drive=Math.max(0,Math.min(14,(allowedSpeed-actualSpeed-.1)*2));
   if(profileA>=-.05)return drive;
   // Blend the former acceleration/braking switch across 0.3 m/s. Tiny
   // speed noise must not toggle the entire negative feed-forward term.

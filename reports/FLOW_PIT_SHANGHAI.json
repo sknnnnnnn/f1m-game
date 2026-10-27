@@ -1,0 +1,19 @@
+{
+  "track": "shanghai",
+  "time": 66.48333333333333,
+  "stop": null,
+  "rejections": 0,
+  "phases": [
+    "APPROACH",
+    "PIT_IN",
+    "SERVICE",
+    "RELEASE",
+    "PIT_OUT",
+    "MERGE",
+    "RACING"
+  ],
+  "exited": true,
+  "maxLimited": 78.37934633251204,
+  "maxExit": 78.77361119999838,
+  "scope": "Physical pit cycle with fixture-provided crew-ready proof; not a crew animation test"
+}
