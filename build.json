@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "38b04c60427b8238",
-  "sourceRevision": "38b04c60427b8238cd3bce0d2e582bd364a5d49c63fe1e4e8a2aa5877d644b49",
+  "version": "93f5e627f88c8d5e",
+  "sourceRevision": "93f5e627f88c8d5e10eed959ad46751c9aad0f10d4ea127d1229066d6767387f",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "8f0e46c4ed3e16a71fcb31198ed252513c41fc402e624c2bfd71cdcedb69eeff",
@@ -163,7 +163,7 @@
     "engine/ui/race-viewport36.js": "25ad0ae380ec7873ec62d64f2cdaaf1b92bd0bcbde55c22f34356d0ecb7823cf",
     "engine/ui/setup-controls.js": "c80eb4c4d133349ee055d1b4f5fab6c0ff4cfc6ddbe669c90c7ebc531916fe91",
     "engine/ui/showtime-ui22.js": "928b938aac57f7e027219d5366565509112259ffb9c532ce74aa5fee6da550d8",
-    "engine/ui/watch-ui24.css": "f7217c3afe20c57f8797f5d2bdb52a8b63221d56d9d25a56d002d799aea2b26e",
+    "engine/ui/watch-ui24.css": "6c87f061896753c9dabbf06c9affc9de89695a48a6765f23c7c9cb0d9f65d465",
     "engine/ui/watch-ui24.js": "40e300c60f79d88226d3abcff7144fb37b9c7cca5dbb9755d57a24a32eac79e9",
     "engine/ui/weekend-ui.js": "e13b61dfaf60ef96f9ed6c2d575cdd9874bf3273e7404a0c2b77dcf60e2f1bca",
     "frozen/config/C0.json": "2fa2e34d7ced2a8effc80bc476131e9caf920eeba44741952b606e6dcb2608d2",
