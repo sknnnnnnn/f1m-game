@@ -1,0 +1,40 @@
+{
+  "version": "51ebd4a8e57dec00",
+  "sourceCommit": "d58916d9334ec18fc27d5ee7282d891cc4f0432c",
+  "sourceTree": "fbef3e171b22c9ae4052b79ac086cba8a136fd94",
+  "pagesCommit": "00c34fcc58044da7e59c90b8a217378a51a9aca5",
+  "pagesTree": "fec544ceeaf8c003646e60167388b21f3724f6f0",
+  "deployment": {
+    "run": 40572902019,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "verifiedAtUtc": "2026-10-27T19:52:57.583617+00:00",
+  "url": "https://sknnnnnnn.github.io/f1m-game/",
+  "assetHashes": {
+    "build.json": {
+      "match": true,
+      "sha256": "a9e45ddfc1dedd35490ff9ea6c2bdb033a5d6436356cecd68d07b1ff1f1fe713"
+    },
+    "assets/app.js": {
+      "match": true,
+      "sha256": "1a4cfca5afb81647279b53997ebd3e4480f3a8c368d8f5aeb01fe24ce97dc71b"
+    },
+    "sw.js": {
+      "match": true,
+      "sha256": "400d9532addfb287e975c844566133cb418cd4e2f64ac9d666ce4db08e8b7da1"
+    }
+  },
+  "checks": {
+    "mainSuiteJobs": 47,
+    "mainSuite": "PASS",
+    "build": "PASS",
+    "pwa": "PASS",
+    "speechSourceAndBundleAbsent": true,
+    "radioChimeAndTextRetained": true,
+    "androidListening": "not tested",
+    "newAndroidFPS": "not tested"
+  },
+  "mainBranchUnchanged": true
+}
+
