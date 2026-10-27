@@ -28,4 +28,4 @@ export function gridCrew33(T,parent,track,config){const scale=.88,root=new T.Gro
  const feet=stand>.95?footsteps.update(a.index,anchor,renderYaw,speed/scale,activeTime+elapsed):null;if(!feet)footsteps.reset(a.index);
  rig.pose(a.index,anchor,renderYaw,{hands,feet,crouch,walk:distance/.58*Math.PI,stride:speed>.03?.25:0,speed:speed/scale,lean:0,look:a.role===2?.045*Math.sin(attention*.6):0});report.push({id:a.id,role:roles[a.role],position:anchor.clone().multiplyScalar(scale).toArray(),yaw:renderYaw,phase:grid?task.phase:u>=1?'CLEAR':stand<1?'WITHDRAW':'WALK_OUT',facingCar:Math.cos(wrap(renderYaw-idleYaw)),speed,distanceToCar:start.distanceTo(center),reachError:rig.debug[a.index]?.maxReachError??0});
  }rig.flush();for(const {mesh,part,i} of copies){mesh.visible=cpu&&root.visible;if(mesh.visible){part.getMatrixAt(i,mesh.matrix);mesh.matrixWorldNeedsUpdate=true;}}}
- return {update,diagnostics:()=>({actors:actors.length,clock:activeTime,report})};}
+ return {update,diagnostics:()=>({actors:actors.length,clock:activeTime,report}),rig};}

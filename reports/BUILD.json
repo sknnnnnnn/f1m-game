@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "ba525293537c4435",
-  "sourceRevision": "ba525293537c443516530df77022b0ad14451fcc494f8893cdc6790c56183754",
+  "version": "580e30aa28a364a9",
+  "sourceRevision": "580e30aa28a364a96160f4395cf35c6a5b55bf7b8fac203be2ffa904150e46dd",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "1e65260f2cc6e0e38424b950888af79e94c0463e726741786b67dfb5dabf05e3",
@@ -89,8 +89,8 @@
     "engine/rendering/driver-rig.js": "59b22d81aa6838b585c4ea4e429f66b259423d0e420afa6a2e7a1b5e80bdbd59",
     "engine/rendering/dynamics.js": "aa5533d7dd262578de170b12a53a572cf6e6ba674cfa414eb2287d0b21abdb07",
     "engine/rendering/engine-entry.js": "5ae2aa6ea669a2ceda124dfe5877afcfb2a1ac1fe4de2c0ffc4554e9598f5e10",
-    "engine/rendering/grid-crew33.js": "b200a882406c6727f2d01a77cbcd20c164d66a27c604b0f712660d7087fe3a11",
-    "engine/rendering/grid-footsteps33.js": "69d848098c836110bb3be45cd7c78937c867fda5b5c6120d8582c3470026bdcf",
+    "engine/rendering/grid-crew33.js": "657178164cb655e4b45128c07dd045819240b7026af070d7045ff33ed007a8d2",
+    "engine/rendering/grid-footsteps33.js": "a15d43f8bdb293292630585246f1c8bc8ab05b4f369f4593f4911158b221a708",
     "engine/rendering/grip-hand.js": "ed97b8308af35b9454855a0b8e01f9342c89e2e3e3319b8ac58d6c41289e85a6",
     "engine/rendering/imported-scene33.js": "64d7daa6e7c1925b47dfd70eb97d97809a7468820322d70ee1b5df9201655664",
     "engine/rendering/living-scene26.js": "faf428d893ef22c548fb1b5085ea08fc93a2f5b87a113799295708a6a7d868b4",
@@ -140,10 +140,11 @@
     "engine/tracks/reference25/suzuka-old.json.gz": "81a2a9ca3e3f9dce7dae61266870cb633993d0394f50a5253706a352cbd9bbd4",
     "engine/tracks/road-height33.js": "8be88cb49e093ee1c147cd0487e8bcd7642022c260fb750806d8fcec0ea2f2c5",
     "engine/tracks/scenery/shanghai.js": "cdb3f97994500fb815eac2c4d98d3e83375227fa521bbf3ed7332a4d74b05fc0",
-    "engine/tracks/scenery/suzuka.js": "61b0d4ae15b25555966b90c366a9e56758af83b19fe8f8ea8410331fa4201a1e",
+    "engine/tracks/scenery/suzuka.js": "ed4fbcd99e61291e80c33aba1dc65498a45f510a421e55d311c31050eead0c05",
     "engine/tracks/shanghai-line.js": "f4bd6b14874c5468fe6200666635f945ca22dd7161034e4d9e26cae5982e62e8",
     "engine/tracks/survey-curve25.js": "195c00d340f956fa487bd3f3edf87f112b63c3e7054865af010a86c05d00b9bc",
     "engine/tracks/suzuka-line25.js": "30ae4a655eaea6e4581ff0bfd389d24b78a7f3ed9694a1fcef9bfda78d3fed9b",
+    "engine/tracks/terrain-clearance.js": "deb0738103cf8d5cb49bf3743d8a218a9e190647e20b1d1c6f7755380e8fe69e",
     "engine/tracks/track-layout28.js": "9c0d2df2fbdb47d133e1d1456fb561d18ab5f63e192f6fe84b353b5ec526a01c",
     "engine/tracks/track.js": "31e93873cf9c513f4af3ecf6ce768c1f4b68e5f61e65792d09ffb9424761a905",
     "engine/ui/championship-ui23.js": "82a7902e37e7de19d3dac0a2f24a9d2056f962ae4b03941b6ef57eff02541fd0",
@@ -197,8 +198,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 1026325,
-      "sha256": "7627064265957e9f0966614098af64c6cbaca38d7d2b9bf26cf5adf08569f496"
+      "bytes": 1027590,
+      "sha256": "ec17f660ff09dce2f259cb05c73eb631b9bff388236b03fcc54a8398a59a70ed"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -225,8 +226,8 @@
       "sha256": "59b22d81aa6838b585c4ea4e429f66b259423d0e420afa6a2e7a1b5e80bdbd59"
     },
     "build.json": {
-      "bytes": 19952,
-      "sha256": "0e1caa692c50a8dcae7335aed2f86552c10eb003e62ef94346f2f0019b9e1fbf"
+      "bytes": 20062,
+      "sha256": "11b9a2c4e0a922440136d28dc4eb1ce34dfa668b653228fa86145900b24d5000"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -266,7 +267,7 @@
     },
     "sw.js": {
       "bytes": 1299,
-      "sha256": "eea3d048594666a8276dc32ae408c9aa1a26e68a343f3c12791b46587915a4a7"
+      "sha256": "010b48e514acfffc77ca346a462b346bc49bab39ff64f4e9565053d9a69e4a26"
     }
   }
 }
