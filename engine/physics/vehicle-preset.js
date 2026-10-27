@@ -1,7 +1,7 @@
 import {isAttackConfig,attackBrake} from './attack-drive.js';
 
 // Isolated development preset. Original C0.json, physics and controller stay frozen.
-function highSpeedConfig(base){return {...structuredClone(base),version:'F1M-ATTACK-BRAKE/4',mu:2.7,steerRate:1.1,steerLag:.05,brakeF:6200,brakeR:2000,deployW:300000,motorTorque:450,capacity:8000000,CdA:.65,ratios:[3.3,2.9,2.5,2.15,1.85,1.59,1.37,1.18],pedalRate:16};}
+function highSpeedConfig(base){return {...structuredClone(base),version:'F1M-ATTACK-BRAKE/5',Cs:12000,Cc:60000,Hsc:120,Hst:55,Hca:5,Ky:.9,Kpsi:1,Kr:.18,mu:2.7,steerRate:1.1,steerLag:.05,brakeF:6200,brakeR:2000,deployW:300000,motorTorque:450,capacity:8000000,CdA:.65,ratios:[3.3,2.9,2.5,2.15,1.85,1.59,1.37,1.18],pedalRate:16};}
 function selectGear(c,s){
   if(s.shiftRemaining>0)return s.shiftTarget;
   const omega=Math.max(0,(s.wheels[2].omega+s.wheels[3].omega)/2);

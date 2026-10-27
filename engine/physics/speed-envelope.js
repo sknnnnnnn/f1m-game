@@ -56,3 +56,17 @@ export function approachDemand(profileA,allowedSpeed,actualSpeed,agent,caution=t
  const drive=Math.max(0,agent.personality.exit??6);
  return profileA+(drive-profileA)*hold;
 }
+
+// Solve the braking envelope at its resulting entry speed. Evaluating aero
+// grip at the untouched straight-line cap (e.g. 94 m/s), then assigning a
+// 20 m/s entry, invents high-speed downforce that the slower car does not have.
+export function reachableEntrySpeed(c,agent,tyre,k,limit,exitSpeed,ds,caution,scale=1){
+ let entry=limit;
+ for(let i=0;i<10;i++){
+  const v=Math.max(entry,exitSpeed),budget=brakingBudget(c,agent,tyre,k,v,entry,caution)*scale;
+  const next=Math.min(entry,Math.sqrt(exitSpeed*exitSpeed+2*budget*ds));
+  if(entry-next<.0001){entry=next;break;}
+  entry=next;
+ }
+ return entry;
+}

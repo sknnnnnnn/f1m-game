@@ -1,11 +1,6 @@
-// Speeds supplied by the user, 2026-10-27 (km/h). These are comparison
-// references, not exact apex telemetry or hard limits on the simulated car.
-// Retain their source status; track geometry and physical grip still win.
-export const CORNER_SPEED_REFS=Object.freeze({
- bahrain:Object.freeze({3:211,5:243,6:209,7:228,12:264}),
- suzuka:Object.freeze({1:229,3:234,4:217,5:211,6:184,7:244,8:243,12:224,15:295}),
- shanghai:Object.freeze({4:181,5:286,7:258,8:182})
-});
+// Multi-driver F1 25 median apex speeds (Driver Dojo), supplied 2026-10-27.
+// Comparison references, not official real-world telemetry or hard speed caps.
+export const CORNER_SPEED_REFS=Object.freeze({"bahrain":{"1":69.0,"2":119.0,"3":131.0,"4":111.0,"5":198.0,"6":196.0,"7":196.0,"8":81.0,"9":127.0,"10":74.0,"11":151.0,"12":241.0,"13":138.0,"14":121.0,"15":122.0},"suzuka":{"1":162.0,"2":155.0,"3":209.0,"4":195.0,"5":192.0,"6":164.0,"7":204.0,"8":234.0,"9":136.0,"10":73.0,"11":73.0,"12":225.0,"13":190.0,"14":152.5,"15":295.0,"16":90.0,"17":90.0,"18":94.0},"shanghai":{"1":174.0,"2":90.0,"3":85.0,"4":85.5,"5":271.0,"6":75.0,"7":239.0,"8":156.5,"9":108.5,"10":111.0,"11":84.0,"12":91.0,"13":127.0,"14":63.0,"15":63.0,"16":159.0}});
 const ease=x=>{x=Math.max(0,Math.min(1,x));return x*x*x*(10-15*x+6*x*x);};
 const segments=new WeakMap();
 function trackSegments(track){
@@ -30,7 +25,7 @@ export function cornerSpeedReference(track,station){
  const weight=av?1-ease(ds/Math.max(1,length-35)):ease((ds-35)/Math.max(1,length-35));
  return {turn:av?a.number:a.next,speed:(av??bv)/3.6,weight};
 }
-export function referenceGripDemand(track,station,k,base,c,tyre){
+export function referenceGripDemand(track,station,k,base,c,tyre,caution=0){
  const ref=cornerSpeedReference(track,station);if(!ref)return base;
  const v=ref.speed,aero=.5*c.rho*c.ClA/c.m;
  const needed=Math.abs(k)*v*v/(c.g+aero*v*v);
@@ -38,6 +33,6 @@ export function referenceGripDemand(track,station,k,base,c,tyre){
  // support it. This stays below the validator's .8*mu budget, never adds
  // physical grip, never lowers an already faster safe plan and scales with
  // cold/worn/damaged tyres. Some schematic bends cannot reach the reference.
- const requested=Math.min(.78*c.mu*tyre,needed*1.04*tyre);
+ const requested=Math.min((.78-.14*Math.max(0,Math.min(1,caution)))*c.mu*tyre,needed*1.04*tyre);
  return base+Math.max(0,requested-base)*ref.weight;
 }

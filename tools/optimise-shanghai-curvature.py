@@ -26,7 +26,7 @@ bounds=[]
 for j in range(N):
  mask=np.abs((s-j*L/N+L/2)%L-L/2)<10
  pos=max(0,float(max(k[mask])));neg=max(0,float(max(-k[mask])))
- bounds.append((-min(5.4,.45/neg) if neg else -5.4,min(5.4,.45/pos) if pos else 5.4))
+ bounds.append((-min(4.2,.45/neg) if neg else -4.2,min(4.2,.45/pos) if pos else 4.2))
 x=np.zeros(N);val,g=fn(x)
 for j in [0,120,400,800]:
  xp=x.copy();xm=x.copy();xp[j]+=.0001;xm[j]-=.0001
@@ -34,5 +34,5 @@ for j in [0,120,400,800]:
 warm=json.loads(Path('engine/tracks/shanghai-line.js').read_text().split('export const SHANGHAI_LINE=')[1].rstrip(';\n'));x=np.clip(np.array(warm),np.array(bounds)[:,0],np.array(bounds)[:,1])
 r=minimize(fn,x,jac=True,method='L-BFGS-B',bounds=bounds,options={'maxiter':5000,'ftol':1e-10,'gtol':1e-6,'maxcor':30})
 assert r.fun<val
-Path('engine/tracks/shanghai-line.js').write_text('// Offline curvature-optimised spline on unchanged Shanghai road; max offset 5.4 m.\nexport const SHANGHAI_LINE='+json.dumps(np.round(r.x,7).tolist(),separators=(',',':'))+';\n')
+Path('engine/tracks/shanghai-line.js').write_text('// Offline curvature-optimised spline on unchanged Shanghai road; max offset 4.2 m.\nexport const SHANGHAI_LINE='+json.dumps(np.round(r.x,7).tolist(),separators=(',',':'))+';\n')
 print(dict(initial=val,final=r.fun,iterations=r.nit,converged=bool(r.success),message=str(r.message)))

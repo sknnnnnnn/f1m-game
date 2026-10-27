@@ -1,0 +1,3016 @@
+{
+  "roadViolation": null,
+  "sourceHashes": {
+    "engine/physics/reference-adapter.js": "8d96b6dc8d0a3ee14fa3c4807b471b5e9094e66a8739ecbb029d73e36cc0a332",
+    "engine/tracks/corner-speed-reference.js": "b6381291c50863da3c2c5d77cc850e0005e520431d25ee279eaff31a97f54caf"
+  },
+  "laps": 2,
+  "track": "suzuka",
+  "solo": false,
+  "finished": true,
+  "time": 233.26666666666665,
+  "stop": null,
+  "rejections": 0,
+  "rejectionDetails": [],
+  "boundary": 5.863447534735652,
+  "roadHalfWidth": 7,
+  "retired": [],
+  "finish": [
+    {
+      "id": 1,
+      "time": 218.5866649463227
+    },
+    {
+      "id": 2,
+      "time": 222.06087163611275
+    },
+    {
+      "id": 3,
+      "time": 227.81937872189954
+    },
+    {
+      "id": 4,
+      "time": 224.980508548737
+    },
+    {
+      "id": 5,
+      "time": 233.2653006262229
+    },
+    {
+      "id": 6,
+      "time": 230.4422474334817
+    }
+  ],
+  "brakeApplications": 327,
+  "corners": [
+    {
+      "number": 1,
+      "s": 742.2073771732327,
+      "k": -0.008828040000393998,
+      "refKPH": 162,
+      "cars": {
+        "1": {
+          "samples": 33,
+          "brakeSamples": 0,
+          "throttleSum": 1.4644151805941474,
+          "minKPH": 148.7930835464435,
+          "maxKPH": 164.8227038303969,
+          "apexDistance": 0.05210140142344244,
+          "atMarkerKPH": 162.0791345210457,
+          "brakePct": 0,
+          "meanThrottle": 0.04437621759376204
+        },
+        "2": {
+          "samples": 34,
+          "brakeSamples": 11,
+          "throttleSum": 2.079006369301747,
+          "minKPH": 146.1186723496046,
+          "maxKPH": 164.24728385796047,
+          "apexDistance": 0.9419165168651489,
+          "atMarkerKPH": 149.91715042476778,
+          "brakePct": 32.35294117647059,
+          "meanThrottle": 0.06114724615593374
+        },
+        "3": {
+          "samples": 35,
+          "brakeSamples": 18,
+          "throttleSum": 0.6515612973350435,
+          "minKPH": 132.86836606813077,
+          "maxKPH": 167.32559045488782,
+          "apexDistance": 0.4778338203891508,
+          "atMarkerKPH": 150.65220485593844,
+          "brakePct": 51.42857142857143,
+          "meanThrottle": 0.01861603706671553
+        },
+        "4": {
+          "samples": 33,
+          "brakeSamples": 20,
+          "throttleSum": 0.7589833888040517,
+          "minKPH": 135.84140523245566,
+          "maxKPH": 172.23381164256412,
+          "apexDistance": 0.5917304171084652,
+          "atMarkerKPH": 152.19311570615378,
+          "brakePct": 60.60606060606061,
+          "meanThrottle": 0.02299949663042581
+        },
+        "5": {
+          "samples": 35,
+          "brakeSamples": 16,
+          "throttleSum": 1.7392957570942107,
+          "minKPH": 128.91454126913925,
+          "maxKPH": 160.51718963983618,
+          "apexDistance": 0.32571733420491,
+          "atMarkerKPH": 138.1721981810892,
+          "brakePct": 45.714285714285715,
+          "meanThrottle": 0.04969416448840602
+        },
+        "6": {
+          "samples": 34,
+          "brakeSamples": 14,
+          "throttleSum": 2.3683285010844126,
+          "minKPH": 136.96242803037126,
+          "maxKPH": 159.62761113512528,
+          "apexDistance": 0.7020702320228338,
+          "atMarkerKPH": 148.10085050087784,
+          "brakePct": 41.1764705882353,
+          "meanThrottle": 0.06965672062012979
+        }
+      }
+    },
+    {
+      "number": 2,
+      "s": 831.1270873969206,
+      "k": -0.0190887199997337,
+      "refKPH": 155,
+      "cars": {
+        "1": {
+          "samples": 33,
+          "brakeSamples": 0,
+          "throttleSum": 6.755879213515021,
+          "minKPH": 143.52801620482464,
+          "maxKPH": 154.02874446050188,
+          "apexDistance": 0.5986642085103995,
+          "atMarkerKPH": 143.54003477737282,
+          "brakePct": 0,
+          "meanThrottle": 0.20472361253075821
+        },
+        "2": {
+          "samples": 39,
+          "brakeSamples": 16,
+          "throttleSum": 11.029865972542597,
+          "minKPH": 117.3506338797931,
+          "maxKPH": 144.21565536699967,
+          "apexDistance": 0.2056487813883905,
+          "atMarkerKPH": 127.43248824570102,
+          "brakePct": 41.02564102564103,
+          "meanThrottle": 0.28281707621904095
+        },
+        "3": {
+          "samples": 41,
+          "brakeSamples": 21,
+          "throttleSum": 11.444342597946472,
+          "minKPH": 114.57922856064607,
+          "maxKPH": 142.47186883021976,
+          "apexDistance": 0.2572643542421247,
+          "atMarkerKPH": 116.81252519085002,
+          "brakePct": 51.21951219512195,
+          "meanThrottle": 0.2791303072669871
+        },
+        "4": {
+          "samples": 40,
+          "brakeSamples": 20,
+          "throttleSum": 9.10110638189546,
+          "minKPH": 106.5580622917709,
+          "maxKPH": 141.12566534589325,
+          "apexDistance": 0.21917055776839334,
+          "atMarkerKPH": 123.32863329373599,
+          "brakePct": 50,
+          "meanThrottle": 0.22752765954738652
+        },
+        "5": {
+          "samples": 41,
+          "brakeSamples": 14,
+          "throttleSum": 10.905889358594077,
+          "minKPH": 114.2612313369429,
+          "maxKPH": 141.1104591344995,
+          "apexDistance": 0.4039388380647324,
+          "atMarkerKPH": 115.48464214003626,
+          "brakePct": 34.146341463414636,
+          "meanThrottle": 0.2659973014291238
+        },
+        "6": {
+          "samples": 41,
+          "brakeSamples": 22,
+          "throttleSum": 8.765346647383641,
+          "minKPH": 104.50201776932145,
+          "maxKPH": 143.18987480207366,
+          "apexDistance": 0.34551899212465287,
+          "atMarkerKPH": 111.36377197059426,
+          "brakePct": 53.65853658536585,
+          "meanThrottle": 0.2137889426191132
+        }
+      }
+    },
+    {
+      "number": 3,
+      "s": 1079.7393384304974,
+      "k": 0.008755440000008457,
+      "refKPH": 209,
+      "cars": {
+        "1": {
+          "samples": 25,
+          "brakeSamples": 0,
+          "throttleSum": 11.870396009713627,
+          "minKPH": 186.76252900213075,
+          "maxKPH": 204.25379252696595,
+          "apexDistance": 0.7441751706405739,
+          "atMarkerKPH": 203.87405313257997,
+          "brakePct": 0,
+          "meanThrottle": 0.4748158403885451
+        },
+        "2": {
+          "samples": 24,
+          "brakeSamples": 0,
+          "throttleSum": 9.762753847622417,
+          "minKPH": 188.28586294888228,
+          "maxKPH": 202.2768754915542,
+          "apexDistance": 2.399955531731848,
+          "atMarkerKPH": 190.39952147909815,
+          "brakePct": 0,
+          "meanThrottle": 0.4067814103176007
+        },
+        "3": {
+          "samples": 26,
+          "brakeSamples": 9,
+          "throttleSum": 3.583865909891585,
+          "minKPH": 179.75484274759154,
+          "maxKPH": 197.65247081784707,
+          "apexDistance": 0.10215791876862568,
+          "atMarkerKPH": 189.06897447403216,
+          "brakePct": 34.61538461538461,
+          "meanThrottle": 0.13784099653429174
+        },
+        "4": {
+          "samples": 26,
+          "brakeSamples": 3,
+          "throttleSum": 7.239744881417517,
+          "minKPH": 187.33999971396415,
+          "maxKPH": 202.08889447422015,
+          "apexDistance": 4.979483492206782e-10,
+          "atMarkerKPH": 198.93434762766705,
+          "brakePct": 11.538461538461538,
+          "meanThrottle": 0.278451726208366
+        },
+        "5": {
+          "samples": 28,
+          "brakeSamples": 8,
+          "throttleSum": 5.799223500503192,
+          "minKPH": 158.81707217680977,
+          "maxKPH": 188.9262079648335,
+          "apexDistance": 0.08546908522066587,
+          "atMarkerKPH": 162.7817702237261,
+          "brakePct": 28.571428571428573,
+          "meanThrottle": 0.20711512501797116
+        },
+        "6": {
+          "samples": 27,
+          "brakeSamples": 3,
+          "throttleSum": 8.03926876336446,
+          "minKPH": 169.35896778098873,
+          "maxKPH": 189.11485769266093,
+          "apexDistance": 0.6972892953094743,
+          "atMarkerKPH": 189.08398646600978,
+          "brakePct": 11.11111111111111,
+          "meanThrottle": 0.2977506949394244
+        }
+      }
+    },
+    {
+      "number": 4,
+      "s": 1210.3968718204062,
+      "k": -0.010275289999990321,
+      "refKPH": 195,
+      "cars": {
+        "1": {
+          "samples": 27,
+          "brakeSamples": 6,
+          "throttleSum": 6.528201565780453,
+          "minKPH": 179.65848734370397,
+          "maxKPH": 202.64172581542303,
+          "apexDistance": 0.5723547863167369,
+          "atMarkerKPH": 192.28812808107892,
+          "brakePct": 22.22222222222222,
+          "meanThrottle": 0.2417852431770538
+        },
+        "2": {
+          "samples": 25,
+          "brakeSamples": 4,
+          "throttleSum": 6.035477226745611,
+          "minKPH": 179.72383051550494,
+          "maxKPH": 196.61863230361223,
+          "apexDistance": 0.2168701400082682,
+          "atMarkerKPH": 180.17753586788774,
+          "brakePct": 16,
+          "meanThrottle": 0.24141908906982443
+        },
+        "3": {
+          "samples": 29,
+          "brakeSamples": 18,
+          "throttleSum": 3.322253180267322,
+          "minKPH": 149.45873276470624,
+          "maxKPH": 186.88460371590332,
+          "apexDistance": 1.8912668763409783,
+          "atMarkerKPH": 178.2146136901714,
+          "brakePct": 62.06896551724138,
+          "meanThrottle": 0.11456045449197662
+        },
+        "4": {
+          "samples": 29,
+          "brakeSamples": 18,
+          "throttleSum": 2.8298807437102798,
+          "minKPH": 148.9766551903387,
+          "maxKPH": 191.23264078270898,
+          "apexDistance": 1.303301501615806,
+          "atMarkerKPH": 179.25250048722697,
+          "brakePct": 62.06896551724138,
+          "meanThrottle": 0.0975820946106993
+        },
+        "5": {
+          "samples": 29,
+          "brakeSamples": 9,
+          "throttleSum": 3.835068095203542,
+          "minKPH": 144.03311994651287,
+          "maxKPH": 187.84098091958268,
+          "apexDistance": 0.7823412044122051,
+          "atMarkerKPH": 179.25156762007376,
+          "brakePct": 31.03448275862069,
+          "meanThrottle": 0.1322437274208118
+        },
+        "6": {
+          "samples": 29,
+          "brakeSamples": 16,
+          "throttleSum": 2.630047064443177,
+          "minKPH": 143.9153778031357,
+          "maxKPH": 188.97009868864848,
+          "apexDistance": 1.4397289524317785,
+          "atMarkerKPH": 155.44009062039714,
+          "brakePct": 55.172413793103445,
+          "meanThrottle": 0.09069127808424747
+        }
+      }
+    },
+    {
+      "number": 5,
+      "s": 1382.792228376536,
+      "k": 0.011933319999376628,
+      "refKPH": 192,
+      "cars": {
+        "1": {
+          "samples": 26,
+          "brakeSamples": 4,
+          "throttleSum": 9.577563264486047,
+          "minKPH": 171.31990637576726,
+          "maxKPH": 188.86868312568828,
+          "apexDistance": 0.15261900800078365,
+          "atMarkerKPH": 174.1967249538293,
+          "brakePct": 15.384615384615385,
+          "meanThrottle": 0.36836781786484796
+        },
+        "2": {
+          "samples": 27,
+          "brakeSamples": 6,
+          "throttleSum": 9.19679497995907,
+          "minKPH": 171.27292029681578,
+          "maxKPH": 187.83119834153,
+          "apexDistance": 0.14835599836214897,
+          "atMarkerKPH": 183.1657347092684,
+          "brakePct": 22.22222222222222,
+          "meanThrottle": 0.34062203629478033
+        },
+        "3": {
+          "samples": 31,
+          "brakeSamples": 12,
+          "throttleSum": 8.479416427180466,
+          "minKPH": 134.18228121217103,
+          "maxKPH": 176.40578593234926,
+          "apexDistance": 0.6442374692155681,
+          "atMarkerKPH": 135.39385093088907,
+          "brakePct": 38.70967741935484,
+          "meanThrottle": 0.2735295621671118
+        },
+        "4": {
+          "samples": 30,
+          "brakeSamples": 14,
+          "throttleSum": 7.578531456869369,
+          "minKPH": 145.12447120117002,
+          "maxKPH": 179.40338563706908,
+          "apexDistance": 0.30399864981018254,
+          "atMarkerKPH": 154.45707480723297,
+          "brakePct": 46.666666666666664,
+          "meanThrottle": 0.25261771522897897
+        },
+        "5": {
+          "samples": 31,
+          "brakeSamples": 8,
+          "throttleSum": 9.097591432279202,
+          "minKPH": 135.87827048450598,
+          "maxKPH": 177.72475238439685,
+          "apexDistance": 2.024588806151314,
+          "atMarkerKPH": 171.98304570546063,
+          "brakePct": 25.806451612903224,
+          "meanThrottle": 0.29347069136384524
+        },
+        "6": {
+          "samples": 31,
+          "brakeSamples": 6,
+          "throttleSum": 7.6194682059320185,
+          "minKPH": 134.77211155111473,
+          "maxKPH": 177.93395310000315,
+          "apexDistance": 0.4461230599031296,
+          "atMarkerKPH": 140.385991768478,
+          "brakePct": 19.35483870967742,
+          "meanThrottle": 0.245789296965549
+        }
+      }
+    },
+    {
+      "number": 6,
+      "s": 1595.1107201351379,
+      "k": -0.010863450000018433,
+      "refKPH": 164,
+      "cars": {
+        "1": {
+          "samples": 30,
+          "brakeSamples": 0,
+          "throttleSum": 7.063058791371556,
+          "minKPH": 153.78124429788807,
+          "maxKPH": 163.8110839311234,
+          "apexDistance": 0.27983809515762914,
+          "atMarkerKPH": 162.51647044754677,
+          "brakePct": 0,
+          "meanThrottle": 0.23543529304571853
+        },
+        "2": {
+          "samples": 31,
+          "brakeSamples": 0,
+          "throttleSum": 11.494302941062477,
+          "minKPH": 149.2349008287249,
+          "maxKPH": 162.76332950388894,
+          "apexDistance": 0.6132564883650957,
+          "atMarkerKPH": 160.06785132976074,
+          "brakePct": 0,
+          "meanThrottle": 0.3707839658407251
+        },
+        "3": {
+          "samples": 35,
+          "brakeSamples": 1,
+          "throttleSum": 10.358078135836271,
+          "minKPH": 122.0896121631074,
+          "maxKPH": 154.07555892252216,
+          "apexDistance": 0.7202039435746883,
+          "atMarkerKPH": 130.08726589326727,
+          "brakePct": 2.857142857142857,
+          "meanThrottle": 0.295945089595322
+        },
+        "4": {
+          "samples": 32,
+          "brakeSamples": 0,
+          "throttleSum": 14.297230245414257,
+          "minKPH": 135.77900506052305,
+          "maxKPH": 159.61854484151294,
+          "apexDistance": 1.4523873889415881,
+          "atMarkerKPH": 153.5439520511418,
+          "brakePct": 0,
+          "meanThrottle": 0.4467884451691955
+        },
+        "5": {
+          "samples": 32,
+          "brakeSamples": 0,
+          "throttleSum": 15.071734044684694,
+          "minKPH": 131.67025624038288,
+          "maxKPH": 156.58020096203003,
+          "apexDistance": 0.4243887360721601,
+          "atMarkerKPH": 153.21308714709699,
+          "brakePct": 0,
+          "meanThrottle": 0.4709916888963967
+        },
+        "6": {
+          "samples": 34,
+          "brakeSamples": 0,
+          "throttleSum": 17.576628885079703,
+          "minKPH": 121.77638933890488,
+          "maxKPH": 153.68803201128412,
+          "apexDistance": 0.5657038059703154,
+          "atMarkerKPH": 152.11671573455942,
+          "brakePct": 0,
+          "meanThrottle": 0.5169596730905796
+        }
+      }
+    },
+    {
+      "number": 7,
+      "s": 1754.8032609450268,
+      "k": 0.009574360000328313,
+      "refKPH": 204,
+      "cars": {
+        "1": {
+          "samples": 25,
+          "brakeSamples": 0,
+          "throttleSum": 17.530025704821277,
+          "minKPH": 182.28263430177583,
+          "maxKPH": 201.30585210843392,
+          "apexDistance": 0.12198902533555156,
+          "atMarkerKPH": 187.96943140694256,
+          "brakePct": 0,
+          "meanThrottle": 0.7012010281928511
+        },
+        "2": {
+          "samples": 25,
+          "brakeSamples": 0,
+          "throttleSum": 16.594007704062058,
+          "minKPH": 183.30661667329477,
+          "maxKPH": 200.5293051935198,
+          "apexDistance": 1.8342210516507294,
+          "atMarkerKPH": 197.83954079713845,
+          "brakePct": 0,
+          "meanThrottle": 0.6637603081624823
+        },
+        "3": {
+          "samples": 29,
+          "brakeSamples": 1,
+          "throttleSum": 19.644244098965192,
+          "minKPH": 154.4496788113088,
+          "maxKPH": 189.14908164904702,
+          "apexDistance": 1.3527580861259594,
+          "atMarkerKPH": 162.28607874129182,
+          "brakePct": 3.4482758620689653,
+          "meanThrottle": 0.6773877275505239
+        },
+        "4": {
+          "samples": 26,
+          "brakeSamples": 0,
+          "throttleSum": 16.563181424162366,
+          "minKPH": 182.47670588431973,
+          "maxKPH": 197.71660309185668,
+          "apexDistance": 4.973571776645258e-9,
+          "atMarkerKPH": 188.07782523666535,
+          "brakePct": 0,
+          "meanThrottle": 0.6370454393908602
+        },
+        "5": {
+          "samples": 29,
+          "brakeSamples": 0,
+          "throttleSum": 21.87194211803561,
+          "minKPH": 155.15775599867558,
+          "maxKPH": 188.86556310127844,
+          "apexDistance": 1.3208364236993475,
+          "atMarkerKPH": 168.0874536458337,
+          "brakePct": 0,
+          "meanThrottle": 0.7542049006219176
+        },
+        "6": {
+          "samples": 27,
+          "brakeSamples": 2,
+          "throttleSum": 18.48879474276292,
+          "minKPH": 163.65662700399437,
+          "maxKPH": 188.74722356254236,
+          "apexDistance": 0.395521190369891,
+          "atMarkerKPH": 187.1889682818259,
+          "brakePct": 7.407407407407407,
+          "meanThrottle": 0.6847701756578859
+        }
+      }
+    },
+    {
+      "number": 8,
+      "s": 2271.9893306134163,
+      "k": -0.005729450000260152,
+      "refKPH": 234,
+      "cars": {
+        "1": {
+          "samples": 21,
+          "brakeSamples": 16,
+          "throttleSum": 1.25,
+          "minKPH": 209.47597317485565,
+          "maxKPH": 258.4590390406799,
+          "apexDistance": 1.6198350933877919,
+          "atMarkerKPH": 238.3787796410603,
+          "brakePct": 76.19047619047619,
+          "meanThrottle": 0.05952380952380952
+        },
+        "2": {
+          "samples": 21,
+          "brakeSamples": 17,
+          "throttleSum": 1.0759339578715263,
+          "minKPH": 207.79236955421067,
+          "maxKPH": 267.3977972648788,
+          "apexDistance": 0.18960051148269486,
+          "atMarkerKPH": 236.4889707036821,
+          "brakePct": 80.95238095238095,
+          "meanThrottle": 0.05123495037483459
+        },
+        "3": {
+          "samples": 22,
+          "brakeSamples": 19,
+          "throttleSum": 1.0180751173365805,
+          "minKPH": 203.69663662315276,
+          "maxKPH": 251.06761889396452,
+          "apexDistance": 1.6567814190043464,
+          "atMarkerKPH": 221.77180108519798,
+          "brakePct": 86.36363636363636,
+          "meanThrottle": 0.046276141697117294
+        },
+        "4": {
+          "samples": 22,
+          "brakeSamples": 16,
+          "throttleSum": 2.154460300310008,
+          "minKPH": 205.95861766123784,
+          "maxKPH": 262.1335592685225,
+          "apexDistance": 0.3527785617193331,
+          "atMarkerKPH": 231.6563032250176,
+          "brakePct": 72.72727272727273,
+          "meanThrottle": 0.0979300136504549
+        },
+        "5": {
+          "samples": 23,
+          "brakeSamples": 15,
+          "throttleSum": 1.1829524566625824,
+          "minKPH": 202.99330054734637,
+          "maxKPH": 250.4385499547333,
+          "apexDistance": 0.5906666523601416,
+          "atMarkerKPH": 223.52848866660221,
+          "brakePct": 65.21739130434783,
+          "meanThrottle": 0.0514327155070688
+        },
+        "6": {
+          "samples": 22,
+          "brakeSamples": 15,
+          "throttleSum": 2.833333333333333,
+          "minKPH": 207.52697826931004,
+          "maxKPH": 249.40355229236985,
+          "apexDistance": 1.5854607604273951,
+          "atMarkerKPH": 210.8736280670524,
+          "brakePct": 68.18181818181819,
+          "meanThrottle": 0.12878787878787878
+        }
+      }
+    },
+    {
+      "number": 9,
+      "s": 2448.0140630970436,
+      "k": -0.025719269998236777,
+      "refKPH": 136,
+      "cars": {
+        "1": {
+          "samples": 36,
+          "brakeSamples": 7,
+          "throttleSum": 1.045742849824832,
+          "minKPH": 129.43194722898565,
+          "maxKPH": 144.4385086097062,
+          "apexDistance": 0.8370799569061091,
+          "atMarkerKPH": 137.1383611091459,
+          "brakePct": 19.444444444444443,
+          "meanThrottle": 0.02904841249513422
+        },
+        "2": {
+          "samples": 37,
+          "brakeSamples": 10,
+          "throttleSum": 1.8537412977069407,
+          "minKPH": 125.77827194230983,
+          "maxKPH": 143.8734683541388,
+          "apexDistance": 2.9563125281129032e-9,
+          "atMarkerKPH": 132.55825528765553,
+          "brakePct": 27.027027027027028,
+          "meanThrottle": 0.05010111615424164
+        },
+        "3": {
+          "samples": 40,
+          "brakeSamples": 18,
+          "throttleSum": 5.27876636693637,
+          "minKPH": 110.04943978742817,
+          "maxKPH": 149.63777224309348,
+          "apexDistance": 2.9563125281129032e-9,
+          "atMarkerKPH": 114.88549940414828,
+          "brakePct": 45,
+          "meanThrottle": 0.13196915917340926
+        },
+        "4": {
+          "samples": 36,
+          "brakeSamples": 9,
+          "throttleSum": 0.5758571362497484,
+          "minKPH": 129.52416249960766,
+          "maxKPH": 143.29123958739314,
+          "apexDistance": 1.165624945737818,
+          "atMarkerKPH": 131.43162024685876,
+          "brakePct": 25,
+          "meanThrottle": 0.01599603156249301
+        },
+        "5": {
+          "samples": 39,
+          "brakeSamples": 12,
+          "throttleSum": 7.719293585620978,
+          "minKPH": 101.41848262179234,
+          "maxKPH": 136.6173744736947,
+          "apexDistance": 0.823225183314662,
+          "atMarkerKPH": 101.81421813175528,
+          "brakePct": 30.76923076923077,
+          "meanThrottle": 0.19793060475951224
+        },
+        "6": {
+          "samples": 40,
+          "brakeSamples": 17,
+          "throttleSum": 6.817061335717067,
+          "minKPH": 99.9799430232826,
+          "maxKPH": 139.14378234029957,
+          "apexDistance": 1.0698001521373044,
+          "atMarkerKPH": 128.2578306377309,
+          "brakePct": 42.5,
+          "meanThrottle": 0.17042653339292668
+        }
+      }
+    },
+    {
+      "number": 10,
+      "s": 2881.7244864329914,
+      "k": 0.01423160000517677,
+      "refKPH": 73,
+      "cars": {
+        "1": {
+          "samples": 59,
+          "brakeSamples": 27,
+          "throttleSum": 0,
+          "minKPH": 70.13583501704797,
+          "maxKPH": 124.97778688427456,
+          "apexDistance": 2.9917828214820474e-9,
+          "atMarkerKPH": 80.34148004783282,
+          "brakePct": 45.76271186440678,
+          "meanThrottle": 0
+        },
+        "2": {
+          "samples": 62,
+          "brakeSamples": 30,
+          "throttleSum": 1.0272541446953576,
+          "minKPH": 67.59016114353801,
+          "maxKPH": 127.13952958713301,
+          "apexDistance": 0.17431119605362255,
+          "atMarkerKPH": 83.71074548454152,
+          "brakePct": 48.38709677419355,
+          "meanThrottle": 0.016568615237021897
+        },
+        "3": {
+          "samples": 65,
+          "brakeSamples": 43,
+          "throttleSum": 0.2891746876912466,
+          "minKPH": 62.97137863202711,
+          "maxKPH": 114.04776931527816,
+          "apexDistance": 0.24306525005204094,
+          "atMarkerKPH": 78.66711918854183,
+          "brakePct": 66.15384615384616,
+          "meanThrottle": 0.004448841349096101
+        },
+        "4": {
+          "samples": 62,
+          "brakeSamples": 31,
+          "throttleSum": 0.4682052020662496,
+          "minKPH": 67.61322048102224,
+          "maxKPH": 124.77737153404391,
+          "apexDistance": 0.12844719410031757,
+          "atMarkerKPH": 73.35650256340335,
+          "brakePct": 50,
+          "meanThrottle": 0.007551696807520155
+        },
+        "5": {
+          "samples": 64,
+          "brakeSamples": 33,
+          "throttleSum": 0.6560357742199697,
+          "minKPH": 63.01263578762075,
+          "maxKPH": 113.12583674848946,
+          "apexDistance": 2.9917828214820474e-9,
+          "atMarkerKPH": 74.67335612384375,
+          "brakePct": 51.5625,
+          "meanThrottle": 0.010250558972187027
+        },
+        "6": {
+          "samples": 64,
+          "brakeSamples": 41,
+          "throttleSum": 0.7271153167772535,
+          "minKPH": 56.777298967404406,
+          "maxKPH": 109.17067412842135,
+          "apexDistance": 2.9917828214820474e-9,
+          "atMarkerKPH": 75.90911415439851,
+          "brakePct": 64.0625,
+          "meanThrottle": 0.011361176824644586
+        }
+      }
+    },
+    {
+      "number": 11,
+      "s": 2912.57418181672,
+      "k": 0.04870685000024174,
+      "refKPH": 73,
+      "cars": {
+        "1": {
+          "samples": 65,
+          "brakeSamples": 4,
+          "throttleSum": 1.1230962835238176,
+          "minKPH": 69.0977754886131,
+          "maxKPH": 81.2172361530758,
+          "apexDistance": 3.2800926419440657e-9,
+          "atMarkerKPH": 72.99464412655043,
+          "brakePct": 6.153846153846154,
+          "meanThrottle": 0.017278404361904885
+        },
+        "2": {
+          "samples": 72,
+          "brakeSamples": 9,
+          "throttleSum": 2.513636956199012,
+          "minKPH": 67.58051093806088,
+          "maxKPH": 88.10089084926703,
+          "apexDistance": 0.29738688017050663,
+          "atMarkerKPH": 69.58534812701255,
+          "brakePct": 12.5,
+          "meanThrottle": 0.03491162439165294
+        },
+        "3": {
+          "samples": 76,
+          "brakeSamples": 21,
+          "throttleSum": 4.230496840496596,
+          "minKPH": 62.97137863202711,
+          "maxKPH": 89.02044479272699,
+          "apexDistance": 3.2800926419440657e-9,
+          "atMarkerKPH": 67.54956760651129,
+          "brakePct": 27.63157894736842,
+          "meanThrottle": 0.05566443211179732
+        },
+        "4": {
+          "samples": 74,
+          "brakeSamples": 10,
+          "throttleSum": 2.7374182219707968,
+          "minKPH": 67.53980464383085,
+          "maxKPH": 88.59118535392467,
+          "apexDistance": 3.2800926419440657e-9,
+          "atMarkerKPH": 69.04369972891818,
+          "brakePct": 13.513513513513514,
+          "meanThrottle": 0.0369921381347405
+        },
+        "5": {
+          "samples": 73,
+          "brakeSamples": 16,
+          "throttleSum": 4.04584813605934,
+          "minKPH": 63.01263578762075,
+          "maxKPH": 81.84484785582684,
+          "apexDistance": 3.2800926419440657e-9,
+          "atMarkerKPH": 63.01646586174882,
+          "brakePct": 21.91780821917808,
+          "meanThrottle": 0.05542257720629233
+        },
+        "6": {
+          "samples": 71,
+          "brakeSamples": 19,
+          "throttleSum": 5.864429309786438,
+          "minKPH": 56.777298967404406,
+          "maxKPH": 86.94161186257415,
+          "apexDistance": 3.2800926419440657e-9,
+          "atMarkerKPH": 56.791629493411946,
+          "brakePct": 26.760563380281692,
+          "meanThrottle": 0.08259759591248504
+        }
+      }
+    },
+    {
+      "number": 12,
+      "s": 3190.2214402702757,
+      "k": -0.004860339999996319,
+      "refKPH": 225,
+      "cars": {
+        "1": {
+          "samples": 24,
+          "brakeSamples": 0,
+          "throttleSum": 22.342916198950068,
+          "minKPH": 199.9199847506415,
+          "maxKPH": 219.7058686819592,
+          "apexDistance": 1.5881144322988803,
+          "atMarkerKPH": 204.43230519829936,
+          "brakePct": 0,
+          "meanThrottle": 0.9309548416229195
+        },
+        "2": {
+          "samples": 25,
+          "brakeSamples": 0,
+          "throttleSum": 22.774990355398685,
+          "minKPH": 198.76130750997464,
+          "maxKPH": 219.98407781481222,
+          "apexDistance": 0.32305969760227526,
+          "atMarkerKPH": 204.33255404652326,
+          "brakePct": 0,
+          "meanThrottle": 0.9109996142159474
+        },
+        "3": {
+          "samples": 23,
+          "brakeSamples": 0,
+          "throttleSum": 20.73133837730004,
+          "minKPH": 197.6466058530548,
+          "maxKPH": 215.33761756077558,
+          "apexDistance": 0.3113791457449224,
+          "atMarkerKPH": 208.48721134992977,
+          "brakePct": 0,
+          "meanThrottle": 0.90136253814348
+        },
+        "4": {
+          "samples": 23,
+          "brakeSamples": 0,
+          "throttleSum": 20.8308663558958,
+          "minKPH": 198.74304213340906,
+          "maxKPH": 217.8893186024676,
+          "apexDistance": 0.12142573567189174,
+          "atMarkerKPH": 210.79607646015833,
+          "brakePct": 0,
+          "meanThrottle": 0.905689841560687
+        },
+        "5": {
+          "samples": 24,
+          "brakeSamples": 0,
+          "throttleSum": 19.698499963055173,
+          "minKPH": 198.13991177979815,
+          "maxKPH": 211.50027966881794,
+          "apexDistance": 1.1080513961046563,
+          "atMarkerKPH": 207.04596400215013,
+          "brakePct": 0,
+          "meanThrottle": 0.8207708317939656
+        },
+        "6": {
+          "samples": 24,
+          "brakeSamples": 0,
+          "throttleSum": 16.877604993907212,
+          "minKPH": 198.24484636310942,
+          "maxKPH": 211.65144270514588,
+          "apexDistance": 1.4886092250703769,
+          "atMarkerKPH": 203.0048925761199,
+          "brakePct": 0,
+          "meanThrottle": 0.7032335414128005
+        }
+      }
+    },
+    {
+      "number": 13,
+      "s": 3810.844723872344,
+      "k": 0.010744829999850459,
+      "refKPH": 190,
+      "cars": {
+        "1": {
+          "samples": 28,
+          "brakeSamples": 1,
+          "throttleSum": 3.760278067375087,
+          "minKPH": 172.53807950348366,
+          "maxKPH": 183.09183012599235,
+          "apexDistance": 0.3170055140358272,
+          "atMarkerKPH": 182.2288869256195,
+          "brakePct": 3.5714285714285716,
+          "meanThrottle": 0.13429564526339596
+        },
+        "2": {
+          "samples": 28,
+          "brakeSamples": 1,
+          "throttleSum": 3.671324571030896,
+          "minKPH": 171.51414583416445,
+          "maxKPH": 182.52640793155874,
+          "apexDistance": 1.9005482819425197,
+          "atMarkerKPH": 181.4682104599859,
+          "brakePct": 3.5714285714285716,
+          "meanThrottle": 0.13111873467967486
+        },
+        "3": {
+          "samples": 29,
+          "brakeSamples": 1,
+          "throttleSum": 3.933510412202393,
+          "minKPH": 170.95621672806672,
+          "maxKPH": 180.72104612283977,
+          "apexDistance": 0.688325680788239,
+          "atMarkerKPH": 175.56883878319022,
+          "brakePct": 3.4482758620689653,
+          "meanThrottle": 0.13563829007594458
+        },
+        "4": {
+          "samples": 29,
+          "brakeSamples": 1,
+          "throttleSum": 3.621746501972617,
+          "minKPH": 171.25438433920493,
+          "maxKPH": 180.1759037632869,
+          "apexDistance": 1.0376428251488505,
+          "atMarkerKPH": 175.63709916661537,
+          "brakePct": 3.4482758620689653,
+          "meanThrottle": 0.12488781041284887
+        },
+        "5": {
+          "samples": 29,
+          "brakeSamples": 11,
+          "throttleSum": 3.5521563381181998,
+          "minKPH": 170.724103941785,
+          "maxKPH": 188.2879440470945,
+          "apexDistance": 0.30744727602223065,
+          "atMarkerKPH": 175.96379200278645,
+          "brakePct": 37.93103448275862,
+          "meanThrottle": 0.12248814959028274
+        },
+        "6": {
+          "samples": 29,
+          "brakeSamples": 2,
+          "throttleSum": 0.8233964830927774,
+          "minKPH": 169.86304688297074,
+          "maxKPH": 184.63032081546996,
+          "apexDistance": 1.0670390619275167,
+          "atMarkerKPH": 175.89289178848915,
+          "brakePct": 6.896551724137931,
+          "meanThrottle": 0.02839298217561301
+        }
+      }
+    },
+    {
+      "number": 14,
+      "s": 3945.1316331897497,
+      "k": 0.01377857999998343,
+      "refKPH": 152.5,
+      "cars": {
+        "1": {
+          "samples": 36,
+          "brakeSamples": 0,
+          "throttleSum": 4.061037919732131,
+          "minKPH": 142.42550559862565,
+          "maxKPH": 151.49362291454048,
+          "apexDistance": 0.39075302530591216,
+          "atMarkerKPH": 143.0082878332232,
+          "brakePct": 0,
+          "meanThrottle": 0.11280660888144808
+        },
+        "2": {
+          "samples": 35,
+          "brakeSamples": 0,
+          "throttleSum": 4.140740539753043,
+          "minKPH": 141.96222234973428,
+          "maxKPH": 149.4757795417395,
+          "apexDistance": 0.8631600521416658,
+          "atMarkerKPH": 142.5036550617428,
+          "brakePct": 0,
+          "meanThrottle": 0.11830687256437267
+        },
+        "3": {
+          "samples": 37,
+          "brakeSamples": 0,
+          "throttleSum": 4.452362027170997,
+          "minKPH": 141.6981863935556,
+          "maxKPH": 149.3619348433726,
+          "apexDistance": 2.496562956366688e-10,
+          "atMarkerKPH": 142.1659706113551,
+          "brakePct": 0,
+          "meanThrottle": 0.12033410884245938
+        },
+        "4": {
+          "samples": 37,
+          "brakeSamples": 0,
+          "throttleSum": 4.568029433437467,
+          "minKPH": 141.8928316176703,
+          "maxKPH": 148.03286085441533,
+          "apexDistance": 2.496562956366688e-10,
+          "atMarkerKPH": 141.91710669025824,
+          "brakePct": 0,
+          "meanThrottle": 0.12346025495776938
+        },
+        "5": {
+          "samples": 35,
+          "brakeSamples": 3,
+          "throttleSum": 4.490777570494665,
+          "minKPH": 141.22670525627944,
+          "maxKPH": 146.7927551906407,
+          "apexDistance": 1.2915176058454563,
+          "atMarkerKPH": 142.04985662131156,
+          "brakePct": 8.571428571428571,
+          "meanThrottle": 0.12830793058556186
+        },
+        "6": {
+          "samples": 37,
+          "brakeSamples": 3,
+          "throttleSum": 5.619148014314925,
+          "minKPH": 136.85597458802266,
+          "maxKPH": 145.80313851226117,
+          "apexDistance": 2.496562956366688e-10,
+          "atMarkerKPH": 141.6234424340619,
+          "brakePct": 8.108108108108109,
+          "meanThrottle": 0.15186886525175475
+        }
+      }
+    },
+    {
+      "number": 15,
+      "s": 4961.356892889042,
+      "k": 0.004975959999992639,
+      "refKPH": 295,
+      "cars": {
+        "1": {
+          "samples": 19,
+          "brakeSamples": 6,
+          "throttleSum": 7.725165922749656,
+          "minKPH": 252.00374466727135,
+          "maxKPH": 280.3540750568927,
+          "apexDistance": 0.18334581782755777,
+          "atMarkerKPH": 252.09878051814152,
+          "brakePct": 31.57894736842105,
+          "meanThrottle": 0.40658768014471874
+        },
+        "2": {
+          "samples": 19,
+          "brakeSamples": 7,
+          "throttleSum": 7.697966409833907,
+          "minKPH": 252.60633785544286,
+          "maxKPH": 280.7558568100079,
+          "apexDistance": 0.007274710771980608,
+          "atMarkerKPH": 252.60633785544286,
+          "brakePct": 36.8421052631579,
+          "meanThrottle": 0.40515612683336355
+        },
+        "3": {
+          "samples": 20,
+          "brakeSamples": 8,
+          "throttleSum": 7.3157646249614725,
+          "minKPH": 253.45940109067257,
+          "maxKPH": 279.7483825382107,
+          "apexDistance": 2.177396576495539,
+          "atMarkerKPH": 253.45940109067257,
+          "brakePct": 40,
+          "meanThrottle": 0.36578823124807364
+        },
+        "4": {
+          "samples": 20,
+          "brakeSamples": 8,
+          "throttleSum": 7.360497182132262,
+          "minKPH": 252.71647132946538,
+          "maxKPH": 280.33487720648753,
+          "apexDistance": 2.9916686254432534,
+          "atMarkerKPH": 259.17113178687896,
+          "brakePct": 40,
+          "meanThrottle": 0.3680248591066131
+        },
+        "5": {
+          "samples": 19,
+          "brakeSamples": 7,
+          "throttleSum": 6.257803463930125,
+          "minKPH": 254.34427393549853,
+          "maxKPH": 277.5476008008112,
+          "apexDistance": 0.8377901850576563,
+          "atMarkerKPH": 257.47432463879863,
+          "brakePct": 36.8421052631579,
+          "meanThrottle": 0.329358077048954
+        },
+        "6": {
+          "samples": 20,
+          "brakeSamples": 7,
+          "throttleSum": 6.010379708579461,
+          "minKPH": 255.73819558513193,
+          "maxKPH": 280.72671099563644,
+          "apexDistance": 2.149263882674404,
+          "atMarkerKPH": 256.91004192960713,
+          "brakePct": 35,
+          "meanThrottle": 0.30051898542897304
+        }
+      }
+    },
+    {
+      "number": 16,
+      "s": 5387.808564369994,
+      "k": -0.02845929999999703,
+      "refKPH": 90,
+      "cars": {
+        "1": {
+          "samples": 48,
+          "brakeSamples": 24,
+          "throttleSum": 15.681244925347048,
+          "minKPH": 92.23992692557533,
+          "maxKPH": 121.19352950313424,
+          "apexDistance": 0.5963389843350342,
+          "atMarkerKPH": 92.78635614988073,
+          "brakePct": 50,
+          "meanThrottle": 0.3266926026113968
+        },
+        "2": {
+          "samples": 47,
+          "brakeSamples": 25,
+          "throttleSum": 14.607559534937337,
+          "minKPH": 91.20503603768232,
+          "maxKPH": 132.84403328671107,
+          "apexDistance": 0.32984821474610726,
+          "atMarkerKPH": 95.03412354731866,
+          "brakePct": 53.191489361702125,
+          "meanThrottle": 0.3107991390412199
+        },
+        "3": {
+          "samples": 48,
+          "brakeSamples": 24,
+          "throttleSum": 16.097389968599728,
+          "minKPH": 89.35320295186119,
+          "maxKPH": 120.64036441237454,
+          "apexDistance": 0.9363674078845179,
+          "atMarkerKPH": 90.39897792211791,
+          "brakePct": 50,
+          "meanThrottle": 0.3353622910124943
+        },
+        "4": {
+          "samples": 47,
+          "brakeSamples": 24,
+          "throttleSum": 15.320429440514214,
+          "minKPH": 89.6208845233863,
+          "maxKPH": 122.01601277680763,
+          "apexDistance": 0.1611289390152706,
+          "atMarkerKPH": 90.42073444059446,
+          "brakePct": 51.06382978723404,
+          "meanThrottle": 0.32596658384072796
+        },
+        "5": {
+          "samples": 53,
+          "brakeSamples": 22,
+          "throttleSum": 11.240178337097955,
+          "minKPH": 83.70671289174723,
+          "maxKPH": 119.2905806571808,
+          "apexDistance": 0.04970849319715853,
+          "atMarkerKPH": 85.22608397952455,
+          "brakePct": 41.509433962264154,
+          "meanThrottle": 0.21207883654901802
+        },
+        "6": {
+          "samples": 49,
+          "brakeSamples": 22,
+          "throttleSum": 15.897462152447911,
+          "minKPH": 86.8490908472749,
+          "maxKPH": 117.15788912378969,
+          "apexDistance": 0.4456018189507631,
+          "atMarkerKPH": 88.04658598096555,
+          "brakePct": 44.89795918367347,
+          "meanThrottle": 0.32443800311118187
+        }
+      }
+    },
+    {
+      "number": 17,
+      "s": 5445.878579209954,
+      "k": 0.02220738000001533,
+      "refKPH": 90,
+      "cars": {
+        "1": {
+          "samples": 45,
+          "brakeSamples": 15,
+          "throttleSum": 18.21314926227426,
+          "minKPH": 96.98381301515076,
+          "maxKPH": 123.58906037234793,
+          "apexDistance": 0.3437580150989561,
+          "atMarkerKPH": 97.79961446957984,
+          "brakePct": 33.333333333333336,
+          "meanThrottle": 0.40473665027276134
+        },
+        "2": {
+          "samples": 47,
+          "brakeSamples": 13,
+          "throttleSum": 20.676670959110044,
+          "minKPH": 94.9816368050942,
+          "maxKPH": 121.81005792892337,
+          "apexDistance": 0.42085593596448234,
+          "atMarkerKPH": 96.40848018330325,
+          "brakePct": 27.659574468085108,
+          "meanThrottle": 0.4399291693427669
+        },
+        "3": {
+          "samples": 46,
+          "brakeSamples": 14,
+          "throttleSum": 19.1549196134191,
+          "minKPH": 95.08629535493762,
+          "maxKPH": 118.61843622881487,
+          "apexDistance": 0.5283302831162473,
+          "atMarkerKPH": 96.07071945180603,
+          "brakePct": 30.434782608695652,
+          "meanThrottle": 0.4164112959438935
+        },
+        "4": {
+          "samples": 45,
+          "brakeSamples": 14,
+          "throttleSum": 18.397775795413942,
+          "minKPH": 95.10811098606347,
+          "maxKPH": 120.61142328002781,
+          "apexDistance": 0.24381434809174607,
+          "atMarkerKPH": 97.70778850810134,
+          "brakePct": 31.11111111111111,
+          "meanThrottle": 0.4088394621203098
+        },
+        "5": {
+          "samples": 50,
+          "brakeSamples": 13,
+          "throttleSum": 14.685844104072608,
+          "minKPH": 84.34158033612013,
+          "maxKPH": 119.70222552198824,
+          "apexDistance": 0.29438978283951656,
+          "atMarkerKPH": 85.17124587152156,
+          "brakePct": 26,
+          "meanThrottle": 0.29371688208145214
+        },
+        "6": {
+          "samples": 47,
+          "brakeSamples": 18,
+          "throttleSum": 18.31978557619435,
+          "minKPH": 95.23854605258832,
+          "maxKPH": 119.72475018842658,
+          "apexDistance": 0.6224739579934067,
+          "atMarkerKPH": 96.47872452334448,
+          "brakePct": 38.297872340425535,
+          "meanThrottle": 0.3897826718339223
+        }
+      }
+    },
+    {
+      "number": 18,
+      "s": 5493.060466267421,
+      "k": 0.0003050600021144599,
+      "refKPH": 94,
+      "cars": {
+        "1": {
+          "samples": 40,
+          "brakeSamples": 1,
+          "throttleSum": 33.496844729642945,
+          "minKPH": 98.61974077641206,
+          "maxKPH": 153.3460965221286,
+          "apexDistance": 1.0937174083223908,
+          "atMarkerKPH": 127.1243510648905,
+          "brakePct": 2.5,
+          "meanThrottle": 0.8374211182410736
+        },
+        "2": {
+          "samples": 40,
+          "brakeSamples": 0,
+          "throttleSum": 35.290136785907954,
+          "minKPH": 96.57501700116836,
+          "maxKPH": 150.57303239275421,
+          "apexDistance": 0.16152506615480888,
+          "atMarkerKPH": 128.75164056702633,
+          "brakePct": 0,
+          "meanThrottle": 0.8822534196476989
+        },
+        "3": {
+          "samples": 40,
+          "brakeSamples": 0,
+          "throttleSum": 35.55335801338751,
+          "minKPH": 97.18287632437392,
+          "maxKPH": 150.93780991318022,
+          "apexDistance": 0.16038537996746527,
+          "atMarkerKPH": 128.35399478201867,
+          "brakePct": 0,
+          "meanThrottle": 0.8888339503346877
+        },
+        "4": {
+          "samples": 40,
+          "brakeSamples": 0,
+          "throttleSum": 35.086974448474976,
+          "minKPH": 96.37429217327228,
+          "maxKPH": 151.76922930652745,
+          "apexDistance": 0.033607616921017325,
+          "atMarkerKPH": 127.3714777360326,
+          "brakePct": 0,
+          "meanThrottle": 0.8771743612118744
+        },
+        "5": {
+          "samples": 44,
+          "brakeSamples": 1,
+          "throttleSum": 29.577604385862635,
+          "minKPH": 84.34158033612013,
+          "maxKPH": 149.6719688096781,
+          "apexDistance": 0.16628324309795062,
+          "atMarkerKPH": 113.8972727117793,
+          "brakePct": 2.272727272727273,
+          "meanThrottle": 0.6722182814968781
+        },
+        "6": {
+          "samples": 40,
+          "brakeSamples": 0,
+          "throttleSum": 34.688594727596765,
+          "minKPH": 96.80707130072564,
+          "maxKPH": 151.10122992865132,
+          "apexDistance": 0.7563203782506207,
+          "atMarkerKPH": 127.99548977495166,
+          "brakePct": 0,
+          "meanThrottle": 0.8672148681899191
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": 2,
+      "s": 5794.813303758775,
+      "v": 36.759888600640956
+    },
+    {
+      "id": 3,
+      "s": 5787.558866033932,
+      "v": 59.186435619952576
+    },
+    {
+      "id": 5,
+      "s": 5765.50581988764,
+      "v": 68.88118350028064
+    },
+    {
+      "id": 3,
+      "s": 5790.741688678753,
+      "v": 57.01223941918729
+    },
+    {
+      "id": 2,
+      "s": 381.17859158539824,
+      "v": 296.0828367170621
+    },
+    {
+      "id": 4,
+      "s": 361.44956684983913,
+      "v": 290.5582523462948
+    },
+    {
+      "id": 3,
+      "s": 368.0114278847892,
+      "v": 287.74277417226745
+    },
+    {
+      "id": 5,
+      "s": 350.57911004959476,
+      "v": 290.5098046165992
+    },
+    {
+      "id": 4,
+      "s": 385.467859305188,
+      "v": 286.3692083460288
+    },
+    {
+      "id": 6,
+      "s": 365.5786998092851,
+      "v": 290.65472305420235
+    },
+    {
+      "id": 1,
+      "s": 558.180872432727,
+      "v": 322.18538270364957
+    },
+    {
+      "id": 3,
+      "s": 486.00184751015973,
+      "v": 246.97293132544402
+    },
+    {
+      "id": 5,
+      "s": 541.9878704556177,
+      "v": 199.82611068181893
+    },
+    {
+      "id": 5,
+      "s": 588.1369089189251,
+      "v": 179.14588703236825
+    },
+    {
+      "id": 2,
+      "s": 695.02549012,
+      "v": 167.02996713805837
+    },
+    {
+      "id": 3,
+      "s": 683.101982495447,
+      "v": 159.79997254585967
+    },
+    {
+      "id": 2,
+      "s": 752.1959592890846,
+      "v": 156.71518956447989
+    },
+    {
+      "id": 3,
+      "s": 726.0811018572226,
+      "v": 155.89422621702113
+    },
+    {
+      "id": 6,
+      "s": 708.4712810783691,
+      "v": 159.62761113512528
+    },
+    {
+      "id": 4,
+      "s": 728.2847014837645,
+      "v": 158.20187101785328
+    },
+    {
+      "id": 5,
+      "s": 702.9844492343532,
+      "v": 151.65374495208263
+    },
+    {
+      "id": 2,
+      "s": 764.7445613997619,
+      "v": 152.6059318792786
+    },
+    {
+      "id": 3,
+      "s": 738.5858890639162,
+      "v": 152.30335889164022
+    },
+    {
+      "id": 5,
+      "s": 715.2727521205688,
+      "v": 149.02592679831565
+    },
+    {
+      "id": 6,
+      "s": 739.3011160592185,
+      "v": 157.75202333832516
+    },
+    {
+      "id": 3,
+      "s": 801.4172645654068,
+      "v": 131.15327122481784
+    },
+    {
+      "id": 5,
+      "s": 777.8233091798672,
+      "v": 129.47389111433858
+    },
+    {
+      "id": 6,
+      "s": 805.1552199169168,
+      "v": 125.29939225905167
+    },
+    {
+      "id": 1,
+      "s": 1027.3628595762657,
+      "v": 207.05738248491096
+    },
+    {
+      "id": 2,
+      "s": 1031.2843678856855,
+      "v": 204.47057345406952
+    },
+    {
+      "id": 1,
+      "s": 1166.4072774560225,
+      "v": 213.57961358899195
+    },
+    {
+      "id": 6,
+      "s": 972.2709711740264,
+      "v": 177.85399670987914
+    },
+    {
+      "id": 4,
+      "s": 1024.6053037882423,
+      "v": 206.421174075446
+    },
+    {
+      "id": 3,
+      "s": 1023.9572447674412,
+      "v": 203.97468193550793
+    },
+    {
+      "id": 6,
+      "s": 1007.3771334638908,
+      "v": 187.0574806358626
+    },
+    {
+      "id": 3,
+      "s": 1040.9096148997482,
+      "v": 199.74560113104553
+    },
+    {
+      "id": 5,
+      "s": 1006.0215152557837,
+      "v": 183.85009011358025
+    },
+    {
+      "id": 4,
+      "s": 1074.29527454,
+      "v": 200.160618160645
+    },
+    {
+      "id": 5,
+      "s": 1021.373624592189,
+      "v": 181.8128973899107
+    },
+    {
+      "id": 6,
+      "s": 1052.6820523989356,
+      "v": 175.60143078165737
+    },
+    {
+      "id": 4,
+      "s": 1095.8772219279363,
+      "v": 198.80946992471777
+    },
+    {
+      "id": 2,
+      "s": 1169.3929826368917,
+      "v": 207.9091033146377
+    },
+    {
+      "id": 3,
+      "s": 1100.283678349696,
+      "v": 181.91612422782674
+    },
+    {
+      "id": 6,
+      "s": 1072.3401318925862,
+      "v": 172.27342958709855
+    },
+    {
+      "id": 1,
+      "s": 1321.712691119077,
+      "v": 205.38669601410703
+    },
+    {
+      "id": 4,
+      "s": 1165.2158688149193,
+      "v": 197.8841557194498
+    },
+    {
+      "id": 5,
+      "s": 1098.320112678461,
+      "v": 163.89354460452518
+    },
+    {
+      "id": 3,
+      "s": 1163.6504466094077,
+      "v": 194.09225137270693
+    },
+    {
+      "id": 6,
+      "s": 1145.9631142134426,
+      "v": 179.65965164580106
+    },
+    {
+      "id": 1,
+      "s": 1376.380954313665,
+      "v": 188.26318761816407
+    },
+    {
+      "id": 6,
+      "s": 1165.6572615506068,
+      "v": 175.02233215403933
+    },
+    {
+      "id": 5,
+      "s": 1161.847893191828,
+      "v": 160.9200596128473
+    },
+    {
+      "id": 2,
+      "s": 1323.1280434388236,
+      "v": 200.7066643679379
+    },
+    {
+      "id": 6,
+      "s": 1220.6638689826,
+      "v": 153.80628215568578
+    },
+    {
+      "id": 5,
+      "s": 1192.24999218,
+      "v": 154.23438480456448
+    },
+    {
+      "id": 1,
+      "s": 1467.284096248349,
+      "v": 199.27619391825587
+    },
+    {
+      "id": 2,
+      "s": 1377.34816449,
+      "v": 186.65070662839867
+    },
+    {
+      "id": 5,
+      "s": 1241.7393939079097,
+      "v": 144.91627103686287
+    },
+    {
+      "id": 3,
+      "s": 1311.333722911344,
+      "v": 174.91615594450548
+    },
+    {
+      "id": 4,
+      "s": 1340.0895398721834,
+      "v": 183.6395540178725
+    },
+    {
+      "id": 6,
+      "s": 1305.4888879203393,
+      "v": 159.90257644676274
+    },
+    {
+      "id": 2,
+      "s": 1467.1766129131042,
+      "v": 196.18716708849203
+    },
+    {
+      "id": 5,
+      "s": 1294.0780542502791,
+      "v": 151.4104728511331
+    },
+    {
+      "id": 5,
+      "s": 1314.9361655865218,
+      "v": 146.71419584724538
+    },
+    {
+      "id": 6,
+      "s": 1387.2326808679468,
+      "v": 140.68147042026268
+    },
+    {
+      "id": 5,
+      "s": 1355.9135221123383,
+      "v": 142.11256216653356
+    },
+    {
+      "id": 4,
+      "s": 1471.5189412776635,
+      "v": 173.8908591498913
+    },
+    {
+      "id": 5,
+      "s": 1376.5335193371204,
+      "v": 144.4650727398784
+    },
+    {
+      "id": 1,
+      "s": 1687.3068439347808,
+      "v": 187.26527637166006
+    },
+    {
+      "id": 3,
+      "s": 1478.254439038587,
+      "v": 154.47913329953766
+    },
+    {
+      "id": 6,
+      "s": 1467.7480022830678,
+      "v": 150.47569996692133
+    },
+    {
+      "id": 3,
+      "s": 1535.7827486188985,
+      "v": 141.9603979385629
+    },
+    {
+      "id": 6,
+      "s": 1500.74694602,
+      "v": 145.7415086911127
+    },
+    {
+      "id": 5,
+      "s": 1471.7119386,
+      "v": 148.38200655694783
+    },
+    {
+      "id": 2,
+      "s": 1687.3123610226914,
+      "v": 184.0861019143156
+    },
+    {
+      "id": 5,
+      "s": 1495.3876852588437,
+      "v": 141.75342518601522
+    },
+    {
+      "id": 6,
+      "s": 1546.3322199914728,
+      "v": 126.04562106938721
+    },
+    {
+      "id": 3,
+      "s": 1615.07228774,
+      "v": 135.88077567646457
+    },
+    {
+      "id": 4,
+      "s": 1686.5539539574377,
+      "v": 183.41129061963974
+    },
+    {
+      "id": 2,
+      "s": 1863.4896909410113,
+      "v": 200.2094086231566
+    },
+    {
+      "id": 2,
+      "s": 1885.2852980771659,
+      "v": 196.8516464166538
+    },
+    {
+      "id": 3,
+      "s": 1695.007621683286,
+      "v": 168.86604696456124
+    },
+    {
+      "id": 6,
+      "s": 1666.6102217213213,
+      "v": 167.5527699696933
+    },
+    {
+      "id": 4,
+      "s": 1860.395742067431,
+      "v": 200.42681086259552
+    },
+    {
+      "id": 5,
+      "s": 1692.240446225211,
+      "v": 165.05260926338732
+    },
+    {
+      "id": 4,
+      "s": 1887.6103337089967,
+      "v": 197.8455802712366
+    },
+    {
+      "id": 3,
+      "s": 1817.2211217358908,
+      "v": 185.25547094512794
+    },
+    {
+      "id": 6,
+      "s": 1781.7443667947005,
+      "v": 183.71616791805758
+    },
+    {
+      "id": 1,
+      "s": 2249.234548456532,
+      "v": 258.4590390406799
+    },
+    {
+      "id": 1,
+      "s": 2302.839026,
+      "v": 223.70859233279793
+    },
+    {
+      "id": 4,
+      "s": 2059.7717121658434,
+      "v": 217.34744979907353
+    },
+    {
+      "id": 2,
+      "s": 2243.3548313728984,
+      "v": 267.3977972648788
+    },
+    {
+      "id": 5,
+      "s": 1877.8836670693577,
+      "v": 199.90555063374245
+    },
+    {
+      "id": 5,
+      "s": 1888.7672082297308,
+      "v": 196.8920798430566
+    },
+    {
+      "id": 3,
+      "s": 1993.5411572557348,
+      "v": 206.07278856839275
+    },
+    {
+      "id": 2,
+      "s": 2297.752643705501,
+      "v": 219.52597601184723
+    },
+    {
+      "id": 4,
+      "s": 2244.5285526949115,
+      "v": 259.3676655467568
+    },
+    {
+      "id": 6,
+      "s": 2071.826554166869,
+      "v": 218.16691739592633
+    },
+    {
+      "id": 4,
+      "s": 2304.1158858477365,
+      "v": 218.46334079639402
+    },
+    {
+      "id": 3,
+      "s": 2227.7233062493724,
+      "v": 256.7883859782166
+    },
+    {
+      "id": 6,
+      "s": 2209.5286535365476,
+      "v": 240.28887877400257
+    },
+    {
+      "id": 5,
+      "s": 2192.6592341302107,
+      "v": 234.39159464300454
+    },
+    {
+      "id": 6,
+      "s": 2315.2410929387133,
+      "v": 210.7728083747861
+    },
+    {
+      "id": 5,
+      "s": 2262.4324546544935,
+      "v": 220.25466399905824
+    },
+    {
+      "id": 3,
+      "s": 2395.3447588746126,
+      "v": 172.20008747562937
+    },
+    {
+      "id": 6,
+      "s": 2354.591652452062,
+      "v": 190.54212287966755
+    },
+    {
+      "id": 5,
+      "s": 2304.4321140530005,
+      "v": 202.99330054734637
+    },
+    {
+      "id": 1,
+      "s": 2738.2130271283236,
+      "v": 226.99789586753283
+    },
+    {
+      "id": 3,
+      "s": 2450.8547542368588,
+      "v": 113.10188169067585
+    },
+    {
+      "id": 1,
+      "s": 2801.541927327757,
+      "v": 188.41744088434427
+    },
+    {
+      "id": 2,
+      "s": 2724.012250282366,
+      "v": 238.88185675762526
+    },
+    {
+      "id": 4,
+      "s": 2723.9522457342055,
+      "v": 231.18223460737065
+    },
+    {
+      "id": 2,
+      "s": 2843.3312612374466,
+      "v": 126.51978262912901
+    },
+    {
+      "id": 2,
+      "s": 2853.743347663393,
+      "v": 123.66155922296187
+    },
+    {
+      "id": 3,
+      "s": 2705.0371604539773,
+      "v": 221.1876825218164
+    },
+    {
+      "id": 6,
+      "s": 2663.930756451713,
+      "v": 212.74492070369732
+    },
+    {
+      "id": 4,
+      "s": 2839.763497201244,
+      "v": 108.41572933934172
+    },
+    {
+      "id": 5,
+      "s": 2648.927287047711,
+      "v": 199.1244894102294
+    },
+    {
+      "id": 3,
+      "s": 2780.8459431141077,
+      "v": 154.287595808468
+    },
+    {
+      "id": 3,
+      "s": 2841.6777181678076,
+      "v": 118.99762973996215
+    },
+    {
+      "id": 3,
+      "s": 2895.5113712206844,
+      "v": 70.81754675202392
+    },
+    {
+      "id": 6,
+      "s": 2867.746170429414,
+      "v": 86.70494339080217
+    },
+    {
+      "id": 5,
+      "s": 2864.9901408150204,
+      "v": 94.5100179589885
+    },
+    {
+      "id": 1,
+      "s": 3672.9662535642246,
+      "v": 277.0517368585261
+    },
+    {
+      "id": 2,
+      "s": 3678.3231119414354,
+      "v": 274.0423977339359
+    },
+    {
+      "id": 5,
+      "s": 3118.2374994719394,
+      "v": 193.94337164804242
+    },
+    {
+      "id": 1,
+      "s": 3844.77829130916,
+      "v": 177.39255731922643
+    },
+    {
+      "id": 6,
+      "s": 3344.1738081665862,
+      "v": 231.14135113956266
+    },
+    {
+      "id": 5,
+      "s": 3275.488611236893,
+      "v": 220.3454156807402
+    },
+    {
+      "id": 4,
+      "s": 3680.684576795349,
+      "v": 271.50194281554735
+    },
+    {
+      "id": 2,
+      "s": 3843.0986744802663,
+      "v": 176.91381955399441
+    },
+    {
+      "id": 6,
+      "s": 3490.5549390840556,
+      "v": 222.4501402731982
+    },
+    {
+      "id": 3,
+      "s": 3678.1183137429985,
+      "v": 270.09670710079564
+    },
+    {
+      "id": 6,
+      "s": 3552.760703672923,
+      "v": 225.3526799615014
+    },
+    {
+      "id": 4,
+      "s": 3843.985696480965,
+      "v": 175.46374419231066
+    },
+    {
+      "id": 6,
+      "s": 3653.5584692347456,
+      "v": 234.72736531434694
+    },
+    {
+      "id": 2,
+      "s": 4052.8697189709583,
+      "v": 143.85239929546648
+    },
+    {
+      "id": 5,
+      "s": 3627.8775335641294,
+      "v": 242.92884340749913
+    },
+    {
+      "id": 3,
+      "s": 3846.430416499812,
+      "v": 175.12970462528327
+    },
+    {
+      "id": 6,
+      "s": 3792.259226280695,
+      "v": 181.13175684928015
+    },
+    {
+      "id": 6,
+      "s": 3863.2968527656753,
+      "v": 166.26380069914086
+    },
+    {
+      "id": 4,
+      "s": 4064.873156343528,
+      "v": 153.73686562600415
+    },
+    {
+      "id": 5,
+      "s": 3844.083804698347,
+      "v": 172.13895408768218
+    },
+    {
+      "id": 6,
+      "s": 3943.31694523,
+      "v": 141.02189622710998
+    },
+    {
+      "id": 5,
+      "s": 3880.269796587494,
+      "v": 160.28932436391636
+    },
+    {
+      "id": 5,
+      "s": 3897.501921833203,
+      "v": 153.97135669138936
+    },
+    {
+      "id": 3,
+      "s": 4228.00226225092,
+      "v": 214.41759199289277
+    },
+    {
+      "id": 1,
+      "s": 4912.36031787,
+      "v": 294.8788820311459
+    },
+    {
+      "id": 6,
+      "s": 4224.013487255787,
+      "v": 213.1398042877139
+    },
+    {
+      "id": 1,
+      "s": 5039.424255564388,
+      "v": 257.675923868099
+    },
+    {
+      "id": 2,
+      "s": 4911.435532406679,
+      "v": 294.817746079309
+    },
+    {
+      "id": 1,
+      "s": 5230.890770678589,
+      "v": 265.0871838494556
+    },
+    {
+      "id": 2,
+      "s": 5038.09291920039,
+      "v": 256.88945716052467
+    },
+    {
+      "id": 4,
+      "s": 4920.621861999743,
+      "v": 288.7741871320273
+    },
+    {
+      "id": 2,
+      "s": 5228.830033284115,
+      "v": 264.6433363578449
+    },
+    {
+      "id": 4,
+      "s": 5039.159348306062,
+      "v": 255.4342733528058
+    },
+    {
+      "id": 3,
+      "s": 4911.829547243708,
+      "v": 293.25264739711486
+    },
+    {
+      "id": 1,
+      "s": 5425.91701161,
+      "v": 123.58906037234793
+    },
+    {
+      "id": 3,
+      "s": 5037.688279479916,
+      "v": 255.2083090950894
+    },
+    {
+      "id": 4,
+      "s": 5230.213373964622,
+      "v": 265.3464189413093
+    },
+    {
+      "id": 6,
+      "s": 4919.203883668794,
+      "v": 289.5263905231015
+    },
+    {
+      "id": 2,
+      "s": 5428.145877508072,
+      "v": 118.32680892019143
+    },
+    {
+      "id": 5,
+      "s": 4911.775279994766,
+      "v": 291.66007682647006
+    },
+    {
+      "id": 1,
+      "s": 5532.201386710177,
+      "v": 150.9249675983303
+    },
+    {
+      "id": 6,
+      "s": 5044.054626804794,
+      "v": 249.47477543135525
+    },
+    {
+      "id": 1,
+      "s": 5544.755435870819,
+      "v": 143.00679052907202
+    },
+    {
+      "id": 6,
+      "s": 5064.716584540654,
+      "v": 241.93124857223503
+    },
+    {
+      "id": 3,
+      "s": 5234.865600507778,
+      "v": 259.27949761578594
+    },
+    {
+      "id": 5,
+      "s": 5036.59654842664,
+      "v": 252.0403385752115
+    },
+    {
+      "id": 4,
+      "s": 5426.568341585285,
+      "v": 120.04300334593482
+    },
+    {
+      "id": 6,
+      "s": 5229.28629651362,
+      "v": 257.1747755956352
+    },
+    {
+      "id": 2,
+      "s": 5533.592025869511,
+      "v": 150.20302523246545
+    },
+    {
+      "id": 5,
+      "s": 5141.95287714693,
+      "v": 251.92900953090083
+    },
+    {
+      "id": 3,
+      "s": 5424.799491044248,
+      "v": 117.82716807080062
+    },
+    {
+      "id": 4,
+      "s": 5531.428012113057,
+      "v": 151.37594637394935
+    },
+    {
+      "id": 5,
+      "s": 5321.831031753708,
+      "v": 144.76150475296308
+    },
+    {
+      "id": 6,
+      "s": 5422.974760353226,
+      "v": 119.72475018842658
+    },
+    {
+      "id": 3,
+      "s": 5533.320106772139,
+      "v": 151.37792343715384
+    },
+    {
+      "id": 5,
+      "s": 5420.192969795471,
+      "v": 99.19360304160486
+    },
+    {
+      "id": 6,
+      "s": 5530.344328690508,
+      "v": 152.17575554809085
+    },
+    {
+      "id": 1,
+      "s": 556.9667575727124,
+      "v": 291.89558820850954
+    },
+    {
+      "id": 5,
+      "s": 5499.735794787881,
+      "v": 119.76325962739936
+    },
+    {
+      "id": 5,
+      "s": 5574.930234840181,
+      "v": 155.04279261230556
+    },
+    {
+      "id": 2,
+      "s": 551.5431584046293,
+      "v": 298.15225891541337
+    },
+    {
+      "id": 2,
+      "s": 707.8820803033321,
+      "v": 164.24728385796047
+    },
+    {
+      "id": 4,
+      "s": 555.2396132036303,
+      "v": 295.16630279221465
+    },
+    {
+      "id": 2,
+      "s": 805.0706789463397,
+      "v": 141.23906193390405
+    },
+    {
+      "id": 4,
+      "s": 694.4943923619888,
+      "v": 175.34079326333136
+    },
+    {
+      "id": 2,
+      "s": 816.60958369,
+      "v": 135.5454550004441
+    },
+    {
+      "id": 4,
+      "s": 704.09892993,
+      "v": 173.81841040720988
+    },
+    {
+      "id": 3,
+      "s": 551.6072440212198,
+      "v": 298.76526759978293
+    },
+    {
+      "id": 4,
+      "s": 771.7267518189097,
+      "v": 144.11285346317035
+    },
+    {
+      "id": 1,
+      "s": 1023.3942644429823,
+      "v": 198.58766317753427
+    },
+    {
+      "id": 4,
+      "s": 798.5081717222129,
+      "v": 141.12566534589325
+    },
+    {
+      "id": 3,
+      "s": 696.699130760626,
+      "v": 171.5700658292016
+    },
+    {
+      "id": 6,
+      "s": 552.3072593621715,
+      "v": 297.667478994491
+    },
+    {
+      "id": 4,
+      "s": 824.2820922155088,
+      "v": 127.38048411907837
+    },
+    {
+      "id": 1,
+      "s": 1164.6470061977036,
+      "v": 200.32365204150108
+    },
+    {
+      "id": 2,
+      "s": 1033.1536913707912,
+      "v": 199.00080920262823
+    },
+    {
+      "id": 3,
+      "s": 799.334507926773,
+      "v": 142.47186883021976
+    },
+    {
+      "id": 6,
+      "s": 705.9136179,
+      "v": 160.7173560653651
+    },
+    {
+      "id": 6,
+      "s": 718.61643364,
+      "v": 152.85847022522844
+    },
+    {
+      "id": 5,
+      "s": 553.411696372305,
+      "v": 295.4317272875029
+    },
+    {
+      "id": 1,
+      "s": 1320.6966696842278,
+      "v": 194.7969556016452
+    },
+    {
+      "id": 2,
+      "s": 1169.114360780064,
+      "v": 195.71224002590827
+    },
+    {
+      "id": 6,
+      "s": 798.0296577119973,
+      "v": 143.18987480207366
+    },
+    {
+      "id": 4,
+      "s": 1029.4810464079842,
+      "v": 200.27811853834257
+    },
+    {
+      "id": 5,
+      "s": 683.4906891694548,
+      "v": 176.96456179293068
+    },
+    {
+      "id": 5,
+      "s": 702.28424197,
+      "v": 168.09300067623596
+    },
+    {
+      "id": 1,
+      "s": 1377.8032827932514,
+      "v": 177.51304240135934
+    },
+    {
+      "id": 5,
+      "s": 715.8448258046202,
+      "v": 159.3389601491106
+    },
+    {
+      "id": 1,
+      "s": 1468.4809414105719,
+      "v": 188.4764728226091
+    },
+    {
+      "id": 2,
+      "s": 1325.1669308755372,
+      "v": 190.88588519981474
+    },
+    {
+      "id": 4,
+      "s": 1170.323439613983,
+      "v": 197.0967071180546
+    },
+    {
+      "id": 5,
+      "s": 792.1033438972134,
+      "v": 142.48264040791065
+    },
+    {
+      "id": 3,
+      "s": 1041.7577814462313,
+      "v": 195.2371708847671
+    },
+    {
+      "id": 5,
+      "s": 807.6564378763219,
+      "v": 139.82738499601354
+    },
+    {
+      "id": 2,
+      "s": 1376.8305356189398,
+      "v": 177.85789751816347
+    },
+    {
+      "id": 1,
+      "s": 1544.7517120781972,
+      "v": 157.11395540054343
+    },
+    {
+      "id": 6,
+      "s": 1021.0804258168888,
+      "v": 201.04846415685415
+    },
+    {
+      "id": 3,
+      "s": 1166.0272173825826,
+      "v": 196.60232255524195
+    },
+    {
+      "id": 4,
+      "s": 1314.6203897244611,
+      "v": 188.74532047394445
+    },
+    {
+      "id": 2,
+      "s": 1472.6821496612108,
+      "v": 184.38208970019144
+    },
+    {
+      "id": 4,
+      "s": 1380.2362777928229,
+      "v": 176.04953528214105
+    },
+    {
+      "id": 2,
+      "s": 1548.4481964963602,
+      "v": 155.7091453729892
+    },
+    {
+      "id": 1,
+      "s": 1686.64331541186,
+      "v": 180.15907289844037
+    },
+    {
+      "id": 6,
+      "s": 1166.959785433345,
+      "v": 198.8462912081087
+    },
+    {
+      "id": 3,
+      "s": 1320.4246839718955,
+      "v": 191.61399102013885
+    },
+    {
+      "id": 5,
+      "s": 1022.3734537970635,
+      "v": 199.8020844961319
+    },
+    {
+      "id": 4,
+      "s": 1470.9313774732254,
+      "v": 186.0796211687277
+    },
+    {
+      "id": 3,
+      "s": 1376.5924433193447,
+      "v": 175.82681226990493
+    },
+    {
+      "id": 2,
+      "s": 1675.2091572092263,
+      "v": 170.43371676123405
+    },
+    {
+      "id": 6,
+      "s": 1322.050567082721,
+      "v": 193.1579583985276
+    },
+    {
+      "id": 5,
+      "s": 1168.1338808442201,
+      "v": 198.38410882718333
+    },
+    {
+      "id": 3,
+      "s": 1466.726207432943,
+      "v": 188.30544895206287
+    },
+    {
+      "id": 6,
+      "s": 1378.6758265101978,
+      "v": 175.74760594628995
+    },
+    {
+      "id": 2,
+      "s": 1793.6804014712795,
+      "v": 186.1659835812289
+    },
+    {
+      "id": 3,
+      "s": 1529.6221939796023,
+      "v": 161.00536978058327
+    },
+    {
+      "id": 4,
+      "s": 1673.426159700355,
+      "v": 171.1739874339065
+    },
+    {
+      "id": 6,
+      "s": 1468.950063889889,
+      "v": 187.7368562107096
+    },
+    {
+      "id": 5,
+      "s": 1323.1980198264641,
+      "v": 191.9365571406948
+    },
+    {
+      "id": 5,
+      "s": 1379.7342171154164,
+      "v": 175.09933795056824
+    },
+    {
+      "id": 6,
+      "s": 1531.9102996237452,
+      "v": 160.38098041064896
+    },
+    {
+      "id": 3,
+      "s": 1689.8395996753761,
+      "v": 178.3583055186381
+    },
+    {
+      "id": 5,
+      "s": 1469.89725064,
+      "v": 186.39830901114797
+    },
+    {
+      "id": 1,
+      "s": 2242.703276515031,
+      "v": 251.23261761211518
+    },
+    {
+      "id": 1,
+      "s": 2300.4866234166807,
+      "v": 211.07153828435634
+    },
+    {
+      "id": 6,
+      "s": 1686.4468864319297,
+      "v": 180.42365582509555
+    },
+    {
+      "id": 3,
+      "s": 1889.5392942940314,
+      "v": 192.3394216479845
+    },
+    {
+      "id": 2,
+      "s": 2244.357020914774,
+      "v": 251.13871413545323
+    },
+    {
+      "id": 2,
+      "s": 2302.05479201462,
+      "v": 207.79236955421067
+    },
+    {
+      "id": 5,
+      "s": 1667.2159806848274,
+      "v": 168.15723985631612
+    },
+    {
+      "id": 2,
+      "s": 2336.394001571635,
+      "v": 194.01229780663897
+    },
+    {
+      "id": 2,
+      "s": 2357.5712198186516,
+      "v": 187.15788569098515
+    },
+    {
+      "id": 2,
+      "s": 2383.1499832245904,
+      "v": 180.55456784049127
+    },
+    {
+      "id": 6,
+      "s": 1908.7069561775263,
+      "v": 204.0657477734132
+    },
+    {
+      "id": 4,
+      "s": 2249.0288006100336,
+      "v": 247.79719653592284
+    },
+    {
+      "id": 4,
+      "s": 2300.0220546511464,
+      "v": 209.03165731122013
+    },
+    {
+      "id": 4,
+      "s": 2334.501101808381,
+      "v": 196.02889775731592
+    },
+    {
+      "id": 4,
+      "s": 2356.1983968736345,
+      "v": 192.05615146449264
+    },
+    {
+      "id": 4,
+      "s": 2381.3015533078888,
+      "v": 171.34371084420653
+    },
+    {
+      "id": 3,
+      "s": 2247.0871344134025,
+      "v": 247.4145660733208
+    },
+    {
+      "id": 3,
+      "s": 2304.1691494455595,
+      "v": 209.65377997579083
+    },
+    {
+      "id": 1,
+      "s": 2734.3194217742143,
+      "v": 219.54800060505525
+    },
+    {
+      "id": 6,
+      "s": 2243.196483838501,
+      "v": 249.40355229236985
+    },
+    {
+      "id": 1,
+      "s": 2800.676297156838,
+      "v": 180.77312748459835
+    },
+    {
+      "id": 6,
+      "s": 2300.611727986714,
+      "v": 209.95749097802877
+    },
+    {
+      "id": 2,
+      "s": 2731.492615642759,
+      "v": 223.73130845586783
+    },
+    {
+      "id": 5,
+      "s": 2244.644631769665,
+      "v": 249.32776921619583
+    },
+    {
+      "id": 5,
+      "s": 2301.9914634349016,
+      "v": 209.91797449868392
+    },
+    {
+      "id": 2,
+      "s": 2849.3855980627404,
+      "v": 112.06314387300037
+    },
+    {
+      "id": 4,
+      "s": 2737.0075255432002,
+      "v": 220.5837173473936
+    },
+    {
+      "id": 4,
+      "s": 2845.6878936997596,
+      "v": 127.3251258056928
+    },
+    {
+      "id": 3,
+      "s": 2732.623301629468,
+      "v": 218.94466808466152
+    },
+    {
+      "id": 4,
+      "s": 2852.5659176225263,
+      "v": 123.09188137632586
+    },
+    {
+      "id": 6,
+      "s": 2721.614372425143,
+      "v": 219.76471441852456
+    },
+    {
+      "id": 5,
+      "s": 2729.29069748,
+      "v": 220.8601708475239
+    },
+    {
+      "id": 4,
+      "s": 3122.764818437943,
+      "v": 195.2230745454319
+    },
+    {
+      "id": 1,
+      "s": 3668.1576628414623,
+      "v": 273.11295662061303
+    },
+    {
+      "id": 3,
+      "s": 3123.6813355338777,
+      "v": 195.23115284894436
+    },
+    {
+      "id": 1,
+      "s": 3846.82539591506,
+      "v": 171.24805950928567
+    },
+    {
+      "id": 2,
+      "s": 3668.518878297669,
+      "v": 272.7200624477792
+    },
+    {
+      "id": 6,
+      "s": 3116.345887040308,
+      "v": 193.15134918650384
+    },
+    {
+      "id": 4,
+      "s": 3677.40578171694,
+      "v": 267.78383637366943
+    },
+    {
+      "id": 2,
+      "s": 3845.9939217717656,
+      "v": 170.27845157400262
+    },
+    {
+      "id": 3,
+      "s": 3670.4178997690337,
+      "v": 273.2911979423061
+    },
+    {
+      "id": 4,
+      "s": 3847.423968947861,
+      "v": 169.94981656071062
+    },
+    {
+      "id": 6,
+      "s": 3674.477880493478,
+      "v": 270.5397806524233
+    },
+    {
+      "id": 3,
+      "s": 3843.287410290426,
+      "v": 170.95621672806672
+    },
+    {
+      "id": 4,
+      "s": 4050.980302436515,
+      "v": 141.1739363315894
+    },
+    {
+      "id": 5,
+      "s": 3670.1723802778943,
+      "v": 270.72729560249235
+    },
+    {
+      "id": 6,
+      "s": 3842.1445229708165,
+      "v": 171.79735141553923
+    },
+    {
+      "id": 3,
+      "s": 4067.5300504658003,
+      "v": 153.80059877368518
+    },
+    {
+      "id": 5,
+      "s": 3846.3249972701437,
+      "v": 169.50363990938257
+    },
+    {
+      "id": 5,
+      "s": 3859.7203277078706,
+      "v": 163.7792930992373
+    },
+    {
+      "id": 1,
+      "s": 4892.313118980362,
+      "v": 307.9083683718419
+    },
+    {
+      "id": 5,
+      "s": 3928.3335487854615,
+      "v": 142.1205402160419
+    },
+    {
+      "id": 1,
+      "s": 5046.753320985541,
+      "v": 246.5120538610475
+    },
+    {
+      "id": 5,
+      "s": 4049.19057031519,
+      "v": 142.23733346214885
+    },
+    {
+      "id": 2,
+      "s": 4901.129207790733,
+      "v": 298.19358809180835
+    },
+    {
+      "id": 1,
+      "s": 5232.858128340868,
+      "v": 260.03968007763893
+    },
+    {
+      "id": 2,
+      "s": 5047.042530928737,
+      "v": 246.73260396815627
+    },
+    {
+      "id": 4,
+      "s": 4896.79455696722,
+      "v": 304.8069425418018
+    },
+    {
+      "id": 2,
+      "s": 5232.946105279124,
+      "v": 255.45974587074016
+    },
+    {
+      "id": 4,
+      "s": 5043.672399839399,
+      "v": 247.50673297383483
+    },
+    {
+      "id": 3,
+      "s": 4894.365558495723,
+      "v": 311.09137848787447
+    },
+    {
+      "id": 1,
+      "s": 5424.10232364,
+      "v": 121.26091315902131
+    },
+    {
+      "id": 4,
+      "s": 5229.684762092859,
+      "v": 258.57341380826506
+    },
+    {
+      "id": 3,
+      "s": 5042.269820539049,
+      "v": 247.8731509033116
+    },
+    {
+      "id": 6,
+      "s": 4896.861365031198,
+      "v": 314.60376814336587
+    },
+    {
+      "id": 1,
+      "s": 5527.6937754689925,
+      "v": 151.98601106980715
+    },
+    {
+      "id": 2,
+      "s": 5426.654133628683,
+      "v": 117.75834332068683
+    },
+    {
+      "id": 6,
+      "s": 5038.617277811428,
+      "v": 249.22585364828976
+    },
+    {
+      "id": 3,
+      "s": 5236.084084521167,
+      "v": 256.10470310473573
+    },
+    {
+      "id": 5,
+      "s": 4889.457012528035,
+      "v": 321.6668265301003
+    },
+    {
+      "id": 4,
+      "s": 5425.91701161,
+      "v": 118.81045633478882
+    },
+    {
+      "id": 2,
+      "s": 5534.1629229521295,
+      "v": 149.36068965462198
+    },
+    {
+      "id": 6,
+      "s": 5232.207079831964,
+      "v": 260.0146881548946
+    },
+    {
+      "id": 5,
+      "s": 5040.056014651691,
+      "v": 249.3773386029396
+    },
+    {
+      "id": 3,
+      "s": 5424.615969938874,
+      "v": 117.4127503641419
+    },
+    {
+      "id": 4,
+      "s": 5533.160532853076,
+      "v": 151.15027973999
+    },
+    {
+      "id": 5,
+      "s": 5233.89620675025,
+      "v": 258.3056682109822
+    },
+    {
+      "id": 6,
+      "s": 5423.281518857434,
+      "v": 119.1289423579703
+    },
+    {
+      "id": 3,
+      "s": 5531.276601098083,
+      "v": 149.46954969991694
+    },
+    {
+      "id": 5,
+      "s": 5426.1457640546705,
+      "v": 119.70222552198824
+    },
+    {
+      "id": 6,
+      "s": 5529.6943849842155,
+      "v": 150.8853996322552
+    },
+    {
+      "id": 5,
+      "s": 5529.4762532998775,
+      "v": 150.54911396013
+    }
+  ]
+}

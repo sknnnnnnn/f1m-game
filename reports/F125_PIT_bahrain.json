@@ -1,0 +1,19 @@
+{
+  "track": "bahrain",
+  "time": 69.2,
+  "stop": null,
+  "rejections": 0,
+  "phases": [
+    "APPROACH",
+    "PIT_IN",
+    "SERVICE",
+    "RELEASE",
+    "PIT_OUT",
+    "MERGE",
+    "RACING"
+  ],
+  "exited": true,
+  "maxLimited": 79.68061285304026,
+  "maxExit": 78.9518000039039,
+  "scope": "Physical pit cycle with fixture-provided crew-ready proof; not a crew animation test"
+}

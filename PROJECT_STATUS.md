@@ -1,3 +1,7 @@
+Current: F1 25 driving calibration, build `ba525293537c4435`. [49-corner comparison and measured limits](reports/F125_DRIVING_TH.md). Solo lap-two speeds within ±20% in 46/49 corners versus 11/49 before. Six-car two-lap integrations pass all three circuits with zero retirement, guard stop or controller rejection and sampled body corners inside the road. Six-car Suzuka five-lap integration also passes. Frozen core/assets preserved; Android GPU/FPS remains unverified.
+
+Historical milestone notes follow.
+
 Current: Speed ref applied to 18 corners, build `7cfce508201fcfd0` (2026-10-27). See [corner speed results and model limits](reports/CORNER_SPEED_TH.md). Frozen physics/controller, models and graphics retained. Android validation pending.
 
 Historical milestone notes below retain their original statements and do not override the current report.

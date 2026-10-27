@@ -1,0 +1,19 @@
+{
+  "track": "suzuka",
+  "time": 76.71666666666667,
+  "stop": null,
+  "rejections": 0,
+  "phases": [
+    "APPROACH",
+    "PIT_IN",
+    "SERVICE",
+    "RELEASE",
+    "PIT_OUT",
+    "MERGE",
+    "RACING"
+  ],
+  "exited": true,
+  "maxLimited": 78.37944617077429,
+  "maxExit": 71.31905566367051,
+  "scope": "Physical pit cycle with fixture-provided crew-ready proof; not a crew animation test"
+}

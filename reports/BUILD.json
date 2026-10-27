@@ -1,17 +1,18 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "7cfce508201fcfd0",
-  "sourceRevision": "7cfce508201fcfd062ef50564cc8551adf0af8f7384763ffc5aa37d34fcc9a5a",
+  "version": "ba525293537c4435",
+  "sourceRevision": "ba525293537c443516530df77022b0ad14451fcc494f8893cdc6790c56183754",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
-    "engine/ai/agent.js": "5be4253793988aa8bc7fc505afa8f794eeb8225c4e41e26061cb25a85bfc4208",
+    "engine/ai/agent.js": "1e65260f2cc6e0e38424b950888af79e94c0463e726741786b67dfb5dabf05e3",
     "engine/ai/battle-camera.js": "78e583678411f244786fbd09fed4e9a75ddba56a8a3592545b6dbfda795346b0",
     "engine/ai/battle-planner.js": "a9fd5256743be01592701f6471dedb68b2b1afc2587cf55ce9936131c31558e7",
     "engine/ai/braking-zones.js": "113e74e885c188e223448fb5c6ddc6edb8a8d1c0af12823f0213876946d15d0f",
+    "engine/ai/corner-commit25.js": "e1119bc3345f1dc229a1d0b187f0872572577aa705bde01e90a7dfe6416eee97",
     "engine/ai/corridor-threat.js": "7d66c9ea808886a802b1e426754e2b08457613f7e020d92e4ccd3a8bd8695fbc",
     "engine/ai/draft.js": "d291df87e4097cc86b2cae506a193b7ff3e8bfa0770412f5f3a737acebee3ab2",
     "engine/ai/duel-tactics.js": "b7f6fcb33584f176ee0e5208237aa216e54cae690a661a1d6c698502eb2e87a4",
-    "engine/ai/imported-circuits33.js": "b5a7b48bf7989c20b1e00b60a428c8a6040108da09530917d155d6188250403e",
+    "engine/ai/imported-circuits33.js": "c7a2af958cdf6d5cb1a581889b8e6226e8ec2c877eaf5538eb51e595899c6261",
     "engine/ai/personality.js": "1a6315310d129e156def1c3cd784c59c430fcf94c4c0116e9d8e67c278326c09",
     "engine/ai/racecraft.js": "23b1dacc985742951c9e3a5a66df9f9588abc6f3d52e31e52e959311099a167e",
     "engine/ai/rejoin-prediction.js": "2209ed39721fed02163100a217a401555bc86deae90b612065893189cc174372",
@@ -22,15 +23,16 @@
     "engine/drs/rear-wing24.js": "da045012ee605e4aca873d3a9eeb2f1714f448aa6460710966a3d61ddac76d51",
     "engine/drs/wing-kits25.js": "54cafdbab7a624e5fac543f23f73c5d48be2d2e0a9e2799385ddc2d03a86ac6b",
     "engine/index.js": "bc44eace049a0e12c3074cbb385512b7fcf92e974eec8687905af7892fe65909",
-    "engine/physics/attack-drive.js": "573b1d5c625b7d02bfeae2b4a051e9c0c6f6f35331d0b32248263e9dc1ac0196",
+    "engine/physics/attack-drive.js": "b11d130cc678ac89b331d19792606137ca1515d250d921f481983c8b9a181545",
     "engine/physics/collision.js": "3c788dba61f348e07f38b0f74b9c5ae8d8ee359584507c2cc00e386bf00f2dca",
-    "engine/physics/driver-pedal.js": "8f420b79372648b6d4c22d0f093fbb922a228febc7475143bb3f779f44ad942f",
+    "engine/physics/driver-pedal.js": "1b7f7851ef1ff797d7f931aacc11b83264943bf0926838f55468a2179625df3f",
+    "engine/physics/grip-steering25.js": "3a60919063c03b6bc67e195da7d1340bb528d5c1457c542f5bff5cfc6fa7b7f9",
     "engine/physics/pose-buffer.js": "c41906bda1e631fa90bd2435c4f1838385113bb56697927355bbea3e1b45c110",
-    "engine/physics/reference-adapter.js": "81422a3ad31dd9495e87582119534514ef5577208bc8f09b69e6dff18a86a118",
+    "engine/physics/reference-adapter.js": "8d96b6dc8d0a3ee14fa3c4807b471b5e9094e66a8739ecbb029d73e36cc0a332",
     "engine/physics/route-spline.js": "51358071d4179e9b3363536fb4c46652789c8e8b8a39b9b1688eac3bd98f04e0",
-    "engine/physics/speed-envelope.js": "bb0bc3f659b7c13da0311118c53c68be2c4dad20a98216a151edd8cf63a87950",
-    "engine/physics/tyres.js": "7cd1a8261c34410567c09a56d7d75df97e5fe93904f6cf941c678a57dd6a3191",
-    "engine/physics/vehicle-preset.js": "9727517350658e0570a72935eb5e25a2048b079bb390b75f1fa889070ace8697",
+    "engine/physics/speed-envelope.js": "b83aeff277f444331865f3ed419c18450d9b96f738eb5dcc2839ed0cbb9331be",
+    "engine/physics/tyres.js": "197e6463ecc1ea0b3539f8233aeb0190e9326ad183e782a7e54e7b9fdbf637ba",
+    "engine/physics/vehicle-preset.js": "c0b17b3762c7bae3e50618f0fedfc4634284af3d573d33eb578d10aca50f27d7",
     "engine/pit/crew/brake-service.js": "441dc8b1ab3e1ff4d0ee83f334fa8e9ecd3495fd5391ed577d52ec1bbabb77fc",
     "engine/pit/crew/car-assembly.js": "a015fbbb104dfe3f12d6f65433748eb6c24c5d734d271f6de4b94881898956a2",
     "engine/pit/crew/contact-pose.js": "00ffa1c8f7f52c1416313b52550b7a84eb31b5f9d5fde1096eb34fea4f5ef356",
@@ -73,7 +75,7 @@
     "engine/race/strategy.js": "a157813463786a5660d671d1ddb3cb784c0e54840d649ef8a15229a627ceea3b",
     "engine/race/team-engineer.js": "9d35e3d2fae9fdbe8cbc935b18f03d12335c7422c63f2569e16d0811c0acc803",
     "engine/race/weekend-environment.js": "9b942c1afc7165228c76ca5d3fb9edcf10a083e0c06bcb14350c76baa2b9966a",
-    "engine/race/weekend-race.js": "d4e558e7acd093414f24d3981f4ddde4960d51b4eb053f3b1d00e3142e6c673d",
+    "engine/race/weekend-race.js": "510d37212df3614a14ccb19a47739295b5408f1ddec411b2cdecd02bcf88720a",
     "engine/race/weekend-save.js": "939fbe6d21c58b7ae5d3b339d42f4681c9e49422e9ece27325d9a452dd7e5bc0",
     "engine/race/weekend-session.js": "2fb2b79df13bc7da81bdbb22880a89ab6128418fd4a46dc0bc1d14a25288ab8c",
     "engine/race/weekend.js": "6b7293032e8c8b9a9ee59c3887db43d0a7a5818437e8b4410c3e2d77080bdb82",
@@ -120,20 +122,30 @@
     "engine/safety/safety-car-visual.js": "d83fe0b8eeb32a619cf3e8e2c449d48474185647b247ceb223e43c910d433822",
     "engine/safety/safety-car.js": "a0f52c91112cca61fe32c1f9eb0bcda9a005b095f24fab47ef04125278e8a7b8",
     "engine/safety/safety-scene.js": "0e5db3f42752143eb247ceab070222c14e0b67da5eeea67c3fd1edd8264b3f94",
-    "engine/tracks/bahrain-layout.js": "c89c2ae3567a8e9e5f8124156cb5fba9d7f23814c848843ea56f707874ec12b4",
+    "engine/tracks/bahrain-layout.js": "e4dcb0b527a5575362bdbb73d37264e534a713e9eba2a884b40211670b30d353",
+    "engine/tracks/bahrain-line25.js": "e3df4d76f4531f1227d704bcd36364fc3fbe5edd5240688dd01cfef7c879740d",
     "engine/tracks/circuit-catalog23.js": "dc512d37642a89d11481e5a48d9e4ba5db1d79b117da0b38b0fa4271ab4b84d9",
     "engine/tracks/circuit-lines23.js": "839ae590295fde4a1147421f4f3de9dd215440fba4e70556edc96b4e745469dc",
-    "engine/tracks/corner-speed-reference.js": "a848428bc14eec60ebe037e0e2cafc33921c6f89bebf510fff42d00cabfa09a3",
+    "engine/tracks/corner-speed-reference.js": "b6381291c50863da3c2c5d77cc850e0005e520431d25ee279eaff31a97f54caf",
     "engine/tracks/imported-track33.js": "9f78927ae40e469b69e58a3ea0a09c92535cabbb6edc4ecf8429577588d2e5de",
     "engine/tracks/racing-line-data.js": "636ec1ad75fda6427d8939783277a3cd49ea8a66ccea0688f7a30349989ff593",
-    "engine/tracks/racing-line.js": "d976898a54e857f7d4f736f514ae56b9ae7dcfa7ae2377a9487aac0f9093a414",
+    "engine/tracks/racing-line.js": "31a6d4304bf2e74db75172e6824a77bac8cb1cf45daf9fdae5bca80f8c439418",
     "engine/tracks/racing-path.js": "ba9a34183ab870e4b7a30e5cf15cf236d836e1ac578e20ba041495f9a76398e0",
+    "engine/tracks/reference25/README.md": "99662be6cb8f249b88f25e4042b71475e3413cc656afb4ec5810eecfb463bac3",
+    "engine/tracks/reference25/bahrain-layout.json": "5a23becd1bb79a5f0e824bc16f8f297a1fe71a9269daedd89d1d90805ec8a982",
+    "engine/tracks/reference25/bahrain-map.json": "39fb5a4ab4eedbdcb7b17ab49d8a788edd5770c8f3f9e011534142b564943921",
+    "engine/tracks/reference25/bahrain-old.json.gz": "a3655d3d322327d1ed4b53b30f9b707474dba36e74bd22114a14be94e8ed339f",
+    "engine/tracks/reference25/suzuka-layout.json": "25d0acfd1575ebda025dde9030c02f5670cc445e5e95808aeee27d971e3152e8",
+    "engine/tracks/reference25/suzuka-map.json": "3de1b58faa117fa41130ea22d593c8e62c4e80442dd5d78ac4adc9edaaa96408",
+    "engine/tracks/reference25/suzuka-old.json.gz": "81a2a9ca3e3f9dce7dae61266870cb633993d0394f50a5253706a352cbd9bbd4",
     "engine/tracks/road-height33.js": "8be88cb49e093ee1c147cd0487e8bcd7642022c260fb750806d8fcec0ea2f2c5",
-    "engine/tracks/scenery/shanghai.js": "1ff1fcce22f5b0cd08cfd0c1e63a2ced5b97a2ad822f82249bc541ec9975df8f",
-    "engine/tracks/scenery/suzuka.js": "09a27c31f282b93383dbb20e7ced3a6f929bf3ebd93fd16da1fdfb6c05a1931c",
-    "engine/tracks/shanghai-line.js": "c42d8ea2f1f5c4cfc2443e6f4387de4cb0a83e2c3ff26669deb02d38c8d03f9a",
+    "engine/tracks/scenery/shanghai.js": "cdb3f97994500fb815eac2c4d98d3e83375227fa521bbf3ed7332a4d74b05fc0",
+    "engine/tracks/scenery/suzuka.js": "61b0d4ae15b25555966b90c366a9e56758af83b19fe8f8ea8410331fa4201a1e",
+    "engine/tracks/shanghai-line.js": "f4bd6b14874c5468fe6200666635f945ca22dd7161034e4d9e26cae5982e62e8",
+    "engine/tracks/survey-curve25.js": "195c00d340f956fa487bd3f3edf87f112b63c3e7054865af010a86c05d00b9bc",
+    "engine/tracks/suzuka-line25.js": "30ae4a655eaea6e4581ff0bfd389d24b78a7f3ed9694a1fcef9bfda78d3fed9b",
     "engine/tracks/track-layout28.js": "9c0d2df2fbdb47d133e1d1456fb561d18ab5f63e192f6fe84b353b5ec526a01c",
-    "engine/tracks/track.js": "188648ff74e1cca3437825c175d68a721c255551484c43cd1d1d46c77cf1e16f",
+    "engine/tracks/track.js": "31e93873cf9c513f4af3ecf6ce768c1f4b68e5f61e65792d09ffb9424761a905",
     "engine/ui/championship-ui23.js": "82a7902e37e7de19d3dac0a2f24a9d2056f962ae4b03941b6ef57eff02541fd0",
     "engine/ui/control23.js": "53d4e3629374060bd124343a3788d00b94998eb4b8d83c6e7beffe928e1b5f04",
     "engine/ui/engineer-ui.js": "ff1646f6e360f92820b3ffddcf5c1cd9d94907ae5b4bc886110b4d9b72c9e5fa",
@@ -185,8 +197,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 995256,
-      "sha256": "a284f422d3cefcdd325d9b5ffdf368edf606f11c078c83a3ddb2f6cf14deb435"
+      "bytes": 1026325,
+      "sha256": "7627064265957e9f0966614098af64c6cbaca38d7d2b9bf26cf5adf08569f496"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -213,8 +225,8 @@
       "sha256": "59b22d81aa6838b585c4ea4e429f66b259423d0e420afa6a2e7a1b5e80bdbd59"
     },
     "build.json": {
-      "bytes": 18591,
-      "sha256": "2f6e0244ea687af1a23fc8c19a1aaa6d6a2f7d10bb29b1b51e4f2d7914c89c4b"
+      "bytes": 19952,
+      "sha256": "0e1caa692c50a8dcae7335aed2f86552c10eb003e62ef94346f2f0019b9e1fbf"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -245,16 +257,16 @@
       "sha256": "c1fdbd7fcdf937ecef9a5229134e8d584dd633a65843d90ecaa923586b0bf1f8"
     },
     "workers/physics-worker.js": {
-      "bytes": 534975,
-      "sha256": "9dd7716e07674eaa83f5102c46129144fbd17b2510c19e33fcfb363e66fbec21"
+      "bytes": 533773,
+      "sha256": "eb7f262d865084f1a20c7a3d986f401b10296fd4839640baa4aaf47a7271b259"
     },
     "workers/race-worker.js": {
-      "bytes": 767252,
-      "sha256": "a24b5e7f466490140b586968a324be78f79d90f0158719cddb62e1c133319d8a"
+      "bytes": 785439,
+      "sha256": "1d470b75a3506dee2e8a26ea48b036c28f254ee82ce507b203a2d72b81634a24"
     },
     "sw.js": {
       "bytes": 1299,
-      "sha256": "da1971dbfff372857b582c4eecce2819e5ce0b82797d1337b4a9fed61ca07e09"
+      "sha256": "eea3d048594666a8276dc32ae408c9aa1a26e68a343f3c12791b46587915a4a7"
     }
   }
 }

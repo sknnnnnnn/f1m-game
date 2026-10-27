@@ -10,8 +10,8 @@ export function attackBrake(c,s,requested,box){if(!isAttackConfig(c)||requested<
 // still reachable. Real corner/traffic braking keeps its original command.
 export function coastBrakeTrim(c,s,out,agent){
  const cmd=out.command,v=Math.hypot(s.u,s.v);
- if(!isAttackConfig(c)||cmd.brake<=0||cmd.brake>.06||v<15||Math.abs(out.trace?.reference?.k??1)>.012||out.trace.speedError<-.6||agent.corridorDecel<0||(agent.trafficLimit??Infinity)<v+2)return out;
+ if(!isAttackConfig(c)||cmd.brake<=0||cmd.brake>.08||v<15||Math.abs(out.trace?.reference?.k??1)>.012||out.trace.speedError<-1||agent.corridorDecel<0||(agent.trafficLimit??Infinity)<v+2)return out;
  const drag=.5*c.rho*c.CdA*v*v/c.m;
- if(!agent.plan?.knots.every(q=>q.v>=v-.6&&q.a>=-Math.max(.3,drag)))return out;
+ if(!agent.plan?.knots.every(q=>q.v>=v-1&&q.a>=-Math.max(.3,drag)))return out;
  return {...out,command:{...cmd,brake:0},trace:{...out.trace,brakeTrim:'COAST'}};
 }
