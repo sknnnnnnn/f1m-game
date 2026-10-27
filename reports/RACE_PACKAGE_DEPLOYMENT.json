@@ -1,0 +1,67 @@
+{
+  "version": "932ad21a4fbc03fd",
+  "sourceCommit": "3b014a714a12085e0b8f4321b88425e8772eca0e",
+  "pagesCommit": "e7886404ca399b9add2493123731f0cf0075ce9c",
+  "deploymentRun": 40521061295,
+  "deployment": "success",
+  "liveAssets": [
+    {
+      "file": "build.json",
+      "matches": true
+    },
+    {
+      "file": "assets/app.js",
+      "matches": true
+    },
+    {
+      "file": "sw.js",
+      "matches": true
+    },
+    {
+      "file": "workers/race-worker.js",
+      "matches": true
+    },
+    {
+      "file": "workers/physics-worker.js",
+      "matches": true
+    }
+  ],
+  "verification": {
+    "unitJobs": 34,
+    "gridIntegrations": [
+      {
+        "cars": 6,
+        "laps": 5,
+        "seed": 19,
+        "tracks": [
+          "bahrain",
+          "shanghai",
+          "suzuka"
+        ]
+      },
+      {
+        "cars": 6,
+        "laps": 2,
+        "seed": 7,
+        "tracks": [
+          "bahrain",
+          "shanghai",
+          "suzuka"
+        ]
+      }
+    ],
+    "physicalPitCycles": 3,
+    "androidVisualAudioFPS": "not verified",
+    "offlineUpdate": "Versioned network downloads, reload cache mode, isolated active cache and failure-to-install regression tests passed"
+  },
+  "browser": {
+    "state": "STARTING GRID",
+    "startButtonEnabled": true,
+    "buildVisible": "932ad21a4fbc03fd",
+    "offlineReady": true,
+    "manualUpdateMigration": "Verified through check update → ready → activate; new version visible in UI",
+    "renderer": "Cloud Chrome CPU fallback; WebGL disabled by environment",
+    "scope": "Startup and manual update only; no Android FPS or listening claim"
+  },
+  "canonicalURLsAlsoMatch": true
+}
