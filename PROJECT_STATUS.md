@@ -1,3 +1,5 @@
+Current: Race Experience 38, build `60c921dd61b1beba`. [Features and validation](reports/RACE_EXPERIENCE_TH.md). Driver-rig CPU optimization, safe attack reset, compound conditioning, measured intervals, strategy comparison, event clips and local race journal. Radio chime only; phone 60 FPS remains unverified.
+
 Current: Radio chime only, build `51ebd4a8e57dec00`. Voice synthesis and voice controls removed; existing radio alert and text retained. [Change and device findings](reports/RADIO_CHIME_TH.md).
 
 Current: Race polish, build `bacf02672a85af4c`. [Features, measured results and limits](reports/RACE_POLISH_TH.md). Calmer chassis, voiced radio, richer audio, FPS camera, 60Hz pacing and crew optimizations. Android 60FPS/listening validation pending.

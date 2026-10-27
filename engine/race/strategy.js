@@ -1,3 +1,4 @@
+import {strategyChoices38} from './experience38.js';
 import {PIT} from '../pit/pit-lane.js';
 import {pitEstimate26} from '../pit/pit-estimate26.js';
 import {predictRejoin} from '../ai/rejoin-prediction.js';
@@ -18,9 +19,12 @@ export function evaluateStrategy(car,field,laps,options={}){
  const newLoss=stintLoss26(0,newWear,left)+(1-COMPOUNDS[next].grip)*30*left+1.2;
  const rejoin=predictRejoin(car,field,pitLoss,estimate.mainMetres),gain=oldLoss-newLoss-pitLoss-rejoin.trafficPenalty;
  const leader=field.filter(c=>c.id!==car.id&&!c.pit?.active&&c.progress>car.progress&&c.progress-car.progress<55).sort((a,b)=>a.progress-b.progress)[0];
- const undercut=['TACTICIAN','OPPORTUNIST'].includes(car.kind)&&leader&&wear>.3&&left>2.2&&gain> -8&&pitTraffic===0;
+ const rivalMoreWorn=leader&&tyreWear(leader.state)>wear+.06;
+ const undercut=!rivalMoreWorn&&['TACTICIAN','OPPORTUNIST'].includes(car.kind)&&leader&&wear>.3&&left>2.2&&gain> -8&&pitTraffic===0;
  const distanceToEntry=(PIT.entry-car.projection.s+circuit.length)%circuit.length,worthWindow=remaining-distanceToEntry>circuit.length*.75;
  const life=projected>.94&&wear>.30&&left>1.2,emergency=wear>.78&&left>.7;
  const rivalPitting=field.some(c=>c.id!==car.id&&c.pit?.active&&Math.abs(c.progress-car.progress)<300),holdOut=!car.pit.manual&&!emergency&&!life&&rivalPitting&&wear<.5&&rejoin.trafficPenalty>3;
- return {call:car.pit.manual||!holdOut&&worthWindow&&(emergency||life||undercut||gain>5+8*(car.agent.style.tyreCare??.5)&&wear>.25&&left>1.4),rejoin,plan:holdOut?'OVERCUT':undercut?'UNDERCUT':gain>5?'PIT_NOW':'STAY_OUT',reason:car.pit.manual?'คำสั่ง BOX':holdOut?'อยู่ต่อ รอช่องออกพิตโล่ง':!worthWindow?'เก็บตำแหน่งจนถึงเส้นชัย':emergency?'ยางสึกมาก':undercut?'เข้าก่อนคู่แข่ง':life?'รักษายางให้ถึงเส้นชัย':gain>5?'เปลี่ยนยางคุ้มเวลา':'วิ่งต่อคุ้มกว่า',nextCompound:next,projectedWear:projected,estimatedGainSeconds:gain,estimatedPitLoss:pitLoss,rival:leader?.id??null};
+ const one=Math.min(1,left),after=Math.max(0,left-one),waitLoss=stintLoss26(wear,Math.min(1.5,wear+rate*circuit.length*one),one)+stintLoss26(0,rate*circuit.length*after*ratio,after)+(1-COMPOUNDS[next].grip)*30*after+1.2;
+ const choices38=strategyChoices38({waitLoss,oldLoss,newLoss,pitLoss,trafficPenalty:rejoin.trafficPenalty,wear,rate,remaining,length:circuit.length});
+ return {choices38,call:car.pit.manual||!holdOut&&worthWindow&&(emergency||life||undercut||gain>5+8*(car.agent.style.tyreCare??.5)&&wear>.25&&left>1.4),rejoin,plan:holdOut?'OVERCUT':undercut?'UNDERCUT':gain>5?'PIT_NOW':'STAY_OUT',reason:car.pit.manual?'คำสั่ง BOX':holdOut?'อยู่ต่อ รอช่องออกพิตโล่ง':!worthWindow?'เก็บตำแหน่งจนถึงเส้นชัย':emergency?'ยางสึกมาก':undercut?'เข้าก่อนคู่แข่ง':life?'รักษายางให้ถึงเส้นชัย':gain>5?'เปลี่ยนยางคุ้มเวลา':'วิ่งต่อคุ้มกว่า',nextCompound:next,projectedWear:projected,estimatedGainSeconds:gain,estimatedPitLoss:pitLoss,rival:leader?.id??null};
 }

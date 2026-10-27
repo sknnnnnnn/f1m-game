@@ -1,0 +1,10 @@
+PASS only completed actual races score once, both points tables and ordered save restore
+PASS target instructions validate team, use real pace, preserve physical state and expire
+PASS team tow/swap/cancel are mutually exclusive and restore prior pace
+PASS two-car plans are atomic and reach real tyre/config/pit order
+PASS actual save retains intent and refuses different circuit geometry
+PASS spark RGB remains HDR orange while opacity fades; cloud uses separate material
+PASS hard-braking scrub marks exist independently of lock smoke and coasting adds none
+PASS bounded archive retains completed actual event clips after rolling window passes
+PASS rear wear reduces planned corner demand only; real countersteer uses inputs
+PASS pit traffic remains visible until physically clear and crossing reserve never changes poses

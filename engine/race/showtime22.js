@@ -1,3 +1,4 @@
+import {tyreConditioning38} from '../physics/tyres.js';
 import {wingEligibility24} from '../drs/drs24.js';
 import {clearance,brakeBrush} from '../physics/collision.js';
 // Game telemetry adapters. No writes to authoritative pose, rank, wheels or grip.
@@ -13,7 +14,7 @@ export function effectsTelemetry22(car,c){const s=car.state,speed=Math.hypot(s.u
  return {speed,locks,smoke:Math.max(...locks),clearance,scrape,spark:scrape?clamp((.016-clearance)*75+.3,0,1)*(.4+.6*(.5+.5*Math.sin((s.time??0)*17+car.id*2.3))):0,dust:['GRAVEL','SAND'].includes(car.surface?.kind)&&speed>8?clamp(speed/35,0,1):0,wing:car.show22?.wing??false,tyre:tyrePhase22(car)};}
 export function battleBrief22(car){const a=car.agent??{},d=a.duel??{},p=a.personality??{},rival=d.counter?.id??d.pass?.id??d.exit?.id??a.perception?.leader?.id;return {rival:rival??null,phase:d.counter?'สวนคืน':d.exit?'วางทางออก':d.pass?'รักษาช่องแซง':a.state==='DRAFT'?'เตรียมจากลมดูด':'อ่านพื้นที่',style:p.risk>.72?'เบรกกล้า · ชอบบุก':p.defend>.7?'ป้องกันพื้นที่':(a.style?.tyreCare??0)>.75?'ถนอมยาง · เน้นทางออก':'ปรับไลน์ตามคู่แข่ง'};}
 
-export function freshTyreFactor22(car){return (car.tyres?.sets??1)>1?.96+.04*clamp((car.distance-car.tyres.fittedDistance)/450,0,1):1;}
+export function freshTyreFactor22(car){if((car.tyres?.sets??1)<=1)return 1;const t=tyreConditioning38(car),loss=car.tyres.compound==='H'?.05:car.tyres.compound==='S'?.03:.04;return 1-loss*(1-t.scrub);}
 // Damage only on an already-accepted tiny stable braking brush. Hard impacts
 // still stop before contact. This is wing wear, not an impulse/crash solver.
 export function brushDamage22(r,dt){for(const a of r.cars)for(const b of r.cars){if(a.id===b.id||a.pit.active||b.pit.active||!a.health)continue;const s=a.state,t=b.state;if(clearance(s,t,r.config)>=0||!brakeBrush(s,s,t,t,r.config))continue;const dx=t.X-s.X,dy=t.Y-s.Y,forward=dx*Math.cos(s.psi)+dy*Math.sin(s.psi),side=-dx*Math.sin(s.psi)+dy*Math.cos(s.psi);if(forward<r.config.length*.65)continue;a.health.wing=clamp(a.health.wing+dt*.08,0,1);a.health.wingSide=-Math.sign(side)||1;}}

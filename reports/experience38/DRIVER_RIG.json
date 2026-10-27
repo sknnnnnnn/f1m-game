@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "vertexComparisons": 1135296,
+  "maxVertex": 5.684341886080802e-14,
+  "maxMatrix": 1.7053025658242404e-13,
+  "cpuMS": {
+    "before": 32.30358000000001,
+    "after": 20.25460300000003,
+    "speedup": 1.5948759894232418
+  },
+  "scope": "Actual imported GLB, identical geometry and articulated transforms at nine steering angles under translated/rotated/scaled car; CPU fixture only, no Android FPS claim"
+}

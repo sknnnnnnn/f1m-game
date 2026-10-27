@@ -22,6 +22,8 @@ export class RaceRadio34 {
   for(const e of p.radio??[]){if((e.id===id||e.id===0)&&p.time-e.time>=0&&p.time-e.time<6)add('radio:'+e.time+':'+e.id+':'+e.text,e.text,e.id===0?3:2,'engineer',9);}
   for(const e of p.pitEvents??[]){if(e.car!==id&&e.kind==='PIT_ENTRY'&&p.time-e.time>=0&&p.time-e.time<6)add('rivalpit:'+e.car+':'+e.time,(p.cars.find(c=>c.id===e.car)?.name??'#'+e.car)+' เข้าพิท · เช็กแผนของเรา',2,'rivalpit',25);}
   const tyre=car.tyres??row.tyres,engineer=p.engineer?.cars.find(c=>c.id===id);
+  if(tyre?.thermal38?.phase==='HOT'&&!car.pit?.active)add('hot38:'+id+':'+tyre.sets,'ยางร้อน · ลดการสไลด์และดูแลขาออกโค้ง',2,'thermal38',40);
+  if(tyre?.sets>1&&tyre.thermal38?.phase==='READY'&&!car.pit?.active)add('ready38:'+id+':'+tyre.sets,'ยางเข้าช่วงพร้อมแล้ว · บุกเมื่อมีพื้นที่',1,'ready38',35);
   if(tyre&&tyre.health<.35&&!car.pit?.active)add('tyre:'+id+':'+tyre.sets,'ยางเหลือ '+Math.round(tyre.health*100)+'% · ตรวจแผน BOX',3,'tyre',35);
   if(p.time>10&&engineer?.front&&engineer.gap>12&&engineer.gap<90&&engineer.closing>.5&&!car.pit?.active)add('closing:'+engineer.front+':'+Math.floor(p.time/35),'กำลังไล่ '+(p.cars.find(c=>c.id===engineer.front)?.name??'#'+engineer.front)+' · รอช่องบุก',1,'closing',35);
   candidates.sort((a,b)=>b.priority-a.priority);

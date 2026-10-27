@@ -32,13 +32,14 @@ function duelTactics(agent,state,p,safeLane,decision){
  if(['FEINT','OUTSIDE_SWITCH'].includes(mode))memory.pass=null;
  if(memory.pass){const pass=memory.pass,opponent=p.cars.find(c=>c.id===pass.id);
   const progress=passProgress26(pass,opponent,state.time,agent.config?.length??5.5);
-  if(progress!=='HOLD'){memory.lastPass={id:pass.id,result:progress,time:state.time};memory.pass=null;}
+  if(progress!=='HOLD'){memory.lastPass={id:pass.id,result:progress,time:state.time};memory.pass=null;if(['STALLED','EXPIRED'].includes(progress)){memory.retryUntil38=state.time+Math.max(1.2,Math.min(2.5,agent.style?.patience??1.5));if(agent.racecraft){agent.racecraft.action='WAIT';agent.racecraft.cooldown=memory.retryUntil38;}agent.lastAbort={time:state.time,rival:pass.id,reason:'ช่องเดิมไม่คืบหน้า ตั้งรถแล้วเตรียมบุกใหม่'};}}
   else if(safeLane(pass.lane)){choice=pass.lane;mode='PASS_COMMIT';reason=`COMPLETE PASS CAR ${pass.id} / HOLD CORRIDOR`;}
   else {memory.pass=null;reason+=' / PASS SPACE CLOSED';}
  }
+ if(state.time<(memory.retryUntil38??0)&&!memory.pass&&['SLINGSHOT','PASS_COMMIT'].includes(mode)){choice=agent.targetLane;mode='DRAFT';reason='RESET ATTACK / REBUILD CLOSING SPEED';}
  // A third driver can exploit an actual side-by-side fight ahead. The same
  // predictive corridor check and downstream following/braking limits still win.
- if(!['FEINT','OUTSIDE_SWITCH'].includes(mode)&&!memory.pass&&!memory.exit&&!corner&&agent.personality.risk>=.65&&state.time>=agent.commitUntil){
+ if(!['FEINT','OUTSIDE_SWITCH'].includes(mode)&&!memory.pass&&!memory.exit&&state.time>=(memory.retryUntil38??0)&&!corner&&agent.personality.risk>=.65&&state.time>=agent.commitUntil){
   const ahead=p.cars.filter(c=>c.gap>20&&c.gap<65);
   let opportunity=null;
   for(let i=0;i<ahead.length;i++)for(let j=i+1;j<ahead.length;j++){

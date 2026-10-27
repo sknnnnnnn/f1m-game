@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "measuredCrossingIntervals": {
+    "position": 2,
+    "front": {
+      "id": 1,
+      "name": "A",
+      "metres": 40,
+      "seconds": 2
+    },
+    "rear": {
+      "id": 3,
+      "name": "C",
+      "metres": 20,
+      "seconds": 1
+    },
+    "lapDelta": -1,
+    "phase": null
+  },
+  "tyreWindowAndTemperature": true,
+  "threeStrategyChoices": true,
+  "journalDedupAndBoundedStorage": true,
+  "storageFailureHandled": true,
+  "replayPitAndPersonalBest": true,
+  "replayDoesNotMutateEvents": true,
+  "protectedLaneAndEmptyTrafficSkip": true,
+  "stalledAttackReset": true
+}

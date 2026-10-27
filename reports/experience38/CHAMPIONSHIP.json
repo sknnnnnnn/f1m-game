@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "scope": "Controlled feature fixtures; complete physical runs and real browser evidence separate",
+  "cases": [
+    {
+      "name": "only completed actual races score once, both points tables and ordered save restore",
+      "status": "PASS",
+      "details": true
+    },
+    {
+      "name": "target instructions validate team, use real pace, preserve physical state and expire",
+      "status": "PASS",
+      "details": true
+    },
+    {
+      "name": "team tow/swap/cancel are mutually exclusive and restore prior pace",
+      "status": "PASS",
+      "details": true
+    },
+    {
+      "name": "two-car plans are atomic and reach real tyre/config/pit order",
+      "status": "PASS",
+      "details": true
+    },
+    {
+      "name": "actual save retains intent and refuses different circuit geometry",
+      "status": "PASS",
+      "details": true
+    },
+    {
+      "name": "spark RGB remains HDR orange while opacity fades; cloud uses separate material",
+      "status": "PASS",
+      "details": {
+        "rgb": [
+          2.8,
+          1.05,
+          0.12
+        ],
+        "fade": [
+          1,
+          0.4642857142857143
+        ]
+      }
+    },
+    {
+      "name": "hard-braking scrub marks exist independently of lock smoke and coasting adds none",
+      "status": "PASS",
+      "details": {
+        "marks": 4,
+        "smoke": 0
+      }
+    },
+    {
+      "name": "bounded archive retains completed actual event clips after rolling window passes",
+      "status": "PASS",
+      "details": {
+        "clips": 12
+      }
+    },
+    {
+      "name": "rear wear reduces planned corner demand only; real countersteer uses inputs",
+      "status": "PASS",
+      "details": true
+    },
+    {
+      "name": "pit traffic remains visible until physically clear and crossing reserve never changes poses",
+      "status": "PASS",
+      "details": {
+        "pitFlagInAuthoritativeStateUnchanged": true,
+        "cap": 26.851443164195103
+      }
+    }
+  ]
+}
