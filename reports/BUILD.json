@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "38b04c60427b8238",
-  "sourceRevision": "38b04c60427b8238cd3bce0d2e582bd364a5d49c63fe1e4e8a2aa5877d644b49",
+  "version": "93f5e627f88c8d5e",
+  "sourceRevision": "93f5e627f88c8d5e10eed959ad46751c9aad0f10d4ea127d1229066d6767387f",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "8f0e46c4ed3e16a71fcb31198ed252513c41fc402e624c2bfd71cdcedb69eeff",
@@ -163,7 +163,7 @@
     "engine/ui/race-viewport36.js": "25ad0ae380ec7873ec62d64f2cdaaf1b92bd0bcbde55c22f34356d0ecb7823cf",
     "engine/ui/setup-controls.js": "c80eb4c4d133349ee055d1b4f5fab6c0ff4cfc6ddbe669c90c7ebc531916fe91",
     "engine/ui/showtime-ui22.js": "928b938aac57f7e027219d5366565509112259ffb9c532ce74aa5fee6da550d8",
-    "engine/ui/watch-ui24.css": "f7217c3afe20c57f8797f5d2bdb52a8b63221d56d9d25a56d002d799aea2b26e",
+    "engine/ui/watch-ui24.css": "6c87f061896753c9dabbf06c9affc9de89695a48a6765f23c7c9cb0d9f65d465",
     "engine/ui/watch-ui24.js": "40e300c60f79d88226d3abcff7144fb37b9c7cca5dbb9755d57a24a32eac79e9",
     "engine/ui/weekend-ui.js": "e13b61dfaf60ef96f9ed6c2d575cdd9874bf3273e7404a0c2b77dcf60e2f1bca",
     "frozen/config/C0.json": "2fa2e34d7ced2a8effc80bc476131e9caf920eeba44741952b606e6dcb2608d2",
@@ -206,8 +206,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 1044100,
-      "sha256": "8a7b1b5cf543aa01f95e63f2c79b5036b70695e4ca62eb49aad0f1b6f9fce57e"
+      "bytes": 1044122,
+      "sha256": "89da83d93a0d10a4081785b110f4af4205c5fede018e66c618930a8a5a4f7610"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -235,7 +235,7 @@
     },
     "build.json": {
       "bytes": 20893,
-      "sha256": "fd4ed57e7bfc69481098de501aaf56edc8d1cdd56fc8c8d5d0b5b8473cbb32f4"
+      "sha256": "8a9a7d6f58d04a2b6e22ef037cc7ce16d6cd1137ffdce4c70b0958ad653d26ed"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -275,7 +275,7 @@
     },
     "sw.js": {
       "bytes": 1828,
-      "sha256": "6acfbcd1e4088385f17ba4c1569d5bd322076d9f96f780db2ce7d927d3a7a1d5"
+      "sha256": "17317d459474040953e8606c578006b334d6269f120f591b55c5194baa858d33"
     }
   }
 }

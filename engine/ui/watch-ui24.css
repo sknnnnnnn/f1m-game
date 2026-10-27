@@ -18,5 +18,5 @@
 
 /* Place the rendered race above the unchanged HUD/buttons. Camera aspect is
    recomputed by the stage ResizeObserver; no crop, zoom or canvas translation. */
-body.viewport-ui36 #stage{inset:0 0 var(--race-ui-bottom36,150px)!important}
+body.viewport-ui36 #stage{inset:0 0 var(--race-ui-bottom36,150px)!important;height:auto!important}
 @media(max-height:540px){body.viewport-ui36 #hud{top:auto!important}}
