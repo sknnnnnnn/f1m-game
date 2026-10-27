@@ -1,0 +1,30 @@
+{
+  "version": "580e30aa28a364a9",
+  "sourceCommit": "475c32579a2fb6fcf72a9ed50ef8149f3b50cdee",
+  "pagesCommit": "907425a63dd8056803e331cab2de55196d6eca62",
+  "deploymentRun": 40510176516,
+  "deploymentStatus": "completed",
+  "deploymentConclusion": "success",
+  "liveAssets": [
+    {
+      "file": "build.json",
+      "matches": true
+    },
+    {
+      "file": "assets/app.js",
+      "matches": true
+    },
+    {
+      "file": "sw.js",
+      "matches": true
+    },
+    {
+      "file": "workers/race-worker.js",
+      "matches": true
+    },
+    {
+      "file": "workers/physics-worker.js",
+      "matches": true
+    }
+  ]
+}
