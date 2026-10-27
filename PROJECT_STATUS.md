@@ -1,4 +1,4 @@
-Current: Race package, build `0653e7d89b47091a`. See [changes, measured racing/pit results and limits](reports/RACE_PACKAGE_TH.md). F125 driving base, crew/terrain fix, frozen physics and models retained. Main unchanged; Android listening/visual/FPS validation remains pending.
+Current: Race package, build `932ad21a4fbc03fd`. See [changes, measured racing/pit results and limits](reports/RACE_PACKAGE_TH.md). F125 driving base, crew/terrain fix, frozen physics and models retained. Main unchanged; Android listening/visual/FPS validation remains pending.
 
 Historical milestone notes follow.
 

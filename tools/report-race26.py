@@ -53,6 +53,10 @@ Fixture ให้หลักฐานช่างพร้อมเพื่อ
 |---|---:|---:|---:|---:|
 {chr(10).join(pits)}
 
+## การอัปเดตและแคช
+
+พบจากการตรวจลิงก์จริงว่าตัวอัปเดตอาจเติมแคชเวอร์ชันใหม่ด้วยไฟล์จาก HTTP/CDN cache รุ่นเก่า จึงเพิ่ม URL รุ่นเฉพาะตอนดาวน์โหลด ข้าม HTTP cache เก็บไฟล์ด้วย key ปกติสำหรับออฟไลน์ และให้แต่ละ service worker อ่านเฉพาะแคชรุ่นตัวเอง หากดาวน์โหลดไฟล์ใดไม่สำเร็จจะไม่ติดตั้งแพตช์ที่ไม่ครบ การใช้แพตช์ยังต้องกดเองหลังพักเกม
+
 ## การตรวจและข้อจำกัด
 
 - npm test: 34 งานผ่าน รวม worker parity และ checksum ไฟล์แกน/โมเดลเดิม 20 ไฟล์
@@ -68,5 +72,7 @@ Fixture ให้หลักฐานช่างพร้อมเพื่อ
 (root/'reports/RACE_PACKAGE_TH.md').write_text(text)
 for filename in ['PROJECT_STATUS.md','README_TH.md']:
  p=root/filename;s=p.read_text();prefix=f'Current: Race package, build `{version}`. See [changes, measured racing/pit results and limits](reports/RACE_PACKAGE_TH.md). F125 driving base, crew/terrain fix, frozen physics and models retained. Main unchanged; Android listening/visual/FPS validation remains pending.\n\nHistorical milestone notes follow.\n\n'
- if not s.startswith(prefix):p.write_text(prefix+s)
+ if not s.startswith(prefix):
+  if s.startswith('Current: Race package, build'):s=s.split('Historical milestone notes follow.\n\n',1)[1]
+  p.write_text(prefix+s)
 print(version)

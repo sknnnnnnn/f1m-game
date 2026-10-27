@@ -4,6 +4,11 @@
   "offlineNavigation": true,
   "binaryModelsAndNestedWorkerCached": true,
   "updatesRequireExplicitMessage": true,
+  "versionedNetworkRequests": true,
+  "httpCacheBypassed": true,
+  "canonicalOfflineKeys": true,
+  "activeVersionCacheOnly": true,
+  "failedDownloadsBlockInstallation": true,
   "otherCachesPreserved": true,
-  "scope": "Service worker unit test with deterministic cache/fetch mocks; actual Android install/offline remains separate."
+  "scope": "Service worker unit test with deterministic cache/fetch mocks; Android install/FPS remains separate."
 }
