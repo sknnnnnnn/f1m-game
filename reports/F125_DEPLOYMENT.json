@@ -1,0 +1,41 @@
+{
+  "version": "ba525293537c4435",
+  "sourceCommit": "49c04a256970a7eb8d430958fec5707dde3c9cf8",
+  "pagesCommit": "6d723664c73263c94234447dddf45c73407f6cdf",
+  "deploymentRun": 40474384366,
+  "deployment": "success",
+  "liveAssets": [
+    {
+      "file": "build.json",
+      "matches": true,
+      "version": "ba525293537c4435"
+    },
+    {
+      "file": "assets/app.js",
+      "matches": true,
+      "version": null
+    },
+    {
+      "file": "workers/race-worker.js",
+      "matches": true,
+      "version": null
+    },
+    {
+      "file": "workers/physics-worker.js",
+      "matches": true,
+      "version": null
+    },
+    {
+      "file": "sw.js",
+      "matches": true,
+      "version": null
+    }
+  ],
+  "browser": {
+    "state": "STARTING GRID",
+    "buildVisible": "ba525293537c4435",
+    "offlineReady": true,
+    "renderer": "Chrome CPU fallback; WebGL unavailable in remote test browser",
+    "scope": "Startup/grid only. No full browser race or Android GPU/FPS assertion."
+  }
+}
