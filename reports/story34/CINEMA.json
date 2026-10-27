@@ -1,0 +1,134 @@
+{
+  "scope": "Node presentation timing and camera math, rigid pair at 252 km/h, actual VisualBuffer with asynchronous packets; not browser FPS or full-race QA",
+  "series": [
+    {
+      "hz": 30,
+      "packetMS": 45,
+      "aspect": 0.46208530805687204,
+      "maxFrameNDCStep": 1.2351550801728703e-14,
+      "rmsFrameNDCStep": 4.400938736534057e-15
+    },
+    {
+      "hz": 30,
+      "packetMS": 45,
+      "aspect": 1.7777777777777777,
+      "maxFrameNDCStep": 7.623643714769221e-15,
+      "rmsFrameNDCStep": 2.380794355110648e-15
+    },
+    {
+      "hz": 30,
+      "packetMS": 70,
+      "aspect": 0.46208530805687204,
+      "maxFrameNDCStep": 1.2351550801728703e-14,
+      "rmsFrameNDCStep": 4.287769549524983e-15
+    },
+    {
+      "hz": 30,
+      "packetMS": 70,
+      "aspect": 1.7777777777777777,
+      "maxFrameNDCStep": 7.623643714769221e-15,
+      "rmsFrameNDCStep": 2.3885445464554854e-15
+    },
+    {
+      "hz": 60,
+      "packetMS": 45,
+      "aspect": 0.46208530805687204,
+      "maxFrameNDCStep": 1.8125772227440156e-14,
+      "rmsFrameNDCStep": 5.037803571479636e-15
+    },
+    {
+      "hz": 60,
+      "packetMS": 45,
+      "aspect": 1.7777777777777777,
+      "maxFrameNDCStep": 6.225297801144755e-15,
+      "rmsFrameNDCStep": 2.343362636953519e-15
+    },
+    {
+      "hz": 60,
+      "packetMS": 70,
+      "aspect": 0.46208530805687204,
+      "maxFrameNDCStep": 1.2306773402097227e-14,
+      "rmsFrameNDCStep": 4.893994265149404e-15
+    },
+    {
+      "hz": 60,
+      "packetMS": 70,
+      "aspect": 1.7777777777777777,
+      "maxFrameNDCStep": 7.623643714769221e-15,
+      "rmsFrameNDCStep": 2.3682487465281332e-15
+    },
+    {
+      "hz": 90,
+      "packetMS": 45,
+      "aspect": 0.46208530805687204,
+      "maxFrameNDCStep": 1.2078627311918202e-14,
+      "rmsFrameNDCStep": 3.856033463251889e-15
+    },
+    {
+      "hz": 90,
+      "packetMS": 45,
+      "aspect": 1.7777777777777777,
+      "maxFrameNDCStep": 6.651341530813521e-15,
+      "rmsFrameNDCStep": 2.0866578082806132e-15
+    },
+    {
+      "hz": 90,
+      "packetMS": 70,
+      "aspect": 0.46208530805687204,
+      "maxFrameNDCStep": 1.2297756073405194e-14,
+      "rmsFrameNDCStep": 3.857129890787979e-15
+    },
+    {
+      "hz": 90,
+      "packetMS": 70,
+      "aspect": 1.7777777777777777,
+      "maxFrameNDCStep": 8.791827759516761e-15,
+      "rmsFrameNDCStep": 2.1911956834387817e-15
+    },
+    {
+      "hz": 120,
+      "packetMS": 45,
+      "aspect": 0.46208530805687204,
+      "maxFrameNDCStep": 1.2351550801728703e-14,
+      "rmsFrameNDCStep": 4.070175610604036e-15
+    },
+    {
+      "hz": 120,
+      "packetMS": 45,
+      "aspect": 1.7777777777777777,
+      "maxFrameNDCStep": 6.354814666525635e-15,
+      "rmsFrameNDCStep": 2.158056579838083e-15
+    },
+    {
+      "hz": 120,
+      "packetMS": 70,
+      "aspect": 0.46208530805687204,
+      "maxFrameNDCStep": 1.819125496320609e-14,
+      "rmsFrameNDCStep": 4.078950722739844e-15
+    },
+    {
+      "hz": 120,
+      "packetMS": 70,
+      "aspect": 1.7777777777777777,
+      "maxFrameNDCStep": 6.484417700753082e-15,
+      "rmsFrameNDCStep": 2.2414322759780023e-15
+    }
+  ],
+  "stationary": [
+    {
+      "aspect": 0.46208530805687204,
+      "maxAnchorJump": 0,
+      "maxFovStep": 0.4031186420096624
+    },
+    {
+      "aspect": 1.7777777777777777,
+      "maxAnchorJump": 0,
+      "maxFovStep": 0.2319378839384605
+    }
+  ],
+  "director": {
+    "heldAcrossPackets": 200,
+    "partnerChangesDetected": true,
+    "sourceUnmodified": true
+  }
+}

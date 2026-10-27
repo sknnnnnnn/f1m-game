@@ -31,7 +31,8 @@ export class BroadcastDirector{
  update(frame,time,id=this.focus){if(!frame?.cars?.some(c=>c.id===id))return null;if(id!==this.focus||time<this.lastTime){this.reset(id);}this.lastTime=time;const next=this.classify(frame,time,id);if(!next)return null;
  const key=next.kind+':'+next.shot+':'+(next.partnerId??'');if(key!==this.candidate){this.candidate=key;this.candidateSince=time;}
  let switched=false;const duration=time-this.since,entry=!Number.isFinite(this.since),stable=time-this.candidateSince>=.7,critical=next.urgent&&duration>=(next.kind==='STOPPED'?.5:next.kind==='PASS'?2:4)&&(!next.eventKey||next.eventKey!==this.lastEventKey);
- if(entry||next.kind==='GRID'||(stable&&time>=this.holdUntil)||critical){const changed=next.shot!==this.story.shot||(next.shot==='duel'&&next.partnerId!==this.story.partnerId);if(changed||entry){if(this.story.shot==='trackside')this.tracksideUntil=time+10;this.story=next;if(next.eventKey)this.lastEventKey=next.eventKey;this.since=time;this.holdUntil=time+(next.shot==='trackside'?6:next.kind==='PASS'?8:7);switched=true;}}
+ const matureDuel=next.kind==='DUEL'&&duration>=7&&time>=this.holdUntil;
+ if(entry||next.kind==='GRID'||((stable||matureDuel)&&time>=this.holdUntil)||critical){const changed=next.shot!==this.story.shot||(next.shot==='duel'&&next.partnerId!==this.story.partnerId);if(changed||entry){if(this.story.shot==='trackside')this.tracksideUntil=time+10;this.story=next;if(next.eventKey)this.lastEventKey=next.eventKey;this.since=time;this.holdUntil=time+(next.shot==='trackside'?6:next.kind==='PASS'?8:7);switched=true;}}
  if(next.shot===this.story.shot&&next.partnerId===this.story.partnerId){this.story={...this.story,...next};}
  // A stationary TV post must not pan after a car for an entire straight.
  if(this.story.shot==='trackside'&&time-this.since>6){this.story={kind:'EXIT',shot:'chase',title:'ออกจากจุดเบรก · ตามรถต่อ'};this.tracksideUntil=time+10;this.since=time;this.holdUntil=time+4.5;switched=true;}

@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "0ce632be9c8bcb9a",
-  "sourceRevision": "0ce632be9c8bcb9a6e90872eec5bfc189d79c4eeaebe91a3d81e8160ccc463b2",
+  "version": "4e4419b64bc34852",
+  "sourceRevision": "4e4419b64bc34852465f184d5f073ad826b91e092e9d63ad1a3d49579f755224",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "8f0e46c4ed3e16a71fcb31198ed252513c41fc402e624c2bfd71cdcedb69eeff",
@@ -84,7 +84,7 @@
     "engine/race/weekend.js": "6b7293032e8c8b9a9ee59c3887db43d0a7a5818437e8b4410c3e2d77080bdb82",
     "engine/rendering/app.js": "b2223afb0588bd096a55820a86e4206a953df57af6f60f96555932d5414e77cf",
     "engine/rendering/bahrain-scene30.js": "e0dc40600c840273c89488bb6e879df06115107943215e8b84986713c125d3ed",
-    "engine/rendering/broadcast.js": "37e2d8d193d333a8cb02a952f45e37ecf2a1a99633ed94b160992186d93b38ac",
+    "engine/rendering/broadcast.js": "3025acf29d7951c5680142be8244da85c6d9db6d08317783db0a53b287213711",
     "engine/rendering/camera-safety30.js": "32d1c6af6c08ad9658a8eac5f1ad0b8c9dc32f5e0a7ca26b363513dee2075321",
     "engine/rendering/cameras.js": "5693bfeda7fa2fbb97661c287ce2782bafe3338deffb7d89d677a9a10f9608bf",
     "engine/rendering/circuit-finish.js": "3d6d9c9c9cd431f53562a731b74c388cc4f4d6ecaedb092b921f490b543e556f",
@@ -158,11 +158,11 @@
     "engine/ui/race-digest34.js": "5872c079caddd27cd756a6bb880aa622a51b29afe67b2f70d8d3b2c9494970fc",
     "engine/ui/race-radio34.js": "d9c2fc521a6bbc60eeb59e984719bed624e2607c2d15144443f6ed12231e89e6",
     "engine/ui/race-ui21.css": "a56c85f53bd15dd3d3472e2dff982519424347d130862b737c50a71df69c6416",
-    "engine/ui/race-ui21.js": "1037408713efc02b3b58afeb4bf4f3dc12a40ff457787cf41794a8331c10add7",
+    "engine/ui/race-ui21.js": "e58f02790ebeee5c275aa27844908956948608b785b66d2725949be52e896974",
     "engine/ui/setup-controls.js": "c80eb4c4d133349ee055d1b4f5fab6c0ff4cfc6ddbe669c90c7ebc531916fe91",
     "engine/ui/showtime-ui22.js": "928b938aac57f7e027219d5366565509112259ffb9c532ce74aa5fee6da550d8",
     "engine/ui/watch-ui24.css": "2d09f7cf5acbaadcc8e2404ce25b1cd35c4ff7601f19ee87a076d82cb914218e",
-    "engine/ui/watch-ui24.js": "0840242a9e8db898b503d64a1a1cf13fc1b7326b779a061091b6b06ebb555a6d",
+    "engine/ui/watch-ui24.js": "40e300c60f79d88226d3abcff7144fb37b9c7cca5dbb9755d57a24a32eac79e9",
     "engine/ui/weekend-ui.js": "e13b61dfaf60ef96f9ed6c2d575cdd9874bf3273e7404a0c2b77dcf60e2f1bca",
     "frozen/config/C0.json": "2fa2e34d7ced2a8effc80bc476131e9caf920eeba44741952b606e6dcb2608d2",
     "frozen/config/P1Criteria-R1.json": "49768bf3f1e3658730bf66ae95e207c473a4f4953f6286516d970d302095e918",
@@ -204,8 +204,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 1041657,
-      "sha256": "01cba6e72dba58e866e2c4ec74fe37ebc91ba02896798193b455c42f710934c3"
+      "bytes": 1041890,
+      "sha256": "240fb441951508152b855a235ecc34538b0bf84de72b67194ef09611ee82c2ab"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -233,7 +233,7 @@
     },
     "build.json": {
       "bytes": 20686,
-      "sha256": "5221fffa5befda92abe68f61b544995284217f2bfa0736860060a804960270c2"
+      "sha256": "8317eefc1495675040662266d38c850fa5774b8e2d898fd68056663baa3eea19"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -273,7 +273,7 @@
     },
     "sw.js": {
       "bytes": 1828,
-      "sha256": "2924664a636391b6d50c574cb2078d5ae082307e10e2f6c5c4396aa5e8cad2d2"
+      "sha256": "947bbde839b9e4d93cbb042c9b1f38ea4f9e449278b25e30254984396a949287"
     }
   }
 }
