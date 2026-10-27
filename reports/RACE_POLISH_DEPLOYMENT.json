@@ -1,0 +1,69 @@
+{
+  "version": "bacf02672a85af4c",
+  "sourceCommit": "00b47436667c719b4d80460b73f70521ca9dd86f",
+  "sourceTree": "3833eaf75c5ed28f4e7add8e8cb22abbef030581",
+  "pagesCommit": "aa483c1fc644d373baa6665b218cc4b65007d70b",
+  "pagesTree": "757756bfbc1d750e9a5b21f0850f461fbe4665e8",
+  "deployment": {
+    "run": 40569077428,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "url": "https://sknnnnnnn.github.io/f1m-game/",
+  "verifiedAtUtc": "2026-10-27T19:27:32Z",
+  "assetHashes": {
+    "assets/app.js": {
+      "match": true,
+      "sha256": "1b4b1365e8af7ab4aa1a9ec7e8337c7c372aa30032192721c8954b936b19d5ed"
+    },
+    "assets/mobile.js": {
+      "match": true,
+      "sha256": "ae9ed29e682fbae53731fa9c0ec1e3f86dbb38350963a93841e6464fb222ce38"
+    },
+    "workers/race-worker.js": {
+      "match": true,
+      "sha256": "5401e17baec877b026466224246d05183a33e64c0c843df9cbaeb9164ef7b59e"
+    },
+    "workers/physics-worker.js": {
+      "match": true,
+      "sha256": "eb7f262d865084f1a20c7a3d986f401b10296fd4839640baa4aaf47a7271b259"
+    },
+    "sw.js": {
+      "match": true,
+      "sha256": "8a8dfbd8e2f4231e9869f53477933f2e6b053dfb0b15328b0ee680e4960b9657"
+    },
+    "build.json": {
+      "match": true,
+      "sha256": "c412e1c1ed951dffe50918d7edb9c5c4b1e85fd29f50a008ebff972651f58d53"
+    }
+  },
+  "checks": {
+    "mainSuiteJobs": 47,
+    "mainSuite": "PASS",
+    "build": "PASS",
+    "pwa": "PASS",
+    "sixCarsThreeLapsThreeTracks": "PASS",
+    "matrixParity": 106560,
+    "crewBoundsChecks": 51282,
+    "cameraScenarios": 16,
+    "voiceStateMachine": "PASS",
+    "optionalMirrorStateRestoration": "PASS",
+    "liveBrowser": {
+      "status": "PASS_UI",
+      "versionShown": "bacf02672a85af4c",
+      "loadedGrid": true,
+      "voiceButtonsPresent": true,
+      "voiceToggleRoundtrip": true,
+      "voiceTest": "UI handled unavailable native speech engine; listening not verified",
+      "mirrorUnavailableFallback": "PASS on CPU renderer",
+      "fpsWidget": "Shows measured painted frames, not target label",
+      "benchmark30sButton": true,
+      "benchmarkRequiresLive3D": "PASS",
+      "cameraFPSSelection": true,
+      "scope": "Desktop cloud Chrome CPU fallback, WebGL disabled; no Android performance inference"
+    },
+    "androidFPS60": "not tested",
+    "nativeAndroidListening": "not tested"
+  },
+  "mainBranchUnchanged": true
+}

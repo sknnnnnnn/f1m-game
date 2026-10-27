@@ -54,3 +54,5 @@ Legacy standalone tests/showtime22.mjs ยังมี spark fixture ที่�
 - [MDN SpeechSynthesis](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis)
 - [MDN voiceschanged](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/voiceschanged_event)
 - [Three.js InstancedMesh](https://threejs.org/docs/#api/en/objects/InstancedMesh)
+
+ตรวจลิงก์จริง build bacf02672a85af4c: โหลดกริดได้, เมนูวิทยุ/ลองเสียง/เตือนรถหลัง/กระจกและวัด 30 วิครบ, สวิตช์วิทยุคืนสถานะเปิด, เปลี่ยนกล้อง FPS ได้, ปุ่มวัดปฏิเสธการวัดก่อนเริ่มเรซ เบราว์เซอร์ cloud ใช้ CPU fallback และเสียงพูดไม่พร้อม จึงยืนยันได้เฉพาะ UI/fallback ไม่ใช่ GPU FPS หรือคุณภาพเสียง Android
