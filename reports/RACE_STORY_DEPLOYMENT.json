@@ -1,0 +1,53 @@
+{
+  "version": "4e4419b64bc34852",
+  "sourceCommit": "1ea9d697d0537783bc0bd360f84194ded9945b1d",
+  "pagesCommit": "5a67ac8195f8748b53faef949c3e678fb07052ba",
+  "deploymentRun": 40538468799,
+  "deployment": "success",
+  "liveAssets": [
+    {
+      "file": "build.json",
+      "matches": true,
+      "version": "4e4419b64bc34852"
+    },
+    {
+      "file": "assets/app.js",
+      "matches": true,
+      "version": null
+    },
+    {
+      "file": "sw.js",
+      "matches": true,
+      "version": null
+    },
+    {
+      "file": "workers/race-worker.js",
+      "matches": true,
+      "version": null
+    },
+    {
+      "file": "workers/physics-worker.js",
+      "matches": true,
+      "version": null
+    }
+  ],
+  "unitJobs": 37,
+  "cameraMathCases": 16,
+  "drivingPhysicsAndModels": "unchanged",
+  "androidVisualAudioFPS": "not verified",
+  "browser": {
+    "buildVisible": "4e4419b64bc34852",
+    "state": "STARTING GRID",
+    "offlineReady": true,
+    "pausedResultsRows": 6,
+    "selectedDriverSwitch": {
+      "from": "KAEW",
+      "to": "MALI",
+      "position": "P3",
+      "summary": "MALI · P3 → P3"
+    },
+    "emptyLapMessage": "ยังไม่มีรอบที่วิ่งจบ",
+    "renderer": "Cloud Chrome CPU fallback; WebGL unavailable",
+    "scope": "Startup, manual update, paused results and selected-driver summary verified; no completed browser race or Android UI/audio/FPS claim"
+  }
+}
