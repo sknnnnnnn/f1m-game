@@ -40,7 +40,7 @@ export function racePitRuntime28(scene,car,props=[]){
  const rearRacks=[rack(-3.4,rearCenter.z+1.25,1.1,.80,.55),rack(3.4,rearCenter.z+1.25,1.1,.80,.55)],panelRack=rack(-3.4+panelCenter.x,panelCenter.z,.85,.72,.60),brakeRack=rack(car.wheels[1].center.x+3.2,car.wheels[1].center.z-.80,.50,.42,.65),brakeFreshRack=rack(car.wheels[1].center.x+3.2,car.wheels[1].center.z+.80,.50,.42,.65);
 
  const tablet=new T.Mesh(new RoundedBoxGeometry(.30,.19,.018,2,.015),new T.MeshStandardMaterial({color:0x132a31,roughness:.35}));tablet.position.set(5.16,1.02,-4.85);tablet.rotation.x=-.25;scene.add(tablet);
- let current=null,activeHolds=[],activeTiming={crewReadyAt:0,releasePermitAt:0};
+ const boundedPlans37=new WeakSet();let current=null,activeHolds=[],activeTiming={crewReadyAt:0,releasePermitAt:0};
  function layoutPose(wallTime){
   const time=phaseAt(wallTime,activeHolds);
   requests=Array(22).fill(null);wheelObstacles=[];
@@ -222,7 +222,8 @@ export function racePitRuntime28(scene,car,props=[]){
    if(externalPose.done){if(flowCombined||mode==='tyres')for(const w of car.wheels){w.newRoot.visible=true;w.newRoot.position.copy(w.center);w.newRoot.rotation.x=-externalPose.travel/.417;}if(mode==='nose'){newNose.visible=true;newNose.position.set(0,0,0);}}
    car.root.position.set(externalPose.x,state.lift,externalPose.z);car.root.rotation.y=externalPose.yaw;
   }
-  posed.forEach((a,i)=>{if(!a){crew.hide(i);return;}crew.pose(i,a.pos,a.yaw,{crouch:a.crouch,hands:a.hands,posture:a.posture,sideLean:a.sideLean,collision:{wheels:wheelObstacles,props:state.propObstacles},feet:a.feet,walk:a.gait,stride:Math.min(.08,a.speed*.035),speed:a.speed,look:a.look??.04*Math.sin((externalPose?.idleTime??time)*1.7+i*1.9)});});
+  const collision37={wheels:wheelObstacles,props:state.propObstacles,cacheKey37:JSON.stringify([wheelObstacles,state.propObstacles])};
+  posed.forEach((a,i)=>{if(!a){crew.hide(i);return;}crew.pose(i,a.pos,a.yaw,{crouch:a.crouch,hands:a.hands,posture:a.posture,sideLean:a.sideLean,collision:collision37,feet:a.feet,walk:a.gait,stride:Math.min(.08,a.speed*.035),speed:a.speed,look:a.look??.04*Math.sin((externalPose?.idleTime??time)*1.7+i*1.9)});});
   crew.flush();return state;
  }
 
@@ -238,7 +239,9 @@ export function racePitRuntime28(scene,car,props=[]){
     activeHolds=e.holds;activeTiming=e.timing;e.presentation=new CrewPresentation(flowWorkStart(e),e.motion.sample(e.flowEnd),presentationProps,job);geometryPlans29.set(signature,e);
    }motionCache.set(key,e);
   }
-  const e=motionCache.get(key);activeHolds=e.holds;activeTiming=e.timing;return {start:wallAt(2.05,e.holds),release:wallAt(e.timing.releasePermitAt,e.holds),end:e.flowEnd,deploy:e.presentation.readyAt,return:e.presentation.returnAt,blocked:e.blocked};
+  const e=motionCache.get(key);
+  if(!e.bounds37){const b=new T.Box3();for(const motion of [e.motion,e.presentation.deploy,e.presentation.returning,e.presentation.turnaround])for(const frame of motion.frames)for(const actor of frame.actors)if(actor)b.expandByPoint(actor.pos);e.bounds37=b.expandByScalar(3);}
+  if(!boundedPlans37.has(e)){crew.setBounds37(e.bounds37);boundedPlans37.add(e);}activeHolds=e.holds;activeTiming=e.timing;return {start:wallAt(2.05,e.holds),release:wallAt(e.timing.releasePermitAt,e.holds),end:e.flowEnd,deploy:e.presentation.readyAt,return:e.presentation.returnAt,blocked:e.blocked};
  }
  return {prepare,render(job,t,pose){prepare(job);time=t;externalPose={...pose,skipRender:true};return renderPose();},releaseClear(){return !!current&&current.jacksClear===true&&workReleased({actors:posed})&&departureClear({actors:posed});},frame(){return {actors:posed,tools,state:current,loads:logistics.report,crewMode:externalPose?.crewMode};},crew,car,logistics};
 }

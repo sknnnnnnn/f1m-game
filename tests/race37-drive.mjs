@@ -1,0 +1,9 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {LivingSession26} from '../engine/race/living-session26.js';import {circuit} from '../engine/tracks/track.js';
+const r=new LivingSession26().race;r.seed=Number(process.env.RACE37_SEED??19);r.reset();r.laps=Number(process.env.RACE37_LAPS??3);r.prepare();let off=null;const modes={},stages=[];
+for(let tick=0;tick<55000&&!r.finished&&!r.stop;tick++){
+ for(const c of r.cars)if(['SERVICE','RELEASE'].includes(c.pit.phase)&&r.time-c.pit.serviceStarted>=r.serviceDuration(c)+.2)c.pit.releaseProof29={serviceAt:c.pit.serviceStarted,at:r.time,clear:true};
+ if(!r.advance())break;
+ if(tick%30===0)for(const c of r.cars){modes[c.agent.state]=(modes[c.agent.state]??0)+1;if(!c.pit.active&&c.finishedAt===null&&Math.abs(c.projection.d)+r.config.width/2>circuit.width/2+.05)off??={id:c.id,time:r.time,d:c.projection.d};}
+ if(tick%3600===0){console.error(circuit.key,Math.round(r.time),r.overtakes);stages.push({time:r.time,passes:r.overtakes});}
+}
+const times=r.cars.map(c=>c.finishedAt).filter(Number.isFinite),out={track:circuit.key,seed:r.seed,laps:r.laps,finished:r.finished,time:r.time,stop:r.stop,rejections:r.controllerRejections,off,retired:r.cars.filter(c=>c.live26.retired).map(c=>c.id),passes:r.overtakes,midRacePasses:r.events.filter(e=>e.kind==='OVERTAKE'&&(e.time??e.tick/60)>10).length,tailGap:times.length?Math.max(...times)-Math.min(...times):null,modes,results:r.results(),stages,scope:'Six integrated cars; renderer crew-clear proof fixture only if a pit service is needed. No pose/speed/position corrections.'};fs.writeFileSync(process.env.RACE37_OUT??`reports/race37/DRIVE_${circuit.key}.json`,JSON.stringify(out,null,2));console.log(JSON.stringify(out));assert(r.finished&&!r.stop&&!r.controllerRejections&&!off&&!out.retired.length);

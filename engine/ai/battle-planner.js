@@ -32,7 +32,7 @@ export function scoreLines(agent,state,p,safeLane){
 export function planBattle(agent,state,p,safeLane,decision){
  if(!agent.battle||state.time-agent.battle.created>=.6)agent.battle=scoreLines(agent,state,p,safeLane);
  const report=agent.battle;if(agent.engineerOrder?.attack==='ABORT'){agent.battleCommit=null;return decision;}if(!report)return decision;
- const protectedMode=['HOLD_SPACE','BOXED_IN','RECOVER','BRAKE','FEINT','OUTSIDE_SWITCH'].includes(decision.mode);
+ const protectedMode=['HOLD_SPACE','BOXED_IN','RECOVER','BRAKE','FEINT','OUTSIDE_SWITCH','PASS_COMMIT'].includes(decision.mode);
  const rival=p.cars.find(o=>o.id===report.rival),memory=agent.battleCommit;
  if(memory){const d=circuit.delta(memory.apex,p.own.s),other=p.cars.find(o=>o.id===memory.rival);let lane=memory.lane,mode=memory.kind==='EXIT'?'EXIT_SETUP':'BRAKE_DUEL';
   if(!other||other.gap< -14||other.gap>115||state.time-memory.started>12||d< -150){agent.battleCommit=null;}

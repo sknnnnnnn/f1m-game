@@ -1,0 +1,14 @@
+{
+  status: 'PASS',
+  sphereChecks: 51282,
+  profile: {
+    start: 2.05,
+    release: 7.033333333333333,
+    end: 7.483333333333333,
+    deploy: 22.35,
+    return: 22,
+    blocked: false
+  },
+  cache: { hits: 158, solves: 1165, uploads: 2331 },
+  scope: 'Actual accepted GLB, deploy/service/return frames, conservative instancing bounds contain every rendered crew part; no GPU/Android FPS claim'
+}

@@ -9,6 +9,6 @@ export function resourcePlan(agent,state,p){
  const order=agent.engineerOrder;if(order?.energy==='SAVE'){mode='ENGINEER_SAVE';reserve=.55;allowDeploy=false;}else if(order?.energy==='DEPLOY'){mode='ENGINEER_DEPLOY';reserve=.08;deploySpeed=40;allowDeploy=fraction>.08;}
  const next=circuit.turns.map(t=>({...t,distance:(t.s-p.own.s+circuit.length)%circuit.length})).filter(t=>Math.abs(t.k)>.018).sort((a,b)=>a.distance-b.distance)[0];
  if(next&&next.distance<Math.max(45,p.speed*2)&&Math.abs(p.own.k)<.006)allowDeploy=false;
- const exitFactor=Math.min(agent.tyreManagement.exitFactor,1-clamp((heat-120)/80+wear*.1,0,.22)*care);
+ const exitFactor=Math.min(agent.tyreManagement.exitFactor,1-clamp((heat-120)/80+wear*.1,0,.14)*care);
  return {mode,fraction,reserve,allowDeploy,deploySpeed,exitFactor,wear,heat,reason:mode==='ENGINEER_SAVE'?'คำสั่งทีม: เก็บพลังงาน':mode==='ENGINEER_DEPLOY'?'คำสั่งทีม: ใช้พลังงานเมื่อผ่านจุดเบรก':mode==='SAVE'?'เก็บพลังงานและถนอมยาง':mode==='ATTACK'?'ใช้พลังงานไล่คู่แข่ง':mode==='DEFEND'?'รักษาตำแหน่งจากรถหลัง':mode==='FINAL_PUSH'?'ใช้พลังงานช่วงท้ายเรซ':'บริหารพลังงานให้ถึงช่วงบุก'};
 }

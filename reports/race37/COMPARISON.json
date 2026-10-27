@@ -1,0 +1,56 @@
+{
+  "scope": "Six actual cars, seed19, 3laps per track, before/after. Single-seed evidence, not a guarantee of more overtakes in every race.",
+  "results": [
+    {
+      "track": "bahrain",
+      "baseline": {
+        "passes": 6,
+        "midRacePasses": 4,
+        "tailGap": 17.143089779068703
+      },
+      "after": {
+        "passes": 5,
+        "midRacePasses": 3,
+        "tailGap": 16.301313115116443
+      },
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null
+    },
+    {
+      "track": "shanghai",
+      "baseline": {
+        "passes": 4,
+        "midRacePasses": 4,
+        "tailGap": 19.251943304376653
+      },
+      "after": {
+        "passes": 5,
+        "midRacePasses": 5,
+        "tailGap": 18.605754724202825
+      },
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null
+    },
+    {
+      "track": "suzuka",
+      "baseline": {
+        "passes": 5,
+        "midRacePasses": 4,
+        "tailGap": 16.813983019909244
+      },
+      "after": {
+        "passes": 4,
+        "midRacePasses": 3,
+        "tailGap": 16.07250842921667
+      },
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null
+    }
+  ]
+}

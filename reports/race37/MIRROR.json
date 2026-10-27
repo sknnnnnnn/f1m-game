@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "defaultDisabled": true,
+  "extraPass100ms": true,
+  "mainRendererRestored": true,
+  "failureRestoresRendererAndVisibility": true,
+  "scope": "Three scene graph and deterministic renderer fixture; live WebGL mirror image/Android cost not measured"
+}

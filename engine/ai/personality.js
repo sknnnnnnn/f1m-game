@@ -11,5 +11,5 @@ export function tyreDemand(agent,state){
  const style=RACE_STYLES[agent.kind]??RACE_STYLES.SMOOTH;
  const rear=state.wheels.slice(2),heat=Math.max(...rear.map(w=>w.Ts)),wear=Math.max(...rear.map(w=>w.wear));
  const stress=Math.max(0,(heat-108)/28,wear*1.5),cold=agent.newTyre22?Math.max(0,(68-heat)/35):0;
- return {label:style.label,stress,exitFactor:Math.max(.72,1-Math.min(.28,stress*.18)*style.tyreCare-Math.min(.09,cold*.09)),hybridReserve:.12+.12*style.tyreCare};
+ return {label:style.label,stress,exitFactor:Math.max(.72,1-Math.min(.18,stress*.12)*style.tyreCare-Math.min(.09,cold*.09)),hybridReserve:.12+.12*style.tyreCare};
 }

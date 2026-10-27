@@ -1,3 +1,5 @@
+Current: Race polish, build `bacf02672a85af4c`. [Features, measured results and limits](reports/RACE_POLISH_TH.md). Calmer chassis, voiced radio, richer audio, FPS camera, 60Hz pacing and crew optimizations. Android 60FPS/listening validation pending.
+
 Current: Race viewport, build `93f5e627f88c8d5e`. [Viewport and validation](reports/RACE_VIEWPORT_TH.md). Game image ends above the unchanged HUD/buttons, including FPS.
 
 Current: Pit continuity, build `b1da04136309c013`. [Changes and verification](reports/PIT_CONTINUITY_TH.md). Rolling pit exit at approximately 80 km/h, smooth pit-exit curve and service model handoff. Android visual/FPS verification pending.

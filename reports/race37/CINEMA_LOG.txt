@@ -1,0 +1,1 @@
+{"baseline":false,"cases":16,"maxFrameNDCStep":1.819125496320609e-14,"stationary":[{"aspect":0.46208530805687204,"maxAnchorJump":0,"maxFovStep":0.4031186420096624},{"aspect":1.7777777777777777,"maxAnchorJump":0,"maxFovStep":0.2319378839384605}],"director":{"heldAcrossPackets":200,"partnerChangesDetected":true,"sourceUnmodified":true}}

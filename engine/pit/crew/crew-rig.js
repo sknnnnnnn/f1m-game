@@ -45,7 +45,7 @@ function build_fabricTexture(){const n=64,data=new Uint8Array(n*n*4);for(let y=0
 function build_helmetTrim(){const gs=[];const lip=new T.CatmullRomCurve3(Array.from({length:21},(_,i)=>{const a=(i/20*2-1)*1.18;return V(.134*Math.sin(a),.067,-.134*Math.cos(a));}));gs.push(new T.TubeGeometry(lip,20,.0045,5,false));for(const x of [-.028,0,.028]){const g=new T.BoxGeometry(.018,.006,.004);g.translate(x,-.086,-.115);gs.push(g);}for(const side of [-1,1]){const g=new T.SphereGeometry(1,8,6);g.scale(.006,.028,.026);g.translate(side*.125,-.025,.005);gs.push(g);}return merged(gs);}
 export class CrewBatch{
  constructor(scene,count=20){
-  this.count=count;this.parts=new Map();this.scene=scene;this.metrics={maxArmError:0,maxLegError:0,actors:count};
+  this.count=count;this.poseCache37=new Map();this.dirtyParts37=new Set();this.cacheStats37={hits:0,solves:0,uploads:0};this.parts=new Map();this.scene=scene;this.metrics={maxArmError:0,maxLegError:0,actors:count};
   const mat=(name,color,roughness=.85)=>new T.MeshStandardMaterial({name,color,roughness,metalness:0});
   this.mats={suit:mat('Crew fabric',0x235b5c),dark:mat('Stretch panels',0x20494d),light:mat('Shoulder fabric',0x3d6968),helmet:mat('Helmet shell',0xd9dfd8,.43),visor:mat('Visor',0x0a1c26,.25),glove:mat('Nomex gloves',0xc5c5b6),sole:mat('Rubber boots',0x17252a)};
   this.mats.visor.side=T.DoubleSide;this.mats.visor.metalness=.45;this.mats.visor.roughness=.17;this.mats.suit.bumpMap=fabricTexture();this.mats.suit.bumpScale=.0013;this.mats.light.bumpMap=this.mats.suit.bumpMap;this.mats.light.bumpScale=.0008;this.mats.glove.roughness=.96;this.mats.boot=mat('Fireproof shoe upper',0x263a3d);this.mats.piping=mat('Muted suit piping',0x71938b);this.mats.badge=mat('Printed team patch',0xffffff);this.mats.badge.map=labelTexture();this.mats.badge.side=T.DoubleSide;
@@ -59,12 +59,26 @@ export class CrewBatch{
   }
   const colors=[0x7fc8b4,0x7fabc7,0xd0b875,0xc68b80];for(let i=0;i<count;i++){const col=new T.Color(i<12?colors[Math.floor(i/3)]:0xc1d4cc);this.parts.get('helmetStripe').setColorAt(i,col);this.parts.get('shoulderL').setColorAt(i,col);this.parts.get('shoulderR').setColorAt(i,col);}
  }
+ setBounds37(box){this.bounds37??=box.clone();this.bounds37.union(box);const sphere=this.bounds37.getBoundingSphere(new T.Sphere());for(const m of this.parts.values()){m.boundingSphere=sphere.clone();m.frustumCulled=true;m.updateMatrix();m.matrixAutoUpdate=false;}}
  setVisible(visible){for(const m of this.parts.values())m.visible=visible;}
  add(key,g,mat){const o=new T.InstancedMesh(g,mat,this.count);o.name='Crew '+key;o.instanceMatrix.setUsage(T.DynamicDrawUsage);o.castShadow=true;o.frustumCulled=false;this.scene.add(o);this.parts.set(key,o);}
- set(key,i,pos,scale=ONE,quat=null){M.compose(pos,quat??Q.identity(),scale);this.parts.get(key).setMatrixAt(i,M);}
- hide(i){M.makeScale(0,0,0);for(const m of this.parts.values())m.setMatrixAt(i,M);}
+ set(key,i,pos,scale=ONE,quat=null){M.compose(pos,quat??Q.identity(),scale);this.parts.get(key).setMatrixAt(i,M);this.dirtyParts37.add(key);}
+ hide(i){this.poseCache37.delete(i);M.makeScale(0,0,0);for(const [key,m] of this.parts){m.setMatrixAt(i,M);this.dirtyParts37.add(key);}}
  link(key,i,a,b){Q.setFromUnitVectors(Y,b.clone().sub(a).normalize());this.set(key,i,a.clone().add(b).multiplyScalar(.5),V(1,a.distanceTo(b),1),Q);}
  pose(i,anchor,yaw,{crouch=0,hands=null,feet=null,walk=0,stride=0,speed=0,posture=null,sideLean=0,lean=.09,look=0,collision=null}={}){
+  const signature=[anchor.x,anchor.y,anchor.z,yaw,crouch,walk,stride,speed,sideLean,lean,posture?.height,posture?.bend,hands?.length??-1,feet?.length??-1];
+  for(const h of hands??[])signature.push(h.x,h.y,h.z);
+  for(const f of feet??[])signature.push(f.world.x,f.world.y,f.world.z,f.yaw,f.roll);
+  const collisionKey=collision?.cacheKey37??JSON.stringify([collision?.wheels,collision?.props]);
+  const cached=this.poseCache37.get(i);
+  if(cached&&cached.collisionKey===collisionKey&&cached.signature.length===signature.length&&signature.every((v,n)=>v===cached.signature[n])){
+   this.cacheStats37.hits++;this.debug??=[];this.debug[i]=cached.debug;
+   if(cached.look===look)return;cached.look=look;
+   const headQ=cached.rotation.clone().multiply(new T.Quaternion().setFromEuler(new T.Euler(cached.pitch,cached.yaw+look,0)));
+   for(const part of ['helmet','visor','helmetStripe','helmetTrim'])this.set(part,i,cached.head,ONE,headQ);
+   return;
+  }
+  this.cacheStats37.solves++;
   const rot=new T.Quaternion().setFromAxisAngle(Y,yaw),world=p=>p.clone().applyQuaternion(rot).add(anchor),local=p=>p.clone().sub(anchor).applyQuaternion(rot.clone().invert());
   const c=Math.max(0,Math.min(1.15,crouch)),fit=posture?contactPoseAt(anchor,yaw,posture,hands):fitContactPose(anchor,yaw,c,hands,feet);
   const pelvisY=fit.height,pelvis=V(0,pelvisY,0),chest=fit.chest.clone(),chestQ=fit.q.clone();
@@ -92,8 +106,9 @@ export class CrewBatch{
    this.debug[i].legError=Math.max(this.debug[i].legError,Math.abs(knee.distanceTo(ankle)-.435));
    const handQ=rot.clone().multiply(new T.Quaternion().setFromUnitVectors(Y,hand.clone().sub(elbow).normalize()));const closed=!!hands;this.set('hand'+s,i,world(hand),closed?ONE:V(),handQ);this.set('handRelaxed'+s,i,world(hand),closed?V():ONE,handQ);this.set('glovePad'+s,i,world(hand),ONE,handQ);const cuffCenter=world(hand).add(V(0,-.047,0).applyQuaternion(handQ));this.set('cuff'+s,i,cuffCenter,ONE,handQ);
   }
+  this.poseCache37.set(i,{signature,collisionKey,head:world(head),rotation:rot.clone().multiply(chestQ),pitch,look,yaw:headYaw-look,debug:this.debug[i]});
  }
- flush(){for(const m of this.parts.values())m.instanceMatrix.needsUpdate=true;}
+ flush(){for(const key of this.dirtyParts37){this.parts.get(key).instanceMatrix.needsUpdate=true;this.cacheStats37.uploads++;}this.dirtyParts37.clear();}
 }
 
 // Immutable authored geometry/atlases shared across the six garages and grid.
