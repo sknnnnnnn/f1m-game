@@ -1,0 +1,20 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> f1m-engine@1.0.0 test:pwa
+> node tests/pwa-static.mjs && node tests/service-worker.mjs
+
+PASS relative paths, PWA manifest, PNG dimensions, cached asset inventory, no automatic update mid-race
+{
+  status: 'PASS',
+  cachedAssets: 17,
+  offlineNavigation: true,
+  binaryModelsAndNestedWorkerCached: true,
+  updatesRequireExplicitMessage: true,
+  versionedNetworkRequests: true,
+  httpCacheBypassed: true,
+  canonicalOfflineKeys: true,
+  activeVersionCacheOnly: true,
+  failedDownloadsBlockInstallation: true,
+  otherCachesPreserved: true,
+  scope: 'Service worker unit test with deterministic cache/fetch mocks; Android install/FPS remains separate.'
+}

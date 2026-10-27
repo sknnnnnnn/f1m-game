@@ -1,0 +1,468 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> f1m-engine@1.0.0 test
+> node tests/run-engine.mjs
+
+
+TEST tests/race-story34.mjs bahrain
+{
+  status: 'PASS',
+  track: 'bahrain',
+  focusedRadio: true,
+  deduplicated: true,
+  criticalPreemption: true,
+  replayMuted: true,
+  resetSafe: true,
+  lapArithmetic: true,
+  queueNotDoubleCounted: true,
+  escapedDriverNames: true,
+  passCameraCapturesEvent: true,
+  selectedCarRetained: true,
+  realPresentationReadOnly: true
+}
+
+TEST tests/race-story34.mjs shanghai
+{
+  status: 'PASS',
+  track: 'shanghai',
+  focusedRadio: true,
+  deduplicated: true,
+  criticalPreemption: true,
+  replayMuted: true,
+  resetSafe: true,
+  lapArithmetic: true,
+  queueNotDoubleCounted: true,
+  escapedDriverNames: true,
+  passCameraCapturesEvent: true,
+  selectedCarRetained: true,
+  realPresentationReadOnly: true
+}
+
+TEST tests/race-story34.mjs suzuka
+{
+  status: 'PASS',
+  track: 'suzuka',
+  focusedRadio: true,
+  deduplicated: true,
+  criticalPreemption: true,
+  replayMuted: true,
+  resetSafe: true,
+  lapArithmetic: true,
+  queueNotDoubleCounted: true,
+  escapedDriverNames: true,
+  passCameraCapturesEvent: true,
+  selectedCarRetained: true,
+  realPresentationReadOnly: true
+}
+
+TEST tests/race-package26.mjs bahrain
+{
+  status: 'PASS',
+  track: 'bahrain',
+  gridTraitsPreserved: true,
+  emergencyBrakePriority: true,
+  alongsideSpace: true,
+  forecastCompoundConsistent: true,
+  passingLanes: [ -3.3, -2.6, 2.6, 3.3 ],
+  progressivePassCommit: true,
+  pitRoute: {
+    metres: 984.8077056580523,
+    transit: 61.7741989330338,
+    loss: 41.85549974604193
+  },
+  healthyStaysOut: true,
+  wornCallsPit: true,
+  audioNodes: 33,
+  audioParameterUpdates: 2163,
+  boundedCameraCue: { lens: 5, aim: -0.32, roll: -0.012 }
+}
+
+TEST tests/race-package26.mjs shanghai
+{
+  status: 'PASS',
+  track: 'shanghai',
+  gridTraitsPreserved: true,
+  emergencyBrakePriority: true,
+  alongsideSpace: true,
+  forecastCompoundConsistent: true,
+  passingLanes: [ -3.8, -2.6, 2.6, 3.8 ],
+  progressivePassCommit: true,
+  pitRoute: {
+    metres: 854.1854594021809,
+    transit: 60.014415474093255,
+    loss: 42.9933424176322
+  },
+  healthyStaysOut: true,
+  wornCallsPit: true,
+  audioNodes: 33,
+  audioParameterUpdates: 2163,
+  boundedCameraCue: { lens: 5, aim: -0.32, roll: -0.012 }
+}
+
+TEST tests/race-package26.mjs suzuka
+{
+  status: 'PASS',
+  track: 'suzuka',
+  gridTraitsPreserved: true,
+  emergencyBrakePriority: true,
+  alongsideSpace: true,
+  forecastCompoundConsistent: true,
+  passingLanes: [ -3.8, -2.6, 2.6, 3.8 ],
+  progressivePassCommit: true,
+  pitRoute: {
+    metres: 1068.5882066384302,
+    transit: 70.80797597324643,
+    loss: 49.97090188124207
+  },
+  healthyStaysOut: true,
+  wornCallsPit: true,
+  audioNodes: 33,
+  audioParameterUpdates: 2163,
+  boundedCameraCue: { lens: 5, aim: -0.32, roll: -0.012 }
+}
+
+TEST tests/grid-walk-terrain.mjs suzuka
+{
+  track: 'suzuka',
+  minHip: 0.8142919170582594,
+  maxLeg: 3.3306690738754696e-16
+}
+{ maxTerrainAboveRoad: -1.4691620831341545 }
+
+TEST tests/grid-walk-terrain.mjs shanghai
+{
+  track: 'shanghai',
+  minHip: 0.8014189600944519,
+  maxLeg: 3.3306690738754696e-16
+}
+{ maxTerrainAboveRoad: -1.4691620831341545 }
+
+TEST tests/grid-walk-terrain.mjs bahrain
+{
+  track: 'bahrain',
+  minHip: 0.8201538920402527,
+  maxLeg: 3.3306690738754696e-16
+}
+{ maxTerrainAboveRoad: -1.4691620831341545 }
+
+TEST tests/f125-driving.mjs bahrain
+PASS F125 driving bahrain {
+  turns: 15,
+  maxOffset: 3.1000000000000005,
+  coastKeepsEmergencyBrake: true
+}
+PASS bounded edge connector bahrain
+PASS front-slip steering and emergency priority
+PASS speed-consistent braking envelope
+
+TEST tests/f125-driving.mjs suzuka
+PASS F125 driving suzuka {
+  turns: 18,
+  maxOffset: 4.200000000000001,
+  coastKeepsEmergencyBrake: true
+}
+PASS bounded edge connector suzuka
+PASS front-slip steering and emergency priority
+PASS speed-consistent braking envelope
+
+TEST tests/f125-driving.mjs shanghai
+PASS F125 driving shanghai {
+  turns: 16,
+  maxOffset: 4.200000000000001,
+  coastKeepsEmergencyBrake: true
+}
+PASS bounded edge connector shanghai
+PASS front-slip steering and emergency priority
+PASS speed-consistent braking envelope
+
+TEST tests/corner-speed-reference.mjs shanghai
+PASS shanghai reference mapping, continuity, tyre scaling, physical budget, no speed cap
+
+TEST tests/corner-speed-reference.mjs suzuka
+PASS suzuka reference mapping, continuity, tyre scaling, physical budget, no speed cap
+
+TEST tests/corner-speed-reference.mjs bahrain
+PASS bahrain reference mapping, continuity, tyre scaling, physical budget, no speed cap
+
+TEST tests/route-spline.mjs shanghai
+{
+  maximumCacheError: 0,
+  cachedCoordinatesMatch: true,
+  continuousControlGrid: true
+}
+
+TEST tests/flow-fixes.mjs shanghai
+{
+  track: 'shanghai',
+  grid: {
+    movesBeforeStart: true,
+    phases: [
+      'INSPECT',   'STAND',
+      'STEP_BACK', 'OBSERVE',
+      'RETURN',    'KNEEL',
+      'WITHDRAW',  'WALK_OUT',
+      'CLEAR'
+    ],
+    minimumCrewCenterDistance: 1.511841709934933,
+    maxHandReachError: 0,
+    continuousClearTransition: true,
+    plantedFootChecks: 108
+  },
+  drs: {
+    dragReduction: 0.28,
+    gapSeconds: 5,
+    oneSecondStartKPH: 252,
+    openEndKPH: 262.9090402505048,
+    closedEndKPH: 260.80217703026534,
+    scope: 'Physical straight fixture at full throttle, fixed gear and no ERS; not a top-speed or lap-time promise'
+  }
+}
+
+TEST tests/driver-pedal.mjs shanghai
+PASS: progressive pedal, immediate brake/traffic/recovery bypass, continuous envelope and traction reapply
+
+TEST tests/circuit-finish.mjs shanghai
+{
+  status: 'PASS',
+  track: 'shanghai',
+  surfaceMaps: 3,
+  roadsidePavilions: 9,
+  addedRealtimeLights: 0,
+  staticBatch: {
+    beforeMeshes: 81,
+    afterMeshes: 22,
+    beforeTriangles: 792,
+    afterTriangles: 792
+  },
+  scope: 'Texture/scene construction and static geometry preservation; browser appearance checked separately.'
+}
+
+TEST tests/circuit-finish.mjs suzuka
+{
+  status: 'PASS',
+  track: 'suzuka',
+  surfaceMaps: 3,
+  roadsidePavilions: 10,
+  addedRealtimeLights: 0,
+  staticBatch: {
+    beforeMeshes: 90,
+    afterMeshes: 24,
+    beforeTriangles: 880,
+    afterTriangles: 880
+  },
+  scope: 'Texture/scene construction and static geometry preservation; browser appearance checked separately.'
+}
+
+TEST tests/circuit-finish.mjs bahrain
+{
+  status: 'PASS',
+  track: 'bahrain',
+  surfaceMaps: 3,
+  roadsidePavilions: 9,
+  addedRealtimeLights: 0,
+  staticBatch: {
+    beforeMeshes: 81,
+    afterMeshes: 22,
+    beforeTriangles: 792,
+    afterTriangles: 792
+  },
+  scope: 'Texture/scene construction and static geometry preservation; browser appearance checked separately.'
+}
+
+TEST tests/sprint-straight.mjs shanghai
+{"preset":"F1M-ATTACK-BRAKE/5","scope":"Unchanged frozen solver and controller; tuned game vehicle preset. Dry straight integration, finite ERS; not a lap-time promise.","accelerationSeconds":{"100":1.9499999999999955,"200":4.383333333333341,"300":8.566666666666821},"braking":{"seconds":2.8833333333333258,"distance":101.29252495502654,"thresholdSeconds":{"1":2.8833333333333258,"30":2.483333333333327,"60":2.099999999999995,"100":1.6166666666666634,"200":0.6666666666666667},"maxYaw":9.601034030388028e-16,"finalKPH":-0.006340102216540006}}
+
+TEST tests/cpu-visibility.mjs shanghai
+{
+  status: 'PASS',
+  scope: 'Exact RGBA equality against previous rasterizer at four cameras and after geometry mutation; no resolution or draw-distance change',
+  counts: [
+    { cameraX: 0, allVertices: 4800, transformed: 192 },
+    { cameraX: 50, allVertices: 4800, transformed: 384 },
+    { cameraX: 500, allVertices: 4800, transformed: 384 },
+    { cameraX: 900, allVertices: 4800, transformed: 384 }
+  ]
+}
+
+TEST tests/mobile-fixes.mjs bahrain
+{
+  status: 'PASS',
+  DRS: [
+    { gap: 0.5, allowed: true },
+    { gap: 3, allowed: true },
+    { gap: 3.01, allowed: true },
+    { gap: 5, allowed: true },
+    { gap: 5.01, allowed: false },
+    { gap: 10, allowed: false }
+  ],
+  night: {
+    stableSpotCount: 4,
+    dayIntensity: 0,
+    nightIntensity: 1400,
+    scope: 'Scene graph and light-state test; Android shader/GPU not tested'
+  },
+  pit: {
+    track: 'bahrain',
+    sweptCornerChecks: 32040,
+    scope: 'Geometric route footprint against neighboring bay work areas; physical entry/stop tested separately'
+  }
+}
+
+TEST tests/mobile-fixes.mjs shanghai
+{
+  status: 'PASS',
+  DRS: [
+    { gap: 0.5, allowed: true },
+    { gap: 3, allowed: true },
+    { gap: 3.01, allowed: true },
+    { gap: 5, allowed: true },
+    { gap: 5.01, allowed: false },
+    { gap: 10, allowed: false }
+  ],
+  night: {
+    stableSpotCount: 4,
+    dayIntensity: 0,
+    nightIntensity: 1400,
+    scope: 'Scene graph and light-state test; Android shader/GPU not tested'
+  },
+  pit: {
+    track: 'shanghai',
+    sweptCornerChecks: 32040,
+    scope: 'Geometric route footprint against neighboring bay work areas; physical entry/stop tested separately'
+  }
+}
+
+TEST tests/mobile-fixes.mjs suzuka
+{
+  status: 'PASS',
+  DRS: [
+    { gap: 0.5, allowed: true },
+    { gap: 3, allowed: true },
+    { gap: 3.01, allowed: true },
+    { gap: 5, allowed: true },
+    { gap: 5.01, allowed: false },
+    { gap: 10, allowed: false }
+  ],
+  night: {
+    stableSpotCount: 4,
+    dayIntensity: 0,
+    nightIntensity: 1400,
+    scope: 'Scene graph and light-state test; Android shader/GPU not tested'
+  },
+  pit: {
+    track: 'suzuka',
+    sweptCornerChecks: 32040,
+    scope: 'Geometric route footprint against neighboring bay work areas; physical entry/stop tested separately'
+  }
+}
+
+TEST tests/static-batch.mjs shanghai
+PASS static batches preserve geometry, UVs, normals, bounds and camera proxies: {
+  beforeMeshes: 12,
+  afterMeshes: 1,
+  beforeTriangles: 144,
+  afterTriangles: 144
+}
+
+TEST tests/engine-core.mjs shanghai
+{
+  status: 'PASS',
+  preservedFiles: 20,
+  tracks: 5,
+  batchParity: { ticks: 180, cars: 6, stateAndTraceExact: true }
+}
+
+TEST tests/worker-transport.mjs shanghai
+{
+  status: 'PASS',
+  cars: 6,
+  messagesBefore: 6,
+  messagesAfter: 2,
+  environmentsClonedBefore: 6,
+  environmentsClonedAfter: 2,
+  allResultsCommittedAfterAwait: true
+}
+
+TEST tests/safety-policy.mjs bahrain
+PASS Safety Car waits for the tail with bounded target speed; in-lap behavior retained
+
+TEST tests/watch24.mjs bahrain
+PASS DRS stays open through changing gap, throttle and gentle straight curvature
+PASS detection grants one permit for a future zone and does not chase current gap
+PASS brake, flags, pit and high steering close immediately without within-zone chatter
+PASS no leader permit, no zone and launch lock cannot open DRS
+PASS rear flap leading edge lifts, fixed mainplane and trailing hinge do not move
+PASS spark threshold and bounded glow increase visible emission without idle or smoke confusion
+PASS replay inspect rotates the camera while the selected physical frame stays frozen
+PASS minimap fits geometry, taps use CSS coordinates and safety car is not a selectable race car
+
+TEST tests/championship23.mjs bahrain
+PASS only completed actual races score once, both points tables and ordered save restore
+PASS target instructions validate team, use real pace, preserve physical state and expire
+PASS team tow/swap/cancel are mutually exclusive and restore prior pace
+PASS two-car plans are atomic and reach real tyre/config/pit order
+PASS actual save retains intent and refuses different circuit geometry
+PASS spark RGB remains HDR orange while opacity fades; cloud uses separate material
+PASS hard-braking scrub marks exist independently of lock smoke and coasting adds none
+PASS bounded archive retains completed actual event clips after rolling window passes
+PASS rear wear reduces planned corner demand only; real countersteer uses inputs
+PASS pit traffic remains visible until physically clear and crossing reserve never changes poses
+
+TEST tests/grid33.mjs bahrain
+{
+  track: 'bahrain',
+  actors: 18,
+  allFacingCar: true,
+  maxHandReachError: 0,
+  clearedBeforeLights: true,
+  reversedStartingOrderFollowsActualCar: true
+}
+
+TEST tests/grid33.mjs shanghai
+{
+  track: 'shanghai',
+  actors: 18,
+  allFacingCar: true,
+  maxHandReachError: 0,
+  clearedBeforeLights: true,
+  reversedStartingOrderFollowsActualCar: true
+}
+
+TEST tests/grid33.mjs suzuka
+{
+  track: 'suzuka',
+  actors: 18,
+  allFacingCar: true,
+  maxHandReachError: 0,
+  clearedBeforeLights: true,
+  reversedStartingOrderFollowsActualCar: true
+}
+
+TEST tests/circuits33-geometry.mjs shanghai
+{
+  track: 'shanghai',
+  maxProjectionError: 0,
+  crossing: null,
+  pitEntry: 5162.3115384615385,
+  pitExit: 6005.783076923077,
+  maxPitK: 0.09634567078290278
+}
+
+TEST tests/circuits33-geometry.mjs suzuka
+{
+  track: 'suzuka',
+  maxProjectionError: 4.547473508864641e-13,
+  crossing: {
+    distance: 0.8689190809072861,
+    heights: [ 7.98974372, 21.34849152 ],
+    stations: [ 2546.00721314, 4917.80438176 ]
+  },
+  pitEntry: 5393.060466267421,
+  pitExit: 6493.068831489266,
+  maxPitK: 0.1038895204984298
+}
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

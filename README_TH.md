@@ -1,3 +1,7 @@
+Current: Race story, build `1855c9cd493f98e9`. [Usage, verified behaviour and limits](reports/RACE_STORY_TH.md). Focused team radio, responsive selected-car Cinema and per-driver race digest. Driving, AI, six-car grid, track geometry and graphics unchanged. Android UI/listening/FPS verification pending.
+
+Historical milestone notes follow.
+
 Current: Race package, build `932ad21a4fbc03fd`. See [changes, measured racing/pit results and limits](reports/RACE_PACKAGE_TH.md). F125 driving base, crew/terrain fix, frozen physics and models retained. Main unchanged; Android listening/visual/FPS validation remains pending.
 
 Historical milestone notes follow.

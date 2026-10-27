@@ -11,8 +11,10 @@ export class RaceAudio {
  this.turbo=c.createOscillator();this.turbo.type='sine';this.turboGain=c.createGain();this.turboGain.gain.value=0;this.turbo.connect(this.turboGain);this.turboGain.connect(master);this.turbo.start();
  const tyreFilter=c.createBiquadFilter();tyreFilter.type='bandpass';tyreFilter.frequency.value=1550;tyreFilter.Q.value=4;this.tyre=c.createGain();this.tyre.gain.value=0;source.connect(tyreFilter);tyreFilter.connect(this.tyre);this.tyre.connect(master);
  const rainFilter=c.createBiquadFilter();rainFilter.type='highpass';rainFilter.frequency.value=1400;this.rain=c.createGain();this.rain.gain.value=0;source.connect(rainFilter);rainFilter.connect(this.rain);this.rain.connect(master);const curbFilter=c.createBiquadFilter();curbFilter.type='bandpass';curbFilter.frequency.value=230;curbFilter.Q.value=1.4;this.curb=c.createGain();this.curb.gain.value=0;source.connect(curbFilter);curbFilter.connect(this.curb);this.curb.connect(master);
+ this.radioTone=c.createOscillator();this.radioTone.type='sine';this.radioGain=c.createGain();this.radioGain.gain.value=0;this.radioTone.connect(this.radioGain);this.radioGain.connect(master);this.radioTone.start();
  const shiftFilter=c.createBiquadFilter();shiftFilter.type='bandpass';shiftFilter.frequency.value=300;this.shift=c.createGain();this.shift.gain.value=0;source.connect(shiftFilter);shiftFilter.connect(this.shift);this.shift.connect(master);
  }
+ radioCue(priority=1){if(!this.enabled||!this.context||!this.radioTone)return;const t=this.context.currentTime,g=this.radioGain.gain;g.cancelScheduledValues(t);g.setValueAtTime(.0001,t);g.linearRampToValueAtTime(priority>=4?.10:.065,t+.012);g.exponentialRampToValueAtTime(.0001,t+.19);this.radioTone.frequency.setValueAtTime(priority>=4?960:720,t);this.radioTone.frequency.setValueAtTime(priority>=4?720:960,t+.085);}
  mute(){this.enabled=false;if(this.context)this.master.gain.setTargetAtTime(0,this.context.currentTime,.04);}
  setVolume(value){this.volume=Math.max(0,Math.min(.6,value));}
  reset(){this.lastGear=null;this.lastCar=null;}
