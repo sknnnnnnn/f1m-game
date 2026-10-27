@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "d916a138a44e8e76",
-  "sourceRevision": "d916a138a44e8e7679b33ade8061da79214ef9403f913204deb902ac0ebb70b8",
+  "version": "7cfce508201fcfd0",
+  "sourceRevision": "7cfce508201fcfd062ef50564cc8551adf0af8f7384763ffc5aa37d34fcc9a5a",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "5be4253793988aa8bc7fc505afa8f794eeb8225c4e41e26061cb25a85bfc4208",
@@ -26,7 +26,7 @@
     "engine/physics/collision.js": "3c788dba61f348e07f38b0f74b9c5ae8d8ee359584507c2cc00e386bf00f2dca",
     "engine/physics/driver-pedal.js": "8f420b79372648b6d4c22d0f093fbb922a228febc7475143bb3f779f44ad942f",
     "engine/physics/pose-buffer.js": "c41906bda1e631fa90bd2435c4f1838385113bb56697927355bbea3e1b45c110",
-    "engine/physics/reference-adapter.js": "3d2dbd8f4ceaf0340ba9f1d3979e2bc614560c621263f7e7c9199cc50962f183",
+    "engine/physics/reference-adapter.js": "81422a3ad31dd9495e87582119534514ef5577208bc8f09b69e6dff18a86a118",
     "engine/physics/route-spline.js": "51358071d4179e9b3363536fb4c46652789c8e8b8a39b9b1688eac3bd98f04e0",
     "engine/physics/speed-envelope.js": "bb0bc3f659b7c13da0311118c53c68be2c4dad20a98216a151edd8cf63a87950",
     "engine/physics/tyres.js": "7cd1a8261c34410567c09a56d7d75df97e5fe93904f6cf941c678a57dd6a3191",
@@ -123,6 +123,7 @@
     "engine/tracks/bahrain-layout.js": "c89c2ae3567a8e9e5f8124156cb5fba9d7f23814c848843ea56f707874ec12b4",
     "engine/tracks/circuit-catalog23.js": "dc512d37642a89d11481e5a48d9e4ba5db1d79b117da0b38b0fa4271ab4b84d9",
     "engine/tracks/circuit-lines23.js": "839ae590295fde4a1147421f4f3de9dd215440fba4e70556edc96b4e745469dc",
+    "engine/tracks/corner-speed-reference.js": "a848428bc14eec60ebe037e0e2cafc33921c6f89bebf510fff42d00cabfa09a3",
     "engine/tracks/imported-track33.js": "9f78927ae40e469b69e58a3ea0a09c92535cabbb6edc4ecf8429577588d2e5de",
     "engine/tracks/racing-line-data.js": "636ec1ad75fda6427d8939783277a3cd49ea8a66ccea0688f7a30349989ff593",
     "engine/tracks/racing-line.js": "d976898a54e857f7d4f736f514ae56b9ae7dcfa7ae2377a9487aac0f9093a414",
