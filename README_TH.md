@@ -1,3 +1,5 @@
+Current: Radio chime only, build `51ebd4a8e57dec00`. Voice synthesis and voice controls removed; existing radio alert and text retained. [Change and device findings](reports/RADIO_CHIME_TH.md).
+
 Current: Race polish, build `bacf02672a85af4c`. [Features, measured results and limits](reports/RACE_POLISH_TH.md). Calmer chassis, voiced radio, richer audio, FPS camera, 60Hz pacing and crew optimizations. Android 60FPS/listening validation pending.
 
 Current: Race viewport, build `93f5e627f88c8d5e`. [Viewport and validation](reports/RACE_VIEWPORT_TH.md). Game image ends above the unchanged HUD/buttons, including FPS.
