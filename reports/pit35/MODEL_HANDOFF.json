@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "scope": "Actual GLB assembled by prepareCar; world-space wheel/wing bounds match the racing model at the service handoff. No GPU rendering.",
+  "maxError": 4.02041788225783e-14
+}

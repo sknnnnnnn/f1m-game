@@ -1,0 +1,141 @@
+{
+  "track": "suzuka",
+  "time": 89.28333333333333,
+  "stop": null,
+  "rejections": 0,
+  "stopped": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "intrusions": [],
+  "footprintChecks": 543160,
+  "events": [
+    {
+      "kind": "PIT_STOP",
+      "car": 1,
+      "time": 19.2,
+      "tick": 1152,
+      "speed": 0.012058381803685162,
+      "stationError": -0.10317279435457749
+    },
+    {
+      "kind": "PIT_STOP",
+      "car": 2,
+      "time": 27.4,
+      "tick": 1644,
+      "speed": 0.000012263800644466222,
+      "stationError": -0.08892860466585262
+    },
+    {
+      "kind": "PIT_STOP",
+      "car": 3,
+      "time": 27.7,
+      "tick": 1662,
+      "speed": 0.007086333356519639,
+      "stationError": -0.1018243800581331
+    },
+    {
+      "kind": "PIT_RELEASE",
+      "car": 1,
+      "time": 29.433333333333334,
+      "tick": 1766
+    },
+    {
+      "kind": "PIT_STOP",
+      "car": 4,
+      "time": 35.9,
+      "tick": 2154,
+      "speed": 0.00005143652205381764,
+      "stationError": -0.07952369281520077
+    },
+    {
+      "kind": "PIT_STOP",
+      "car": 5,
+      "time": 35.95,
+      "tick": 2157,
+      "speed": 0.006968737872990899,
+      "stationError": -0.09753387427826965
+    },
+    {
+      "kind": "PIT_RELEASE",
+      "car": 2,
+      "time": 36.1,
+      "tick": 2166
+    },
+    {
+      "kind": "PIT_RELEASE",
+      "car": 3,
+      "time": 42.733333333333334,
+      "tick": 2564
+    },
+    {
+      "kind": "PIT_STOP",
+      "car": 6,
+      "time": 44.166666666666664,
+      "tick": 2650,
+      "speed": 0.000016392709020782222,
+      "stationError": -0.10080003930852399
+    },
+    {
+      "kind": "PIT_RELEASE",
+      "car": 4,
+      "time": 49.36666666666667,
+      "tick": 2962
+    },
+    {
+      "kind": "PIT_RELEASE",
+      "car": 5,
+      "time": 56,
+      "tick": 3360
+    },
+    {
+      "kind": "PIT_RELEASE",
+      "car": 6,
+      "time": 62.63333333333333,
+      "tick": 3758
+    }
+  ],
+  "exits": [
+    {
+      "id": 1,
+      "stops": 1,
+      "phase": "RACING",
+      "transit": 62.61666666666667
+    },
+    {
+      "id": 2,
+      "stops": 1,
+      "phase": "RACING",
+      "transit": 66.76666666666667
+    },
+    {
+      "id": 3,
+      "stops": 1,
+      "phase": "RACING",
+      "transit": 72.4
+    },
+    {
+      "id": 4,
+      "stops": 1,
+      "phase": "RACING",
+      "transit": 78.01666666666667
+    },
+    {
+      "id": 5,
+      "stops": 1,
+      "phase": "RACING",
+      "transit": 83.65
+    },
+    {
+      "id": 6,
+      "stops": 1,
+      "phase": "RACING",
+      "transit": 89.28333333333333
+    }
+  ],
+  "scope": "Six real integrated cars approach their own bays concurrently; oriented footprint against every other work area. No pose writes after initialization."
+}

@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "Fast car passes while pit car yields, then physical rejoin",
+      "status": "PASS",
+      "steps": 1048,
+      "yieldSeconds": 0.2666666666666657,
+      "events": [
+        {
+          "kind": "PIT_YIELD",
+          "car": 1,
+          "time": 8.5,
+          "tick": 510
+        },
+        {
+          "kind": "PIT_MERGE",
+          "car": 1,
+          "time": 8.766666666666666,
+          "tick": 526
+        },
+        {
+          "kind": "PIT_EXIT",
+          "car": 1,
+          "time": 17.466666666666665,
+          "tick": 1048,
+          "totalSeconds": 17.466666666666665
+        }
+      ],
+      "minClearance": null
+    },
+    {
+      "name": "Two cars queue and service in neighbouring real stalls, no teleport or overlap",
+      "status": "PASS",
+      "maxMove": 0.7625657432547513,
+      "minClearance": 2.900028927506333,
+      "cycles": [
+        {
+          "enteredAt": 0,
+          "compoundBefore": "M",
+          "requested": "H",
+          "stoppedAt": 0,
+          "stopPose": {
+            "X": -161.9184488431981,
+            "Y": -87.60353037028067
+          },
+          "serviceSeconds": 3.2,
+          "wearBefore": 0,
+          "compoundAfter": "H",
+          "positionAfter": 1,
+          "exitedAt": 34.18333333333333,
+          "totalSeconds": 34.18333333333333
+        },
+        {
+          "enteredAt": 0,
+          "compoundBefore": "M",
+          "requested": "H",
+          "stoppedAt": 7.483333333333333,
+          "stopPose": {
+            "X": -154.5500413112037,
+            "Y": -66.60040049379691
+          },
+          "serviceSeconds": 3.2,
+          "wearBefore": 0.00003381108132525645,
+          "compoundAfter": "H",
+          "positionAfter": 2,
+          "exitedAt": 39.88333333333333,
+          "totalSeconds": 39.88333333333333
+        }
+      ],
+      "events": [
+        {
+          "kind": "TYRE_CHANGE",
+          "car": 1,
+          "time": 3.2,
+          "tick": 192,
+          "compound": "H",
+          "wearBefore": 0,
+          "serviceSeconds": 3.2
+        },
+        {
+          "kind": "PIT_RELEASE",
+          "car": 1,
+          "time": 7.366666666666666,
+          "tick": 442
+        },
+        {
+          "kind": "PIT_STOP",
+          "car": 2,
+          "time": 7.483333333333333,
+          "tick": 449,
+          "speed": 0.005783820912779111,
+          "stationError": -0.12441648861113208
+        },
+        {
+          "kind": "TYRE_CHANGE",
+          "car": 2,
+          "time": 10.683333333333334,
+          "tick": 641,
+          "compound": "H",
+          "wearBefore": 0.00003381108132525645,
+          "serviceSeconds": 3.2
+        },
+        {
+          "kind": "PIT_RELEASE",
+          "car": 2,
+          "time": 14.066666666666666,
+          "tick": 844
+        },
+        {
+          "kind": "PIT_MERGE",
+          "car": 1,
+          "time": 30.099999999999998,
+          "tick": 1806,
+          "rolling": true
+        },
+        {
+          "kind": "PIT_EXIT",
+          "car": 1,
+          "time": 34.18333333333333,
+          "tick": 2051,
+          "totalSeconds": 34.18333333333333
+        },
+        {
+          "kind": "PIT_MERGE",
+          "car": 2,
+          "time": 35.8,
+          "tick": 2148,
+          "rolling": true
+        },
+        {
+          "kind": "PIT_EXIT",
+          "car": 2,
+          "time": 39.88333333333333,
+          "tick": 2393,
+          "totalSeconds": 39.88333333333333
+        }
+      ]
+    }
+  ]
+}

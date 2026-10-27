@@ -1,10 +1,10 @@
 import {pitTrafficCap32} from '../pit/pit-traffic32.js';
 import {WeekendRace} from './weekend.js';
 import {control} from '../../racing/runtime/frozen/controller.js';
-import {replaceTyres} from '../../racing/runtime/frozen/physics.js';
+import {replaceTyres,engineWheelTorque} from '../../racing/runtime/frozen/physics.js';
 import {circuit,clamp} from '../tracks/track.js';
 import {connectLane,laneAt,makeReference,trajectoryTarget} from '../physics/reference-adapter.js';
-import {PIT,pitRoad,stallStation,pitStopStation,canMerge} from '../pit/pit-lane.js';
+import {PIT,pitRoad,stallStation,pitStopStation,canMerge,pitMergeStop35} from '../pit/pit-lane.js';
 import {makePitPlan,pitApproachSpeed} from '../pit/pit-reference.js';
 import {COMPOUNDS,tyreConfig,tyreInfo,tyreWear} from '../physics/tyres.js';
 import {evaluateStrategy} from './strategy.js';
@@ -40,15 +40,15 @@ export class StrategyRace extends WeekendRace {
  serviceDuration(car){return PIT.serviceSeconds;}
  releaseReady(car){return true;}
  commandCar(car,c){
-  const out=control(c,car.state,car.agent.plan);if(!car.pit.active)return out;
-  const phase=car.pit.phase,road=pitRoad(car.id),at=road.project(car.state.X,car.state.Y),stop=phase==='PIT_IN'?pitStopStation(car.id):phase==='PIT_OUT'?PIT.mergeWait:Infinity;
+  const out=control(c,car.state,car.agent.plan);if(!car.pit.active||out.trace?.rejection)return out;
+  const phase=car.pit.phase,road=pitRoad(car.id),at=road.project(car.state.X,car.state.Y),stop=phase==='PIT_IN'?pitStopStation(car.id):phase==='PIT_OUT'?pitMergeStop35(car,this.cars):Infinity;
   if(['SERVICE','RELEASE','YIELD'].includes(phase)||phase==='PIT_IN'&&stop-at.s<.22){out.command={...out.command,throttle:0,brake:1,steer:0,energy:false};out.controllerState={iv:0};return out;}
   // A pit-only speed servo drives the existing physical pedals and brakes.
   const remaining=stop-at.s,localTarget=trajectoryTarget(car.agent.plan,car.state),target=Math.min(localTarget.v,pitTrafficCap32(car,this.cars,c),car.agent.plan.speed,Number.isFinite(stop)?Math.sqrt(2*2.2*Math.max(0,remaining)):PIT.target),a=clamp(Math.min(0,localTarget.a??0)+(target-car.state.u)*2.5,-7,2.5),drag=.5*c.rho*c.CdA*car.state.u**2,force=c.m*a+drag;
   // Use the frozen controller's engine-force conversion and brake model while
   // avoiding integral wind-up around a stationary service box.
-  if(a<0){out.command={...out.command,throttle:0,brake:clamp(-force/((2*c.brakeF+2*c.brakeR)/c.R),0,1),energy:false};}
-  else out.command={...out.command,throttle:Math.min(out.command.throttle,.5),brake:0,energy:false};
+  if(force<0){out.command={...out.command,throttle:0,brake:clamp(-force/((2*c.brakeF+2*c.brakeR)/c.R),0,1),energy:false};}
+  else out.command={...out.command,throttle:clamp(force/Math.max(1,engineWheelTorque(c,car.state,Math.max(.1,(car.state.wheels[2].omega+car.state.wheels[3].omega)/2))/c.R),0,.5),brake:0,energy:false};
   out.controllerState={iv:0};return out;
  }
  prepareAdvance(){
@@ -73,9 +73,9 @@ export class StrategyRace extends WeekendRace {
     const blocked=this.cars.some(o=>o.id!==car.id&&o.pit.active&&o.state.u>2&&(()=>{const q=pitRoad(car.id).project(o.state.X,o.state.Y);return q.s-S> -80&&q.s-S<28&&Math.abs(q.d)<8;})());
     if(!blocked&&this.releaseReady(car)){pit.phase='PIT_OUT';car.agent.plan=null;this.eventPit(car,'PIT_RELEASE');}
    }
-   if(pit.phase==='PIT_OUT'&&S>=PIT.mergeWait-2&&speed<.15){pit.phase='YIELD';car.agent.plan=null;this.eventPit(car,'PIT_YIELD');}
+   if(pit.phase==='PIT_OUT'&&S>=PIT.mergeWait-2){if(canMerge(car,this.cars)){pit.phase='MERGE';car.agent.plan=null;this.eventPit(car,'PIT_MERGE',{rolling:speed>.15});}else if(speed<.15){pit.phase='YIELD';car.agent.plan=null;this.eventPit(car,'PIT_YIELD');}}
    if(pit.phase==='YIELD'&&canMerge(car,this.cars)){pit.phase='MERGE';car.agent.plan=null;this.eventPit(car,'PIT_MERGE');}
-   if(pit.phase==='MERGE'&&S>=PIT.exit-3){pit.phase='RACING';pit.active=false;pit.manual=false;pit.requestedCompound=null;pit.nextCompound=null;pit.lastStop={...pit.cycle,positionAfter:this.ranking().findIndex(c=>c.id===car.id)+1,exitedAt:this.time,totalSeconds:this.time-pit.enteredAt};pit.cycle=null;car.projection=circuit.project(car.state.X,car.state.Y,car.state.psi);car.agent.curve={t0:car.state.time,T:1,c:[car.projection.d]};car.agent.targetLane=car.projection.d;car.agent.targetSpeed=speed;car.agent.acceleration=0;car.agent.plan=null;this.eventPit(car,'PIT_EXIT',{totalSeconds:pit.lastStop.totalSeconds});}
+   if(pit.phase==='MERGE'&&S>=PIT.exit){pit.phase='RACING';pit.active=false;pit.manual=false;pit.requestedCompound=null;pit.nextCompound=null;pit.lastStop={...pit.cycle,positionAfter:this.ranking().findIndex(c=>c.id===car.id)+1,exitedAt:this.time,totalSeconds:this.time-pit.enteredAt};pit.cycle=null;car.projection=circuit.project(car.state.X,car.state.Y,car.state.psi);car.agent.curve={t0:car.state.time,T:1,c:[car.projection.d]};car.agent.targetLane=car.projection.d;car.agent.targetSpeed=speed;car.agent.acceleration=0;car.agent.plan=null;this.eventPit(car,'PIT_EXIT',{totalSeconds:pit.lastStop.totalSeconds});}
   }
   return true;
  }

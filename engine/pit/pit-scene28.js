@@ -1,4 +1,5 @@
 import * as T from 'three';
+import {pitHandoff35} from './pit-handoff35.js';
 import {prepareCar} from './crew/car-assembly.js';
 import {racePitRuntime28} from './crew/service-runtime28.js';
 import {createPitRoom} from './crew/pit-room.js';
@@ -38,10 +39,8 @@ export function pitScene28(scene,camera){
    const serviceAt=f?.serviceAt??pit.serviceStarted,startedNow=Number.isFinite(serviceAt)&&['SERVICE','RELEASE','PIT_OUT','YIELD','MERGE'].includes(pit.phase);
    if(startedNow&&k.lastService!==serviceAt){
     k.lastService=serviceAt;k.returnAt=null;
-    // Only the work origin follows the actual stop. The building stays fixed.
-    k.bay.updateMatrixWorld(true);const target=new T.Matrix4().compose(new T.Vector3(c.state.X,(pitRoad(id).project(c.state.X,c.state.Y).height??0)+.045,-c.state.Y),new T.Quaternion().setFromAxisAngle(new T.Vector3(0,1,0),c.state.psi-Math.PI/2),new T.Vector3(-k.v,k.v,k.v));
-    new T.Matrix4().copy(k.bay.matrixWorld).invert().multiply(target).decompose(k.work.position,k.work.quaternion,k.work.scale);
    }
+   if(startedNow&&['SERVICE','RELEASE'].includes(pit.phase))pitHandoff35(k.bay,m.root,k.work);
    const returning=k.returnAt!==null,started=startedNow||(returning&&k.lastService!==null),age=startedNow?Math.max(0,time-serviceAt):0,phase=returning&&started?profile.end:started?Math.min(profile.end,profile.start+age):0,done=started&&phase>=profile.release;
    if(done)k.completed=true;let crewMode=null,crewTime=0;if(returning){crewMode='return';crewTime=time-k.returnAt;}else if(!started){crewMode='deploy';crewTime=Math.max(0,time-(f?.calledAt??time));}
    const transforms=[k.bay,k.work].map(g=>({g,position:g.position.clone(),quaternion:g.quaternion.clone(),scale:g.scale.clone()}));let clear=false;
