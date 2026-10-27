@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "1855c9cd493f98e9",
-  "sourceRevision": "1855c9cd493f98e93938bfa8e01879a0403e65567ad8e46b82b22f9c254172c2",
+  "version": "0ce632be9c8bcb9a",
+  "sourceRevision": "0ce632be9c8bcb9a6e90872eec5bfc189d79c4eeaebe91a3d81e8160ccc463b2",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "8f0e46c4ed3e16a71fcb31198ed252513c41fc402e624c2bfd71cdcedb69eeff",
@@ -155,7 +155,7 @@
     "engine/ui/control23.js": "53d4e3629374060bd124343a3788d00b94998eb4b8d83c6e7beffe928e1b5f04",
     "engine/ui/engineer-ui.js": "ff1646f6e360f92820b3ffddcf5c1cd9d94907ae5b4bc886110b4d9b72c9e5fa",
     "engine/ui/living-ui26.js": "2a1cef7e003c96b37e2e0875366a90400d9a4fe81bd0aac12381649bf0c52d6a",
-    "engine/ui/race-digest34.js": "f6088d102758e9f08715bff6ab4ae118795e4a2726b63d8d44afff0cdbac8119",
+    "engine/ui/race-digest34.js": "5872c079caddd27cd756a6bb880aa622a51b29afe67b2f70d8d3b2c9494970fc",
     "engine/ui/race-radio34.js": "d9c2fc521a6bbc60eeb59e984719bed624e2607c2d15144443f6ed12231e89e6",
     "engine/ui/race-ui21.css": "a56c85f53bd15dd3d3472e2dff982519424347d130862b737c50a71df69c6416",
     "engine/ui/race-ui21.js": "1037408713efc02b3b58afeb4bf4f3dc12a40ff457787cf41794a8331c10add7",
@@ -204,8 +204,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 1041600,
-      "sha256": "d9582e94dcf136fccf8851087f8c74492849246eec3a1edbf4b04289d2d54515"
+      "bytes": 1041657,
+      "sha256": "01cba6e72dba58e866e2c4ec74fe37ebc91ba02896798193b455c42f710934c3"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -233,7 +233,7 @@
     },
     "build.json": {
       "bytes": 20686,
-      "sha256": "5e154f856ee0a6d4f4e5a4520f02e2ba55f08d9e227e9da9ceb746cc3b5fee35"
+      "sha256": "5221fffa5befda92abe68f61b544995284217f2bfa0736860060a804960270c2"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -273,7 +273,7 @@
     },
     "sw.js": {
       "bytes": 1828,
-      "sha256": "78e19fd6093867f00e184eeda11710edf6d6772917e69bdf971b51d92032ac0d"
+      "sha256": "2924664a636391b6d50c574cb2078d5ae082307e10e2f6c5c4396aa5e8cad2d2"
     }
   }
 }

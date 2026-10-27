@@ -3,4 +3,3 @@ npm warn Unknown env config "http-proxy". This will stop working in the next maj
 > f1m-engine@1.0.0 build
 > node build.mjs
 
-{"edition":"F1M ATTACK 1.1","version":"1855c9cd493f98e9","htmlBytes":16958,"appBytes":1041600,"outputs":18}

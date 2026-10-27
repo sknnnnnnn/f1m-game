@@ -1,4 +1,4 @@
-export const raceTime34=s=>Number.isFinite(s)?Math.floor(s/60)+':'+(s%60).toFixed(3).padStart(6,'0'):'—';
+export function raceTime34(s){if(!Number.isFinite(s)||s<0)return '—';const ms=Math.round(s*1000);return Math.floor(ms/60000)+':'+((ms%60000)/1000).toFixed(3).padStart(6,'0');}
 // Observed timing only. Lap deltas are not attributed to a cause we cannot prove.
 export function raceDigest34(p,id){
  const car=p?.snapshot?.cars.find(c=>c.id===id),physical=p?.cars.find(c=>c.id===id);if(!car)return null;

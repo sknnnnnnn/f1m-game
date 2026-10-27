@@ -1,0 +1,15 @@
+{
+  status: 'PASS',
+  track: 'suzuka',
+  focusedRadio: true,
+  deduplicated: true,
+  criticalPreemption: true,
+  replayMuted: true,
+  resetSafe: true,
+  lapArithmetic: true,
+  queueNotDoubleCounted: true,
+  escapedDriverNames: true,
+  passCameraCapturesEvent: true,
+  selectedCarRetained: true,
+  realPresentationReadOnly: true
+}
