@@ -3,6 +3,6 @@
   "stop": null,
   "rejections": 0,
   "rearBrake": true,
-  "minClearance": 1.5828949219287172,
+  "minClearance": 1.6200813850270444,
   "scope": "Real physics; first car commanded to brake during launch, no pose/speed writes"
 }

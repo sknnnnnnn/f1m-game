@@ -1,3 +1,7 @@
+Current: Speed ref applied to 18 corners, build `7cfce508201fcfd0` (2026-10-27). See [corner speed results and model limits](reports/CORNER_SPEED_TH.md). Frozen physics/controller, models and graphics retained. Android validation pending.
+
+Historical milestone notes below retain their original statements and do not override the current report.
+
 Latest milestone: flow racing, stronger DRS, balanced standing field and animated grid crew (d916a138a44e8e76). See [measured changes and remaining limits](reports/FLOW_RACING_TH.md). Six-car China two-lap and Suzuka/Bahrain one-lap integrations pass; Android and five-lap validation pending.
 
 Latest milestone: progressive throttle, continuous envelope transition and traction recovery (9b30b0f24b96515d). See [measured results](reports/THROTTLE_DRIVING_TH.md). Six-car China two-lap and Suzuka/Bahrain one-lap integrations pass; actual Android visual/FPS validation pending.

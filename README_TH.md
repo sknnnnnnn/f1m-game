@@ -1,6 +1,6 @@
 # F1M Attack 1.1
 
-เวอร์ชันล่าสุด: เร่งเต็มและเบรกหนัก, DRS 3 วินาที, ปรับภาพ Shanghai/Suzuka/Bahrain ดูรายงาน reports/ATTACK_1_1_TH.md สำหรับผลทดสอบจริงและข้อจำกัด Android
+เวอร์ชันล่าสุด `7cfce508201fcfd0`: ใช้ Speed ref ทั้ง 18 โค้งใน Bahrain/Suzuka/Shanghai ลดการชะลอเกินจำเป็น ดู [ผลก่อน–หลังและข้อจำกัดโมเดลสนาม](reports/CORNER_SPEED_TH.md) คง DRS 5 วินาทีจากรุ่นก่อน และยังรอยืนยันผลบน Android
 
 # F1M Engine 1.0 — Mobile Development
 
