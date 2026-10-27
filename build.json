@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "0653e7d89b47091a",
-  "sourceRevision": "0653e7d89b47091ae3f183b5f335238fc52b79db1fc5874975672aaaa7ae7d76",
+  "version": "932ad21a4fbc03fd",
+  "sourceRevision": "932ad21a4fbc03fdd64346159ddb02c1a94b3fc2093032413de25a39e6294734",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "8f0e46c4ed3e16a71fcb31198ed252513c41fc402e624c2bfd71cdcedb69eeff",
@@ -182,7 +182,7 @@
     "public/manifest.webmanifest": "d00afe884bc8a47499dbe133a441006e109c1e4371b045ad20202159f419b3a1",
     "public/mobile.css": "f0810315631c2bc633349f20a808564644f5e1fd3a61a4038ece279713ca68a3",
     "public/mobile.js": "711a5074078ed7a0c08527c6360149dbae986eba45a84f0463c06049d802224e",
-    "public/sw.js": "22be9ca04be9e924c8e01ef5403f3f4cc75eb2c8dfd553b03af52936896fa910",
+    "public/sw.js": "77c0d09610f786002465ddd8db3445289caf840d9d36390f419ac7ea9d6fa051",
     "racing/runtime/config.js": "ca6edd83ccadd1022d26505f3c4c0e22dae6dbc271e6531c4373196a472c709b",
     "racing/runtime/frozen/config.js": "f6ef0ce66ab4c27e48955013207f39826a427b3e076fd8e83bf2af943b56b560",
     "racing/runtime/frozen/contracts.js": "e7970a354d1fb613940f4944031b423258874417a78cbfcd9087620d1011d2e7",
