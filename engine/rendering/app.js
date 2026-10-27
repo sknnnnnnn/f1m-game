@@ -1,3 +1,4 @@
+import {mountRaceViewport36} from '../ui/race-viewport36.js';
 import {raceDigest34,digestMarkup34} from '../ui/race-digest34.js';
 import {circuitFinish} from './circuit-finish.js';
 import {renderHeartbeatLost,RENDER_HEARTBEAT_GRACE_MS} from '../runtime/render-health.js';
@@ -218,6 +219,7 @@ function inspectReplay24(){if(!tape.active)return;tape.playing=false;setCamera('
 watchUI24=mountWatchUI24({raceUI,championshipUI,getState:()=>({selected,payload}),inspectReplay:inspectReplay24,selectCar,radioCue:priority=>sound.radioCue(priority)});
 $('map').addEventListener('click',e=>{const id=mapHit24(mapHits24,e.clientX,e.clientY,$('map'),$('map').getBoundingClientRect());if(id!==null)selectCar(id);else raceUI.open('drivers',$('drivers-toggle'));});$('map').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();raceUI.open('drivers',$('map'));}});
 document.querySelector('.results-eyebrow').textContent=circuit.name+' · RACE VIEW / 24';$('stage').setAttribute('aria-label','สนาม '+circuit.name+' และรถแข่งสามมิติ');
+mountRaceViewport36();
 initialise();
 
 worldUI26=livingUI26({post,getState:()=>({payload,selected}),night:night22,redraw:()=>{dirty=true;drawPaused();}});

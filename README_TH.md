@@ -1,3 +1,5 @@
+Current: Race viewport, build `38b04c60427b8238`. [Viewport and validation](reports/RACE_VIEWPORT_TH.md). Game image ends above the unchanged HUD/buttons, including FPS.
+
 Current: Pit continuity, build `b1da04136309c013`. [Changes and verification](reports/PIT_CONTINUITY_TH.md). Rolling pit exit at approximately 80 km/h, smooth pit-exit curve and service model handoff. Android visual/FPS verification pending.
 
 Current: Race story, build `4e4419b64bc34852`. [Usage, verified behaviour and limits](reports/RACE_STORY_TH.md). Focused team radio, responsive selected-car Cinema and per-driver race digest. Driving, AI, six-car grid, track geometry and graphics unchanged. Android UI/listening/FPS verification pending.
