@@ -1,4 +1,4 @@
-import {attackBrake} from './attack-drive.js';
+import {isAttackConfig,attackBrake} from './attack-drive.js';
 
 // Isolated development preset. Original C0.json, physics and controller stay frozen.
 function highSpeedConfig(base){return {...structuredClone(base),version:'F1M-ATTACK-BRAKE/4',mu:2.7,steerRate:1.1,steerLag:.05,brakeF:6200,brakeR:2000,deployW:300000,motorTorque:450,capacity:8000000,CdA:.65,ratios:[3.3,2.9,2.5,2.15,1.85,1.59,1.37,1.18],pedalRate:16};}
@@ -16,7 +16,10 @@ function gearCommand(c,s,requested,box){
  const slip=(wheelSpeed-speed)/Math.max(speed,wheelSpeed,1);
  // P2 driver assist trims throttle on measured rear-wheel slip. It cannot add
  // power and still passes through the original physical pedal slew/tyres.
- const tractionLimit=slip>.13?Math.max(.18,requested.throttle-(slip-.13)*3):requested.throttle;
+ let tractionLimit=slip>.13?Math.max(.18,requested.throttle-(slip-.13)*3):requested.throttle;
+ // Reapply torque progressively after a traction cut instead of jumping back
+ // to full throttle every time rear slip crosses the assist threshold.
+ if(isAttackConfig(c)){const previous=box.tractionThrottle??requested.throttle;tractionLimit=Math.min(tractionLimit,previous+c.dt*2.5);box.tractionThrottle=tractionLimit;}
  if(tractionLimit<requested.throttle-.001)box.tractionCuts=(box.tractionCuts??0)+1;const gear=selectGear(c,s);if(gear!==s.gear&&s.shiftRemaining<=0)box.lastShift=s.tick;
  // Deploy the existing finite hybrid store on hard acceleration; braking still
  // regenerates through the original physical energy model.

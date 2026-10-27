@@ -1,3 +1,5 @@
+Latest milestone: progressive throttle, continuous envelope transition and traction recovery (9b30b0f24b96515d). See [measured results](reports/THROTTLE_DRIVING_TH.md). Six-car China two-lap and Suzuka/Bahrain one-lap integrations pass; actual Android visual/FPS validation pending.
+
 Latest milestone: sustained driving, pit-lane 80 km/h and 5-second DRS (2f0da8eb579c21dd). See [results](reports/ATTACK2_DRIVING_TH.md). Android validation pending.
 
 Latest milestone: Shanghai spatial racing path (7d46953990b00bbd), 2026-10-27.

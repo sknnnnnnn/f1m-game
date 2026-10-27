@@ -1,0 +1,29 @@
+{
+  "before": {
+    "raceSeconds": 150.6,
+    "activeCarSeconds": 833.0166666666667,
+    "throttleVariation": 1051.6295115134953,
+    "rapidUnbrakedChanges": 213,
+    "shortReversals": 1765,
+    "meanAbsJerkMPS3": 34.845009164894755,
+    "brakingTicks": 20367,
+    "meanThrottle": 0.5041004834349764,
+    "finished": true,
+    "stop": null,
+    "rejections": 0
+  },
+  "after": {
+    "raceSeconds": 151.68333333333334,
+    "activeCarSeconds": 838.7833333333333,
+    "throttleVariation": 625.7603521306719,
+    "rapidUnbrakedChanges": 41,
+    "shortReversals": 1069,
+    "meanAbsJerkMPS3": 30.408404047700852,
+    "brakingTicks": 19308,
+    "meanThrottle": 0.4814763691255038,
+    "finished": true,
+    "stop": null,
+    "rejections": 0
+  },
+  "scope": "Paired deterministic default LivingSession26 six-car one-lap simulation. Commands sampled every 100 ms for >0.5 throttle changes while brake <0.01 at both ends. Variation and acceleration jerk use active cars at 60 Hz. Not Android FPS or visual proof."
+}

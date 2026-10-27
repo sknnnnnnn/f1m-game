@@ -1,7 +1,7 @@
 {
   "edition": "F1M ATTACK 1.1",
-  "version": "2f0da8eb579c21dd",
-  "sourceRevision": "2f0da8eb579c21dd380b2c5d99b2050531730603d3bc98e0658ba6fa9f8006a1",
+  "version": "9b30b0f24b96515d",
+  "sourceRevision": "9b30b0f24b96515ddfd0c014a5c9d1dec1209e3e0ec69aa49dbfafafdbc6bb9d",
   "inputs": {
     "build.mjs": "baf1e5e31b6f9dae74c9429e9c5f76f0952ae44d47754c87ed928803a41b0115",
     "engine/ai/agent.js": "0f9a5b2caa6a7ed77e9b08158a2df70ed91bd6dc05c6cfb50bbe9d06641267bd",
@@ -24,11 +24,12 @@
     "engine/index.js": "bc44eace049a0e12c3074cbb385512b7fcf92e974eec8687905af7892fe65909",
     "engine/physics/attack-drive.js": "573b1d5c625b7d02bfeae2b4a051e9c0c6f6f35331d0b32248263e9dc1ac0196",
     "engine/physics/collision.js": "3c788dba61f348e07f38b0f74b9c5ae8d8ee359584507c2cc00e386bf00f2dca",
+    "engine/physics/driver-pedal.js": "8f420b79372648b6d4c22d0f093fbb922a228febc7475143bb3f779f44ad942f",
     "engine/physics/pose-buffer.js": "c41906bda1e631fa90bd2435c4f1838385113bb56697927355bbea3e1b45c110",
     "engine/physics/reference-adapter.js": "38c7352f0ed5c1e7f9e3e21455062b3cef4333bc5c27e74669016d67c1fb93cb",
-    "engine/physics/speed-envelope.js": "65a22f618706e27860e300e8dc71b5388a3fcb3a1524d9e2c3fd8c8e3787857f",
+    "engine/physics/speed-envelope.js": "0d3a5efa87e295c48b92c3e5b03eaf1f2c13bfb30d38c35d6aaf669cabb57ca7",
     "engine/physics/tyres.js": "7cd1a8261c34410567c09a56d7d75df97e5fe93904f6cf941c678a57dd6a3191",
-    "engine/physics/vehicle-preset.js": "7e77f04e69cb344f5826a9794cb794a110c299f67d3990c0b79ae49be8c036c1",
+    "engine/physics/vehicle-preset.js": "9727517350658e0570a72935eb5e25a2048b079bb390b75f1fa889070ace8697",
     "engine/pit/crew/brake-service.js": "441dc8b1ab3e1ff4d0ee83f334fa8e9ecd3495fd5391ed577d52ec1bbabb77fc",
     "engine/pit/crew/car-assembly.js": "a015fbbb104dfe3f12d6f65433748eb6c24c5d734d271f6de4b94881898956a2",
     "engine/pit/crew/contact-pose.js": "00ffa1c8f7f52c1416313b52550b7a84eb31b5f9d5fde1096eb34fea4f5ef356",
@@ -58,7 +59,7 @@
     "engine/race/championship23.js": "b6467408d5e0ab1d3f02998ec7a190a98711c11431226f1034c46f0b917e61f8",
     "engine/race/driver-response21.js": "8931083b5b40d119d8899b69ee054c40d131109ad2147efc124f17f42bc4baea",
     "engine/race/drivers.js": "013c1741aef3536dce2a31eaee986fdeac313c21ec5d5c4ea7c4ef9896910591",
-    "engine/race/engine.js": "e07c3561c01824657ed81e1cd0a138f0d9571dae98db108e7ee3c34d1790f57a",
+    "engine/race/engine.js": "e783005213e9617e3552391d04c87bea9f7de7db66db535328fde0d587d4bc8a",
     "engine/race/living-race26.js": "18215541ce6fbcba2fe9aeffa18eea829e47ec7309927d70e7767e8c591f7e0e",
     "engine/race/living-session26.js": "b4a04133c28fa049294a4c1b9143c5949e8f9b70c3ddb6596fe87e1f63d21a2e",
     "engine/race/race-clock.js": "8f6100345a539e2095a7aad9b578553bb3e185cbca7163fe51af1a5d11c5e75b",
@@ -181,8 +182,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 992224,
-      "sha256": "f4e5d8dbe63492758d87def18e1edd7a501812f79ae792d86d94abb25e94b30d"
+      "bytes": 992324,
+      "sha256": "65fbde5d80386d4ecafbaeea92adf1de2c1653df9ea706db8aaeda349741f07c"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -209,8 +210,8 @@
       "sha256": "59b22d81aa6838b585c4ea4e429f66b259423d0e420afa6a2e7a1b5e80bdbd59"
     },
     "build.json": {
-      "bytes": 18152,
-      "sha256": "d4ad002043da1f5a050228450ebdc4c5c4db0cff5a74a3f9e006353609a042af"
+      "bytes": 18258,
+      "sha256": "a56358f59340c3965811f473c6d62a4ee3bba0e8c6a77ca94c778e4e79f4d84a"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -245,12 +246,12 @@
       "sha256": "9dd7716e07674eaa83f5102c46129144fbd17b2510c19e33fcfb363e66fbec21"
     },
     "workers/race-worker.js": {
-      "bytes": 762834,
-      "sha256": "319afb24f6e02a665e1ca5a3e988746821837034d495b57019aed747b2b2ea87"
+      "bytes": 763859,
+      "sha256": "3d31e19b4bceb0389165f54307c4647885bba3ac67ed538c40669de0989add1a"
     },
     "sw.js": {
       "bytes": 1299,
-      "sha256": "59b2a6ac828e00e1fab61b91cc9b271178fd018f1bfc139e04a7fa8b647146e7"
+      "sha256": "cf12e959e0a79a0ef642811e830e7a5e4563b066d91d758bba2ca95effde0b95"
     }
   }
 }

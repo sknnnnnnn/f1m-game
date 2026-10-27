@@ -39,7 +39,15 @@ export function brakingBudget(c,agent,tyre,k,v,curveV=v,caution=brakingTrafficCa
 // reaches its braking envelope. Otherwise its negative feed-forward cancels
 // the positive speed error and produces a long, premature lift/coast phase.
 export function approachDemand(profileA,allowedSpeed,actualSpeed,agent,caution=trafficCaution(agent),curvature=0){
- if(isAttackConfig(agent.config??{})&&agent.id!==7&&!['YELLOW','VSC'].includes(agent.state)){const margin=Math.max(.7,-Math.min(0,profileA)*(.1+1/(agent.config.pedalRate??16)));if(profileA<-.05&&actualSpeed>=allowedSpeed-margin)return profileA;return Math.max(0,Math.min(14,(allowedSpeed-actualSpeed-.4)*5));}
+ if(isAttackConfig(agent.config??{})&&agent.id!==7&&!['YELLOW','VSC'].includes(agent.state)){
+  const margin=Math.max(.7,-Math.min(0,profileA)*(.1+1/(agent.config.pedalRate??16)));
+  const drive=Math.max(0,Math.min(14,(allowedSpeed-actualSpeed-.4)*5));
+  if(profileA>=-.05)return drive;
+  // Blend the former acceleration/braking switch across 0.3 m/s. Tiny
+  // speed noise must not toggle the entire negative feed-forward term.
+  const x=Math.max(0,Math.min(1,(allowedSpeed-actualSpeed-margin)/.3)),blend=x*x*(3-2*x);
+  return profileA+(drive-profileA)*blend;
+ }
  if(agent.config?.driverBraking!=='LATE_ENTRY'||caution>.25||Math.abs(curvature)>(agent.config?.driverBraking==='LATE_ENTRY'&&agent.id!==7&&!['YELLOW','VSC'].includes(agent.state)?.004:.0012))return profileA<-.05?profileA:agent.acceleration;
  if(profileA>=-.05)return agent.acceleration;
  // Include the100ms planning cadence and the unchanged physical pedal slew.
