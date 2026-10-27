@@ -1,0 +1,59 @@
+{
+  "version": "b1da04136309c013",
+  "sourceCommit": "d891610d324a02a89b1e6b2f72e8fe2947c0e00b",
+  "sourceTree": "012bec70c654a4cc73b24eaa505bd5c09e5c03ba",
+  "pagesCommit": "ca4490e6147be352b4d1f55c234566e40b8b5ab0",
+  "pagesTree": "3712d99ffc39c71a0fcc46144c192c5d9d818b74",
+  "deployment": {
+    "run": 40551331348,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "live": "https://sknnnnnnn.github.io/f1m-game/",
+  "verifiedAtUtc": "2026-10-27T17:32:41Z",
+  "assetHashes": {
+    "build.json": {
+      "sha256": "c6ca77223665c2376d9948875a739fa2eb8ceb348870b78cf1f585aa489e66db",
+      "expected": "c6ca77223665c2376d9948875a739fa2eb8ceb348870b78cf1f585aa489e66db",
+      "match": true
+    },
+    "assets/app.js": {
+      "sha256": "c0672a709c67693a744f8cb40f8110bb3988d18e3fc10a2f827dc34cce2b69de",
+      "expected": "c0672a709c67693a744f8cb40f8110bb3988d18e3fc10a2f827dc34cce2b69de",
+      "match": true
+    },
+    "sw.js": {
+      "sha256": "8ffcef792d73cc739cfed14d24ab7cd011c2ca71873f78550355ab37dea7c86a",
+      "expected": "8ffcef792d73cc739cfed14d24ab7cd011c2ca71873f78550355ab37dea7c86a",
+      "match": true
+    },
+    "workers/race-worker.js": {
+      "sha256": "2d942d1259e152c8a751f9c008e34271468095504c3e7714b75c941bfa99d7bc",
+      "expected": "2d942d1259e152c8a751f9c008e34271468095504c3e7714b75c941bfa99d7bc",
+      "match": true
+    },
+    "workers/physics-worker.js": {
+      "sha256": "eb7f262d865084f1a20c7a3d986f401b10296fd4839640baa4aaf47a7271b259",
+      "expected": "eb7f262d865084f1a20c7a3d986f401b10296fd4839640baa4aaf47a7271b259",
+      "match": true
+    }
+  },
+  "validation": {
+    "npmTestJobs": 41,
+    "npmTest": "PASS",
+    "build": "PASS",
+    "pwa": "PASS",
+    "fullPitCycles": [
+      "bahrain",
+      "shanghai",
+      "suzuka"
+    ],
+    "sixCarSuzukaExit": "PASS",
+    "sixCarBayFootprint": "PASS",
+    "physicalTrafficAndQueue": "PASS",
+    "actualGLBHandoff": "PASS",
+    "androidWebGLVisualFPS": "not tested",
+    "browser": "not tested this update"
+  },
+  "mainBranchUnchanged": true
+}
