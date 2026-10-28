@@ -1,7 +1,7 @@
 {
   "edition": "F1M GARAGE 49",
-  "version": "1b6fd7bb2d233d15",
-  "sourceRevision": "1b6fd7bb2d233d153005b12450e2147db9cf9ad6f0c3cc3110e5fb68c552e5c3",
+  "version": "a584574e1524037d",
+  "sourceRevision": "a584574e1524037d0d007a34edf5789ad8e1ac75625c80f61468814f8c818d31",
   "inputs": {
     "build.mjs": "e92f747dfcd2c873a3f77832afa4cc5e38232ef0a2926b2126ce3635bcaaccef",
     "engine/ai/agent.js": "50973b15756d5b20afb4cc1db2d7160dee86c7cf1f9ec4a212a151b31f4f09cf",
@@ -112,7 +112,7 @@
     "engine/rendering/dynamics.js": "2a93d9cda2d2317653015690b555fcf3415ddc21dafe46147268935c1fe68732",
     "engine/rendering/engine-entry.js": "5ae2aa6ea669a2ceda124dfe5877afcfb2a1ac1fe4de2c0ffc4554e9598f5e10",
     "engine/rendering/frame-budget37.js": "f8bdc6e5de3ff84558539365ead9921b6e9112628ceb01fa69e5a1509e3450e5",
-    "engine/rendering/garage-menu49.js": "3d999019db2b46ca8a6c21e55f77418488cacd979da857970122f996e6013341",
+    "engine/rendering/garage-menu49.js": "aebd60ea021edd9b9becadf9fdbcef9b63a4dd53a5b8a79ad75bb060717868c7",
     "engine/rendering/grid-crew33.js": "657178164cb655e4b45128c07dd045819240b7026af070d7045ff33ed007a8d2",
     "engine/rendering/grid-footsteps33.js": "a15d43f8bdb293292630585246f1c8bc8ab05b4f369f4593f4911158b221a708",
     "engine/rendering/grip-hand.js": "ed97b8308af35b9454855a0b8e01f9342c89e2e3e3319b8ac58d6c41289e85a6",
@@ -179,7 +179,7 @@
     "engine/ui/engineer-ui.js": "ff1646f6e360f92820b3ffddcf5c1cd9d94907ae5b4bc886110b4d9b72c9e5fa",
     "engine/ui/experience38.js": "f2fd1a855227b0c815fbae4df72a953211f34eac0b0dccc28056e41e595d12c5",
     "engine/ui/living-ui26.js": "2a1cef7e003c96b37e2e0875366a90400d9a4fe81bd0aac12381649bf0c52d6a",
-    "engine/ui/main-menu49.js": "5162ea2581c40af22b8794e056aaf53046578ca54f97962a963aac121c7d28ae",
+    "engine/ui/main-menu49.js": "66743b45d35149837bf3b9a1d43efc349cb4ab0529ef1e688a51cb92dba3ef68",
     "engine/ui/pass-caption46.js": "d10995dea1e07cfa6b5fa43e5095d4b61bec348d7e325ce86be3d1b89a6afefb",
     "engine/ui/race-digest34.js": "5872c079caddd27cd756a6bb880aa622a51b29afe67b2f70d8d3b2c9494970fc",
     "engine/ui/race-polish37.js": "d619bf5be9fc79ffc930b550bdcfe6eec18aa4c9121145da3031ef4c588b0657",
