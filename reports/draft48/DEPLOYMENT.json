@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "build": "cb33e4d091da5ea9",
+  "url": "https://sknnnnnnn.github.io/f1m-game/",
+  "sourceCommit": "41e1e49c293249953166142b04a42b5c4e82c383",
+  "pagesCommit": "be7e25139429c7e4381970cde49a712092e1ff06",
+  "pagesWorkflow": 40739860998,
+  "pagesConclusion": "success",
+  "observed": [
+    "Existing R47 offers update through ตรวจอัปเดต",
+    "Explicit update loads F1M RACE48 / page title Racecraft48",
+    "Settings shows cb33e4d091da5ea9 and ออฟไลน์พร้อม",
+    "Starting grid ready with enabled เริ่มแข่ง button"
+  ],
+  "scope": "Live cloud browser update/build verification only. No browser full-race or Android FPS/audio/touch acceptance.",
+  "screenshot": "reports/draft48/live-r48-verified.jpg"
+}
