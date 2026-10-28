@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "speedAfter2SecondsMS": {
+    "clear": 74.76250039089406,
+    "oldTow": 77.12126149508657,
+    "strongTow": 78.27174628188484
+  },
+  "scope": "Actual integrator, identical full throttle without ERS/DRS; controlled wheel-lock fixture for recovery. No claim that every race produces locks."
+}

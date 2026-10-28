@@ -16,9 +16,9 @@ const DRIVERS=[
 export function closeFieldTraits(driver){
  const p=driver.traits,profile={
  DEFENDER:{pace:89,corner:1.008,braking:6.35,exit:6.35},
- ATTACKER:{pace:96,corner:.986,braking:6.65,exit:7.05},
+ ATTACKER:{pace:96,corner:.955,braking:6.65,exit:7.05},
  TACTICIAN:{pace:91,corner:1.004,braking:6.45,exit:6.75},
- OPPORTUNIST:{pace:94.5,corner:.996,braking:6.55,exit:7.2},
+ OPPORTUNIST:{pace:94.5,corner:.975,braking:6.55,exit:7.2},
  GUARDIAN:{pace:92,corner:1.000,braking:6.25,exit:6.5},
  SMOOTH:{pace:93,corner:1.006,braking:6.4,exit:6.8}
  }[driver.kind];

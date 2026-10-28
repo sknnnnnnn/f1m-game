@@ -1,19 +1,8 @@
 import assert from 'node:assert/strict';
 import {battleWindow43} from '../engine/ai/battle-window43.js';
-const agent={id:1,raceContext:{remaining:9000}},p={own:{d:0},cars:[{id:2,gap:-100,lateral:0,pit:false}]};
-let plan=battleWindow43(agent,{time:100},p);assert(plan.saving);assert.equal(plan.pace,72);assert(plan.cornerFactor<1);
-p.cars[0].gap=-20;assert(battleWindow43(agent,{time:103},p).saving,'finish a smooth saving window rather than chatter');
-assert(battleWindow43(agent,{time:107},p).saving,'do not accelerate away again before the challenger has a passing corridor');
-p.cars[0]={id:2,gap:-8,lateral:3,pit:false};assert(!battleWindow43(agent,{time:108},p).saving,'race at full effort once the challenger is alongside');
-p.cars[0].gap=-100;assert(!battleWindow43(agent,{time:110},p).saving,'allow a sustained fight after releasing the conserving phase');
-assert(battleWindow43(agent,{time:117},p).saving);
-p.cars.push({id:3,gap:20,lateral:0,pit:false});assert(!battleWindow43(agent,{time:118},p).saving,'a challenger must remain free to attack a car in front');
-p.cars=[];assert(!battleWindow43(agent,{time:130},p).saving,'solo cars do not wait for imaginary rivals');
-agent.engineerOrder={pace:'ATTACK'};p.cars=[{id:2,gap:-100,lateral:0,pit:false}];assert(!battleWindow43(agent,{time:150},p).saving,'explicit player attack orders win');
-agent.engineerOrder={};p.cars[0]={id:2,gap:-5,lateral:3,pit:false};assert(!battleWindow43(agent,{time:160},p).saving,'never conserve while physically alongside');
-assert(!battleWindow43({...agent,id:7},{time:170},p).saving,'the Safety Car never uses battle pacing');
-console.log('PASS conserving strategy, hysteresis, racing release, player overrides, solo/alongside/pit exclusions');
-agent.pitApproach=true;p.cars=[{id:2,gap:-100,lateral:0,pit:false}];assert(!battleWindow43(agent,{time:180},p).saving);agent.pitApproach=false;
-agent.raceContext.remaining=200;assert(!battleWindow43(agent,{time:190},p).saving,'the finish sprint overrides regrouping');
-agent.raceContext={remaining:9000,battleEnabled43:false};assert(!battleWindow43(agent,{time:210},p).saving,'qualifying and practice keep their ordinary pace');
-const {LivingSession26}=await import('../engine/race/living-session26.js');const session=new LivingSession26();assert(session.race.battleEnabled43);session.stage='QUALIFYING';session.placeGrid([1,2,3,4,5,6]);assert.equal(session.race.battleEnabled43,false);session.stage='RACE';session.placeGrid([1,2,3,4,5,6]);assert(session.race.battleEnabled43);
+for(const gap of [-599,-100,-20,8,50,300])for(const time of [0,50,150]){
+ const a={id:1,battleWindow43:{saving:true},raceContext:{remaining:9000}};
+ const plan=battleWindow43(a,{time},{own:{d:0},cars:[{gap,lateral:0}]});
+ assert.equal(plan.saving,false);assert.equal(plan.pace,Infinity);assert.equal(plan.cornerFactor,1);assert.equal(a.battleWindow43.saving,false);
+}
+console.log('PASS no regrouping slowdown, including old saving state');

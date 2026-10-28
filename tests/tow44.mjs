@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {draftFactor} from '../engine/ai/draft.js';
+import {ACTION42,straightTarget42} from '../engine/race/action42.js';
+import {highSpeedConfig} from '../engine/physics/vehicle-preset.js';
+import {C0} from '../racing/runtime/config.js';
+import {initial,step} from '../racing/runtime/frozen/physics.js';
+import {driverResponse,freshResponse} from '../engine/race/driver-response21.js';
+import {setupConfig,newHealth} from '../engine/race/weekend-environment.js';
+const own={id:1,state:{u:75,v:0},projection:{s:100,k:0,d:0}},lead={id:2,projection:{s:150,k:0,d:0}};
+assert.equal(draftFactor(own,[lead]),1);assert(draftFactor(own,[lead],true)<.7,'wet running uses conservative tow');
+lead.projection.d=3;assert(draftFactor(own,[lead])>.85);
+lead.projection.s=100;assert.equal(draftFactor(own,[lead]),0);
+lead.projection.s=150;lead.pit={active:true};assert.equal(draftFactor(own,[lead]),0);
+lead.pit.active=false;lead.id=7;assert.equal(draftFactor(own,[lead]),0);lead.id=2;
+own.projection.k=.02;assert.equal(draftFactor(own,[lead]),0);own.projection.k=0;
+const c=highSpeedConfig(C0);
+function run(relief){const cfg={...c,CdA:c.CdA*(1-relief)},s=initial(cfg,{u:70,X:0,Y:0,psi:0,gear:7,shiftTarget:7});for(let i=0;i<120;i++)step(cfg,s,{tick:s.tick,expires:s.tick,throttle:1,brake:0,steer:0,gear:7,energy:false});return s.u;}
+const speed={clear:run(0),oldTow:run(.56),strongTow:run(.82)};
+assert(speed.strongTow>speed.oldTow&&speed.oldTow>speed.clear);
+const a={id:1,seed:7,personality:{pace:96},raceContext:{progress:100,length:5500},battle43:{pace:72}};
+assert(straightTarget42(a)>90,'stale saving state cannot cap clear-air pace');
+assert.equal(straightTarget42({...a,drafting:true}),103);assert(straightTarget42({...a,drafting:true,tow44:.1})<straightTarget42({...a,drafting:true,tow44:1}));
+const s=initial(c,{u:40,gear:4});s.brake=.8;s.delta=0;for(const w of s.wheels)w.omega=0;
+const car={id:1,state:s,agent:{personality:{risk:.5},perception:{cars:[]}},pit:{active:false},finishedAt:null,projection:{psi:0},response21:freshResponse()},r={ranking:()=>[car],raceMoments:[],time:0};
+const request=()=>({command:{throttle:1,brake:.8,energy:true}});
+for(let i=0;i<18;i++){s.time=i*c.dt;r.time=s.time;driverResponse(r,car,request(),c);}
+assert(car.response21.events>0,'measured lock initiates release');
+car.response21.phase='SETTLE';car.response21.until=s.time+.8;s.time+=c.dt;
+const settled=driverResponse(r,car,request(),c);assert(settled.command.throttle<=.55);assert.equal(settled.command.energy,false);
+const h=newHealth();h.flat[0]=.5;const clean=setupConfig(c,'BALANCED',newHealth()),damaged=setupConfig(c,'BALANCED',h);assert(damaged.mu<=clean.mu*.851);
+fs.writeFileSync('reports/tow44/MECHANICS.json',JSON.stringify({status:'PASS',speedAfter2SecondsMS:speed,scope:'Actual integrator, identical full throttle without ERS/DRS; controlled wheel-lock fixture for recovery. No claim that every race produces locks.'},null,2));
+console.log('PASS physical tow acceleration, pull-out wake, no reverse/pit/SC/corner wake, no leader cap, measured-lock recovery and persistent flatspot grip loss');

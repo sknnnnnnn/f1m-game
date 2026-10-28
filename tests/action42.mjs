@@ -7,7 +7,7 @@ import {initial,step} from '../racing/runtime/frozen/physics.js';
 import {draftFactor} from '../engine/ai/draft.js';
 import {circuit} from '../engine/tracks/track.js';
 import {DRIVERS,closeFieldTraits} from '../engine/race/drivers.js';
-assert.equal(ACTION42.drsRelief,2*.28);assert.equal(ACTION42.draftRelief,2*.28);
+assert.equal(ACTION42.drsRelief,2*.28);assert(ACTION42.draftRelief>2*.28);
 const c=highSpeedConfig(C0);assert.equal(c.deployW,2*300000);assert.equal(c.motorTorque,2*450);assert.equal(c.capacity,8000000);
 function coast(relief){const cfg={...c,CdA:c.CdA*(1-relief)},s=initial(cfg,{X:0,Y:0,psi:0,u:80,v:0,r:0,gear:7,shiftTarget:7});for(let i=0;i<60;i++)step(cfg,s,{tick:s.tick,expires:s.tick,throttle:0,brake:0,steer:0,energy:false,gear:7});return 80-s.u;}
 const loss={closed:coast(0),oldDRS:coast(.28),newDRS:coast(ACTION42.drsRelief)};

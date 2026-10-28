@@ -1,3 +1,4 @@
+import {draftFactor} from '../ai/draft.js';
 import {ACTION42} from './action42.js';
 import {forecastWake39} from '../ai/wake-budget39.js';
 import {gripSteering25} from '../physics/grip-steering25.js';
@@ -26,7 +27,7 @@ export class Weekend2Race extends StrategyRace {
  caution(flag='YELLOW',station=this.cars[0].projection.s,seconds=25,scOverride=false){if(this.safetyCar&&(this.safetyCar.phase!=='PARKED'||this.safetyCar.restartProgress!==null)&&!scOverride&&flag!=='VSC')return false;if(!['GREEN','YELLOW','VSC'].includes(flag))return false;this.controlZone={flag,station,until:this.time+seconds,order:this.ranking().filter(c=>!c.pit.active).map(c=>c.id),violations:[]};for(const c of this.cars)c.agent.plan=null;this.radioCall(0,flag==='GREEN'?'ธงเขียว กลับมาแข่งได้':flag==='VSC'?'VSC ชะลอทั้งสนาม ห้ามแซง':'ธงเหลือง ชะลอในเขต ห้ามแซง','flag',0);return true;}
  inCaution(car){const z=this.controlZone;return z.flag==='VSC'||z.flag==='YELLOW'&&Math.abs(circuit.delta(car.projection.s,z.station))<220;}
  field(){return [...visiblePitTraffic23(super.field(),circuit),...safetyField(this)];}
- draftFor(car,field){return super.draftFor(car,field.filter(c=>c.id!==7));}
+ draftFor(car,field){return draftFactor(car,field.filter(c=>c.id!==7),this.weather.mode!=='DRY'||this.weather.water>.05);}
  callSafety(action){return callSafety(this,action);}
  advance(){safetyPrepare(this);const p=this.prepareAdvance();if(!p)return false;for(const q of p)q.result=step({...q.config,CdA:q.aeroCdA},q.next,q.out.command,this.physicsOptions(q.car));const sc=safetyProposal(this);if(!safetyGuard(this,sc,p))return false;const ok=this.commitAdvance(p);if(ok)safetyCommit(this,sc);return ok;}
  async advanceParallel32(run){safetyPrepare(this);const start=performance.now(),p=this.prepareAdvance();if(!p)return false;const prepared=performance.now();await run(p,{weather:this.weather,live:{drying:this.ensure26().drying,roads:this.ensure26().roads}});const physics=performance.now();const sc=safetyProposal(this);if(!safetyGuard(this,sc,p))return false;const ok=this.commitAdvance(p);if(ok)safetyCommit(this,sc);this.performance32={prepareMS:prepared-start,physicsMS:physics-prepared,commitMS:performance.now()-physics};return ok;}
@@ -36,7 +37,7 @@ export class Weekend2Race extends StrategyRace {
  issueOrder(id,patch){return commandEngineer(this,id,patch);}
  serviceAvailable(car){const team=TEAMS.find(t=>t.cars.includes(car.id));return !this.cars.some(c=>c.id!==car.id&&team.cars.includes(c.id)&&(c.pit.phase==='SERVICE'||c.repairUntil>this.time));}
  thinkCar(car,field,c){
-  car.agent.drs40=!!car.show22?.wing;car.agent.drsZone40=!!car.wing24?.zone;
+  car.agent.wetTow44=this.weather.mode!=='DRY'||this.weather.water>.05;car.agent.drs40=!!car.show22?.wing;car.agent.drsZone40=!!car.wing24?.zone;
   car.agent.newTyre22=car.tyres.sets>1&&car.distance-car.tyres.fittedDistance<450;beforeDriver(this,car);beforeControl23(this,car);thinkPressure(this,car,field);
   const road=surfaceAt(this.weather,car.state.X,car.state.Y,car.tyres.compound,car.pit.active),z=road.water/4,wet=Math.max(.25,1-.45*z-.2*z*(Math.min(1,Math.hypot(car.state.u,car.state.v)/60))**2),balance=cornerBalance23(car),planning0=road.water>.001?{...c,mu:c.mu*wet*.94*balance}:balance<1?{...c,mu:c.mu*balance}:c;
   // A 100 ms plan may cross the wake boundary or start turning before the
@@ -60,7 +61,7 @@ export class Weekend2Race extends StrategyRace {
    if(car.repairUntil>this.time&&car.pit.active){car.pit.phase='RELEASE';car.agent.plan=null;}
    else if(car.repairUntil){h.wing=0;h.wingSide=0;h.suspension=0;car.repairUntil=0;this.radioCall(car.id,'ซ่อมเสร็จ รอปล่อยรถปลอดภัย','repaired',0);}
    car.surface=surfaceAt(this.weather,car.state.X,car.state.Y,car.tyres.compound,car.pit.active);
-   for(const rec of q.result.records)rec.wheels.forEach((w,i)=>{const locked=w.k<-.35&&car.state.brake>.15&&car.state.u>12;if(locked){h.locked[i]+=rec.h;h.flat[i]=clamp(h.flat[i]+(-w.k-.35)*rec.h*.028,0,1);a.locks+=rec.h;this.radioCall(car.id,'ล้อล็อก ผิวยางเริ่มเสีย ระวังเบรกซ้ำ','lock',30);}h.travel[i]=clamp((w.Fz-this.config.m*this.config.g/4)/180000+car.surface.bump,-.04,.04);});
+   for(const rec of q.result.records)rec.wheels.forEach((w,i)=>{const locked=w.k<-.35&&car.state.brake>.15&&car.state.u>12;if(locked){h.locked[i]+=rec.h;h.flat[i]=clamp(h.flat[i]+(-w.k-.35)*rec.h*.14,0,1);a.locks+=rec.h;this.radioCall(car.id,'ล้อล็อก ผิวยางเริ่มเสีย ระวังเบรกซ้ำ','lock',30);}h.travel[i]=clamp((w.Fz-this.config.m*this.config.g/4)/180000+car.surface.bump,-.04,.04);});
    if(['GRAVEL','SAND'].includes(car.surface.kind)&&car.state.u>22){h.wingSide=-Math.sign(car.projection.d)||1;h.suspension=clamp(h.suspension+dt*(car.state.u-22)*.00012,0,1);h.wing=clamp(h.wing+dt*(car.state.u-22)*.00007,0,1);}
    if(Math.abs(car.projection.d)>6&&!car.pit.active){a.offTrackSeconds+=dt;car.invalidLaps??=[];if(!car.invalidLaps.includes(car.lap))car.invalidLaps.push(car.lap);if(this.controlZone.flag==='GREEN')this.caution('YELLOW',car.projection.s,12);this.radioCall(car.id,'ออกนอกสนาม ลดความเร็ว รอช่องกลับ','offtrack',20);}
    const size=this.analysisBinMetres??60,bin=Math.floor(car.projection.s/size),key=car.lap+':'+bin;if(this.tick%6===0){const b=a.bins[key]??={lap:car.lap,station:bin*size,n:0,speed:0,lateral:0,brake:0,energy:0,temperature:0,water:0,sectorTime:0};b.n++;b.speed+=Math.hypot(car.state.u,car.state.v)*3.6;b.lateral+=car.projection.d;b.brake+=car.state.brake;b.energy+=car.state.E/this.config.capacity;b.temperature+=car.state.wheels.reduce((v,w)=>v+w.Ts,0)/4;b.water+=car.surface.actualWater;a.bins[key]=b;}
