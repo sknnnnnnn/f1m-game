@@ -1,0 +1,81 @@
+{
+  "version": "196b3d129a406ec9",
+  "url": "https://sknnnnnnn.github.io/f1m-game/",
+  "sourceCommit": "47f8fd20c0fb10b5daf6f73391af8f31c8d39dae",
+  "pagesCommit": "d09b8f67482df657fcfbe7055f02f25aae624ef4",
+  "outputs": [
+    {
+      "path": "assets/app.js",
+      "match": true,
+      "sha256": "ea0ffa0c934053f5fb03cac2033b89b47bd31d5a9803d43faa7cb648629602c0",
+      "bytes": 1071133
+    },
+    {
+      "path": "build.json",
+      "match": true,
+      "sha256": "ab78788651e14bab60d455728adc55946a56a8fbd0ba5c5dc64d549beabb47ef",
+      "bytes": 21738
+    },
+    {
+      "path": "index.html",
+      "match": true,
+      "sha256": "a49fc8334e317def0bacc5b052a1b90cfe1e444b011b62f67f7762b9c3a3996e",
+      "bytes": 16995
+    },
+    {
+      "path": "workers/physics-worker.js",
+      "match": true,
+      "sha256": "a171eb62d8f463ae9068100bfd9ba8d49ce8432d5617fe4a365ae854923920ea",
+      "bytes": 533773
+    },
+    {
+      "path": "workers/race-worker.js",
+      "match": true,
+      "sha256": "db3f3b4ebc76f989b28f153844c9937e095a49a684583a446bee290f3beb463a",
+      "bytes": 793136
+    },
+    {
+      "path": "sw.js",
+      "match": true,
+      "sha256": "678b7d9a4cba7afe2d7d632fda39cf38c2026ca8fc2647672f1806d37c4b6b48",
+      "bytes": 1828
+    }
+  ],
+  "verifiedAt": "2026-10-28T03:57:31.351171+00:00",
+  "pagesDeployment": {
+    "run": 40629431094,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "browser": {
+    "url": "https://sknnnnnnn.github.io/f1m-game/",
+    "visibleBuild": "196b3d129a406ec9",
+    "offlineReady": true,
+    "chimeButtonEnablesSound": true,
+    "weatherOptions": [
+      "แห้ง / หยุดฝน",
+      "ฝนสลับแห้ง · ช่วงละ 7 นาที",
+      "ฝนต่อเนื่อง"
+    ],
+    "rendererLimitation": "Cloud software fallback; not an Android/GPU performance or listening test"
+  },
+  "validation": {
+    "configuredTestJobs": 53,
+    "productionBuild": "passed",
+    "pwaTests": "passed",
+    "dryPhysicalThreeLapSixCars": [
+      "shanghai",
+      "suzuka",
+      "bahrain"
+    ],
+    "sameLapPitRequests": 6,
+    "pitExits": 6,
+    "maxConcurrentPit": 5,
+    "wetSixCarSuzukaThreeLaps": "finished; zero stop/rejection; six changes to W only"
+  },
+  "open": [
+    "AI passing after first completed lap: zero in final three seed-19 circuit tests",
+    "Android wet FPS and audio audibility not verified"
+  ],
+  "sourceWorkflowAtVerification": "running; local configured tests/build/PWA and physical integrations passed"
+}
