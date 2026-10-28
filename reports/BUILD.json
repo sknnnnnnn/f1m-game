@@ -1,10 +1,10 @@
 {
   "edition": "F1M RACECRAFT 48",
-  "version": "03891116c15d0bea",
-  "sourceRevision": "03891116c15d0beae89387d0ecf6dc0a5e9bd5c2664331df35b890d97f40028d",
+  "version": "cb33e4d091da5ea9",
+  "sourceRevision": "cb33e4d091da5ea9259a194cb0d0958ddf16f70a535fcad50dff17c19c1d459b",
   "inputs": {
-    "build.mjs": "c80292f7bb9571432ac737b8262894cee0d2f992335358900998e675fad68446",
-    "engine/ai/agent.js": "4400969b8bdb57a6efd53e9c9e952dcb2c6ecfe754327f03e8ece7455af7932a",
+    "build.mjs": "97e2ab88d8c934e528e9d8bf2ea99cedbf0b3bdb96338b8254913793d0b4e339",
+    "engine/ai/agent.js": "50973b15756d5b20afb4cc1db2d7160dee86c7cf1f9ec4a212a151b31f4f09cf",
     "engine/ai/battle-camera.js": "78e583678411f244786fbd09fed4e9a75ddba56a8a3592545b6dbfda795346b0",
     "engine/ai/battle-planner.js": "8a754e8b7836cc99653c96243722ab96d55c57ce519f73df809539643ada979e",
     "engine/ai/battle-window43.js": "e636c58da5cd3ad88a529efc4a06bb91484a4d0d16496a64c43a153d1b140ebb",
@@ -230,7 +230,7 @@
   "outputs": {
     "assets/app.js": {
       "bytes": 1078317,
-      "sha256": "142863162c4cd090d5c7bc73636e9cc6753b6ff558bb0d4e4710e65cbd9b5814"
+      "sha256": "8a71b9c4603ae1fb68dbb7a75f7d028d435dbb0be345fb4358a6043b7f13c1d8"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -258,7 +258,7 @@
     },
     "build.json": {
       "bytes": 23319,
-      "sha256": "687a4ed8f661f0ed681c7353439a070fcd109bff61d9875a9beed76eb73b1919"
+      "sha256": "29797631e78f698b1c1964aa3937f2dce9bf72383e5ecb82c2995e16f2045c1b"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -274,7 +274,7 @@
     },
     "index.html": {
       "bytes": 16994,
-      "sha256": "d4a6ff9d81f92ef176dbbf5f0726dc1c25586846c4da266baf15158628deba0a"
+      "sha256": "0b1339cc1223275017018923dcc996bb5b7182428b4f53babc65b216b7227670"
     },
     "manifest.webmanifest": {
       "bytes": 584,
@@ -293,12 +293,12 @@
       "sha256": "a171eb62d8f463ae9068100bfd9ba8d49ce8432d5617fe4a365ae854923920ea"
     },
     "workers/race-worker.js": {
-      "bytes": 812533,
-      "sha256": "53661abf41b0b294ae6dc7b3bc3441737fec4a7312dc637d5cd785fd553177d8"
+      "bytes": 812551,
+      "sha256": "8b4cc2f2280ca7efb2ffadddfa6368d51253f4d869d447bcf83adec424b3ad83"
     },
     "sw.js": {
       "bytes": 1828,
-      "sha256": "0ab53b96d3e73cc016d6f45f84d0f459561e23941320958b06fd6976c3e49778"
+      "sha256": "fd920537bc2a16dcb6f2d6ddf1ae94e404f40ad5236b005a80fc04384c9eedee"
     }
   }
 }

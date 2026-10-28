@@ -1,0 +1,14 @@
+{
+  "build": "cb33e4d091da5ea9",
+  "suzukaRaces": {
+    "files": [
+      "suzuka7.json",
+      "suzuka19.json"
+    ],
+    "testedBuild": "4867e98b852f2b02",
+    "retained": true,
+    "proof": "The only runtime change after these races prepends circuit.key===suzuka to draft48. It is always true on Suzuka, so decisions and commands are identical. No constants, state, integrator or guard changed. Current draft48 fixture and full engine suite also pass."
+  },
+  "otherTracks": "Broad candidate reduced late passes. Its evidence is retained under broad-candidate and excluded from final release results. Final non-Suzuka source restores the R47 lane branch; new wakeDeploy48 already returns outside Suzuka. Fresh full Bahrain/Shanghai races and launch matrix validate the final scoped source.",
+  "android": "Not measured."
+}
