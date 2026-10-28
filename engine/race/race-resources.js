@@ -13,6 +13,7 @@ export function resourcePlan(agent,state,p){
  if(bank40)allowDeploy=false;
  // Spend the finite battery on a battle, bank it on clear road.
  if((order?.energy??'AUTO')==='AUTO'&&mode==='BALANCED'&&fraction<.82)allowDeploy=false;
+ if(agent.battle43?.saving&&(order?.energy??'AUTO')==='AUTO'){allowDeploy=false;reserve=.65;mode='BANK';}
  const exitFactor=Math.min(agent.tyreManagement.exitFactor,1-clamp((heat-120)/80+wear*.1,0,.055)*care);
- return {mode,fraction,reserve,allowDeploy,deploySpeed,exitFactor,wear,heat,reason:bank40?'เก็บพลังงานไว้บุกทางตรงหลัก':mode==='ENGINEER_SAVE'?'คำสั่งทีม: เก็บพลังงาน':mode==='ENGINEER_DEPLOY'?'คำสั่งทีม: ใช้พลังงานเมื่อผ่านจุดเบรก':mode==='SAVE'?'เก็บพลังงานและถนอมยาง':mode==='ATTACK'?'ใช้พลังงานไล่คู่แข่ง':mode==='DEFEND'?'รักษาตำแหน่งจากรถหลัง':mode==='FINAL_PUSH'?'ใช้พลังงานช่วงท้ายเรซ':'บริหารพลังงานให้ถึงช่วงบุก'};
+ return {mode,fraction,reserve,allowDeploy,deploySpeed,exitFactor,wear,heat,reason:mode==='BANK'?'เก็บยางและพลังงาน รอจังหวะสวนกลับ':bank40?'เก็บพลังงานไว้บุกทางตรงหลัก':mode==='ENGINEER_SAVE'?'คำสั่งทีม: เก็บพลังงาน':mode==='ENGINEER_DEPLOY'?'คำสั่งทีม: ใช้พลังงานเมื่อผ่านจุดเบรก':mode==='SAVE'?'เก็บพลังงานและถนอมยาง':mode==='ATTACK'?'ใช้พลังงานไล่คู่แข่ง':mode==='DEFEND'?'รักษาตำแหน่งจากรถหลัง':mode==='FINAL_PUSH'?'ใช้พลังงานช่วงท้ายเรซ':'บริหารพลังงานให้ถึงช่วงบุก'};
 }

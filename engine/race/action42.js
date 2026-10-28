@@ -3,7 +3,7 @@
 export const ACTION42=Object.freeze({drsRelief:.56,draftRelief:.56,deployW:600000,motorTorque:900,maxSpeed:103});
 export function straightTarget42(agent){
  const base=Math.min(97,agent.personality.pace??92)-rhythmPace42(agent);
- return Math.min(ACTION42.maxSpeed,base+(agent.drs40?8:0)+(agent.drafting?2:0));
+ return Math.min(ACTION42.maxSpeed,agent.battle43?.pace??Infinity,base+(agent.drs40?8:0)+(agent.drafting?2:0));
 }
 // A repeatable driver's rhythm, independent of rank, gaps and race results.
 // Some sections suit each driver better. Only the requested cruising pace

@@ -1,0 +1,214 @@
+{
+  "build": "4b257882ade22e5d",
+  "baselineBuild": "b2fd652bdc8e5aba",
+  "baselineLate": {
+    "suzuka": 2,
+    "shanghai": 1,
+    "bahrain": 0
+  },
+  "runs": [
+    {
+      "track": "suzuka",
+      "seed": 7,
+      "laps": 3,
+      "greenOvertakes": 10,
+      "lateOvertakes": 5,
+      "sideSeconds": 24.5,
+      "finished": true,
+      "guardStop": null,
+      "controllerRejections": 0,
+      "sampledOffTrack": null,
+      "lateEvents": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 7853,
+          "time": 130.88333333333333,
+          "by": 1,
+          "of": 6,
+          "gap": 2.0497834889374644,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 7957,
+          "time": 132.61666666666667,
+          "by": 6,
+          "of": 1,
+          "gap": 2.044502264663606,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 12641,
+          "time": 210.68333333333334,
+          "by": 4,
+          "of": 3,
+          "gap": 2.145162710981822,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 14730,
+          "time": 245.5,
+          "by": 1,
+          "of": 6,
+          "gap": 2.822870956673796,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 20113,
+          "time": 335.21666666666664,
+          "by": 1,
+          "of": 3,
+          "gap": 2.226452627033723,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ]
+    },
+    {
+      "track": "shanghai",
+      "seed": 7,
+      "laps": 3,
+      "greenOvertakes": 8,
+      "lateOvertakes": 4,
+      "sideSeconds": 60,
+      "finished": true,
+      "guardStop": null,
+      "controllerRejections": 0,
+      "sampledOffTrack": null,
+      "lateEvents": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 13351,
+          "time": 222.51666666666665,
+          "by": 3,
+          "of": 1,
+          "gap": 2.196321130359138,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 14798,
+          "time": 246.63333333333333,
+          "by": 6,
+          "of": 4,
+          "gap": 2.0563914963695424,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 16394,
+          "time": 273.23333333333335,
+          "by": 4,
+          "of": 6,
+          "gap": 2.0872440606017335,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 21614,
+          "time": 360.23333333333335,
+          "by": 4,
+          "of": 2,
+          "gap": 2.077632488490053,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ]
+    },
+    {
+      "track": "bahrain",
+      "seed": 19,
+      "laps": 3,
+      "greenOvertakes": 11,
+      "lateOvertakes": 7,
+      "sideSeconds": 41.5,
+      "finished": true,
+      "guardStop": null,
+      "controllerRejections": 0,
+      "sampledOffTrack": null,
+      "lateEvents": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 11427,
+          "time": 190.45,
+          "by": 2,
+          "of": 1,
+          "gap": 2.034911383112558,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 11788,
+          "time": 196.46666666666667,
+          "by": 1,
+          "of": 2,
+          "gap": 2.0062528089674743,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 13829,
+          "time": 230.48333333333332,
+          "by": 1,
+          "of": 4,
+          "gap": 2.0255910222240345,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 14261,
+          "time": 237.68333333333334,
+          "by": 3,
+          "of": 2,
+          "gap": 2.146541509491726,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 14382,
+          "time": 239.7,
+          "by": 3,
+          "of": 4,
+          "gap": 2.0139317952198326,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 14634,
+          "time": 243.9,
+          "by": 5,
+          "of": 6,
+          "gap": 2.0468803735202528,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 20281,
+          "time": 338.01666666666665,
+          "by": 3,
+          "of": 1,
+          "gap": 2.1729613531442737,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ]
+    }
+  ],
+  "scope": "Six cars, normal standing grid, 3 laps, dry, frozen-physics integration. Pit crew release uses the established crew-clear fixture. Excludes yellow/VSC-labelled overtakes from reported counts. Not Android visual/FPS acceptance."
+}

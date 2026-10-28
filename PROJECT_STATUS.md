@@ -1,3 +1,5 @@
+Current: Battle Racing 43, build `4b257882ade22e5d`. [Changes and comparison](reports/BATTLE43_TH.md). Dry six-car 3-lap late overtakes 5 / 4 / 7 (Suzuka / Shanghai / Bahrain), versus 2 / 1 / 0 in R42. All finish without guard stop, rejection, retirement or sampled off-track. Deliberate arcade conserving/regrouping strategy; player ATTACK/DEPLOY overrides. Android acceptance pending.
+
 Current: Action Racing 42, build `b2fd652bdc8e5aba`. [Changes and measured limits](reports/ACTION42_TH.md). Doubled DRS/draft drag relief and ERS power; all three six-car three-lap integrations finish with no guard stop/rejection/sampled off-track. Late overtakes Suzuka 2, Shanghai 1, Bahrain 0; frequent late overtaking remains incomplete. Android validation pending.
 
 Current: Race Racing 40, build `f8eb25cbb410e92f`. [Changes, physical race evidence and limitations](reports/RACE_RACING_TH.md). Real late passes verified in Shanghai and Bahrain; six-car pit convoy clears. Suzuka late overtaking remains open. Android wet FPS/listening unverified.
