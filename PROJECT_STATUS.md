@@ -1,3 +1,13 @@
+# TOW 45 — 2026-10-28
+
+- Build700ce64d792778e5; source work/tow45; main untouched.
+- Fixed mirrored minimap Y and added selected-car heading arrow. Same map transform for road/pit/cars/hit selection.
+- Telemetry-driven slipstream badge, strength meter, peripheral rays and wind audio; reduced motion, pause/pit/finish/flag/car-switch visual gating.
+- Dry max tow relief90%,range450m,full core130m. Wet physical relief kept at R44 fallback56%. No regrouping.
+- 64 engine jobs, standalone actual overlay DOM/canvas adapter, build and PWA checks PASS. Three3lap dry races and one rain-developing lap finished without guards/rejections/retirements/sampled offtrack.
+- Shanghai one YELLOW-labelled position swap excluded from green passes; caution limitation retained in evidence. Android FPS/audio/touch still unverified.
+- See reports/TOW45_TH.md and reports/tow45/RELEASE_SUMMARY.json.
+
 # TOW RACING 44 — 2026-10-28
 
 - Build b5e0562028d38c4b. Source work/tow44, main untouched.

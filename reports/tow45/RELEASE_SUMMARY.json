@@ -1,0 +1,75 @@
+{
+  "edition": "TOW45",
+  "build": "700ce64d792778e5",
+  "checks": {
+    "configuredEngineJobs": 64,
+    "exit": 0,
+    "additionalActualOverlayDOMCanvasAdapter": "PASS",
+    "mapHandednessAndHitSelection": "PASS",
+    "productionBuild": "PASS",
+    "pwaServiceWorker": "PASS"
+  },
+  "races": [
+    {
+      "file": "suzuka7.json",
+      "track": "suzuka",
+      "seed": 7,
+      "laps": 3,
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "retired": [],
+      "greenPasses": 9,
+      "greenAfterLapOne": 1,
+      "excludedFlaggedSwaps": 0,
+      "sideSecondsAfterLapOne": 13
+    },
+    {
+      "file": "shanghai7.json",
+      "track": "shanghai",
+      "seed": 7,
+      "laps": 3,
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "retired": [],
+      "greenPasses": 6,
+      "greenAfterLapOne": 0,
+      "excludedFlaggedSwaps": 1,
+      "sideSecondsAfterLapOne": 27.5
+    },
+    {
+      "file": "bahrain19.json",
+      "track": "bahrain",
+      "seed": 19,
+      "laps": 3,
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "retired": [],
+      "greenPasses": 7,
+      "greenAfterLapOne": 2,
+      "excludedFlaggedSwaps": 0,
+      "sideSecondsAfterLapOne": 31.5
+    },
+    {
+      "file": "wet-bahrain19.json",
+      "track": "bahrain",
+      "seed": 19,
+      "laps": 1,
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "retired": [],
+      "greenPasses": 6,
+      "greenAfterLapOne": 0,
+      "excludedFlaggedSwaps": 0,
+      "sideSecondsAfterLapOne": 0
+    }
+  ],
+  "limits": "Node races, not Android/browser performance. One seed per track, three dry races of 3laps and one rain-developing Bahrain lap. Shanghai YELLOW-labelled physical position swap excluded from green overtaking totals; existing caution-control limitation remains. Stronger tow does not guarantee more overtakes. Actual listening and mobile FPS/touch not verified."
+}
