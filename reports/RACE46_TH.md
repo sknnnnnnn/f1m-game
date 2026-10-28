@@ -12,3 +12,5 @@
 ## ตรวจสอบ
 ดู RELEASE_SUMMARY.json/LAUNCH_MATRIX.json/DEPLOYMENT.json เมื่อครบ. Unit fixtures ตรวจBANK→pullout→ERS,คำสั่งSAVE/ABORT,พื้นที่ปิด,คงdemandจนจบpass,late-apex→EXIT_DRIVE,รับ/ปฏิเสธBRAKE_DUELตามcorridor,ประวัติจำกัดและข้อความตามหลักฐานจริง
 Node/batchไม่ใช่การวัดAndroidFPS/เสียงหรือการรับรองทุกเซฟ/ทุกseed. ตัวเกมยังหยุดก่อนcommitเมื่อswept guardพบความเสี่ยงชน
+
+ผลสุดท้าย:65engine jobs,22launch cases,production/PWAผ่าน;เรซเต็มBahrain5รอบ,Suzuka4รอบ,Shanghai3รอบและฝนกำลังก่อตัวBahrain1รอบจบครบ ไม่มีguard/rejection/retirement/offtrackที่สุ่มตรวจทุก0.5s. จำนวนแซงGREEN=4/7/0/0 ตามลำดับ การเผื่อความปลอดภัยอาจลดจำนวนแซง ไม่อ้างว่าเพิ่มทุกสนาม

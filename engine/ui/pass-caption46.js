@@ -1,7 +1,8 @@
 export function passCaption46(payload,selected){
  const event=payload?.events?.filter(e=>e.kind==='OVERTAKE'&&(e.by===selected||e.of===selected)&&!['YELLOW','VSC'].includes(e.decision)).at(-1);
  if(!event||payload.time-event.time>5||payload.time<event.time)return null;
- return (event.by===selected?'แซงสำเร็จ · ':'เสียตำแหน่ง · ')+(event.explanation46??'ผ่านช่องว่างในสนาม');
+ const reason=event.explanation46??'ผ่านช่องว่างในสนาม';
+ return event.by===selected?'แซงสำเร็จ · '+reason:'ถูกแซง · '+(reason.startsWith('คู่แข่ง')?reason.replace('คู่แข่ง','เรา'):'คู่แข่ง: '+reason);
 }
 export function mountPassCaption46(){
  const node=document.createElement('div');node.id='pass-caption46';node.hidden=true;

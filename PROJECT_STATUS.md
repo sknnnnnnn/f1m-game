@@ -1,3 +1,13 @@
+# RACECRAFT 46 — 2026-10-28
+
+- Build933a5fc2fd344706; work/race46; main untouched.
+- Exact R45 Bahrain13.833s CONTACT_GUARD repro fixed by earlier braking/convergence reserve. Swept guard/footprint/allowance unchanged; no position/velocity writes.
+- Suzuka exact15.783s prior state not reproduced;22-case35s batched launch matrix includes both tracks,grids,tyres andATTACK/DEPLOY orders;all PASS.
+-65engine jobs,standalone corner/caption checks,build andPWA PASS. Full default Bahrain5laps,Suzuka4laps,Shanghai3laps and rain-developing Bahrain1lap finished without stop/rejection/retirement/sampled offtrack.
+-Tow bank→pullout→finiteERS;passing demand retained alongside;corner planner/late-apex sequence activated;bounded measured evidence and pass captions.
+-Not a guarantee of more overtakes:Shanghai dry sample0passes.Safety comes before forcing an overtake.AndroidFPS/audio/touch unverified.
+-See reports/RACE46_TH.md,reports/race46/RELEASE_SUMMARY.json,LAUNCH_MATRIX.json andDEPLOYMENT.json.
+
 # TOW 45 — 2026-10-28
 
 - Build700ce64d792778e5; source work/tow45; main untouched.
