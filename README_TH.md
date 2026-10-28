@@ -1,3 +1,7 @@
+## ทดลองหน้าหลัก Garage 49
+
+เปิด https://sknnnnnnn.github.io/f1m-game/preview49/ แล้วเลือก เริ่มเกม → โรงรถ → เริ่มแข่งขัน เลือก Quick Race หรือ Race Weekend ตั้งสนาม/ทีม/รอบ แล้วเตรียมรถและลงสนาม รายละเอียดและขอบเขตทดสอบอยู่ที่ `reports/MAIN_MENU49_TH.md` เกมลิงก์หลักยังคง R48
+
 Current: Race Racing 40, build `f8eb25cbb410e92f`. [Changes, physical race evidence and limitations](reports/RACE_RACING_TH.md). Real late passes verified in Shanghai and Bahrain; six-car pit convoy clears. Suzuka late overtaking remains open. Android wet FPS/listening unverified.
 
 Current: Race Reliability 39, build `196b3d129a406ec9`. [Verified fixes and open AI issue](reports/RACE_RELIABILITY_TH.md). Multipit/hitch handling, batched wet effects, stable weather and tyres, nose camera clearance and radio chime. Late-race overtaking remains open; Android wet FPS/listening unverified.

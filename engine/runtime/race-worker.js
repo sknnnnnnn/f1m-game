@@ -8,8 +8,8 @@ import {command23,applyPlans23} from '../ui/control23.js';
 import {LivingSession26 as Weekend2Session} from '../race/living-session26.js';
 import {saveWeekend,loadWeekend} from '../race/weekend-save.js';
 const physics32=physicsPool32(PHYSICS_WORKER_SOURCE32,circuit.key);let busy32=false;
-let menuConfig49=null,campaign23=null,session=new Weekend2Session(),generation=0,last=performance.now(),heartbeat=last,lastPublish=last;
-function publish(){postMessage({type:'FRAME',generation,...session.presentation(),performance32:{...physics32.metrics,...session.race.performance32}});lastPublish=performance.now();}
+let campaign23=null,session=new Weekend2Session(),generation=0,last=performance.now(),heartbeat=last,lastPublish=last;
+function publish(){postMessage({type:'FRAME',generation,...session.presentation(),menu49:session.menu49??null,performance32:{...physics32.metrics,...session.race.performance32}});lastPublish=performance.now();}
 const pending32=[];self.onmessage=e=>{const m=e.data;if(busy32&&m.type!=='HEARTBEAT'&&m.type!=='PIT_READY29'){pending32.push(m);return;}if(m.type==='RESET'){generation=m.generation;session.reset();if(campaign23){session.stage='RACE';session.race.laps=campaign23.laps===0?raceLaps31(circuit.key):campaign23.laps;session.race.selectTeam(campaign23.team);if(campaign23.plans?.length===2)applyPlans23(session.race,campaign23.plans);}last=heartbeat=performance.now();publish();return;}if(m.generation!==generation)return;
 
  if(m.type==='RESUME_CONTACT32'){if(session.race.resumeContact32()){session.phase='RACE';session.running=true;session.clock.reset();session.notice='ขับต่อจากจุดปลอดภัย · คู่กรณีเบรกเพื่อเว้นระยะ';last=heartbeat=performance.now();}else session.notice='ยังไม่ปลอดภัยที่จะขับต่อ · เก็บเซฟหรือลองเริ่มเรซใหม่';publish();return;}
@@ -23,13 +23,13 @@ const pending32=[];self.onmessage=e=>{const m=e.data;if(busy32&&m.type!=='HEARTB
  if(m.type==='SAFETY_CAR'){session.race.callSafety(m.action);publish();}
  if(m.type==='TEAM'){session.race.selectTeam(m.id);publish();}
  if(m.type==='ORDER'){const result=session.race.issueOrder(m.id,m.patch);postMessage({type:'ORDER_RESULT',generation,...result});publish();}
- if(m.type==='CONFIGURE49'){const result=configureMenuSession49(session,m.config);if(result.ok){menuConfig49={...m.config};campaign23=null;last=heartbeat=performance.now();postMessage({type:'MENU49_RESET',generation});}publish();postMessage({type:'MENU49_RESULT',generation,...result});return;}
- if(m.type==='NEXT_STAGE'){advanceMenuSession49(session,menuConfig49);publish();}
+ if(m.type==='CONFIGURE49'){const result=configureMenuSession49(session,m.config);if(result.ok){campaign23=null;last=heartbeat=performance.now();postMessage({type:'MENU49_RESET',generation});}publish();postMessage({type:'MENU49_RESULT',generation,...result});return;}
+ if(m.type==='NEXT_STAGE'){advanceMenuSession49(session);publish();}
  if(m.type==='SETUP'){session.setup(m.id,m.name,m.adjust??{});publish();}
  if(m.type==='WEATHER'){session.race.setWeather(m.mode);publish();}
  if(m.type==='FLAG'){session.race.caution(m.flag);publish();}
  if(m.type==='SAVE'){session.pause();postMessage({type:'SAVE',generation,data:saveWeekend(session)});publish();}
- if(m.type==='LOAD'){try{const restored=loadWeekend(m.data);session=restored;menuConfig49=null;for(const c of session.race.cars)c.pit.releaseProof29=null;if(Object.prototype.hasOwnProperty.call(m,'campaign23'))campaign23=m.campaign23;last=heartbeat=performance.now();postMessage({type:'LOADED',generation});publish();}catch(e){postMessage({type:'SAVE_ERROR',generation,message:'โหลดไม่สำเร็จ: '+String(e)});}}
+ if(m.type==='LOAD'){try{const restored=loadWeekend(m.data);session=restored;for(const c of session.race.cars)c.pit.releaseProof29=null;if(Object.prototype.hasOwnProperty.call(m,'campaign23'))campaign23=m.campaign23;last=heartbeat=performance.now();postMessage({type:'LOADED',generation});publish();}catch(e){postMessage({type:'SAVE_ERROR',generation,message:'โหลดไม่สำเร็จ: '+String(e)});}}
  if(m.type==='ANALYSIS')postMessage({type:'ANALYSIS',generation,data:session.race.report()});
  if(m.type==='BOX'){if(session.stage==='PRACTICE'&&!session.race.finished&&session.race.laps===1){session.race.laps=2;session.notice='PRACTICE · 2 รอบ เพื่อดูงานพิตที่เรียก';}session.race.requestPit(m.id,m.compound??null);publish();}if(m.type==='CANCEL_BOX'){session.race.cancelPit(m.id);publish();}
  if(m.type==='START'){session.start();last=heartbeat=performance.now();publish();}if(m.type==='PAUSE'){session.pause(m.reason||'');publish();}if(m.type==='HEARTBEAT')heartbeat=performance.now();if(m.type==='SCALE'){session.clock.setScale(m.scale);publish();}if(m.type==='EXPORT')postMessage({type:'EXPORT',generation,data:session.race.export()});};

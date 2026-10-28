@@ -1,4 +1,4 @@
-const CACHE='f1m-engine-__CACHE_VERSION__',ASSETS=__PRECACHE__,BASE=new URL('./',self.location.href);
+const BASE=new URL('./',self.location.href),PREFIX='f1m-engine-scope-'+encodeURIComponent(BASE.pathname)+'-',CACHE=PREFIX+'__CACHE_VERSION__',ASSETS=__PRECACHE__;
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const cache=await caches.open(CACHE);
  // Version the network request, but retain canonical offline lookup keys.
@@ -11,8 +11,9 @@ self.addEventListener('install',event=>event.waitUntil((async()=>{
  }));
 })()));
 self.addEventListener('message',event=>{if(event.data?.type==='ACTIVATE_UPDATE')self.skipWaiting();});
-self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith('f1m-engine-')&&key!==CACHE)await caches.delete(key);await self.clients.claim();})()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith(PREFIX)&&key!==CACHE)await caches.delete(key);await self.clients.claim();})()));
 self.addEventListener('fetch',event=>{const request=event.request,url=new URL(request.url);if(request.method!=='GET'||url.origin!==BASE.origin||!url.pathname.startsWith(BASE.pathname))return;
+ if(request.mode==='navigate'&&/\.html?$/.test(url.pathname)&&url.pathname!==new URL('index.html',BASE).pathname)return;
  if(request.mode==='navigate'){event.respondWith(caches.open(CACHE).then(cache=>cache.match(new URL('index.html',BASE).href)).then(shell=>shell||fetch(request)));return;}
  event.respondWith(caches.open(CACHE).then(cache=>cache.match(request)).then(hit=>hit||fetch(request)));
 });

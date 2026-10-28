@@ -1,3 +1,12 @@
+# GARAGE MAIN MENU 49 — 2026-10-29 (isolated preview)
+
+- Build `8cd0fd02ba97254c`; source work/main-menu49; preview /preview49/; R48 root retained.
+- User design: Start/Settings/Exit → loading → 3D garage/mechanics → Quick Race or Weekend → circuit/session setup → pre-session → track/session.
+- Existing car and CrewBatch; skippable cameras, portrait layout, separate settings/saves/system, direct live team/pit/results actions, paused garage return.
+- Actual session configuration and Practice→Qualifying→Race progression; selected race laps survive save/load and stage changes. Invalid inputs and running resets rejected.
+- Final67 engine jobs,3track entry tests,CrewBatch leg/path tests,build/PWA PASS. Browser UI and actual entry checked; no full browser Weekend or Android GPU/FPS acceptance.
+- See reports/MAIN_MENU49_TH.md and reports/menu49/VALIDATION.json. Preview limitations/cross-track reload documented.
+
 # RACECRAFT 48 — 2026-10-29
 
 - Build `cb33e4d091da5ea9`; work/draft48; main untouched.

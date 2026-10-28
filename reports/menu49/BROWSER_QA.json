@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "build": "8cd0fd02ba97254c",
+  "url": "https://sknnnnnnn.github.io/f1m-game/preview49/",
+  "pagesCommit": "5de35d9f77b1d626c0f30dc0da93af5eb0cb78b8",
+  "observed": [
+    "Final build displayed on title and garage",
+    "Explicit update to final build succeeded",
+    "Garage scene with original car and6mechanics renders",
+    "QuickRace Shanghai OCEAN1lap reaches actual MALI LAP1/1",
+    "390x780 CSS layout and Weekend Suzuka entry checked",
+    "Direct race team/pit/results buttons visible; team panel opens",
+    "Quality before renderer and save preparation before garage checked"
+  ],
+  "scope": "Cloud CPU fallback UI/session-entry QA. Not Android FPS, real GPU, audio or complete browser Weekend acceptance."
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "build": "8cd0fd02ba97254c",
+  "engineJobs": 67,
+  "entryTests": [
+    "bahrain",
+    "shanghai",
+    "suzuka"
+  ],
+  "sessionConfiguration": "PASS",
+  "crewBoundedLegLength": "PASS",
+  "customWeekendLapsSurviveSaveAndAdvance": "PASS",
+  "buildAndPWA": "PASS",
+  "unchangedAIPhysicsModels": true,
+  "scope": "Final engine suite and session/crew entry tests pass. Full browser race completion and actual Android GPU/FPS/audio/touch acceptance not claimed."
+}

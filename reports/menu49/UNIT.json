@@ -7,8 +7,10 @@
   "invalidInputAtomic": true,
   "runningSessionProtected": true,
   "practiceQualifyingSaveRoundTrip": true,
+  "weekendSettingsSurviveSaveAndNextStages": true,
   "missingQualifyingTimesRemainNull": true,
   "crewWalkContinuous": true,
   "worstStep": 0.0112489583333375,
+  "maxLegError": 2.7755575615628914e-16,
   "scope": "Session configuration and task paths, not browser visuals or Android FPS."
 }

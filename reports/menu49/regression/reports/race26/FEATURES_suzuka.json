@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "track": "suzuka",
+  "gridTraitsPreserved": true,
+  "emergencyBrakePriority": true,
+  "alongsideSpace": true,
+  "forecastCompoundConsistent": true,
+  "passingLanes": [
+    -3.8,
+    -2.6,
+    2.6,
+    3.8
+  ],
+  "progressivePassCommit": true,
+  "pitRoute": {
+    "metres": 1065.4277445407383,
+    "transit": 68.28255307821507,
+    "loss": 47.445478986210716
+  },
+  "healthyStaysOut": true,
+  "wornCallsPit": true,
+  "audioNodes": 41,
+  "audioParameterUpdates": 2406,
+  "boundedCameraCue": {
+    "lens": 2,
+    "aim": -0.1,
+    "roll": -0.0035
+  }
+}

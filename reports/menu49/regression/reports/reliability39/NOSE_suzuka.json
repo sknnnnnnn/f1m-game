@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "track": "suzuka",
+  "rays": 36,
+  "closestOwnCarSurface": 0.573889393952272,
+  "near": 0.035,
+  "scope": "Actual accepted GLB, portrait nose camera across three track stations; geometry ray test, no Android screenshot claim"
+}

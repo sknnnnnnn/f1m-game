@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "cachedAssets": 17,
+  "cachedAssets": 18,
   "offlineNavigation": true,
   "binaryModelsAndNestedWorkerCached": true,
   "updatesRequireExplicitMessage": true,
@@ -10,5 +10,6 @@
   "activeVersionCacheOnly": true,
   "failedDownloadsBlockInstallation": true,
   "otherCachesPreserved": true,
+  "otherSiteScopesPreserved": true,
   "scope": "Service worker unit test with deterministic cache/fetch mocks; Android install/FPS remains separate."
 }
