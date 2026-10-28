@@ -1,0 +1,7 @@
+{
+  "engineChecks": 58,
+  "engineChecksExit": 0,
+  "pwaChecksExit": 0,
+  "productionBuildVersion": "f8eb25cbb410e92f",
+  "scope": "Configured engine suite, production build, PWA static checks and deterministic service-worker unit checks. Full races and multipit are recorded separately. No Android performance or audio listening inference."
+}

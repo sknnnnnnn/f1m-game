@@ -1,0 +1,57 @@
+{
+  "version": "f8eb25cbb410e92f",
+  "url": "https://sknnnnnnn.github.io/f1m-game/",
+  "sourceCommit": "bdfa5f4c78df4a6f43797e9d43dc6bca87a43a1a",
+  "pagesCommit": "c9bd6fe9c6b20fac1de400c9b0e97393c4099f48",
+  "files": [
+    {
+      "path": "assets/app.js",
+      "matches": true,
+      "bytes": 1071698,
+      "sha256": "c74b820895f3573c546fc94a23580c18bcfe80bce7e44304a1fb0d5683d3ca81"
+    },
+    {
+      "path": "workers/race-worker.js",
+      "matches": true,
+      "bytes": 799106,
+      "sha256": "145f62f9d42fcadc732a3a5031599dfbc1231c067b23c0c2ab3d417e857cc0fd"
+    },
+    {
+      "path": "workers/physics-worker.js",
+      "matches": true,
+      "bytes": 533773,
+      "sha256": "a171eb62d8f463ae9068100bfd9ba8d49ce8432d5617fe4a365ae854923920ea"
+    },
+    {
+      "path": "build.json",
+      "matches": true,
+      "bytes": 22053,
+      "sha256": "b766b6dfbe84a92e05f1eaaa12958b75dffb7041d5cf201e3ca2f4a55f4a92a3"
+    },
+    {
+      "path": "index.html",
+      "matches": true,
+      "bytes": 16995,
+      "sha256": "a49fc8334e317def0bacc5b052a1b90cfe1e444b011b62f67f7762b9c3a3996e"
+    },
+    {
+      "path": "sw.js",
+      "matches": true,
+      "bytes": 1828,
+      "sha256": "af496a073aa1fe77a9f7e4d77bd9d8d23de36335a43e20b7a23e16f52b2d2c64"
+    }
+  ],
+  "scope": "Public deployed byte verification; device rendering/audio/FPS not inferred.",
+  "pagesWorkflow": {
+    "id": 40652177857,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "uiVerification": {
+    "url": "https://sknnnnnnn.github.io/f1m-game/",
+    "updateButtonApplied": true,
+    "visibleBuild": "f8eb25cbb410e92f",
+    "offlineLabel": "ออฟไลน์พร้อม",
+    "scope": "Cloud browser UI/update verification only. CPU fallback rendered about 1 FPS; no Android FPS or audible-chime claim."
+  }
+}
