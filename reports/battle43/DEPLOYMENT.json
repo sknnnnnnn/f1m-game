@@ -1,0 +1,49 @@
+{
+  "version": "4b257882ade22e5d",
+  "url": "https://sknnnnnnn.github.io/f1m-game/",
+  "sourceCommit": "6c85fb4f98f84ba39f42b6af0582fb6aaa1959f8",
+  "pagesCommit": "c068c0cb0f35f355f504cb29c42bb2c57c4d3d65",
+  "workflow": {
+    "id": 40685455514,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "uiVerification": {
+    "visibleBadge": "BATTLE 43",
+    "visibleBuild": "4b257882ade22e5d",
+    "offlineLabel": "ออฟไลน์พร้อม",
+    "scope": "Cloud browser DOM/load verification. WebGL unavailable, CPU fallback about 1 FPS; not Android FPS or a full browser race."
+  },
+  "assets": [
+    {
+      "path": "assets/app.js",
+      "bytes": 1072136,
+      "chars": 1072090,
+      "sha": "f5d6658988864f31339b1d1195d4ce4efc8e5796"
+    },
+    {
+      "path": "build.json",
+      "bytes": 22371,
+      "chars": 22371,
+      "sha": "ec2a36424d492b5426441f72d59f93fd96c3eea1"
+    },
+    {
+      "path": "index.html",
+      "bytes": 17000,
+      "chars": 13408,
+      "sha": "1129640011a3f215a44c3d8176da86eefd7bd573"
+    },
+    {
+      "path": "sw.js",
+      "bytes": 1828,
+      "chars": 1828,
+      "sha": "df7b92bb6450ed7aef9a255adaa58998a227c581"
+    },
+    {
+      "path": "workers/race-worker.js",
+      "bytes": 802936,
+      "chars": 802936,
+      "sha": "9571979a2c3bb1f804508a8d4717a05b09d13b21"
+    }
+  ]
+}
