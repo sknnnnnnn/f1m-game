@@ -1,4 +1,4 @@
-const CACHE='f1m-engine-6ca6ee76c69b2af3',ASSETS=["./assets/app.js","./assets/cpu.js","./assets/engine.js","./assets/game.css","./assets/hand.js","./assets/mobile.js","./assets/rig.js","./build.json","./icons/icon-192.png","./icons/icon-512.png","./icons/maskable-512.png","./index.html","./manifest.webmanifest","./models/F1M_SafetyCar_SC1.glb","./models/car163.glb","./workers/physics-worker.js","./workers/race-worker.js"],BASE=new URL('./',self.location.href);
+const CACHE='f1m-engine-cb33e4d091da5ea9',ASSETS=["./assets/app.js","./assets/cpu.js","./assets/engine.js","./assets/game.css","./assets/hand.js","./assets/mobile.js","./assets/rig.js","./build.json","./icons/icon-192.png","./icons/icon-512.png","./icons/maskable-512.png","./index.html","./manifest.webmanifest","./models/F1M_SafetyCar_SC1.glb","./models/car163.glb","./workers/physics-worker.js","./workers/race-worker.js"],BASE=new URL('./',self.location.href);
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const cache=await caches.open(CACHE);
  // Version the network request, but retain canonical offline lookup keys.
