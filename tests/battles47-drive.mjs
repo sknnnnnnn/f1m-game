@@ -14,7 +14,7 @@ if(process.env.TEAM46){r.selectTeam(Number(process.env.TEAM46));if(process.env.O
 if(process.env.TYRES46){for(const [i,c]of r.cars.entries())c.tyres.compound=process.env.TYRES46[i];r.prepare();}
 if(process.env.GRID46)session.placeGrid(process.env.GRID46.split(',').map(Number));
 if(process.env.WET40)r.setWeather('RAIN');
-const battle46Counts={};let off=null,sideSeconds=0,nearSeconds=0;const samples=[],passes=[],rejectionDetails=[],start=r.time;
+const battle46Counts={};let off=null,sideSeconds=0,nearSeconds=0;const samples=[],passes=process.env.RESTORE40?r.events.filter(e=>e.kind==='OVERTAKE'):[],rejectionDetails=[],start=r.time;
 const output=process.env.OUT40??`reports/racing40/${circuit.key}.json`;
 for(let i=0;i<55000&&!r.finished&&!r.stop&&r.time<Number(process.env.END40??900);i++){
  for(const c of r.cars)if(['SERVICE','RELEASE'].includes(c.pit.phase)&&r.time-c.pit.serviceStarted>=r.serviceDuration(c)+.2)c.pit.releaseProof29={serviceAt:c.pit.serviceStarted,at:r.time,clear:true};

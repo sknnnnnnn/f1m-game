@@ -1,0 +1,165 @@
+{
+  "scope": "Four final-candidate dry races were resumed at300s from V8 physical-state checkpoints after host process loss. Events, timing, guards and agent state retained; near/side pair-seconds and sampled off-track in resumed outputs cover only the suffix. Prefix checkpoints below confirm no guard stop/rejection/retirement at each checkpoint. No whole-race off-track sampling claim for these four runs.",
+  "checkpoints": [
+    {
+      "file": "r47-accepted-shanghai19-120.bin",
+      "time": 120.01666666666667,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 1
+    },
+    {
+      "file": "r47-accepted-shanghai19-180.bin",
+      "time": 180.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 3
+    },
+    {
+      "file": "r47-accepted-shanghai19-240.bin",
+      "time": 240.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 3
+    },
+    {
+      "file": "r47-accepted-shanghai19-300.bin",
+      "time": 300.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 3
+    },
+    {
+      "file": "r47-accepted-shanghai19-60.bin",
+      "time": 60.016666666666666,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 1
+    },
+    {
+      "file": "r47-accepted-shanghai42-120.bin",
+      "time": 120.01666666666667,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 0
+    },
+    {
+      "file": "r47-accepted-shanghai42-180.bin",
+      "time": 180.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 0
+    },
+    {
+      "file": "r47-accepted-shanghai42-240.bin",
+      "time": 240.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 0
+    },
+    {
+      "file": "r47-accepted-shanghai42-300.bin",
+      "time": 300.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 0
+    },
+    {
+      "file": "r47-accepted-shanghai42-60.bin",
+      "time": 60.016666666666666,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 0
+    },
+    {
+      "file": "r47-accepted-shanghai7-120.bin",
+      "time": 120.01666666666667,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 0
+    },
+    {
+      "file": "r47-accepted-shanghai7-180.bin",
+      "time": 180.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 2
+    },
+    {
+      "file": "r47-accepted-shanghai7-240.bin",
+      "time": 240.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 2
+    },
+    {
+      "file": "r47-accepted-shanghai7-300.bin",
+      "time": 300.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 2
+    },
+    {
+      "file": "r47-accepted-shanghai7-60.bin",
+      "time": 60.016666666666666,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 0
+    },
+    {
+      "file": "r47-accepted-suzuka7-120.bin",
+      "time": 120.01666666666667,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 4
+    },
+    {
+      "file": "r47-accepted-suzuka7-180.bin",
+      "time": 180.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 4
+    },
+    {
+      "file": "r47-accepted-suzuka7-240.bin",
+      "time": 240.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 5
+    },
+    {
+      "file": "r47-accepted-suzuka7-300.bin",
+      "time": 300.01666666666665,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 5
+    },
+    {
+      "file": "r47-accepted-suzuka7-60.bin",
+      "time": 60.016666666666666,
+      "stop": null,
+      "rejections": 0,
+      "retired": [],
+      "passes": 2
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "build": "6ca6ee76c69b2af3",
+  "status": "PASS",
+  "matchedDryRaces": [
+    {
+      "case": "shanghai7",
+      "baselineR46": {
+        "finished": true,
+        "time": 361,
+        "lateGreenPasses": 0,
+        "greenPasses": 0,
+        "reversePairWithin150s": 0,
+        "observedCounterCaptions": 0,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0
+      },
+      "releaseR47": {
+        "finished": true,
+        "time": 358.95,
+        "lateGreenPasses": 2,
+        "greenPasses": 2,
+        "reversePairWithin150s": 1,
+        "observedCounterCaptions": 1,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 300.01666666666665
+      }
+    },
+    {
+      "case": "shanghai19",
+      "baselineR46": {
+        "finished": true,
+        "time": 370.8833333333333,
+        "lateGreenPasses": 0,
+        "greenPasses": 1,
+        "reversePairWithin150s": 0,
+        "observedCounterCaptions": 0,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0
+      },
+      "releaseR47": {
+        "finished": true,
+        "time": 356.23333333333335,
+        "lateGreenPasses": 2,
+        "greenPasses": 3,
+        "reversePairWithin150s": 0,
+        "observedCounterCaptions": 0,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 300.01666666666665
+      }
+    },
+    {
+      "case": "shanghai42",
+      "baselineR46": {
+        "finished": true,
+        "time": 369.71666666666664,
+        "lateGreenPasses": 0,
+        "greenPasses": 0,
+        "reversePairWithin150s": 0,
+        "observedCounterCaptions": 0,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": {
+          "id": 4,
+          "time": 191.01666666666665,
+          "d": -6.915139542371114
+        },
+        "samplingStarts": 0
+      },
+      "releaseR47": {
+        "finished": true,
+        "time": 356.2,
+        "lateGreenPasses": 0,
+        "greenPasses": 0,
+        "reversePairWithin150s": 0,
+        "observedCounterCaptions": 0,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 300.01666666666665
+      }
+    },
+    {
+      "case": "bahrain7",
+      "baselineR46": {
+        "finished": true,
+        "time": 585.75,
+        "lateGreenPasses": 2,
+        "greenPasses": 4,
+        "reversePairWithin150s": 0,
+        "observedCounterCaptions": 0,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0
+      },
+      "releaseR47": {
+        "finished": true,
+        "time": 614.4833333333333,
+        "lateGreenPasses": 11,
+        "greenPasses": 13,
+        "reversePairWithin150s": 3,
+        "observedCounterCaptions": 3,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0
+      }
+    },
+    {
+      "case": "suzuka7",
+      "baselineR46": {
+        "finished": true,
+        "time": 462.23333333333335,
+        "lateGreenPasses": 1,
+        "greenPasses": 7,
+        "reversePairWithin150s": 3,
+        "observedCounterCaptions": 0,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0
+      },
+      "releaseR47": {
+        "finished": true,
+        "time": 459.3,
+        "lateGreenPasses": 1,
+        "greenPasses": 5,
+        "reversePairWithin150s": 0,
+        "observedCounterCaptions": 0,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 300.01666666666665
+      }
+    }
+  ],
+  "extraWet": {
+    "finished": true,
+    "time": 131.55,
+    "lateGreenPasses": 0,
+    "greenPasses": 0,
+    "reversePairWithin150s": 0,
+    "observedCounterCaptions": 0,
+    "stop": null,
+    "rejections": 0,
+    "retired": [],
+    "sampledOff": null,
+    "samplingStarts": 0
+  },
+  "engineJobs": 66,
+  "launchCases": 22,
+  "pwa": "PASS",
+  "saveCompatibility": "PASS",
+  "scope": "Physical batched integration. Four races resumed at300s from final-candidate V8 state; full event history retained. See CHECKPOINT_COVERAGE for sampling limits. Bahrain runs retained under strict limiter no-op proof. Late means after first completed lap; exclude YELLOW/VSC. Re-pass metric uses opposite winner for same pair within150s in both versions. No Android FPS/audio acceptance or all-seed guarantee."
+}

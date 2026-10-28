@@ -1,3 +1,12 @@
+# RACECRAFT 47 — 2026-10-28
+
+- Build `6ca6ee76c69b2af3`; work/battles47; main untouched.
+- Fixed road-relative passing corridor, realistic braking planning, timed attack reset/counterattack and finite ERS recovery/deployment. No leader waiting or gap/rank power injection.
+- Matched post-first-lap GREEN passes: Shanghai seeds7/19/42 0/0/0 → 2/2/0; Bahrain7 2 → 11; Suzuka7 1 → 1.
+- Six race completions without guard stop/rejection/retirement; 66 engine jobs and22 launch cases PASS. Four runs resumed at300s with event history retained; sampling scope documented.
+- Physical regenerative recovery conserves braking motion; torque taper below unchanged106m/s envelope. R46 grid-save compatibility PASS.
+- See reports/BATTLES47_TH.md and reports/battles47/RELEASE_SUMMARY.json. Android FPS/audio/touch acceptance remains pending.
+
 # RACECRAFT 46 — 2026-10-28
 
 - Build933a5fc2fd344706; work/race46; main untouched.
