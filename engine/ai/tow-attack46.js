@@ -1,3 +1,4 @@
+import {wakeDeploy48} from './wake-deploy48.js';
 import {passingLanes26} from './tactical-lanes26.js';
 // Plan physical pedal/lane demand. No speed, position, rank or grip writes.
 export function towAttack46(agent,state,p,safeLane,decision,runway){
@@ -37,5 +38,6 @@ export function applyAttackEnergy46(agent,state){
   const launch=state.time>30&&front&&front.gap<100&&resources.fraction>.24&&(agent.runway47??0)>Math.max(300,(agent.perception?.speed??0)*4);
   resources.allowDeploy=!!launch;resources.reserve=launch?.14:resources.reserve;resources.mode=launch?'TOW_ACCEL':'TOW_BANK';resources.reason=launch?'ใช้ ERS สะสมความเร็วในลมดูดก่อนเบี่ยงแซง':'เกาะลมดูด เก็บ ERS ไว้ตอนเบี่ยงแซง';
  }
+ wakeDeploy48(agent,state);
  if(['COMMIT','CLEAR'].includes(plan?.phase)&&state.time<plan.until&&resources.fraction>.12&&Math.abs(agent.perception?.own.k??1)<.003){resources.allowDeploy=true;resources.reserve=.1;resources.mode='PASS_DEPLOY';resources.reason='ใช้ ERS จบการแซงในช่องที่เปิด';}
 }

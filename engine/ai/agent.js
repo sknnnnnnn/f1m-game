@@ -84,7 +84,8 @@ class Agent {
   if(Math.abs(now.d)>circuit.width/2-(this.config?.width??1.9)/2-.7||Math.abs(state.v)>3){choice=clamp(now.d,-3,3);pace=Math.min(pace,9);mode='RECOVER';reason='ROAD EDGE / SIDESLIP';}
   this.freeLine=this.freeLine&&!['HOLD_SPACE','PASS_COMMIT','BRAKE_DUEL','EXIT_SETUP','EXIT_TARGET','BOXED_IN','RECOVER','FEINT','OUTSIDE_SWITCH'].includes(mode)&&state.time>=this.commitUntil;
   if(entryCommit&&mode!=='RECOVER'){choice=entryCommit.lane;this.curve=entryCommit.curve;this.targetLane=entryCommit.lane;}
-  const tactical40=['PASS_COMMIT','SLINGSHOT','HOLD_SPACE','DEFEND','COUNTER'].includes(mode)&&!entryCommit&&!this.pitApproach&&!this.recovery&&Math.abs(now.k)<.003;
+  const draft48=mode==='DRAFT'&&state.time>30&&Math.abs(now.k)<.001&&runway40>Math.max(240,p.speed*3.2)&&p.cars.some(o=>!o.pit&&o.gap>18&&o.gap<130&&Math.abs(choice-o.lateral)<.6);
+  const tactical40=(draft48||['PASS_COMMIT','SLINGSHOT','HOLD_SPACE','DEFEND','COUNTER'].includes(mode))&&!entryCommit&&!this.pitApproach&&!this.recovery&&Math.abs(now.k)<.003;
   if(tactical40&&safeLane(choice)){this.curve=racingPath(this.curve,state,now,choice);this.targetLane=choice;}
   const clearPath=p.cars.every(o=>o.pit||Math.abs(o.gap)>65+Math.abs(o.relativeSpeed)*4);
   const bendAngle=Math.abs(Math.atan2(Math.sin(circuit.at(now.s+80).psi-circuit.at(now.s-80).psi),Math.cos(circuit.at(now.s+80).psi-circuit.at(now.s-80).psi)));
