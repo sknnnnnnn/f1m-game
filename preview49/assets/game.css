@@ -54,3 +54,10 @@
 @media(prefers-reduced-motion:reduce){#home49 *,#home49 *:before,#home49 *:after{animation:none!important;transition:none!important}}
 
 #home49 h1:focus{outline:none}
+
+/* Restore direct race actions above the existing compact race layout. */
+body:not(.menu49-open):not(.clean-view21) #main-nav24{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));bottom:0;min-height:47px}
+body:not(.menu49-open) #watch-toolbar24{bottom:calc(62px + env(safe-area-inset-bottom))!important}
+body:not(.menu49-open) #hud{bottom:calc(116px + env(safe-area-inset-bottom))!important}
+body:not(.menu49-open) #race-sheet21{bottom:calc(116px + env(safe-area-inset-bottom))!important}
+body:not(.menu49-open) #overview32{bottom:116px}
