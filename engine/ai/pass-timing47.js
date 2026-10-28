@@ -10,7 +10,7 @@ export function preparePass47(agent,state,p){
  }
 
  const pass=agent.duel?.pass,rival=pass&&p.cars.find(c=>c.id===pass.id&&!c.pit);
- if(!pass||!rival||state.time<30||agent.pitApproach||agent.recovery||Math.abs(p.own.k)>.04||(state.brake??0)>.6||rival.gap<22||p.cars.some(c=>!c.pit&&Math.abs(c.gap)<18))return false;
+ if(!pass||!rival||state.time<30||agent.pitApproach||agent.recovery||Math.abs(p.own.k)>.003||(state.brake??0)>.08||rival.gap<22||p.cars.some(c=>!c.pit&&Math.abs(c.gap)<18))return false;
  const bend=upcomingBend(p.own.s,600);if(!bend)return false;
  const closing=Math.max(0,-rival.relativeSpeed),timeToBend=bend.distance/Math.max(10,p.speed),timeToReach=(rival.gap-8)/Math.max(1,closing);
  if(bend.distance>Math.max(130,p.speed*3)||timeToReach+.6<timeToBend)return false;

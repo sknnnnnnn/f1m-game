@@ -14,7 +14,7 @@ export function towAttack46(agent,state,p,safeLane,decision,runway){
  if(!front||agent.entryCommit25||state.time<agent.commitUntil)return decision;
  const closing=Math.max(0,-front.relativeSpeed),deadline=Math.max(30,12+p.speed*.18+closing*(agent.personality.commit+1.8));
  const lanes=passingLanes26(p.own.d,front.lateral,safeLane).sort((a,b)=>Math.abs(a-p.own.d)-Math.abs(b-p.own.d));
- if(front.gap>deadline&&front.gap<110&&closing>1&&(agent.tow44??0)>.2){
+ if(front.gap>deadline&&(state.time<=30||front.gap<110&&closing>1)&&(agent.tow44??0)>.2){
   memory.phase='BANK';memory.rival=front.id;
   // Stay in the wake only while there is enough room to complete pull-out.
   if(Math.abs(front.lateral-p.own.d)<2.6&&safeLane(front.lateral))return {...decision,choice:front.lateral,mode:'DRAFT',reason:`BANK TOW / PULL OUT BEFORE ${deadline.toFixed(0)}m / CAR ${front.id}`};
@@ -34,7 +34,7 @@ export function applyAttackEnergy46(agent,state){
  const front=agent.perception?.cars?.filter(c=>!c.pit&&c.gap>0&&c.gap<180).sort((a,b)=>a.gap-b.gap)[0],remaining=agent.raceContext?.remaining??Infinity;
  if(state.time>30&&remaining>250&&front&&front.gap>18&&!['COMMIT','CLEAR'].includes(plan?.phase)&&(agent.runway47??Infinity)<Math.max(220,(agent.perception?.speed??0)*3)){resources.allowDeploy=false;resources.mode='EXIT_BANK';resources.reason='เก็บ ERS ไว้ทางตรงที่มีระยะจบแซง';}
  if(plan?.phase==='BANK'&&resources.fraction>.15&&remaining>250){
-  const launch=front&&front.gap<100&&resources.fraction>.24&&(agent.runway47??0)>Math.max(300,(agent.perception?.speed??0)*4);
+  const launch=state.time>30&&front&&front.gap<100&&resources.fraction>.24&&(agent.runway47??0)>Math.max(300,(agent.perception?.speed??0)*4);
   resources.allowDeploy=!!launch;resources.reserve=launch?.14:resources.reserve;resources.mode=launch?'TOW_ACCEL':'TOW_BANK';resources.reason=launch?'ใช้ ERS สะสมความเร็วในลมดูดก่อนเบี่ยงแซง':'เกาะลมดูด เก็บ ERS ไว้ตอนเบี่ยงแซง';
  }
  if(['COMMIT','CLEAR'].includes(plan?.phase)&&state.time<plan.until&&resources.fraction>.12&&Math.abs(agent.perception?.own.k??1)<.003){resources.allowDeploy=true;resources.reserve=.1;resources.mode='PASS_DEPLOY';resources.reason='ใช้ ERS จบการแซงในช่องที่เปิด';}

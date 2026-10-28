@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "limiterStartsMS": 104,
+  "launchCases": 22,
+  "maxLaunchSpeedMS": 103.62405819407086,
+  "retainedFullRaces": [
+    "bahrain7.json",
+    "bahrain19-wet.json"
+  ],
+  "reason": "All observed pre-limiter states stay below the strict no-op threshold; the added pure command wrapper returns the original command for these complete runs."
+}

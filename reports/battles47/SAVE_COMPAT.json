@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "baselineCommit": "b4e8bb3b303294fef50b06ec4248e05a77ce3148",
+  "baseConfigIdentical": true,
+  "storedEnergyUnchanged": true,
+  "newPerCarRecoveryApplied": true,
+  "loadedAdvanceTicks": 25,
+  "stop": null,
+  "scope": "Synthetic R46 standing-grid save loaded and advanced in R47; not every user save or every race phase."
+}

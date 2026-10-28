@@ -8,11 +8,11 @@ function duelTactics(agent,state,p,safeLane,decision){
  let {choice,pace,mode,reason,turn,corner,ideal}=decision;
  for(const rival of p.cars){const old=memory.gaps.get(rival.id);if(rival.gap>3&&rival.gap<160&&old!==undefined&&old< -3&&old> -160){if(memory.counter?.id!==rival.id||state.time-(memory.counter.event47??-100)>2){memory.counter={id:rival.id,until:state.time+22};memory.passesSuffered++;}}if(Math.abs(rival.gap)>3)memory.gaps.set(rival.id,rival.gap);}
  const rival=memory.counter&&p.cars.find(c=>c.id===memory.counter.id);
- if(memory.counter&&(state.time>memory.counter.until||!rival||rival.gap< -12||rival.gap>350||rival.pit))memory.counter=null;
+ if(memory.counter&&(state.time>memory.counter.until||!rival||rival.gap< -12||rival.gap>(state.time>30?350:160)||rival.pit))memory.counter=null;
  if(memory.counter&&rival&&rival.gap>8&&rival.gap<130){
   // Ask for racing effort, never add engine power. Traffic/braking limits still apply.
   pace=Math.max(pace,Math.min(94,rival.speed+6));
-  if(!corner&&rival.gap>36&&Math.abs(rival.lateral-p.own.d)<4.1&&safeLane(rival.lateral)){choice=rival.lateral;mode='DRAFT';reason=`COUNTER / REBUILD TOW / REATTACK CAR ${rival.id}`;}
+  if(!corner&&rival.gap>36&&Math.abs(rival.lateral-p.own.d)<4.1&&safeLane(rival.lateral)){choice=rival.lateral;mode=state.time>30?'DRAFT':'COUNTER';reason=`COUNTER / REBUILD TOW / REATTACK CAR ${rival.id}`;}
   else if(['SLINGSHOT','SWITCHBACK','CRUISE'].includes(mode)){mode='COUNTER';reason=`REATTACK CAR ${rival.id} / SPACE AND EXIT`;}
  }
  const front=p.leader,k=Math.abs(p.own.k);

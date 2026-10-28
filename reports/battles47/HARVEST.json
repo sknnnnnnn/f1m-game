@@ -1,0 +1,16 @@
+{
+  "legacy": {
+    "u": 35.456842937056024,
+    "x": 104.95601407452071,
+    "E": 2476316.773879911,
+    "joules": 77316.77387987677
+  },
+  "release": {
+    "u": 35.456842937056024,
+    "x": 104.95601407452071,
+    "E": 2630950.321639668,
+    "joules": 231950.32163963036
+  },
+  "capacity": 8000000,
+  "scope": "Frozen integrator, identical70m/s start and0.3brake for2seconds. Higher recovered energy with matching physical braking, no deployment or energy injection."
+}

@@ -9,3 +9,11 @@
 - ลองปรับความต่างฝีมือโค้งระหว่างการตรวจ แต่ไม่เก็บการปรับนั้นในรุ่นสุดท้าย:คงdriver profilesของR46
 
 ผลreleaseเทียบseedเดียวกันและข้อจำกัดจะอยู่RELEASE_SUMMARY.json. ทดสอบNode/batchไม่ใช่AndroidFPS/audio และจำนวนแซงไม่รับประกันทุกseed/เซฟ
+
+- แก้แกนช่องแซงหลัง30s:ใช้road-relative laneคงที่หลังsmooth join แทนไล่ตามracingOffset+biasที่เลื่อนเข้าapexเดียวกับคู่แข่ง. ตรวจsafeLane/footprint/เบรกเดิมทุกเฟรมและไม่เปลี่ยนgeometryช่วงออกตัว30s
+- scoreLinesใช้0.8×brakingBudgetที่ระบบขับใช้ จำกัด3–22m/s2และลดตามgripเปียก แทนconstant9m/s2;ก่อน30sคงค่า9เดิมเพื่อคงlaunchprefix
+
+- การเก็บพลังงานกลับตอนเบรก:regenW100→350kW, rear regenerative allocation0.25→0.75 ใช้กับconfigurationรถแข่งทุกคันโดยไม่เพิ่มแรงเบรกรวม ลดสัดส่วนfrictionแทน. battery8MJและdeploy600kWเท่าเดิม. Frozen integrator fixtureยืนยันแรงเบรก/การเคลื่อนที่เท่าเดิม แต่พลังงานที่เก็บจริงเพิ่มขึ้น. base configของเซฟเดิมคงเดิมเพื่อโหลดR46ต่อได้
+- หลังเพิ่มharvestจึงไม่อ้างphysical30s-prefixเท่ากันทุกประการอีก ใช้22-case launch regressionและfullraceยืนยันแทน. รูปแบบช่องแซงคงgeometryเดิมก่อน30s
+
+- แก้overspeedช่วงท้ายSuzukaที่พบหลังเพิ่มharvest:เริ่มลดthrottleและปิดERSที่104m/s ก่อนถึงguard106m/s ไม่แก้velocityและไม่ยกguard. fixtureใช้frozen integrator+แรงต้านต่ำพิสูจน์อยู่ในขอบเขต. SAVE_PHYSICSใช้ขอบเขต106เดียวกับrace แทน100เก่าที่ปฏิเสธเซฟความเร็วสูงที่เกมอนุญาต และยังปฏิเสธ106.1
