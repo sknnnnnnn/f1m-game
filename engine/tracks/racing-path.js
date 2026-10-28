@@ -16,7 +16,7 @@ export function racingPath(previous,state,at,lane40=null){
  return {t0:state.time,T:5,c:[at.d],racing:{s:at.s,speed:progressSpeed,accel40:clamp(state.lastAx??0,-16,8),join,lane40,bias40:tactical40?(same40?previous.racing.bias40:lane40-racingOffset(at.s)):null}};
 }
 export function pathOffset(curve,station){
- const limit=circuit.key==='bahrain'?3.3:3.8,target=Number.isFinite(curve.racing.lane40)?clamp(racingOffset(station)+curve.racing.bias40,-limit,limit):racingOffset(station);
+ const limit=circuit.key==='bahrain'?3.3:3.8,target=Number.isFinite(curve.racing.lane40)?clamp(curve.racing.lane40,-limit,limit):racingOffset(station);
  const join=curve.racing.join;if(!join)return target;
  const d=circuit.delta(station,join.s),z=clamp(d,0,join.length),u=z/join.length,w=u*u*u*(10-15*u+6*u*u);
  return (1-w)*join.start+w*target+join.slope*z*(1-w)**2;

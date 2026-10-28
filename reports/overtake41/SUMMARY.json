@@ -1,0 +1,450 @@
+{
+  "status": "NOT_ACCEPTED_NOT_DEPLOYED",
+  "runs": [
+    {
+      "file": "audit.json",
+      "track": "suzuka",
+      "finished": false,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "latePasses": [],
+      "passes": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 178,
+          "time": 2.966666666666667,
+          "by": 4,
+          "of": 3,
+          "gap": 2.0023899996358523,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 384,
+          "time": 6.4,
+          "by": 4,
+          "of": 2,
+          "gap": 2.031173343917544,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 486,
+          "time": 8.1,
+          "by": 5,
+          "of": 3,
+          "gap": 2.0207832877495093,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 612,
+          "time": 10.2,
+          "by": 2,
+          "of": 4,
+          "gap": 2.242555002172594,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "scope": null
+    },
+    {
+      "file": "bahrain19d.json",
+      "track": "bahrain",
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "latePasses": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 8198,
+          "time": 136.63333333333333,
+          "by": 6,
+          "of": 5,
+          "gap": 2.0380551203070354,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "passes": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 338,
+          "time": 5.633333333333333,
+          "by": 3,
+          "of": 2,
+          "gap": 2.0295969033659276,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 8198,
+          "time": 136.63333333333333,
+          "by": 6,
+          "of": 5,
+          "gap": 2.0380551203070354,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "scope": null
+    },
+    {
+      "file": "bahrain19f.json",
+      "track": "bahrain",
+      "finished": true,
+      "stop": null,
+      "rejections": 12,
+      "off": {
+        "id": 5,
+        "time": 245.51666666666665,
+        "d": 5.124524139040844
+      },
+      "latePasses": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 13932,
+          "time": 232.2,
+          "by": 2,
+          "of": 1,
+          "gap": 2.019320975505252,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 14324,
+          "time": 238.73333333333332,
+          "by": 6,
+          "of": 5,
+          "gap": 2.0017968686915992,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "passes": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 13932,
+          "time": 232.2,
+          "by": 2,
+          "of": 1,
+          "gap": 2.019320975505252,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 14324,
+          "time": 238.73333333333332,
+          "by": 6,
+          "of": 5,
+          "gap": 2.0017968686915992,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "scope": null
+    },
+    {
+      "file": "duel-suzuka.json",
+      "track": "suzuka",
+      "finished": null,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "latePasses": null,
+      "passes": null,
+      "scope": "Two-car straight duel initialized once at lap 2, warm tyres, 22 m gap and 2 m/s closing speed. Physical integration only afterwards; not evidence of natural full-race pass frequency."
+    },
+    {
+      "file": "shanghai7d.json",
+      "track": "shanghai",
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "latePasses": [],
+      "passes": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 226,
+          "time": 3.7666666666666666,
+          "by": 3,
+          "of": 2,
+          "gap": 2.120682926200061,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "scope": null
+    },
+    {
+      "file": "shanghai7f.json",
+      "track": "shanghai",
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "latePasses": [],
+      "passes": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 412,
+          "time": 6.866666666666666,
+          "by": 5,
+          "of": 4,
+          "gap": 2.0122467447836243,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "scope": null
+    },
+    {
+      "file": "suzuka7.json",
+      "track": "suzuka",
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "latePasses": [],
+      "passes": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 184,
+          "time": 3.0666666666666664,
+          "by": 4,
+          "of": 3,
+          "gap": 2.129182211088846,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 419,
+          "time": 6.983333333333333,
+          "by": 4,
+          "of": 2,
+          "gap": 2.0060556927637663,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 648,
+          "time": 10.8,
+          "by": 2,
+          "of": 4,
+          "gap": 2.0877383063379966,
+          "decision": "DRAFT",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 889,
+          "time": 14.816666666666666,
+          "by": 4,
+          "of": 2,
+          "gap": 2.0328366676476435,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "scope": null
+    },
+    {
+      "file": "suzuka7b.json",
+      "track": "suzuka",
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "latePasses": [],
+      "passes": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 184,
+          "time": 3.0666666666666664,
+          "by": 4,
+          "of": 3,
+          "gap": 2.129182211088846,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 419,
+          "time": 6.983333333333333,
+          "by": 4,
+          "of": 2,
+          "gap": 2.0060556927637663,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 648,
+          "time": 10.8,
+          "by": 2,
+          "of": 4,
+          "gap": 2.0877383063379966,
+          "decision": "DRAFT",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 858,
+          "time": 14.299999999999999,
+          "by": 4,
+          "of": 2,
+          "gap": 2.0203115766162227,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "scope": null
+    },
+    {
+      "file": "suzuka7d.json",
+      "track": "suzuka",
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "latePasses": [],
+      "passes": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 179,
+          "time": 2.9833333333333334,
+          "by": 4,
+          "of": 3,
+          "gap": 2.0339409776906905,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 391,
+          "time": 6.516666666666667,
+          "by": 4,
+          "of": 2,
+          "gap": 2.0384960617830075,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 642,
+          "time": 10.7,
+          "by": 2,
+          "of": 4,
+          "gap": 2.151765777312903,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 1215,
+          "time": 20.25,
+          "by": 4,
+          "of": 2,
+          "gap": 2.03360107491244,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 1401,
+          "time": 23.35,
+          "by": 2,
+          "of": 4,
+          "gap": 2.0181151497217797,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 1738,
+          "time": 28.966666666666665,
+          "by": 4,
+          "of": 2,
+          "gap": 2.0749930797192064,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "scope": null
+    },
+    {
+      "file": "suzuka7f.json",
+      "track": "suzuka",
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "latePasses": [],
+      "passes": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 178,
+          "time": 2.966666666666667,
+          "by": 4,
+          "of": 3,
+          "gap": 2.029751464664514,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 189,
+          "time": 3.15,
+          "by": 6,
+          "of": 5,
+          "gap": 2.0101796194812778,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 359,
+          "time": 5.983333333333333,
+          "by": 4,
+          "of": 2,
+          "gap": 2.0473307869842756,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 427,
+          "time": 7.116666666666666,
+          "by": 6,
+          "of": 3,
+          "gap": 2.0220624656185464,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 466,
+          "time": 7.766666666666667,
+          "by": 5,
+          "of": 3,
+          "gap": 2.223335186004988,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ],
+      "scope": null
+    }
+  ]
+}
