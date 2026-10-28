@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "quickRace": true,
+  "practiceAndFlyingQualifying": true,
+  "weekendSequence": true,
+  "selectedRaceLapsSurviveStages": true,
+  "invalidInputAtomic": true,
+  "runningSessionProtected": true,
+  "practiceQualifyingSaveRoundTrip": true,
+  "missingQualifyingTimesRemainNull": true,
+  "crewWalkContinuous": true,
+  "worstStep": 0.0112489583333375,
+  "scope": "Session configuration and task paths, not browser visuals or Android FPS."
+}
