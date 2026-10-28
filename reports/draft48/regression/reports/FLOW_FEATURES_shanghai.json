@@ -1,0 +1,29 @@
+{
+  "track": "shanghai",
+  "grid": {
+    "movesBeforeStart": true,
+    "phases": [
+      "INSPECT",
+      "STAND",
+      "STEP_BACK",
+      "OBSERVE",
+      "RETURN",
+      "KNEEL",
+      "WITHDRAW",
+      "WALK_OUT",
+      "CLEAR"
+    ],
+    "minimumCrewCenterDistance": 1.511841709934933,
+    "maxHandReachError": 0,
+    "continuousClearTransition": true,
+    "plantedFootChecks": 108
+  },
+  "drs": {
+    "dragReduction": 0.28,
+    "gapSeconds": 5,
+    "oneSecondStartKPH": 252,
+    "openEndKPH": 265.0595424395787,
+    "closedEndKPH": 263.7487637190776,
+    "scope": "Physical straight fixture at full throttle, fixed gear and no ERS; not a top-speed or lap-time promise"
+  }
+}

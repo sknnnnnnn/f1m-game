@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "matrixComparisons": 106560,
+  "tolerance": 0.000001,
+  "cacheInvalidation": true,
+  "before": {
+    "ms": 78.760287,
+    "cache": null
+  },
+  "after": {
+    "ms": 9.850720999999965,
+    "cache": {
+      "hits": 2618,
+      "solves": 1,
+      "uploads": 513,
+      "sharedHits39": 21
+    }
+  },
+  "speedup": 7.995382977550607,
+  "scope": "Same authored crew geometry and head animation, Node CPU microbenchmark; not Android FPS"
+}

@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "tuning": {
+    "drsRelief": 0.56,
+    "draftRelief": 0.9,
+    "deployW": 600000,
+    "motorTorque": 900,
+    "maxSpeed": 103
+  },
+  "physicalCoastSpeedLoss": {
+    "closed": 2.685632094801676,
+    "oldDRS": 1.952013858019967,
+    "newDRS": 1.2043317025948284
+  },
+  "profiles": [
+    {
+      "name": "KAEW",
+      "pace": 89,
+      "headway": 0.34,
+      "risk": 0.62,
+      "braking": 6.35,
+      "corner": 1.008,
+      "exit": 6.35,
+      "defend": 0.95,
+      "bias": 0,
+      "commit": 1.8
+    },
+    {
+      "name": "ARUN",
+      "pace": 96,
+      "headway": 0.33,
+      "risk": 0.9,
+      "braking": 6.65,
+      "corner": 0.9182692307692307,
+      "exit": 7.05,
+      "defend": 0.55,
+      "bias": 0.4,
+      "commit": 1.5
+    },
+    {
+      "name": "MALI",
+      "pace": 91,
+      "headway": 0.34,
+      "risk": 0.65,
+      "braking": 6.45,
+      "corner": 0.9990049751243782,
+      "exit": 6.75,
+      "defend": 0.7,
+      "bias": -0.4,
+      "commit": 1.9
+    },
+    {
+      "name": "SURI",
+      "pace": 94.5,
+      "headway": 0.335,
+      "risk": 0.82,
+      "braking": 6.55,
+      "corner": 0.951219512195122,
+      "exit": 7.2,
+      "defend": 0.45,
+      "bias": -0.7,
+      "commit": 1.6
+    },
+    {
+      "name": "NIRAN",
+      "pace": 92,
+      "headway": 0.36000000000000004,
+      "risk": 0.35,
+      "braking": 6.25,
+      "corner": 1.015228426395939,
+      "exit": 6.5,
+      "defend": 0.5,
+      "bias": 0.3,
+      "commit": 2.1
+    },
+    {
+      "name": "DAWAN",
+      "pace": 93,
+      "headway": 0.35500000000000004,
+      "risk": 0.42,
+      "braking": 6.4,
+      "corner": 1.0161616161616163,
+      "exit": 6.8,
+      "defend": 0.35,
+      "bias": -0.3,
+      "commit": 2.2
+    }
+  ],
+  "scope": "Amplified game tuning, not real F1 calibration. Actual frozen integrator coast comparison; unchanged finite energy capacity."
+}

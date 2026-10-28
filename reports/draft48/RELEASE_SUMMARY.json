@@ -1,0 +1,199 @@
+{
+  "build": "cb33e4d091da5ea9",
+  "safety": "PASS",
+  "results": [
+    {
+      "case": "suzuka7",
+      "baselineR47": {
+        "finished": true,
+        "time": 459.3,
+        "latePasses": 1,
+        "passes": 5,
+        "counterPasses": 0,
+        "reversePairWithin150s": 0,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 300.01666666666665,
+        "wakeBuildSamples": 0
+      },
+      "candidateR48": {
+        "finished": true,
+        "time": 457.73333333333335,
+        "latePasses": 6,
+        "passes": 10,
+        "counterPasses": 1,
+        "reversePairWithin150s": 1,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0,
+        "wakeBuildSamples": 34
+      },
+      "commonWindow": {
+        "until": 457.73333333333335,
+        "baselineLatePasses": 1,
+        "candidateLatePasses": 6,
+        "note": "Both runs finished; full-race counts also reported."
+      }
+    },
+    {
+      "case": "suzuka19",
+      "baselineR47": {
+        "finished": false,
+        "time": 321.26666666666665,
+        "latePasses": 1,
+        "passes": 5,
+        "counterPasses": 0,
+        "reversePairWithin150s": 1,
+        "stop": {
+          "kind": "CONTACT_GUARD",
+          "tick": 19276,
+          "cars": [
+            1,
+            3
+          ],
+          "hit": true,
+          "clearance": 0.021971035388356652,
+          "fraction": 0.9344262295081968,
+          "padding": 0.021994436536197967,
+          "samples": 245,
+          "gentle": false,
+          "policy": "Pause before atomic state commit. No impulse or pose correction; only stable braking may use the documented 2.5 cm sampled brush allowance."
+        },
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0,
+        "wakeBuildSamples": 0
+      },
+      "candidateR48": {
+        "finished": true,
+        "time": 465.4,
+        "latePasses": 7,
+        "passes": 9,
+        "counterPasses": 0,
+        "reversePairWithin150s": 1,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0,
+        "wakeBuildSamples": 38
+      },
+      "commonWindow": {
+        "until": 321.26666666666665,
+        "baselineLatePasses": 1,
+        "candidateLatePasses": 6,
+        "note": "Baseline stopped. Its partial count is not a completed-race total."
+      }
+    },
+    {
+      "case": "shanghai7",
+      "baselineR47": {
+        "finished": true,
+        "time": 358.95,
+        "latePasses": 2,
+        "passes": 2,
+        "counterPasses": 1,
+        "reversePairWithin150s": 1,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 300.01666666666665,
+        "wakeBuildSamples": 0
+      },
+      "candidateR48": {
+        "finished": true,
+        "time": 358.95,
+        "latePasses": 2,
+        "passes": 2,
+        "counterPasses": 1,
+        "reversePairWithin150s": 1,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0,
+        "wakeBuildSamples": 0
+      },
+      "commonWindow": {
+        "until": 358.95,
+        "baselineLatePasses": 2,
+        "candidateLatePasses": 2,
+        "note": "Both runs finished; full-race counts also reported."
+      }
+    },
+    {
+      "case": "bahrain7",
+      "baselineR47": {
+        "finished": true,
+        "time": 614.4833333333333,
+        "latePasses": 11,
+        "passes": 13,
+        "counterPasses": 3,
+        "reversePairWithin150s": 3,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0,
+        "wakeBuildSamples": 0
+      },
+      "candidateR48": {
+        "finished": true,
+        "time": 614.4833333333333,
+        "latePasses": 11,
+        "passes": 13,
+        "counterPasses": 3,
+        "reversePairWithin150s": 3,
+        "stop": null,
+        "rejections": 0,
+        "retired": [],
+        "sampledOff": null,
+        "samplingStarts": 0,
+        "wakeBuildSamples": 0
+      },
+      "commonWindow": {
+        "until": 614.4833333333333,
+        "baselineLatePasses": 11,
+        "candidateLatePasses": 11,
+        "note": "Both runs finished; full-race counts also reported."
+      }
+    }
+  ],
+  "extraWet": {
+    "finished": true,
+    "time": 130.18333333333334,
+    "latePasses": 0,
+    "passes": 0,
+    "counterPasses": 0,
+    "reversePairWithin150s": 0,
+    "stop": null,
+    "rejections": 0,
+    "retired": [],
+    "sampledOff": null,
+    "samplingStarts": 0,
+    "wakeBuildSamples": 0
+  },
+  "launchCases": 22,
+  "engineJobs": 67,
+  "coverage": {
+    "build": "cb33e4d091da5ea9",
+    "suzukaRaces": {
+      "files": [
+        "suzuka7.json",
+        "suzuka19.json"
+      ],
+      "testedBuild": "4867e98b852f2b02",
+      "retained": true,
+      "proof": "The only runtime change after these races prepends circuit.key===suzuka to draft48. It is always true on Suzuka, so decisions and commands are identical. No constants, state, integrator or guard changed. Current draft48 fixture and full engine suite also pass."
+    },
+    "otherTracks": "Broad candidate reduced late passes. Its evidence is retained under broad-candidate and excluded from final release results. Final non-Suzuka source restores the R47 lane branch; new wakeDeploy48 already returns outside Suzuka. Fresh full Bahrain/Shanghai races and launch matrix validate the final scoped source.",
+    "android": "Not measured."
+  },
+  "scope": "Batched physical integrations from the grid. Late passes are after the first car completes lap one. Same R47 comparison filter: exclude events labelled YELLOW/VSC in decision; no independently recorded flag field. Reverse-pair metric uses a 150-second window. Off-track checks sample centre plus half-width every 0.5s, not continuous rotated body corners. No Android FPS, audio, touch or all-seed acceptance."
+}

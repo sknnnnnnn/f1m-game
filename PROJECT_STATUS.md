@@ -1,3 +1,13 @@
+# RACECRAFT 48 — 2026-10-29
+
+- Build `cb33e4d091da5ea9`; work/draft48; main untouched.
+- Suzuka-only actual wake reference lane and finite ERS outside DRS. Preserved player overrides, launch geometry, physical limits and guard policy.
+- Suzuka7 four-lap late passes1→6; Suzuka19 R48 finishes with7, while R47 stops at321.27s CONTACT_GUARD (common-window late passes1→6).
+- Final Shanghai7 three laps and Bahrain7 five laps exactly match R47 finish time/pass history/lap timings:2/11 late passes. Broad candidate regressions retained and rejected.
+- Four dry races plus one rain-developing race complete without stop/rejection/retirement/sampled offtrack;67 engine jobs,22 launch cases,build/PWA PASS.
+- Suzuka evidence retained under explicit always-true track-guard no-op proof; other tracks/launch retested on final source. Android FPS/audio/touch still pending.
+- See reports/DRAFT48_TH.md and reports/draft48/RELEASE_SUMMARY.json.
+
 # RACECRAFT 47 — 2026-10-28
 
 - Build `6ca6ee76c69b2af3`; work/battles47; main untouched.
