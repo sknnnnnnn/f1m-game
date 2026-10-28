@@ -77,31 +77,30 @@ root.createDriverRig=function(T,car){
  const front=[];for(const n of ['FL_Tire','FR_Tire','L_Inside_Cover','R_Inside_Cover']){const o=car.getObjectByName(n);if(!o)continue;const center=new T.Box3().setFromObject(o).getCenter(new T.Vector3()),pivot=new T.Group();pivot.position.copy(center);pivot.name=n+' steering pivot';car.add(pivot);pivot.attach(o);front.push({pivot,side:center.x<0?-1:1,wheel:/Tire/.test(n)});}
  // Pose checks use simple ellipsoid proxies; not full mesh collision.
  const torsoCenter=new T.Vector3(0,.485,.115),torsoRadii=new T.Vector3(.196,.207,.149);
- const torsoCos38=Math.cos(.22),torsoSin38=Math.sin(.22),envelopePoint38=new T.Vector3(),wheelPoint38=new T.Vector3();
- function torsoClearanceXYZ38(x,y,z){x-=torsoCenter.x;y-=torsoCenter.y;z-=torsoCenter.z;const ry=y*torsoCos38-z*torsoSin38,rz=y*torsoSin38+z*torsoCos38;return Math.sqrt((x/torsoRadii.x)**2+(ry/torsoRadii.y)**2+(rz/torsoRadii.z)**2);}
- function poseClearance(shoulder,elbow,wrist){let m=Infinity;const check=(a,b,t)=>torsoClearanceXYZ38(a.x+(b.x-a.x)*t,a.y+(b.y-a.y)*t,a.z+(b.z-a.z)*t);for(const t of [.55,.75,1])m=Math.min(m,check(shoulder,elbow,t));for(const t of [.25,.5,.75,1])m=Math.min(m,check(elbow,wrist,t));return m;}
+ function torsoClearance(p){const q=p.clone().sub(torsoCenter).applyAxisAngle(new T.Vector3(1,0,0),.22);return Math.sqrt((q.x/torsoRadii.x)**2+(q.y/torsoRadii.y)**2+(q.z/torsoRadii.z)**2);}
+ function poseClearance(shoulder,elbow,wrist){let m=Infinity;for(const t of [.55,.75,1])m=Math.min(m,torsoClearance(shoulder.clone().lerp(elbow,t)));for(const t of [.25,.5,.75,1])m=Math.min(m,torsoClearance(elbow.clone().lerp(wrist,t)));return m;}
  const wheelbase=3.25,track=1.77,ratio=6;let value=0;
  function setSteering(input){value=T.MathUtils.clamp(input,-18,18);const rad=value*Math.PI/180;for(const f of front){let angle=0;if(Math.abs(rad)>1e-8){const turn=Math.sign(rad),radius=wheelbase/Math.tan(Math.abs(rad)),inner=f.side===turn;angle=turn*Math.atan(wheelbase/(radius+(inner?-track/2:track/2)));}f.pivot.rotation.y=-angle;}
- wheel.quaternion.copy(tilt).multiply(new T.Quaternion().setFromAxisAngle(new T.Vector3(0,0,1),-rad*ratio));wheel.updateMatrix();const wheelInverse38=wheel.matrix.clone().invert();
+ wheel.quaternion.copy(tilt).multiply(new T.Quaternion().setFromAxisAngle(new T.Vector3(0,0,1),-rad*ratio));car.updateMatrixWorld(true);
  for(const arm of arms){
- const palm=new T.Vector3(arm.s*.226,-.004,.068).applyMatrix4(wheel.matrix),handLength=.062,combined=lowerLength+handLength,dir=palm.clone().sub(arm.shoulder),d=dir.length();if(d>=upperLength+combined)throw Error('Grip wrist unreachable');dir.normalize();const proj=(upperLength**2-combined**2+d*d)/(2*d),h=Math.sqrt(Math.max(0,upperLength**2-proj**2)),center=arm.shoulder.clone().addScaledVector(dir,proj),bend=new T.Vector3(arm.s*.4,-1,.25);bend.addScaledVector(dir,-bend.dot(dir)).normalize();const axis=new T.Vector3().crossVectors(dir,bend).normalize();
+ const palm=added.worldToLocal(wheel.localToWorld(new T.Vector3(arm.s*.226,-.004,.068))),handLength=.062,combined=lowerLength+handLength,dir=palm.clone().sub(arm.shoulder),d=dir.length();if(d>=upperLength+combined)throw Error('Grip wrist unreachable');dir.normalize();const proj=(upperLength**2-combined**2+d*d)/(2*d),h=Math.sqrt(Math.max(0,upperLength**2-proj**2)),center=arm.shoulder.clone().addScaledVector(dir,proj),bend=new T.Vector3(arm.s*.4,-1,.25);bend.addScaledVector(dir,-bend.dot(dir)).normalize();const axis=new T.Vector3().crossVectors(dir,bend).normalize();
  function candidate(t){const elbow=center.clone().addScaledVector(bend,Math.cos(t)*h).addScaledVector(axis,Math.sin(t)*h),forward=palm.clone().sub(elbow).normalize(),wrist=palm.clone().addScaledVector(forward,-handLength),clear=poseClearance(arm.shoulder,elbow,wrist);return {elbow,wrist,clear};}
  function envelopePenalty(c){
  let penalty=0;
  for(let i=0;i<=16;i++){
-  const first=i<=8,t=first?i/8:(i-8)/8,q=envelopePoint38.copy(first?arm.shoulder:c.elbow).lerp(first?c.elbow:c.wrist,t),r=first?T.MathUtils.lerp(.042,.031,t):T.MathUtils.lerp(.031,.022,t);
+  const first=i<=8,t=first?i/8:(i-8)/8,q=(first?arm.shoulder: c.elbow).clone().lerp(first?c.elbow:c.wrist,t),r=first?T.MathUtils.lerp(.042,.031,t):T.MathUtils.lerp(.031,.022,t);
   // Conservative circular sleeve envelope, floor and linearly fitted cockpit wall.
   penalty+=Math.max(0,.370+r-q.y)**2;
   const z=q.z,stations=rimStations;let inner=.30,rim=.70;
   if(z>=stations[0][0]&&z<=stations.at(-1)[0]){let j=0;while(j<stations.length-2&&z>stations[j+1][0])j++;const a=stations[j],b=stations[j+1],u=(z-a[0])/(b[0]-a[0]);inner=T.MathUtils.lerp(a[1],b[1],u);rim=T.MathUtils.lerp(a[3],b[3],u);const wall=.30+(inner-.30)*T.MathUtils.clamp((q.y-.35)/(rim-.35),0,1);penalty+=Math.max(0,Math.abs(q.x)+r+.006-wall)**2;}
-  if(!first){const d=wheelPoint38.copy(q).applyMatrix4(wheelInverse38);d.x-=arm.s*.168;d.z-=.022;const inflate=(r+.004)/.84,n=Math.sqrt((d.x/(.036+inflate))**2+(d.y/(.086+inflate))**2+(d.z/(.032+inflate))**2);penalty+=Math.max(0,1.025-n)**2;}
+  if(!first){const w=wheel.worldToLocal(added.localToWorld(q.clone())),d=w.sub(new T.Vector3(arm.s*.168,0,.022)),inflate=(r+.004)/.84,n=Math.sqrt((d.x/(.036+inflate))**2+(d.y/(.086+inflate))**2+(d.z/(.032+inflate))**2);penalty+=Math.max(0,1.025-n)**2;}
  }
  return penalty;
  }
  function score(t){const c=candidate(t);return 2000000*envelopePenalty(c)+2000000*Math.max(0,1.025-c.clear)**2+450*Math.max(0,Math.abs(c.elbow.x)-.26)**2+80*Math.max(0,c.elbow.y-.72)**2+t*t;}
- let best=0,bestScore=Infinity;for(let k=-24;k<=24;k++){const t=k*1.6/24,v=score(t);if(v<bestScore){best=t;bestScore=v;}}let step=1.6/24;for(let j=0;j<6;j++){for(const t of [best-step/2,best,best+step/2]){const v=score(t);if(Math.abs(t)<=1.6&&v<bestScore){best=t;bestScore=v;}}step/=2;}const pose=candidate(best);arm.elbow.copy(pose.elbow);arm.hand.position.copy(pose.wrist).applyMatrix4(wheelInverse38);const target=arm.hand.position.clone().applyMatrix4(wheel.matrix);
- arm.handForward=target.clone().sub(arm.elbow).normalize();arm.wristDeflection=T.MathUtils.radToDeg(arm.handForward.angleTo(target.clone().sub(arm.elbow)));arm.torsoProxyClearance=poseClearance(arm.shoulder,arm.elbow,target);arm.up.set(arm.shoulder,arm.elbow);arm.fore.set(arm.elbow,target);deformSleeve(arm,target);
- const forearmWheel=arm.handForward.clone().applyQuaternion(wheel.quaternion.clone().invert());arm.grip.update(forearmWheel);arm.actualPalmBend=T.MathUtils.radToDeg(arm.grip.palmAxis.angleTo(forearmWheel));
+ let best=0,bestScore=Infinity;for(let k=-24;k<=24;k++){const t=k*1.6/24,v=score(t);if(v<bestScore){best=t;bestScore=v;}}let step=1.6/24;for(let j=0;j<6;j++){for(const t of [best-step/2,best,best+step/2]){const v=score(t);if(Math.abs(t)<=1.6&&v<bestScore){best=t;bestScore=v;}}step/=2;}const pose=candidate(best);arm.elbow.copy(pose.elbow);arm.hand.position.copy(wheel.worldToLocal(added.localToWorld(pose.wrist.clone())));car.updateMatrixWorld(true);const target=added.worldToLocal(arm.hand.getWorldPosition(new T.Vector3()));
+ arm.handForward=target.clone().sub(arm.elbow).normalize();arm.wristDeflection=T.MathUtils.radToDeg(arm.handForward.angleTo(target.clone().sub(arm.elbow)));arm.torsoProxyClearance=poseClearance(arm.shoulder,arm.elbow,target);arm.up.set(arm.shoulder,arm.elbow);arm.fore.set(arm.elbow,target);deformSleeve(arm,target);car.updateMatrixWorld(true);
+ const forearmWorld=arm.handForward.clone().transformDirection(added.matrixWorld),forearmWheel=forearmWorld.applyQuaternion(wheel.getWorldQuaternion(new T.Quaternion()).invert());arm.grip.update(forearmWheel);arm.actualPalmBend=T.MathUtils.radToDeg(arm.grip.palmAxis.angleTo(forearmWheel));
 
  }
  head.rotation.y=-rad*.18;car.updateMatrixWorld(true);}
