@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "build": "6ca6ee76c69b2af3",
+  "url": "https://sknnnnnnn.github.io/f1m-game/",
+  "pagesCommit": "015bb3c1a815e03447736fd08fbfdd2c1a10a25c",
+  "pagesWorkflow": 40734014543,
+  "pagesConclusion": "success",
+  "observed": [
+    "R46 update available via ตรวจอัปเดต",
+    "Explicit update then reload shows RACE47",
+    "STARTING GRID and enabled เริ่มแข่ง",
+    "Settings build6ca6ee76c69b2af3 and ออฟไลน์พร้อม"
+  ],
+  "scope": "Cloud CPU fallback UI/update verification only; displayed1FPS is not an Android measurement. No browser full-race, mobile audio or touch acceptance."
+}
