@@ -1,0 +1,182 @@
+{
+  "track": "shanghai",
+  "finished": true,
+  "stop": null,
+  "rejections": 0,
+  "maxActive": 5,
+  "exits": {
+    "1": {
+      "speed": 79.86324246685236,
+      "time": 174.5
+    },
+    "2": {
+      "speed": 79.86358521061669,
+      "time": 180.21666666666667
+    },
+    "3": {
+      "speed": 73.37641139595975,
+      "time": 319.05
+    },
+    "4": {
+      "speed": 79.86304233075222,
+      "time": 186.23333333333332
+    },
+    "5": {
+      "speed": 79.86405342262219,
+      "time": 193.66666666666666
+    },
+    "6": {
+      "speed": 79.86338089405267,
+      "time": 192.25
+    }
+  },
+  "stops": [
+    {
+      "id": 1,
+      "stops": 1
+    },
+    {
+      "id": 2,
+      "stops": 1
+    },
+    {
+      "id": 3,
+      "stops": 1
+    },
+    {
+      "id": 4,
+      "stops": 1
+    },
+    {
+      "id": 5,
+      "stops": 1
+    },
+    {
+      "id": 6,
+      "stops": 1
+    }
+  ],
+  "results": [
+    {
+      "position": 1,
+      "id": 1,
+      "name": "KAEW",
+      "personality": "DEFENDER",
+      "finished": true,
+      "time": 395.6050825437408,
+      "gap": 0,
+      "completedLaps": 3,
+      "bestLap": 114.33916374517923,
+      "lastLap": 114.33916374517923,
+      "peakKPH": 323.6651202128771,
+      "stops": 1,
+      "compound": "H",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 17486.925418178733
+    },
+    {
+      "position": 2,
+      "id": 2,
+      "name": "ARUN",
+      "personality": "ATTACKER",
+      "finished": true,
+      "time": 399.84952375642075,
+      "gap": 4.244441212679931,
+      "completedLaps": 3,
+      "bestLap": 113.88708903243946,
+      "lastLap": 113.88708903243946,
+      "peakKPH": 332.01539454139214,
+      "stops": 1,
+      "compound": "H",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 17377.71089764867
+    },
+    {
+      "position": 3,
+      "id": 4,
+      "name": "SURI",
+      "personality": "OPPORTUNIST",
+      "finished": true,
+      "time": 407.3101964239177,
+      "gap": 11.705113880176896,
+      "completedLaps": 3,
+      "bestLap": 114.40876920262588,
+      "lastLap": 114.40876920262588,
+      "peakKPH": 327.1346909322662,
+      "stops": 1,
+      "compound": "H",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 17212.179422844252
+    },
+    {
+      "position": 4,
+      "id": 6,
+      "name": "DAWAN",
+      "personality": "SMOOTH",
+      "finished": true,
+      "time": 413.43817054538687,
+      "gap": 17.833088001646047,
+      "completedLaps": 3,
+      "bestLap": 114.48891848459078,
+      "lastLap": 114.48891848459078,
+      "peakKPH": 333.57200951612924,
+      "stops": 1,
+      "compound": "H",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 17031.754220126768
+    },
+    {
+      "position": 5,
+      "id": 5,
+      "name": "NIRAN",
+      "personality": "GUARDIAN",
+      "finished": true,
+      "time": 417.1153380685266,
+      "gap": 21.510255524785805,
+      "completedLaps": 3,
+      "bestLap": 113.97976626852295,
+      "lastLap": 113.97976626852295,
+      "peakKPH": 327.81387718166206,
+      "stops": 1,
+      "compound": "H",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 16855.53955522219
+    },
+    {
+      "position": 6,
+      "id": 3,
+      "name": "MALI",
+      "personality": "TACTICIAN",
+      "finished": true,
+      "time": 425.3777766612766,
+      "gap": 29.772694117535764,
+      "completedLaps": 3,
+      "bestLap": 123.06880987627932,
+      "lastLap": 175.35919071565476,
+      "peakKPH": 327.95911290413704,
+      "stops": 1,
+      "compound": "H",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 16353.33535254962
+    }
+  ],
+  "scope": "Six physical cars request same-lap hard-tyre pit stops. Renderer release proof fixture; no pose/speed/rank corrections. Rendering performance tested separately."
+}

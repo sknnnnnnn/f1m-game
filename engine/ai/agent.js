@@ -20,7 +20,7 @@ class Agent {
   const now=p.own,preview=circuit.at(now.s+Math.max(80,p.speed*4)),corner=Math.abs(now.k)>.0005||Math.abs(preview.k)>.0005;
 
   const entryCommit=cornerCommit25(this,state,now);
-  const launchLeadSpeed=o=>o.speed+(state.time<4&&p.speed<60&&Math.abs(now.k)<.001&&o.gap>(this.config?.length??5.5)+10&&o.brake<.02&&o.throttle>.8&&Math.abs(o.headingError)<.06?clamp(o.acceleration??0,0,14)*.25:0);
+  const launchLeadSpeed=o=>o.speed+(state.time<10&&p.speed<60&&Math.abs(now.k)<.003&&o.gap>(this.config?.length??5.5)+10&&o.brake<.02&&o.throttle>.8&&Math.abs(o.headingError)<.06?clamp(o.ax??o.acceleration??0,0,12)*.45:0);
   const bend=Math.abs(now.k)>.004?now:upcomingBend(now.s,600)??preview,turn=Math.sign(bend.k)||1;
   let ideal=clamp(racingOffset(now.s+Math.max(10,p.speed*.8)),p.own.d-4,p.own.d+4);
   this.freeLine=!p.cars.some(o=>!o.pit&&o.gap> -30&&o.gap<Math.max(35,p.speed*.8));

@@ -1,0 +1,10 @@
+{
+  status: 'PASS',
+  hitch500and800msContinue: true,
+  long2001msGuard: true,
+  clockStepBudgetPreserved: true,
+  showerUsesModeTimeAndSevenMinutePhases: true,
+  sharedCrewMatricesExact: true,
+  perInstanceAlphaShader: true,
+  radioDoubleCueAndDuck: true
+}

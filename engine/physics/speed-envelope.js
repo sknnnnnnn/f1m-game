@@ -1,3 +1,4 @@
+import {circuit} from '../tracks/track.js';
 import {isAttackConfig} from './attack-drive.js';
 // P2 demand planning only. C0, tyre/actuator physics and controller stay frozen.
 export function trafficCaution(agent){
@@ -16,7 +17,7 @@ export function lateralDemandFactor(agent,caution=trafficCaution(agent),curvatur
  // Tight corners retain the existing turn-in reserve for the unchanged
  // steering actuator; extra lateral usage is for flowing bends, not hairpins.
  const tight=Math.max(0,Math.min(1,(Math.abs(curvature)-.008)/.012));
- const reserve=Math.max(caution,tight);
+ const reserve=Math.max(caution*(circuit.key==='bahrain'?1:.35),tight);
  return next+(before-next)*reserve;
 }
 export function brakingBudget(c,agent,tyre,k,v,curveV=v,caution=brakingTrafficCaution(agent)){

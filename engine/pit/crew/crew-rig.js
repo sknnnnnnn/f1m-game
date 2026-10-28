@@ -43,9 +43,11 @@ function build_badgeGeometry(){const front=new T.PlaneGeometry(.115,.050);front.
 function build_labelTexture(){const c=document.createElement('canvas');c.width=256;c.height=112;const x=c.getContext('2d');x.fillStyle='#17393c';x.fillRect(0,0,256,112);x.fillStyle='#d6e2d5';x.textAlign='center';x.font='bold 62px sans-serif';x.fillText('F1M',128,64);x.font='19px sans-serif';x.fillText('P I T   C R E W',128,94);const texture=new T.CanvasTexture(c);texture.colorSpace=T.SRGBColorSpace;return texture;}
 function build_fabricTexture(){const n=64,data=new Uint8Array(n*n*4);for(let y=0;y<n;y++)for(let x=0;x<n;x++){const v=((x+y)%2?147:109)+Math.round(9*Math.sin(x*1.9+y*.7)),i=(y*n+x)*4;data[i]=data[i+1]=data[i+2]=v;data[i+3]=255;}const t=new T.DataTexture(data,n,n);t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(6,7);t.needsUpdate=true;return t;}
 function build_helmetTrim(){const gs=[];const lip=new T.CatmullRomCurve3(Array.from({length:21},(_,i)=>{const a=(i/20*2-1)*1.18;return V(.134*Math.sin(a),.067,-.134*Math.cos(a));}));gs.push(new T.TubeGeometry(lip,20,.0045,5,false));for(const x of [-.028,0,.028]){const g=new T.BoxGeometry(.018,.006,.004);g.translate(x,-.086,-.115);gs.push(g);}for(const side of [-1,1]){const g=new T.SphereGeometry(1,8,6);g.scale(.006,.028,.026);g.translate(side*.125,-.025,.005);gs.push(g);}return merged(gs);}
+// Bounded cross-garage pose reuse: identical local contacts share solved matrices.
+const sharedCrew39=new Map(),sharedLimit39=4096;
 export class CrewBatch{
  constructor(scene,count=20){
-  this.count=count;this.poseCache37=new Map();this.dirtyParts37=new Set();this.cacheStats37={hits:0,solves:0,uploads:0};this.parts=new Map();this.scene=scene;this.metrics={maxArmError:0,maxLegError:0,actors:count};
+  this.count=count;this.poseCache37=new Map();this.dirtyParts37=new Set();this.cacheStats37={hits:0,solves:0,uploads:0,sharedHits39:0};this.parts=new Map();this.scene=scene;this.metrics={maxArmError:0,maxLegError:0,actors:count};
   const mat=(name,color,roughness=.85)=>new T.MeshStandardMaterial({name,color,roughness,metalness:0});
   this.mats={suit:mat('Crew fabric',0x235b5c),dark:mat('Stretch panels',0x20494d),light:mat('Shoulder fabric',0x3d6968),helmet:mat('Helmet shell',0xd9dfd8,.43),visor:mat('Visor',0x0a1c26,.25),glove:mat('Nomex gloves',0xc5c5b6),sole:mat('Rubber boots',0x17252a)};
   this.mats.visor.side=T.DoubleSide;this.mats.visor.metalness=.45;this.mats.visor.roughness=.17;this.mats.suit.bumpMap=fabricTexture();this.mats.suit.bumpScale=.0013;this.mats.light.bumpMap=this.mats.suit.bumpMap;this.mats.light.bumpScale=.0008;this.mats.glove.roughness=.96;this.mats.boot=mat('Fireproof shoe upper',0x263a3d);this.mats.piping=mat('Muted suit piping',0x71938b);this.mats.badge=mat('Printed team patch',0xffffff);this.mats.badge.map=labelTexture();this.mats.badge.side=T.DoubleSide;
@@ -78,6 +80,9 @@ export class CrewBatch{
    for(const part of ['helmet','visor','helmetStripe','helmetTrim'])this.set(part,i,cached.head,ONE,headQ);
    return;
   }
+  const round39=v=>typeof v==='number'?Math.round(v*1e6)/1e6:v,shareKey39=JSON.stringify(signature.map(round39))+':'+(collision?.sharedKey39??collisionKey);
+  const shared39=sharedCrew39.get(shareKey39);
+  if(shared39){this.debug??=[];this.cacheStats37.sharedHits39++;for(const [key,matrices] of shared39.matrices){const part=this.parts.get(key);part.instanceMatrix.array.set(matrices,i*16);this.dirtyParts37.add(key);}this.debug[i]=shared39.meta.debug;const meta39={...shared39.meta,signature,collisionKey,look},head39=meta39.rotation.clone().multiply(new T.Quaternion().setFromEuler(new T.Euler(meta39.pitch,meta39.yaw+look,0)));for(const part of ['helmet','visor','helmetStripe','helmetTrim'])this.set(part,i,meta39.head,ONE,head39);this.poseCache37.set(i,meta39);return;}
   this.cacheStats37.solves++;
   const rot=new T.Quaternion().setFromAxisAngle(Y,yaw),world=p=>p.clone().applyQuaternion(rot).add(anchor),local=p=>p.clone().sub(anchor).applyQuaternion(rot.clone().invert());
   const c=Math.max(0,Math.min(1.15,crouch)),fit=posture?contactPoseAt(anchor,yaw,posture,hands):fitContactPose(anchor,yaw,c,hands,feet);
@@ -107,6 +112,7 @@ export class CrewBatch{
    const handQ=rot.clone().multiply(new T.Quaternion().setFromUnitVectors(Y,hand.clone().sub(elbow).normalize()));const closed=!!hands;this.set('hand'+s,i,world(hand),closed?ONE:V(),handQ);this.set('handRelaxed'+s,i,world(hand),closed?V():ONE,handQ);this.set('glovePad'+s,i,world(hand),ONE,handQ);const cuffCenter=world(hand).add(V(0,-.047,0).applyQuaternion(handQ));this.set('cuff'+s,i,cuffCenter,ONE,handQ);
   }
   this.poseCache37.set(i,{signature,collisionKey,head:world(head),rotation:rot.clone().multiply(chestQ),pitch,look,yaw:headYaw-look,debug:this.debug[i]});
+  const meta39=this.poseCache37.get(i);sharedCrew39.set(shareKey39,{meta:{...meta39},matrices:[...this.parts].map(([key,part])=>[key,part.instanceMatrix.array.slice(i*16,i*16+16)])});if(sharedCrew39.size>sharedLimit39)sharedCrew39.delete(sharedCrew39.keys().next().value);
  }
  flush(){for(const key of this.dirtyParts37){this.parts.get(key).instanceMatrix.needsUpdate=true;this.cacheStats37.uploads++;}this.dirtyParts37.clear();}
 }

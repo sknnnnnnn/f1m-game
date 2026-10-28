@@ -7,4 +7,4 @@ export class RenderPolicy {
  changed(size){const key=JSON.stringify(size);if(key===this.lastSize)return false;this.lastSize=key;this.allocations++;return true;}
  profile(cpu=false){return {shadows:!cpu&&this.mode!=='LOW',shadowSize:this.mode==='LOW'?512:1024,detailDistance:cpu?32:this.mode==='LOW'?45:this.mode==='HIGH'?160:100};}
 }
-export function cameraDepth(mode){return mode==='overview'?{near:15,far:9000}:mode==='high'?{near:1.5,far:3000}:mode==='fps'||mode==='nose'?{near:.12,far:1100}:mode==='trackside'?{near:.8,far:1800}:{near:.65,far:1800};}
+export function cameraDepth(mode){return mode==='overview'?{near:15,far:9000}:mode==='high'?{near:1.5,far:3000}:mode==='nose'?{near:.035,far:1100}:mode==='fps'?{near:.06,far:1100}:mode==='trackside'?{near:.8,far:1800}:{near:.65,far:1800};}

@@ -1,6 +1,7 @@
 import {roadPose33} from '../tracks/road-height33.js';
-export function mountRacePolish37({notice,mirror,getRenderer}){
- const host=document.getElementById('camera-tray'),group=document.createElement('div');group.className='race-tools';group.innerHTML='<button id="rear-radar37" aria-pressed="true">เตือนรถหลัง เปิด</button><button id="mirror-toggle37" aria-pressed="false">กระจกหลัง FPS ปิด</button><small>วิทยุใช้เสียงเตือน พร้อมข้อความ</small>';host.append(group);
+export function mountRacePolish37({notice,mirror,getRenderer,audio,refreshAudio}){
+ const host=document.getElementById('camera-tray'),group=document.createElement('div');group.className='race-tools';group.innerHTML='<button id="radio-chime-test39">ลองเสียงเตือนวิทยุ</button><button id="rear-radar37" aria-pressed="true">เตือนรถหลัง เปิด</button><button id="mirror-toggle37" aria-pressed="false">กระจกหลัง FPS ปิด</button><small>วิทยุใช้เสียงเตือน พร้อมข้อความ</small>';host.append(group);
+ group.querySelector('#radio-chime-test39').onclick=()=>{void audio.enable().then(ok=>{refreshAudio?.();if(ok)audio.radioCue(2,true);else notice('เสียงยังเปิดไม่ได้ · ลองกดเปิดเสียงอีกครั้ง');});};
  const radarToggle=group.querySelector('#rear-radar37');let rearEnabled=true;
  radarToggle.onclick=()=>{rearEnabled=!rearEnabled;radarToggle.textContent='เตือนรถหลัง '+(rearEnabled?'เปิด':'ปิด');radarToggle.setAttribute('aria-pressed',String(rearEnabled));};
  const mirrorButton=group.querySelector('#mirror-toggle37');mirrorButton.title='ภาพกล้องหลังเพิ่มงานวาดฉาก · ปิดเพื่อเน้น FPS';mirrorButton.onclick=()=>{if(!mirror.set(!mirror.enabled,getRenderer())){notice('กระจกหลังยังไม่พร้อมใช้ในโหมดภาพนี้');return;}mirrorButton.textContent='กระจกหลัง FPS '+(mirror.enabled?'เปิด':'ปิด');mirrorButton.setAttribute('aria-pressed',String(mirror.enabled));};

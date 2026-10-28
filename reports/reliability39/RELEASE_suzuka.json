@@ -1,0 +1,249 @@
+{
+  "track": "suzuka",
+  "closePairSeconds39": 447,
+  "proximitySamples39": 631,
+  "latePasses39": 0,
+  "lapTimes39": [
+    {
+      "id": 1,
+      "laps": [
+        109.38940634989129,
+        110.1036277150304,
+        110.74969854727937
+      ],
+      "best": 109.38940634989129,
+      "last": 110.74969854727937,
+      "finishedAt": 330.24273261220105
+    },
+    {
+      "id": 2,
+      "laps": [
+        112.11964764733621,
+        110.60451106579568,
+        111.59373473817692
+      ],
+      "best": 110.60451106579568,
+      "last": 111.59373473817692,
+      "finishedAt": 334.3178934513088
+    },
+    {
+      "id": 3,
+      "laps": [
+        114.7077726325246,
+        110.70837799984356,
+        111.587009367252
+      ],
+      "best": 110.70837799984356,
+      "last": 111.587009367252,
+      "finishedAt": 337.00315999962015
+    },
+    {
+      "id": 4,
+      "laps": [
+        120.08633772004485,
+        110.94124128817747,
+        111.58486108385083
+      ],
+      "best": 110.94124128817747,
+      "last": 111.58486108385083,
+      "finishedAt": 342.61244009207314
+    },
+    {
+      "id": 5,
+      "laps": [
+        121.64083077506287,
+        112.22240342569755,
+        111.39121330435972
+      ],
+      "best": 111.39121330435972,
+      "last": 111.39121330435972,
+      "finishedAt": 345.25444750512014
+    },
+    {
+      "id": 6,
+      "laps": [
+        117.55309858191384,
+        110.64440318504714,
+        111.49103802270767
+      ],
+      "best": 110.64440318504714,
+      "last": 111.49103802270767,
+      "finishedAt": 339.68853978966865
+    }
+  ],
+  "seed": 19,
+  "laps": 3,
+  "finished": true,
+  "time": 345.26666666666665,
+  "stop": null,
+  "rejections": 0,
+  "off": null,
+  "retired": [],
+  "passes": 4,
+  "midRacePasses": 2,
+  "tailGap": 15.011714892919088,
+  "modes": {
+    "CRUISE": 2451,
+    "DRAFT": 178,
+    "BRAKE": 8,
+    "FOLLOW": 657,
+    "PASS_COMMIT": 275,
+    "HOLD_SPACE": 95,
+    "BOXED_IN": 9,
+    "COUNTER": 15,
+    "SLINGSHOT": 208,
+    "EXIT_SETUP": 90,
+    "ABORT_ATTACK": 14,
+    "BRAKE_DUEL": 62,
+    "COOLDOWN": 84
+  },
+  "results": [
+    {
+      "position": 1,
+      "id": 1,
+      "name": "KAEW",
+      "personality": "DEFENDER",
+      "finished": true,
+      "time": 330.24273261220105,
+      "gap": 0,
+      "completedLaps": 3,
+      "bestLap": 109.38940634989129,
+      "lastLap": 110.74969854727937,
+      "peakKPH": 322.2864630149497,
+      "stops": 0,
+      "compound": "M",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 18274.615833972362
+    },
+    {
+      "position": 2,
+      "id": 2,
+      "name": "ARUN",
+      "personality": "ATTACKER",
+      "finished": true,
+      "time": 334.3178934513088,
+      "gap": 4.0751608391077525,
+      "completedLaps": 3,
+      "bestLap": 110.60451106579568,
+      "lastLap": 111.59373473817692,
+      "peakKPH": 304.4219011169301,
+      "stops": 0,
+      "compound": "M",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 18113.906386068084
+    },
+    {
+      "position": 3,
+      "id": 3,
+      "name": "MALI",
+      "personality": "TACTICIAN",
+      "finished": true,
+      "time": 337.00315999962015,
+      "gap": 6.760427387419099,
+      "completedLaps": 3,
+      "bestLap": 110.70837799984356,
+      "lastLap": 111.587009367252,
+      "peakKPH": 312.3796842287516,
+      "stops": 0,
+      "compound": "M",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 17947.4436606128
+    },
+    {
+      "position": 4,
+      "id": 6,
+      "name": "DAWAN",
+      "personality": "SMOOTH",
+      "finished": true,
+      "time": 339.68853978966865,
+      "gap": 9.4458071774676,
+      "completedLaps": 3,
+      "bestLap": 110.64440318504714,
+      "lastLap": 111.49103802270767,
+      "peakKPH": 318.99326537399963,
+      "stops": 0,
+      "compound": "M",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 17772.89757936108
+    },
+    {
+      "position": 5,
+      "id": 4,
+      "name": "SURI",
+      "personality": "OPPORTUNIST",
+      "finished": true,
+      "time": 342.61244009207314,
+      "gap": 12.36970747987209,
+      "completedLaps": 3,
+      "bestLap": 110.94124128817747,
+      "lastLap": 111.58486108385083,
+      "peakKPH": 306.2981776348638,
+      "stops": 0,
+      "compound": "M",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 17589.208099776464
+    },
+    {
+      "position": 6,
+      "id": 5,
+      "name": "NIRAN",
+      "personality": "GUARDIAN",
+      "finished": true,
+      "time": 345.25444750512014,
+      "gap": 15.011714892919088,
+      "completedLaps": 3,
+      "bestLap": 111.39121330435972,
+      "lastLap": 111.39121330435972,
+      "peakKPH": 320.75431593351345,
+      "stops": 0,
+      "compound": "M",
+      "penalty": 0,
+      "retired": false,
+      "status": "FINISHED",
+      "retireReason": null,
+      "progress": 17421.77410591861
+    }
+  ],
+  "stages": [
+    {
+      "time": 0.016666666666666666,
+      "passes": 0
+    },
+    {
+      "time": 60.016666666666666,
+      "passes": 4
+    },
+    {
+      "time": 120.01666666666667,
+      "passes": 4
+    },
+    {
+      "time": 180.01666666666665,
+      "passes": 4
+    },
+    {
+      "time": 240.01666666666665,
+      "passes": 4
+    },
+    {
+      "time": 300.01666666666665,
+      "passes": 4
+    }
+  ],
+  "scope": "Six integrated cars; renderer crew-clear proof fixture only if a pit service is needed. No pose/speed/position corrections."
+}

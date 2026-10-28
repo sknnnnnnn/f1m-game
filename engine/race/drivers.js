@@ -1,3 +1,4 @@
+import {circuit} from '../tracks/track.js';
 import {RACE_STYLES} from '../ai/personality.js';
 
 const DRIVERS=[
@@ -14,6 +15,6 @@ const DRIVERS=[
 // Faster cars gain no hidden catch-up force and race position never enters it.
 export function closeFieldTraits(driver){
  const p=driver.traits;
- return {...p,corner:(1.008+(p.corner-.99)*.12)/(RACE_STYLES[driver.kind]?.cornerFactor??1),pace:91.5+(p.pace-91.5)*.15,braking:6.5+(p.braking-6.5)*.2,exit:6.6+(p.exit-6.6)*.2};
+ return {...p,headway:circuit.key==='bahrain'?p.headway:.34+(p.headway-.65)*.1,corner:(1.008+(p.corner-.99)*.12)/(RACE_STYLES[driver.kind]?.cornerFactor??1),pace:91.5+(p.pace-91.5)*.15,braking:6.5+(p.braking-6.5)*.2,exit:6.6+(p.exit-6.6)*.2};
 }
 export {DRIVERS};

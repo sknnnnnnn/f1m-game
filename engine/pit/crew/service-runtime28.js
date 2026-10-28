@@ -222,7 +222,7 @@ export function racePitRuntime28(scene,car,props=[]){
    if(externalPose.done){if(flowCombined||mode==='tyres')for(const w of car.wheels){w.newRoot.visible=true;w.newRoot.position.copy(w.center);w.newRoot.rotation.x=-externalPose.travel/.417;}if(mode==='nose'){newNose.visible=true;newNose.position.set(0,0,0);}}
    car.root.position.set(externalPose.x,state.lift,externalPose.z);car.root.rotation.y=externalPose.yaw;
   }
-  const collision37={wheels:wheelObstacles,props:state.propObstacles,cacheKey37:JSON.stringify([wheelObstacles,state.propObstacles])};
+  const collision37={wheels:wheelObstacles,props:state.propObstacles,cacheKey37:JSON.stringify([wheelObstacles,state.propObstacles]),sharedKey39:JSON.stringify([wheelObstacles,state.propObstacles],(key,value)=>typeof value==='number'?Math.round(value*1e6)/1e6:value)};
   posed.forEach((a,i)=>{if(!a){crew.hide(i);return;}crew.pose(i,a.pos,a.yaw,{crouch:a.crouch,hands:a.hands,posture:a.posture,sideLean:a.sideLean,collision:collision37,feet:a.feet,walk:a.gait,stride:Math.min(.08,a.speed*.035),speed:a.speed,look:a.look??.04*Math.sin((externalPose?.idleTime??time)*1.7+i*1.9)});});
   crew.flush();return state;
  }

@@ -1,3 +1,4 @@
+import {validPitProof39} from '../pit/release-proof39.js';
 import {renderHeartbeatLost,RENDER_HEARTBEAT_GRACE_MS} from './render-health.js';
 import {physicsPool32} from './physics-pool32.js';
 import {raceLaps31} from '../race/race-format31.js';
@@ -11,7 +12,7 @@ function publish(){postMessage({type:'FRAME',generation,...session.presentation(
 const pending32=[];self.onmessage=e=>{const m=e.data;if(busy32&&m.type!=='HEARTBEAT'&&m.type!=='PIT_READY29'){pending32.push(m);return;}if(m.type==='RESET'){generation=m.generation;session.reset();if(campaign23){session.stage='RACE';session.race.laps=campaign23.laps===0?raceLaps31(circuit.key):campaign23.laps;session.race.selectTeam(campaign23.team);if(campaign23.plans?.length===2)applyPlans23(session.race,campaign23.plans);}last=heartbeat=performance.now();publish();return;}if(m.generation!==generation)return;
 
  if(m.type==='RESUME_CONTACT32'){if(session.race.resumeContact32()){session.phase='RACE';session.running=true;session.clock.reset();session.notice='ขับต่อจากจุดปลอดภัย · คู่กรณีเบรกเพื่อเว้นระยะ';last=heartbeat=performance.now();}else session.notice='ยังไม่ปลอดภัยที่จะขับต่อ · เก็บเซฟหรือลองเริ่มเรซใหม่';publish();return;}
- if(m.type==='PIT_READY29'){for(const proof of m.proofs??[]){const c=session.race.cars.find(c=>c.id===proof.id);if(c&&['SERVICE','RELEASE'].includes(c.pit.phase)&&proof.serviceAt===c.pit.serviceStarted&&Number.isFinite(proof.at)&&proof.at<=session.race.time&&session.race.time-proof.at<.5)c.pit.releaseProof29={serviceAt:proof.serviceAt,at:proof.at,clear:proof.clear===true};}return;}
+ if(m.type==='PIT_READY29'){for(const proof of m.proofs??[]){const c=session.race.cars.find(c=>c.id===proof.id);if(c&&validPitProof39(c,proof,session.race.time))c.pit.releaseProof29={serviceAt:proof.serviceAt,at:proof.at,clear:proof.clear===true};}return;}
  if(m.type==='BOOT23'){if(session.race.tick===0){session.reset();session.stage='RACE';session.race.laps=[1,2,4,5,6].includes(m.laps)?m.laps:raceLaps31(circuit.key);session.race.selectTeam(m.team);campaign23={team:m.team,laps:m.laps===0?0:session.race.laps};publish();}return;}
  if(m.type==='LIVING26'){const ok=m.action==='SKIP_CEREMONY'?session.skipCeremony26():m.action==='CEREMONIES'?(session.ceremonies26=m.value!==false,true):session.race.command26(m.action,m.id);postMessage({type:'LIVING_RESULT26',generation,ok});publish();return;}
  if(m.type==='COMMAND23'){const result=command23(session.race,m.command);postMessage({type:'CONTROL_RESULT23',generation,...result});publish();}

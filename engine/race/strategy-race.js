@@ -7,7 +7,7 @@ import {connectLane,laneAt,makeReference,trajectoryTarget} from '../physics/refe
 import {PIT,pitRoad,stallStation,pitStopStation,canMerge,pitMergeStop35} from '../pit/pit-lane.js';
 import {makePitPlan,pitApproachSpeed} from '../pit/pit-reference.js';
 import {COMPOUNDS,tyreConfig,tyreInfo,tyreWear} from '../physics/tyres.js';
-import {evaluateStrategy} from './strategy.js';
+import {evaluateStrategy,chooseCompound} from './strategy.js';
 const active=phase=>['PIT_IN','SERVICE','RELEASE','PIT_OUT','YIELD','MERGE'].includes(phase);
 const PHASES={RACING:'กำลังแข่ง',BOOKED:'รอเข้าพิต',APPROACH:'เตรียมเข้าพิต',PIT_IN:'เข้าพิต',SERVICE:'เปลี่ยนยาง',RELEASE:'รอปล่อยรถ',PIT_OUT:'ออกพิต',YIELD:'รอช่องรวมสนาม',MERGE:'รวมกลับสนาม'};
 export class StrategyRace extends WeekendRace {
@@ -19,7 +19,7 @@ export class StrategyRace extends WeekendRace {
  projectCar(car,state){return car.pit?.active?pitRoad(car.id).project(state.X,state.Y):super.projectCar(car,state);}
  draftFor(car,field){return car.pit?.active?0:super.draftFor(car,field);}
  eventPit(car,kind,extra={}){const e={kind,car:car.id,time:this.time,tick:this.tick,...extra};this.pitEvents.push(e);if(this.pitEvents.length>150)this.pitEvents.shift();this.raceMoments.push({...e,by:car.id});if(this.raceMoments.length>100)this.raceMoments.shift();}
- requestPit(id,compound=null){const car=this.cars.find(c=>c.id===id);if(!car||car.finishedAt!==null||car.pit.active||compound&&!COMPOUNDS[compound])return false;car.pit.manual=true;car.pit.requestedCompound=compound;car.pit.phase='BOOKED';car.agent.plan=null;return true;}
+ requestPit(id,compound=null){const car=this.cars.find(c=>c.id===id);if(!car||car.finishedAt!==null||car.pit.active||compound&&!COMPOUNDS[compound])return false;car.pit.weather39=false;car.pit.manual=true;car.pit.requestedCompound=compound;car.pit.phase='BOOKED';car.agent.plan=null;return true;}
  cancelPit(id){const car=this.cars.find(c=>c.id===id);if(!car||car.pit.active)return false;car.pit.manual=false;car.pit.requestedCompound=null;car.pit.phase='RACING';car.pit.cancelUntil=car.progress+circuit.length*.4;car.agent.plan=null;return true;}
  thinkCar(car,field,c){
   const pit=car.pit;
@@ -35,7 +35,7 @@ export class StrategyRace extends WeekendRace {
   }
   return decision;
  }
- evaluatePitStrategy(car){return evaluateStrategy(car,this.cars,this.laps,{service:this.serviceDuration(car)});}
+ evaluatePitStrategy(car){return evaluateStrategy(car,this.cars,this.laps,{service:this.serviceDuration(car),weather:this.weather});}
  serviceAvailable(car){return true;}
  serviceDuration(car){return PIT.serviceSeconds;}
  releaseReady(car){return true;}
@@ -57,7 +57,7 @@ export class StrategyRace extends WeekendRace {
    if(!pit.active&&this.tick%60===car.id-1&&pit.phase==='RACING'&&car.progress>(pit.cancelUntil??0)&&car.distance>circuit.length*.5){const d=this.evaluatePitStrategy(car);pit.decision=d;this.strategyChecks++;if(d.call){pit.phase='BOOKED';pit.nextCompound=d.nextCompound;this.eventPit(car,'PIT_CALL',{reason:d.reason,compound:d.nextCompound,gain:d.estimatedGainSeconds});}}
    if(pit.phase==='APPROACH'&&main.s>PIT.entry+70&&main.s<PIT.entry+330){pit.phase='BOOKED';car.agent.plan=null;this.eventPit(car,'PIT_DEFER',{reason:'ไม่ตัดหน้ารถข้างกัน รอทางเข้ารอบถัดไป'});}
    if(pit.phase==='BOOKED'&&main.s>PIT.entry-360&&main.s<PIT.entry+25){pit.phase='APPROACH';pit.entryBlocked=false;pit.nextCompound=pit.requestedCompound??pit.nextCompound??this.evaluatePitStrategy(car).nextCompound;car.agent.plan=null;}
-   if(pit.phase==='APPROACH'&&main.s>=PIT.entry&&main.s<PIT.entry+70&&Math.abs(main.d)<1.4&&car.state.u<pitApproachSpeed(this.configuration(car))+3){const occupied=this.cars.some(o=>{if(o.id===car.id||o.pit.active)return false;const q=circuit.project(o.state.X,o.state.Y,o.state.psi),gap=circuit.delta(q.s,main.s),closing=Math.max(0,o.state.u-car.state.u);return Math.abs(q.d-main.d)<4&&gap<18&&gap> -Math.max(90,55+closing*4);});if(occupied){if(!pit.entryBlocked){pit.entryBlocked=true;this.eventPit(car,'PIT_ENTRY_WAIT',{reason:'รถอยู่ข้างทางเข้าพิต รักษาเลนหลักก่อน'});this.radioCall?.(car.id,'มีรถอยู่ด้านทางเข้าพิต ต้องรอหรือเข้ารอบถัดไป','pitEntryBlocked',10);}continue;}pit.phase='PIT_IN';pit.active=true;pit.enteredAt=this.time;pit.serviceStarted=null;pit.serviceElapsed=0;pit.releaseProof29=null;pit.cycle={enteredAt:this.time,compoundBefore:car.tyres.compound,requested:pit.nextCompound,positionBefore:this.ranking().findIndex(c=>c.id===car.id)+1};car.projection=pitRoad(car.id).project(car.state.X,car.state.Y);car.agent.plan=null;this.eventPit(car,'PIT_ENTRY');}
+   if(pit.phase==='APPROACH'&&main.s>=PIT.entry&&main.s<PIT.entry+70&&Math.abs(main.d)<1.4&&car.state.u<pitApproachSpeed(this.configuration(car))+3){const occupied=this.cars.some(o=>{if(o.id===car.id||o.pit.active)return false;const q=circuit.project(o.state.X,o.state.Y,o.state.psi),gap=circuit.delta(q.s,main.s),closing=Math.max(0,o.state.u-car.state.u);return Math.abs(q.d-main.d)<4&&gap<18&&gap> -Math.max(90,55+closing*4);});if(occupied){if(!pit.entryBlocked){pit.entryBlocked=true;this.eventPit(car,'PIT_ENTRY_WAIT',{reason:'รถอยู่ข้างทางเข้าพิต รักษาเลนหลักก่อน'});this.radioCall?.(car.id,'มีรถอยู่ด้านทางเข้าพิต ต้องรอหรือเข้ารอบถัดไป','pitEntryBlocked',10);}continue;}pit.phase='PIT_IN';pit.climateAuto39=pit.weather39||!pit.manual||pit.requestedCompound===null;pit.weather39=false;pit.active=true;pit.enteredAt=this.time;pit.serviceStarted=null;pit.serviceElapsed=0;pit.releaseProof29=null;pit.cycle={enteredAt:this.time,compoundBefore:car.tyres.compound,requested:pit.nextCompound,positionBefore:this.ranking().findIndex(c=>c.id===car.id)+1};car.projection=pitRoad(car.id).project(car.state.X,car.state.Y);car.agent.plan=null;this.eventPit(car,'PIT_ENTRY');}
   }
   return super.prepareAdvance();
  }
@@ -67,7 +67,7 @@ export class StrategyRace extends WeekendRace {
    if(pit.phase==='PIT_IN'&&Math.abs(S-pitStopStation(car.id))<.75&&Math.abs(pitAt.d)<=.6&&speed<.15&&this.serviceAvailable(car)){pit.phase='SERVICE';pit.serviceElapsed=0;pit.serviceStarted=this.time;pit.cycle.stoppedAt=this.time;pit.cycle.stopPose={X:car.state.X,Y:car.state.Y};car.agent.plan=null;this.eventPit(car,'PIT_STOP',{speed,stationError:S-pitStopStation(car.id)});}
    if(pit.phase==='SERVICE'){
     pit.serviceElapsed=this.time-pit.serviceStarted;
-    if(pit.serviceElapsed>=this.serviceDuration(car)){const before=tyreWear(car.state),compound=pit.nextCompound??'M';replaceTyres(car.state,'pit-'+car.id+'-'+(pit.stops+1));car.tyres={compound,fittedDistance:car.distance,sets:car.tyres.sets+1};pit.stops++;pit.cycle.serviceSeconds=pit.serviceElapsed;pit.cycle.wearBefore=before;pit.cycle.compoundAfter=compound;pit.phase='RELEASE';car.agent.plan=null;this.eventPit(car,'TYRE_CHANGE',{compound,wearBefore:before,serviceSeconds:pit.serviceElapsed});}
+    if(pit.serviceElapsed>=this.serviceDuration(car)){const before=tyreWear(car.state),compound=pit.climateAuto39?chooseCompound({...car,pit:{...pit,requestedCompound:null}},Math.max(0,this.laps*circuit.length-car.progress),this.weather):(pit.nextCompound??'M');replaceTyres(car.state,'pit-'+car.id+'-'+(pit.stops+1));car.tyres={compound,fittedDistance:car.distance,sets:car.tyres.sets+1};pit.stops++;pit.cycle.serviceSeconds=pit.serviceElapsed;pit.cycle.wearBefore=before;pit.cycle.compoundAfter=compound;pit.phase='RELEASE';car.agent.plan=null;this.eventPit(car,'TYRE_CHANGE',{compound,wearBefore:before,serviceSeconds:pit.serviceElapsed});}
    }
    if(pit.phase==='RELEASE'){
     const blocked=this.cars.some(o=>o.id!==car.id&&o.pit.active&&o.state.u>2&&(()=>{const q=pitRoad(car.id).project(o.state.X,o.state.Y);return q.s-S> -80&&q.s-S<28&&Math.abs(q.d)<8;})());

@@ -1,0 +1,10 @@
+{
+  status: 'PASS',
+  activeTransformComparisons: 1440,
+  maxError: 0.00001280149490412441,
+  spraySubmissions: { before: 90, after: 1 },
+  puddlePool: 72,
+  puddleSubmissions: 1,
+  sameSprayGeometryAndOpacity: true,
+  scope: 'Actual scene graph with six wet cars and unchanged particle count, geometry, transforms, colours and alpha. Shader plumbing tested; GPU/Android timings not measured.'
+}

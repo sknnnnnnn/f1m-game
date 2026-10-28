@@ -1,0 +1,8 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {LivingSession26} from '../engine/race/living-session26.js';import {circuit} from '../engine/tracks/track.js';
+const r=new LivingSession26().race;r.seed=19;r.reset();r.laps=3;r.prepare();let requested=false,maxActive=0;const exits={},was=new Map();
+for(let tick=0;tick<65000&&!r.finished&&!r.stop;tick++){
+ if(!requested&&r.cars.every(c=>c.progress>circuit.length*.5)){for(const c of r.cars)assert(r.requestPit(c.id,'H'));requested=true;}
+ for(const c of r.cars){was.set(c.id,c.pit.active);if(['SERVICE','RELEASE'].includes(c.pit.phase)&&r.time-c.pit.serviceStarted>=r.serviceDuration(c)+.2)c.pit.releaseProof29={serviceAt:c.pit.serviceStarted,at:r.time,clear:true};}
+ if(!r.advance())break;maxActive=Math.max(maxActive,r.cars.filter(c=>c.pit.active).length);for(const c of r.cars)if(was.get(c.id)&&!c.pit.active&&c.pit.stops)exits[c.id]={speed:Math.hypot(c.state.u,c.state.v)*3.6,time:r.time};if(tick%7200===0)console.error(circuit.key,Math.round(r.time),maxActive,Object.keys(exits).length);
+}
+const out={track:circuit.key,finished:r.finished,stop:r.stop,rejections:r.controllerRejections,maxActive,exits,stops:r.cars.map(c=>({id:c.id,stops:c.pit.stops})),results:r.results(),scope:'Six physical cars request same-lap hard-tyre pit stops. Renderer release proof fixture; no pose/speed/rank corrections. Rendering performance tested separately.'};fs.mkdirSync('reports/reliability39',{recursive:true});fs.writeFileSync('reports/reliability39/MULTIPIT_'+circuit.key+'.json',JSON.stringify(out,null,2));console.log(out);assert(r.finished&&!r.stop&&!r.controllerRejections);assert(maxActive>=4);assert(Object.keys(exits).length===6);assert(r.cars.every(c=>c.pit.stops>=1));

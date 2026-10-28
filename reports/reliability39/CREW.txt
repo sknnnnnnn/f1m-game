@@ -1,0 +1,13 @@
+{
+  status: 'PASS',
+  matrixComparisons: 106560,
+  tolerance: 0.000001,
+  cacheInvalidation: true,
+  before: { ms: 60.474924999999985, cache: null },
+  after: {
+    ms: 14.181501999999966,
+    cache: { hits: 2618, solves: 1, uploads: 513, sharedHits39: 21 }
+  },
+  speedup: 4.2643526052459135,
+  scope: 'Same authored crew geometry and head animation, Node CPU microbenchmark; not Android FPS'
+}

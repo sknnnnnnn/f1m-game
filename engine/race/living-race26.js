@@ -1,3 +1,4 @@
+import {validPitProof39} from '../pit/release-proof39.js';
 import {clearance} from '../physics/collision.js';
 import {surface32} from '../runtime/physics-surface32.js';
 import {PIT_CYCLE27,pitClock27} from '../pit/pit-cycle27.js';
@@ -36,7 +37,7 @@ export class LivingRace26 extends Weekend2Race {
  serviceProfile28(c){return globalThis.F1M_PIT_PROFILE28?.[c.id]?.[c.pit.flow27?.nose?'combined':'tyres'];}
  serviceAvailable(c){return super.serviceAvailable(c)&&(!c.pit.flow27||this.time-c.pit.flow27.calledAt>=(this.serviceProfile28(c)?.deploy??PIT_CYCLE27.deploy));}
  serviceDuration(c){const p=this.serviceProfile28(c);return p?Math.max(.1,p.release-p.start+.1):c.pit.flow27?.nose?PIT_CYCLE27.nose:PIT_CYCLE27.tyres;}
- releaseReady(c){const proof=c.pit.releaseProof29;return !!proof&&proof.serviceAt===c.pit.serviceStarted&&proof.clear===true&&this.time-proof.at>=0&&this.time-proof.at<.5&&this.time-(c.pit.serviceStarted??this.time)>=this.serviceDuration(c)&&!(c.repairUntil>this.time);}
+ releaseReady(c){const proof=c.pit.releaseProof29;return validPitProof39(c,proof,this.time)&&proof.clear===true&&this.time-(c.pit.serviceStarted??this.time)>=this.serviceDuration(c)&&!(c.repairUntil>this.time);}
  pitInfo(c){return {...super.pitInfo(c),serviceStarted:c.pit.serviceStarted??null,blocked28:c.pit.phase==='RELEASE'&&!this.releaseReady(c),source28:'PIT FLOW06.3',flow27:c.pit.flow27?{...c.pit.flow27}:null};}
  prepareAdvance(){for(const c of this.cars){if(['APPROACH','PIT_IN'].includes(c.pit.phase)&&!c.pit.flow27)c.pit.flow27={calledAt:this.time,cycleId:String(this.tick)+'-'+c.id,nose:c.health.wing>.12&&c.engineerOrder?.repair!=='SKIP',serviceAt:null};if(c.pit.phase==='SERVICE'){c.pit.flow27??={calledAt:this.time-18,nose:false};c.pit.flow27.serviceAt=c.pit.serviceStarted;}if(c.pit.phase==='RACING'&&c.pit.flow27)c.pit.flow27=null;}this.ensure26();const p=super.prepareAdvance();return p?.filter(q=>!q.car.live26?.removed)??p;}
  commitAdvance(proposed){const ok=super.commitAdvance(proposed);if(!ok)return false;const w=this.ensure26(),dt=this.config.dt;w.updatedAt=this.time;
