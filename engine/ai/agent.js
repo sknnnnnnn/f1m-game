@@ -1,3 +1,4 @@
+import {towAttack46,applyAttackEnergy46} from './tow-attack46.js';
 import {draftFactor} from './draft.js';
 import {battleWindow43} from './battle-window43.js';
 import {straightTarget42} from '../race/action42.js';
@@ -57,13 +58,15 @@ class Agent {
   let runway40=600;for(let ds=0;ds<=600;ds+=20)if(Math.abs(circuit.at(now.s+ds).k)>.003){runway40=ds;break;}
   const front40=p.cars.filter(o=>!o.pit&&o.gap>8&&o.gap<140).sort((a,b)=>a.gap-b.gap)[0];
   const attack40=runway40>Math.max(state.time>30?150:180,p.speed*(state.time>30?2.25:3.5))&&p.speed>30&&front40&&(this.drs40&&state.time>30&&front40.gap<110||front40.relativeSpeed<1.5&&front40.gap<80||front40.gap<22);
+  const cornerBattle46=state.time>25&&p.speed>18&&p.cars.some(o=>!o.pit&&o.gap>15&&o.gap<75)&&bend.distance>60&&bend.distance<300||!!this.battleCommit||!!this.duel?.exit;
   const hadPass40=!!this.duel?.pass;
-  if(attack40||hadPass40||alongside40){
+  if(attack40||hadPass40||alongside40||cornerBattle46){
   ({choice,pace,mode,reason}=racecraft(this,state,p,safeLane,{choice,pace,mode,reason,turn,corner,ideal}));
   ({choice,pace,mode,reason}=duelTactics(this,state,p,safeLane,{choice,pace,mode,reason,turn,corner,ideal}));
   ({choice,pace,mode,reason}=planBattle(this,state,p,safeLane,{choice,pace,mode,reason}));
   }
-  if(!alongside40&&!entryCommit&&!this.pitApproach&&!this.recovery&&!attack40&&!hadPass40){
+  ({choice,pace,mode,reason}=towAttack46(this,state,p,safeLane,{choice,pace,mode,reason},runway40));
+  if(!alongside40&&!entryCommit&&!this.pitApproach&&!this.recovery&&!attack40&&!hadPass40&&!cornerBattle46&&this.towAttack46?.phase!=='COMMIT'&&this.towAttack46?.phase!=='BANK'){
    this.battleCommit=null;this.crossExit=null;if(this.racecraft)this.racecraft.action='PACE';if(this.duel){this.duel.exit=null;this.duel.pass=null;}
    if(!['BRAKE','RECOVER','BOXED_IN'].includes(mode)){choice=ideal;mode=ahead?'FOLLOW':'CRUISE';reason=ahead?`FOLLOW EXIT / BUILD TOW CAR ${ahead.id}`:'CLEAR RACING LINE';}
   }
@@ -113,6 +116,7 @@ class Agent {
 
   for(const o of p.cars){const geometricThreat=corridorThreat(this,state,o),profile40=profileLimits40.get(o.id);if(profile40&&!geometricThreat){this.trafficLimit=Math.min(this.trafficLimit,profile40.limit);continue;}if(o.gap>0&&o.gap<120&&(geometricThreat||sharesLane40(o))){const caution=Math.max(clamp(Math.abs(now.k)/.004,0,1),clamp(-o.acceleration/4,0,1)),reserve=trafficSpace(this,state,o).reserve,available=Math.max(0,o.gap-reserve);const predictedSpeed=Math.max(0,launchLeadSpeed(o)+Math.min(0,o.acceleration??0)*(.25+.4*caution)),limit=o.gap<reserve?Math.max(0,predictedSpeed+(o.gap-reserve)*.7):Math.sqrt(predictedSpeed*predictedSpeed+2*followBrake40*available);if(geometricThreat)this.corridorDecel=-Math.min(18,.8*(this.config?.mu??1.55)*9.81);this.trafficLimit=Math.min(this.trafficLimit,limit,geometricThreat?Math.max(0,o.speed+(o.gap-reserve)*.75):Infinity);}}
   this.maneuverLimit=mode==='RECOVER'?9:mode==='EXIT_SETUP'?Math.min(pace,p.speed+2):['BRAKE','BOXED_IN','ABORT_ATTACK'].includes(mode)?Math.max(0,pace):Infinity;
+  applyAttackEnergy46(this,state);this.tyreManagement.hybridReserve=this.resources.reserve;
   const old=this.targetSpeed;const speedCeiling40=straightTarget42(this),freeRoadPace=speedCeiling40;this.targetSpeed+=clamp(freeRoadPace-this.targetSpeed,-personality.braking*.1,personality.exit*.1);this.targetSpeed=clamp(this.targetSpeed,0,speedCeiling40);this.acceleration+=clamp(clamp((this.targetSpeed-old)*10,-personality.braking,personality.exit)-this.acceleration,-1.0,1.0);this.state=mode;this.reason=reason;
   const entry={tick:state.tick,time:state.time,state:mode,reason,lane:this.targetLane,targetSpeed:this.targetSpeed,front:ahead?.id??null,gap:ahead?.gap??null,strategicPlan:this.battle?.selected??null,energy:this.resources.mode,perceivedCars:p.cars.map(o=>({id:o.id,gap:o.gap,lateral:o.lateral,relativeSpeed:o.relativeSpeed}))};this.history.push(entry);if(this.history.length>180)this.history.shift();return entry;
  }

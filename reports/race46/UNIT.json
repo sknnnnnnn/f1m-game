@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "towBankThenPullout": true,
+  "finiteERSOverrides": true,
+  "noPoseWrites": true,
+  "boundedPassEvidence": true,
+  "captionFromMeasuredEvidence": true,
+  "earlierBraking": true
+}
