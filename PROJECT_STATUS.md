@@ -1,3 +1,12 @@
+# TOW RACING 44 — 2026-10-28
+
+- Build b5e0562028d38c4b. Source work/tow44, main untouched.
+- Strong physical tow (dry max82%,400m), no regrouping; corner/straight tradeoffs and stronger measured-lock consequences.
+- 63 engine jobs, production build and PWA/service-worker checks PASS.
+- Dry Suzuka/Shanghai/Bahrain: six cars,3laps,7/6/11 GREEN passes; post-lap1=1/1/6. All finished,zero stop/rejection/retirement/sampled offtrack.
+- Rain-developing Bahrain1lap PASS after conservative wet wake; initial failed run retained. Saturated-wet full race and Android performance/audio/touch unverified.
+- See reports/TOW44_TH.md and reports/tow44/RELEASE_SUMMARY.json. No universal overtake-count guarantee; no claims of more late passes than regrouping R43.
+
 Current: Battle Racing 43, build `4b257882ade22e5d`. [Changes and comparison](reports/BATTLE43_TH.md). Dry six-car 3-lap late overtakes 5 / 4 / 7 (Suzuka / Shanghai / Bahrain), versus 2 / 1 / 0 in R42. All finish without guard stop, rejection, retirement or sampled off-track. Deliberate arcade conserving/regrouping strategy; player ATTACK/DEPLOY overrides. Android acceptance pending.
 
 Current: Action Racing 42, build `b2fd652bdc8e5aba`. [Changes and measured limits](reports/ACTION42_TH.md). Doubled DRS/draft drag relief and ERS power; all three six-car three-lap integrations finish with no guard stop/rejection/sampled off-track. Late overtakes Suzuka 2, Shanghai 1, Bahrain 0; frequent late overtaking remains incomplete. Android validation pending.

@@ -1,0 +1,68 @@
+{
+  "edition": "TOW44",
+  "build": "b5e0562028d38c4b",
+  "engineChecks": {
+    "jobs": 63,
+    "exit": 0
+  },
+  "pwa": "PASS",
+  "races": [
+    {
+      "file": "final-suzuka7.json",
+      "track": "suzuka",
+      "seed": 7,
+      "laps": 3,
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "retired": [],
+      "greenPasses": 7,
+      "greenAfterLapOne": 1,
+      "sideBySideSecondsAfterLapOne": 7
+    },
+    {
+      "file": "final-shanghai7.json",
+      "track": "shanghai",
+      "seed": 7,
+      "laps": 3,
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "retired": [],
+      "greenPasses": 6,
+      "greenAfterLapOne": 1,
+      "sideBySideSecondsAfterLapOne": 5.5
+    },
+    {
+      "file": "final-bahrain19.json",
+      "track": "bahrain",
+      "seed": 19,
+      "laps": 3,
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "retired": [],
+      "greenPasses": 11,
+      "greenAfterLapOne": 6,
+      "sideBySideSecondsAfterLapOne": 30
+    },
+    {
+      "file": "wet-safe-bahrain19.json",
+      "track": "bahrain",
+      "seed": 19,
+      "laps": 1,
+      "finished": true,
+      "stop": null,
+      "rejections": 0,
+      "off": null,
+      "retired": [],
+      "greenPasses": 6,
+      "greenAfterLapOne": 0,
+      "sideBySideSecondsAfterLapOne": 0
+    }
+  ],
+  "scope": "Node physical simulation. Three dry races (one seed per track); one Bahrain rain-developing lap, not saturated-wet full race. Dry runs precede wet-only wake fallback; dry formula unchanged. Initial wet run CONTACT_GUARD retained in wet-bahrain19.json; final wet-safe run passes. No regrouping. Overtakes vary by track; this is not more late passing than R43 scripted regrouping. Android FPS/audio/touch not validated."
+}
