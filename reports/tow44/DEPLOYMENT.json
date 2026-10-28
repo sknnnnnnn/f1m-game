@@ -1,0 +1,29 @@
+{
+  "edition": "TOW44",
+  "build": "b5e0562028d38c4b",
+  "url": "https://sknnnnnnn.github.io/f1m-game/",
+  "pagesCommit": "c309d949ededac56bd2601bf04fe3925e86dc167",
+  "pagesTree": "69fc4cb29b2c2d095ff633671f9722b360014488",
+  "workflow": {
+    "id": 40694642820,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "browser": {
+    "badge": "TOW 44",
+    "state": "STARTING GRID",
+    "startButton": true,
+    "settingsBuild": "b5e0562028d38c4b",
+    "offlineReady": true,
+    "limitation": "Cloud CPU fallback ~1FPS; no mobile FPS/audio/full browser-race claim"
+  },
+  "checks": {
+    "engineJobs": 63,
+    "exit": 0,
+    "dryRaces": 3,
+    "rainDevelopingOneLap": 1,
+    "build": true,
+    "pwa": true
+  },
+  "mainUntouched": true
+}
