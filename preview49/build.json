@@ -1,9 +1,9 @@
 {
   "edition": "F1M GARAGE 49",
-  "version": "9aeb60110a64ef4c",
-  "sourceRevision": "9aeb60110a64ef4c36d372a3a288d906c3908250e63b49224e3742bc9314331e",
+  "version": "d0864a782aa826ea",
+  "sourceRevision": "d0864a782aa826ea9c21537214107dbad1a0643fd99f1d221c65560c7a014dae",
   "inputs": {
-    "build.mjs": "7a0ca30e47ccec40cac3d49d79da1cab2c4b8f75c80b0087a04fda69a39a4d33",
+    "build.mjs": "e92f747dfcd2c873a3f77832afa4cc5e38232ef0a2926b2126ce3635bcaaccef",
     "engine/ai/agent.js": "50973b15756d5b20afb4cc1db2d7160dee86c7cf1f9ec4a212a151b31f4f09cf",
     "engine/ai/battle-camera.js": "78e583678411f244786fbd09fed4e9a75ddba56a8a3592545b6dbfda795346b0",
     "engine/ai/battle-planner.js": "8a754e8b7836cc99653c96243722ab96d55c57ce519f73df809539643ada979e",
@@ -213,7 +213,8 @@
     "public/manifest.webmanifest": "d00afe884bc8a47499dbe133a441006e109c1e4371b045ad20202159f419b3a1",
     "public/mobile.css": "f0810315631c2bc633349f20a808564644f5e1fd3a61a4038ece279713ca68a3",
     "public/mobile.js": "eb3c565866d16b2f3cc2c7db2fab4a005a07ddba391b02a41acf21d104a73819",
-    "public/sw.js": "77c0d09610f786002465ddd8db3445289caf840d9d36390f419ac7ea9d6fa051",
+    "public/mobile49.html": "d010c4bdb02c2b384800ece2de8c9544a2f714a80c035d7a2b925868b6537f98",
+    "public/sw.js": "c5756ac6a0c602b91dc5cbf3cec0380f0fa34666f5d265192d7ae07e8f8f54a7",
     "racing/runtime/config.js": "ca6edd83ccadd1022d26505f3c4c0e22dae6dbc271e6531c4373196a472c709b",
     "racing/runtime/frozen/config.js": "f6ef0ce66ab4c27e48955013207f39826a427b3e076fd8e83bf2af943b56b560",
     "racing/runtime/frozen/contracts.js": "e7970a354d1fb613940f4944031b423258874417a78cbfcd9087620d1011d2e7",
