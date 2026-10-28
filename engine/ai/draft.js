@@ -9,9 +9,9 @@ export function draftFactor(car,field,wet=false){
  for(const other of field){
   if(other.id===car.id||other.id===7||other.pit?.active)continue;
   const gap=circuit.delta(other.projection.s,own.s),lateral=Math.abs(other.projection.d-own.d);
-  if(gap>7&&gap<400&&lateral<6){
-   if(wet){strength=Math.max(strength,.56/.82*clamp(1-(gap-12)/268,0,1)*clamp(1-lateral/4.8,0,1));continue;}
-   const distance=gap<=100?1:clamp((400-gap)/300,0,1);
+  if(gap>7&&gap<450&&lateral<6){
+   if(wet){strength=Math.max(strength,.56/.90*clamp(1-(gap-12)/268,0,1)*clamp(1-lateral/4.8,0,1));continue;}
+   const distance=gap<=130?1:clamp((450-gap)/320,0,1);
    const width=lateral<=2.6?1:clamp((6-lateral)/3.4,0,1);
    strength=Math.max(strength,distance*width);
   }

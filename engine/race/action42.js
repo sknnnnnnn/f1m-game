@@ -1,6 +1,6 @@
 // Deliberately amplified game tuning requested for frequent battles.
 // Relief is measured from the closed-wing / clear-air drag coefficient.
-export const ACTION42=Object.freeze({drsRelief:.56,draftRelief:.82,deployW:600000,motorTorque:900,maxSpeed:103});
+export const ACTION42=Object.freeze({drsRelief:.56,draftRelief:.90,deployW:600000,motorTorque:900,maxSpeed:103});
 export function straightTarget42(agent){
  const base=Math.min(97,agent.personality.pace??92)-rhythmPace42(agent);
  return Math.min(ACTION42.maxSpeed,base+(agent.drs40?8:0)+(agent.drafting?16*Math.min(1,agent.tow44??1):0));

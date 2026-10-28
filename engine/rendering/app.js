@@ -1,3 +1,4 @@
+import {mountSlipstream45} from './slipstream45.js';
 import {ACTION42} from '../race/action42.js';
 import {mountExperience38} from '../ui/experience38.js';
 import {createRearMirror37} from './rear-mirror37.js';
@@ -44,6 +45,7 @@ import {ChassisDynamics,attachRollingWheels} from './dynamics.js';
 import {BroadcastDirector,resolveCameraStory} from './broadcast.js';
 import {ReplayTape} from './replay.js';
 import {RaceAudio} from '../audio/audio.js';
+const towFX45=mountSlipstream45();
 const broadcast=new BroadcastDirector(),tape=new ReplayTape(),sound=new RaceAudio(highSpeedConfig(C0));let resultDigestKey34=null,experience38=null;let mapView32=null,pitUI31=null,worldUI26=null,watchUI24=null,mapHits24=[],championshipUI=null,raceUI=null,autoFocus=false,viewingCars=null,viewTime=0,resultsDismissed=true,resultTick=-1,previousLight=0,replayReturn=null;
 const T=F1M_ENGINE.THREE,$=id=>document.getElementById(id),errors=[],metrics={frames:0,gaps:[],drawMS:[],renderedTick:0,maxVisualSteer:0,pauses:[],views:[],resets:0};
 const recovery=new RenderRecovery();const memorySentinel=new MemorySentinel();const renderPolicy=new RenderPolicy();let qualityMode='AUTO',lastRain=-1,contextLost=false,lastSnapshot=0;const holdCanvas=document.createElement('canvas');holdCanvas.id='frame-hold';holdCanvas.hidden=true;
@@ -119,7 +121,7 @@ function frame(now){const gap=last?now-last:0;last=now;metrics.frames++;if(now-l
  if(renderer.cpu?(!running||now-lastDraw>66):frameBudget37.due(now)){const paintGap=lastDraw?now-lastDraw:1000/60;const painted=metrics.paintedFrames??0;renderSafely(now,paintGap);lastDraw=now;if((metrics.paintedFrames??0)>painted)frameBudget37.painted(now);}
 
  memorySentinel.sample((payload?.time??0),{heapBytes:performance.memory?.usedJSHeapSize??null,geometries:renderer?.cpu?null:renderer?.info?.memory?.geometries??null,textures:renderer?.cpu?null:renderer?.info?.memory?.textures??null,replayFrames:tape.frames.length,replayCapacity:tape.capacity,poseFrames:buffer.frames.length,textureCache:renderer?.textureCache?.size??null});
- drawRain(now);
+ drawRain(now);towFX45.update(viewingCars?.find(c=>c.id===selected),{now,running:tape.active?tape.playing:running,phase:tape.active?'RACE':payload?.phase,flag:tape.active?'GREEN':payload?.controlZone?.flag??'GREEN',camera:director.mode});
  polishUI37?.update({now,budget:frameBudget37,cars:viewingCars??payload?.cars,selected,camera:director.effective??director.mode,replay:tape.active});if(now-lastUI>150){stage('ui',()=>updateUI());stage('minimap',()=>drawMap());lastUI=now;}if(metrics.gaps.length>240)metrics.gaps.shift();metrics.gaps.push(gap);requestAnimationFrame(frame);
 }
 const brakingReferences=brakingZones(circuit);

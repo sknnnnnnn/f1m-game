@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "mapLeftTurnCross": -353.44000000000017,
+  "speedsAfter2SecondsMS": {
+    "clear": 74.76250039089406,
+    "r44": 78.27174628188484,
+    "r45": 78.63319651670234
+  },
+  "cue": {
+    "active": true,
+    "strength": 0.8,
+    "relief": 0.7200000000000001,
+    "speed": 70,
+    "label": "แรงดูดเต็ม · เตรียมแซง"
+  },
+  "scope": "World/map handedness and cue fixtures; frozen integrator acceleration with identical throttle, no DRS/ERS. Audio perception and Android FPS remain device checks."
+}
