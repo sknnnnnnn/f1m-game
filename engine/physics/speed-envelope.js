@@ -1,16 +1,18 @@
+import {pathLaneAt} from '../tracks/racing-path.js';
 import {circuit} from '../tracks/track.js';
 import {isAttackConfig} from './attack-drive.js';
 // P2 demand planning only. C0, tyre/actuator physics and controller stay frozen.
 export function trafficCaution(agent){
  const p=agent.perception;if(!p)return 0;
- return Math.max(0,...p.cars.filter(o=>!o.pit&&Math.abs(o.lateral-p.own.d)<6).map(o=>Math.max(0,Math.min(1,(60-Math.abs(o.gap))/30))));
+ return Math.max(0,...p.cars.filter(o=>!o.pit&&Math.abs(o.lateral-p.own.d)<6&&(o.gap>=0||Math.abs(o.gap)<10&&Math.abs(o.lateral-p.own.d)>1.8)).map(o=>Math.max(0,Math.min(1,(18-Math.abs(o.gap))/10))));
 }
 export function brakingTrafficCaution(agent){
  const p=agent.perception;if(!p)return 0;
- const width=agent.config?.width??1.9;
+ const width=agent.config?.width??1.9,curve=agent.curve;
+ const shares40=o=>curve?.racing&&o.intent?.curve?.racing?[0,.4,.8,1.2].some(t=>Math.abs(pathLaneAt(curve,curve.t0+t).d-pathLaneAt(o.intent.curve,curve.t0+t).d)<width+.4):Math.min(Math.abs(o.lateral-p.own.d),Math.abs((o.intent?.targetLane??o.lateral)-(agent.targetLane??p.own.d)))<width+.4;
  // Nearby cars still constrain lateral turn-in, but a car alongside on a
  // separate line may relax part of the early longitudinal braking reserve.
- return Math.max(0,...p.cars.filter(o=>!o.pit&&o.gap>0&&Math.min(Math.abs(o.lateral-p.own.d),Math.abs((o.intent?.targetLane??o.lateral)-(agent.targetLane??p.own.d)))<width+.4).map(o=>Math.max(0,Math.min(1,(45-o.gap)/30))));
+ return Math.max(0,...p.cars.filter(o=>!o.pit&&o.gap>0&&shares40(o)).map(o=>Math.max(0,Math.min(1,(45-o.gap)/30))));
 }
 export function lateralDemandFactor(agent,caution=trafficCaution(agent),curvature=0){
  const before=.86*(agent.personality.corner??1)*(agent.style?.cornerFactor??1),next=Math.min(.98,.97*(agent.personality.corner??1)*(agent.style?.cornerFactor??1));
@@ -28,12 +30,17 @@ export function brakingBudget(c,agent,tyre,k,v,curveV=v,caution=brakingTrafficCa
  const style=Math.max(.9,Math.min(1,(agent.personality.braking??6.3)/6.5));
  // Respect both fixed brake torque and the simultaneous tyre-force budget.
  // The old extra curvature multiplier penalised the friction circle twice.
- const clear=agent.config?.driverBraking==='LATE_ENTRY'?1-trafficCaution(agent):0,torqueUse=.84+.06*clear,gripUse=.84+.04*clear;
+ const racing40=isAttackConfig(c)&&agent.config?.driverBraking==='LATE_ENTRY'&&agent.id!==7&&!agent.recovery&&!['YELLOW','VSC'].includes(agent.state);
+ const clear=racing40?1:agent.config?.driverBraking==='LATE_ENTRY'?1-trafficCaution(agent):0,torqueUse=.84+.06*clear,gripUse=.84+.04*clear;
  const next=Math.max(1,Math.min(torqueUse*mechanical*style,gripUse*grip*reserve));
+ // Race cars share this physical reserve; following control owns spacing.
+ if(racing40)return next*.96;
  const oldLateral=Math.abs(k)*curveV*curveV/grip,oldReserve=Math.sqrt(Math.max(.12,1-Math.min(.96,oldLateral)**2));
  const before=Math.min((agent.personality.braking??6)*1.85,.68*grip*oldReserve)*Math.max(.45,Math.min(1,1-30*Math.abs(k)));
- // Keep 90% of the close-combat reserve: separate lanes can still converge.
- return next+(before-next)*Math.max(caution,.9*trafficCaution(agent));
+ // Longitudinal reserve follows an occupied or converging corridor.
+ // A neighbour on a separate lane still constrains lateral grip and is
+ // checked by corridorThreat, but must not halve every braking budget.
+ return next+(before-next)*caution;
 }
 
 // Feed the unchanged controller an acceleration reference only when the car

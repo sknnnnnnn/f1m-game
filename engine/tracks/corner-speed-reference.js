@@ -27,7 +27,7 @@ export function cornerSpeedReference(track,station){
 }
 export function referenceGripDemand(track,station,k,base,c,tyre,caution=0){
  const ref=cornerSpeedReference(track,station);if(!ref)return base;
- const v=ref.speed,aero=.5*c.rho*c.ClA/c.m;
+ const v=ref.speed*Math.sqrt(c.compoundGrip40??1),aero=.5*c.rho*c.ClA/c.m;
  const needed=Math.abs(k)*v*v/(c.g+aero*v*v);
  // Request enough lateral usage for the reference if the actual car can
  // support it. This stays below the validator's .8*mu budget, never adds

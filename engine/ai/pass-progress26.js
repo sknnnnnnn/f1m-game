@@ -5,6 +5,8 @@ export function passProgress26(pass,rival,time,length=5.5){
  if(rival.gap<-(length+4))return 'CLEAR';
  if(rival.gap>85||time-pass.started>18)return 'EXPIRED';
  pass.bestGap??=rival.gap;pass.advancedAt??=pass.started;
+ pass.trendGap40??=rival.gap;pass.trendAt40??=time;
+ if(time-pass.trendAt40>=1){if(rival.gap<pass.trendGap40-.4)pass.advancedAt=time;pass.trendGap40=rival.gap;pass.trendAt40=time;}
  if(rival.gap<pass.bestGap-1){pass.bestGap=rival.gap;pass.advancedAt=time;}
  if(rival.gap>18&&time-pass.advancedAt>4.5)return 'STALLED';
  return 'HOLD';

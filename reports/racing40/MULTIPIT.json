@@ -1,0 +1,67 @@
+{
+  "track": "shanghai",
+  "time": 92.31666666666666,
+  "stop": null,
+  "rejections": 0,
+  "off": null,
+  "maxActive": 6,
+  "exits": {
+    "1": {
+      "time": 62.55,
+      "kph": 79.86366739113984
+    },
+    "2": {
+      "time": 66.41666666666667,
+      "kph": 79.86368326320634
+    },
+    "3": {
+      "time": 72.13333333333333,
+      "kph": 79.86297895035344
+    },
+    "4": {
+      "time": 77.86666666666666,
+      "kph": 79.86376719326036
+    },
+    "5": {
+      "time": 83.58333333333333,
+      "kph": 79.86309584422459
+    },
+    "6": {
+      "time": 89.3,
+      "kph": 79.86308357339955
+    }
+  },
+  "stops": [
+    {
+      "id": 1,
+      "stops": 1,
+      "phase": "RACING"
+    },
+    {
+      "id": 2,
+      "stops": 1,
+      "phase": "RACING"
+    },
+    {
+      "id": 3,
+      "stops": 1,
+      "phase": "RACING"
+    },
+    {
+      "id": 4,
+      "stops": 1,
+      "phase": "RACING"
+    },
+    {
+      "id": 5,
+      "stops": 1,
+      "phase": "RACING"
+    },
+    {
+      "id": 6,
+      "stops": 1,
+      "phase": "RACING"
+    }
+  ],
+  "scope": "Six-car pit-arrival convoy initialized once at 80 km/h and 18 m spacing; real integrated entry/service/exit thereafter. Crew-clear proof fixture only."
+}

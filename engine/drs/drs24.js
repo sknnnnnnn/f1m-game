@@ -3,6 +3,13 @@ import {circuit as defaultCircuit,mod} from '../tracks/track.js';
 // specific championship year. Detection grants one zone permit; it is not
 // recomputed from the changing race gap on every rendering/configuration call.
 export function drsZones24(track=defaultCircuit){
+ // This imported main straight includes a gentle final-corner exit. The
+ // generic flat-run finder cut it short; braking/steering locks still close
+ // the wing before turn-in on the mapped approach to T1.
+ if(track.key==='suzuka'){
+  const last=track.turns?.find(t=>t.number===18),first=track.turns?.find(t=>t.number===1);
+  if(last&&first){const start=mod(last.s+210,track.length);return [{id:'SUZUKA_MAIN40',name:'ทางตรงหลัก',detect:start,start,end:mod(first.s-100,track.length)}];}
+ }
  if(track.key==='bahrain')return [{id:'MAIN',name:'ทางตรงหลัก',detect:5075,start:5150,end:650},{id:'T3-T4',name:'ทางตรงหลัง T3',detect:980,start:1050,end:1410},{id:'T10-T11',name:'ทางตรงหลัง T10',detect:2770,start:2830,end:3280}];
  // Find long, gently curved runs from the actual geometry of fictional tracks.
  const step=10,N=Math.ceil(track.length/step),flat=Array.from({length:N},(_,i)=>Math.abs(track.at(i*step).k)<.0018);let cut=flat.findIndex(x=>!x);if(cut<0)cut=0;const runs=[];let first=null;

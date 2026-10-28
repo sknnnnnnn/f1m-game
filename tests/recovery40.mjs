@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {LivingSession26} from '../engine/race/living-session26.js';
+import {initial} from '../racing/runtime/frozen/physics.js';
+import {circuit} from '../engine/tracks/track.js';
+import {validatePlan} from '../engine/physics/reference-adapter.js';
+const r=new LivingSession26().race,c=r.cars[3],config=r.configuration(c),n=circuit.key==='shanghai'?6.1:circuit.width/2-1.2,q=circuit.point(1100,n);
+c.state=initial(config,{X:q.x,Y:q.y,psi:q.psi,u:70,v:0,r:0,gear:6});c.projection=circuit.project(q.x,q.y,q.psi);c.agent.curve={t0:0,T:1,c:[n]};c.agent.targetLane=n;c.agent.targetSpeed=90;c.agent.plan=null;c.agent.profile40=null;
+const before=JSON.stringify(c.state);assert(Math.abs(c.projection.d)+config.width/2<circuit.width/2,'fixture body remains on the road');r.thinkCar(c,r.field(),config);
+assert.equal(c.agent.state,'RECOVER');assert(c.agent.plan.recovery);assert(c.agent.plan.speed<=12);assert.equal(validatePlan(config,c.state,c.agent.plan),null);assert.equal(JSON.stringify(c.state),before,'recovery planning must not alter the physical car');
+console.log('PASS',circuit.key,'edge recovery declares a bounded recovery trajectory before the ordinary corridor validator rejects it');
