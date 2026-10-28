@@ -2,7 +2,6 @@
   "status": "NOT_ACCEPTED_NOT_DEPLOYED",
   "runs": [
     {
-      "file": "audit.json",
       "track": "suzuka",
       "finished": false,
       "stop": null,
@@ -51,10 +50,10 @@
           "physical": true
         }
       ],
-      "scope": null
+      "scope": null,
+      "file": "audit.json"
     },
     {
-      "file": "bahrain19d.json",
       "track": "bahrain",
       "finished": true,
       "stop": null,
@@ -94,10 +93,10 @@
           "physical": true
         }
       ],
-      "scope": null
+      "scope": null,
+      "file": "bahrain19d.json"
     },
     {
-      "file": "bahrain19f.json",
       "track": "bahrain",
       "finished": true,
       "stop": null,
@@ -151,10 +150,10 @@
           "physical": true
         }
       ],
-      "scope": null
+      "scope": null,
+      "file": "bahrain19f.json"
     },
     {
-      "file": "duel-suzuka.json",
       "track": "suzuka",
       "finished": null,
       "stop": null,
@@ -162,10 +161,10 @@
       "off": null,
       "latePasses": null,
       "passes": null,
-      "scope": "Two-car straight duel initialized once at lap 2, warm tyres, 22 m gap and 2 m/s closing speed. Physical integration only afterwards; not evidence of natural full-race pass frequency."
+      "scope": "Two-car straight duel initialized once at lap 2, warm tyres, 22 m gap and 2 m/s closing speed. Physical integration only afterwards; not evidence of natural full-race pass frequency.",
+      "file": "duel-suzuka.json"
     },
     {
-      "file": "shanghai7d.json",
       "track": "shanghai",
       "finished": true,
       "stop": null,
@@ -184,10 +183,10 @@
           "physical": true
         }
       ],
-      "scope": null
+      "scope": null,
+      "file": "shanghai7d.json"
     },
     {
-      "file": "shanghai7f.json",
       "track": "shanghai",
       "finished": true,
       "stop": null,
@@ -206,10 +205,10 @@
           "physical": true
         }
       ],
-      "scope": null
+      "scope": null,
+      "file": "shanghai7f.json"
     },
     {
-      "file": "suzuka7.json",
       "track": "suzuka",
       "finished": true,
       "stop": null,
@@ -258,10 +257,10 @@
           "physical": true
         }
       ],
-      "scope": null
+      "scope": null,
+      "file": "suzuka7.json"
     },
     {
-      "file": "suzuka7b.json",
       "track": "suzuka",
       "finished": true,
       "stop": null,
@@ -310,10 +309,10 @@
           "physical": true
         }
       ],
-      "scope": null
+      "scope": null,
+      "file": "suzuka7b.json"
     },
     {
-      "file": "suzuka7d.json",
       "track": "suzuka",
       "finished": true,
       "stop": null,
@@ -382,10 +381,10 @@
           "physical": true
         }
       ],
-      "scope": null
+      "scope": null,
+      "file": "suzuka7d.json"
     },
     {
-      "file": "suzuka7f.json",
       "track": "suzuka",
       "finished": true,
       "stop": null,
@@ -444,7 +443,8 @@
           "physical": true
         }
       ],
-      "scope": null
+      "scope": null,
+      "file": "suzuka7f.json"
     }
   ]
 }
