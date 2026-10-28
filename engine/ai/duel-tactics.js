@@ -28,12 +28,12 @@ function duelTactics(agent,state,p,safeLane,decision){
  }
  // Keep a passing corridor until the rival is physically cleared. Returning to
  // the ideal line merely because the leader left the same-lane sensor aborts passes.
- if(mode==='SLINGSHOT'&&!memory.pass&&p.leader&&p.leader.gap<65){memory.pass={id:p.leader.id,lane:choice,started:state.time};}
+ if(mode==='SLINGSHOT'&&!memory.pass&&p.leader&&p.leader.gap<(agent.drs40?140:85)){memory.pass={id:p.leader.id,lane:choice,started:state.time,reach42:agent.drs40?160:100,stall42:agent.drs40?9:6};}
  if(['FEINT','OUTSIDE_SWITCH'].includes(mode))memory.pass=null;
  if(memory.pass){const pass=memory.pass,opponent=p.cars.find(c=>c.id===pass.id);
   const progress=passProgress26(pass,opponent,state.time,agent.config?.length??5.5);
   if(progress!=='HOLD'){memory.lastPass={id:pass.id,result:progress,time:state.time};memory.pass=null;if(['STALLED','EXPIRED'].includes(progress)){memory.retryUntil38=state.time+Math.max(1.2,Math.min(2.5,agent.style?.patience??1.5));if(agent.racecraft){agent.racecraft.action='WAIT';agent.racecraft.cooldown=memory.retryUntil38;}agent.lastAbort={time:state.time,rival:pass.id,reason:'ช่องเดิมไม่คืบหน้า ตั้งรถแล้วเตรียมบุกใหม่'};}}
-  else if(safeLane(pass.lane)){choice=pass.lane;mode='PASS_COMMIT';reason=`COMPLETE PASS CAR ${pass.id} / HOLD CORRIDOR`;}
+  else if(safeLane(pass.lane,1.25)){choice=pass.lane;mode='PASS_COMMIT';reason=`COMPLETE PASS CAR ${pass.id} / HOLD CORRIDOR`;}
   else {memory.pass=null;reason+=' / PASS SPACE CLOSED';}
  }
  if(state.time<(memory.retryUntil38??0)&&!memory.pass&&['SLINGSHOT','PASS_COMMIT'].includes(mode)){choice=agent.targetLane;mode='DRAFT';reason='RESET ATTACK / REBUILD CLOSING SPEED';}
@@ -52,8 +52,8 @@ function duelTactics(agent,state,p,safeLane,decision){
  }
  // Once physically alongside, reserve the side already occupied. Never cross
  // a rival merely because the ideal apex or a counterattack lies beyond them.
- const alongside=p.cars.filter(c=>Math.abs(c.gap)<8&&Math.abs(c.lateral-p.own.d)>1.8&&Math.abs(c.lateral-p.own.d)<8);
- if(alongside.length){let low=-8.2,high=8.2;for(const other of alongside){if(other.lateral>p.own.d)high=Math.min(high,other.lateral-2.35);else low=Math.max(low,other.lateral+2.35);}
+ const alongside=p.cars.filter(c=>Math.abs(c.gap)<16&&Math.abs(c.lateral-p.own.d)>1.8&&Math.abs(c.lateral-p.own.d)<8);
+ if(alongside.length){let low=-8.2,high=8.2;for(const other of alongside){if(other.lateral>p.own.d)high=Math.min(high,other.lateral-3);else low=Math.max(low,other.lateral+3);}
   const lane=low<=high?clamp(choice,low,high):p.own.d;
   if(Math.abs(lane-agent.targetLane)<.6||safeLane(lane))choice=lane;else choice=agent.targetLane;
   mode='HOLD_SPACE';reason=`RACE ALONGSIDE ${alongside.map(c=>c.id).join('/')} / LEAVE A CAR WIDTH`;

@@ -1,0 +1,81 @@
+{
+  "build": "b2fd652bdc8e5aba",
+  "scope": "Six cars, three laps from the normal grid. Real frozen-solver integration throughout; crew-clear fixture during pit service; not Android rendering/FPS validation.",
+  "runs": [
+    {
+      "track": "suzuka",
+      "seed": 7,
+      "laps": 3,
+      "overtakes": 7,
+      "afterFirstLap": 2,
+      "finished": true,
+      "stop": null,
+      "controllerRejections": 0,
+      "sampledOffTrack": null,
+      "lateEvents": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 13370,
+          "time": 222.83333333333334,
+          "by": 1,
+          "of": 6,
+          "gap": 2.101315543144665,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        },
+        {
+          "kind": "OVERTAKE",
+          "tick": 13811,
+          "time": 230.18333333333334,
+          "by": 6,
+          "of": 1,
+          "gap": 2.089743808724961,
+          "decision": "PASS_COMMIT",
+          "physical": true
+        }
+      ]
+    },
+    {
+      "track": "shanghai",
+      "seed": 7,
+      "laps": 3,
+      "overtakes": 4,
+      "afterFirstLap": 1,
+      "finished": true,
+      "stop": null,
+      "controllerRejections": 0,
+      "sampledOffTrack": null,
+      "lateEvents": [
+        {
+          "kind": "OVERTAKE",
+          "tick": 13224,
+          "time": 220.4,
+          "by": 3,
+          "of": 2,
+          "gap": 2.0855048453486233,
+          "decision": "HOLD_SPACE",
+          "physical": true
+        }
+      ]
+    },
+    {
+      "track": "bahrain",
+      "seed": 19,
+      "laps": 3,
+      "overtakes": 4,
+      "afterFirstLap": 0,
+      "finished": true,
+      "stop": null,
+      "controllerRejections": 0,
+      "sampledOffTrack": null,
+      "lateEvents": []
+    }
+  ],
+  "validation": {
+    "existingEngineChecks": 58,
+    "additionalActionChecks": 3,
+    "build": true,
+    "pwa": true
+  },
+  "limitation": "Frequent late overtaking across every circuit is NOT established. Bahrain seed 19 has zero overtakes after lap one."
+}

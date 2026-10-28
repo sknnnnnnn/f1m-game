@@ -7,7 +7,7 @@ export function racingPath(previous,state,at,lane40=null){
  let join=previous?.racing?.join??null;
  if(!same40){
   const speed=Math.hypot(state.u,state.v),length=Math.max(100,speed*2);
-  const heading=wrap(state.psi+Math.atan2(state.v,Math.max(1,state.u))-at.psi),room=Math.max(0,5.8-Math.abs(at.d)),slopeLimit=room/(length*.35);
+  const heading=wrap(state.psi+Math.atan2(state.v,Math.max(1,state.u))-at.psi),room=Math.max(0,(circuit.key==='bahrain'?3.3:5.8)-Math.abs(at.d)),slopeLimit=room/(length*.35);
   const initialSlope=clamp((1-at.k*at.d)*Math.tan(heading),-slopeLimit,slopeLimit);
   join={s:at.s,length,start:at.d,slope:initialSlope};
  }

@@ -14,7 +14,16 @@ const DRIVERS=[
 // Sprint field: narrow mechanical pace differences, retain tactical identity.
 // Faster cars gain no hidden catch-up force and race position never enters it.
 export function closeFieldTraits(driver){
- const p=driver.traits;
- return {...p,headway:circuit.key==='bahrain'?p.headway:.34+(p.headway-.65)*.1,corner:(1.008+(p.corner-.99)*.12)/(RACE_STYLES[driver.kind]?.cornerFactor??1),pace:91.5+(p.pace-91.5)*.15,braking:6.5+(p.braking-6.5)*.2,exit:6.6+(p.exit-6.6)*.2};
+ const p=driver.traits,profile={
+ DEFENDER:{pace:89,corner:1.008,braking:6.35,exit:6.35},
+ ATTACKER:{pace:96,corner:.986,braking:6.65,exit:7.05},
+ TACTICIAN:{pace:91,corner:1.004,braking:6.45,exit:6.75},
+ OPPORTUNIST:{pace:94.5,corner:.996,braking:6.55,exit:7.2},
+ GUARDIAN:{pace:92,corner:1.000,braking:6.25,exit:6.5},
+ SMOOTH:{pace:93,corner:1.006,braking:6.4,exit:6.8}
+ }[driver.kind];
+ return {...p,headway:circuit.key==='bahrain'?p.headway:.34+(p.headway-.65)*.1,
+ ...profile,corner:profile.corner/(RACE_STYLES[driver.kind]?.cornerFactor??1)};
 }
+
 export {DRIVERS};

@@ -22,8 +22,8 @@ const pose=(a,b,f)=>({X:a.X+(b.X-a.X)*f,Y:a.Y+(b.Y-a.Y)*f,psi:a.psi+wrap(b.psi-a
 // Sweep the actual footprint. Stable braking uses <=1 cm motion intervals and
 // at most 2.5 cm sampled penetration; unstable/high-relative-speed pairs retain
 // conservative pre-contact protection. No teleport or velocity correction.
-function sweep(a0,a1,b0,b1,c){const motion=s=>Math.hypot(s[1].X-s[0].X,s[1].Y-s[0].Y)+Math.hypot(c.length,c.width)/2*Math.abs(wrap(s[1].psi-s[0].psi));const bound=motion([a0,a1])+motion([b0,b1]),gentle=brakeBrush(a0,a1,b0,b1,c),N=Math.max(2,Math.ceil(bound/(gentle?.01:.18))),padding=gentle?-.025:.02+bound/(2*N);let min=Infinity;
- for(let k=0;k<=N;k++){const gap=clearance(pose(a0,a1,k/N),pose(b0,b1,k/N),c);min=Math.min(min,gap);if(gap<=padding)return{hit:true,clearance:gap,fraction:k/N,padding,samples:N+1,gentle};}
+function sweep(a0,a1,b0,b1,c,fine=false){const motion=s=>Math.hypot(s[1].X-s[0].X,s[1].Y-s[0].Y)+Math.hypot(c.length,c.width)/2*Math.abs(wrap(s[1].psi-s[0].psi));const bound=motion([a0,a1])+motion([b0,b1]),gentle=brakeBrush(a0,a1,b0,b1,c),N=Math.max(2,Math.ceil(bound/(gentle?.01:fine===2?.004:fine?.04:.18))),padding=gentle?-.025:.02+bound/(2*N);let min=Infinity;
+ for(let k=0;k<=N;k++){const gap=clearance(pose(a0,a1,k/N),pose(b0,b1,k/N),c);min=Math.min(min,gap);if(gap<=padding){if(!gentle&&fine!==2)return sweep(a0,a1,b0,b1,c,fine?2:1);return{hit:true,clearance:gap,fraction:k/N,padding,samples:N+1,gentle};}}
  return{hit:false,clearance:min,padding,samples:N+1,gentle};
 }
 

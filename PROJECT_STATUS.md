@@ -1,3 +1,5 @@
+Current: Action Racing 42, build `b2fd652bdc8e5aba`. [Changes and measured limits](reports/ACTION42_TH.md). Doubled DRS/draft drag relief and ERS power; all three six-car three-lap integrations finish with no guard stop/rejection/sampled off-track. Late overtakes Suzuka 2, Shanghai 1, Bahrain 0; frequent late overtaking remains incomplete. Android validation pending.
+
 Current: Race Racing 40, build `f8eb25cbb410e92f`. [Changes, physical race evidence and limitations](reports/RACE_RACING_TH.md). Real late passes verified in Shanghai and Bahrain; six-car pit convoy clears. Suzuka late overtaking remains open. Android wet FPS/listening unverified.
 
 Current: Race Reliability 39, build `196b3d129a406ec9`. [Verified fixes and open AI issue](reports/RACE_RELIABILITY_TH.md). Multipit/hitch handling, batched wet effects, stable weather and tyres, nose camera clearance and radio chime. Late-race overtaking remains open; Android wet FPS/listening unverified.
