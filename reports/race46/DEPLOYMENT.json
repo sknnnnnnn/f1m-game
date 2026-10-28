@@ -1,0 +1,43 @@
+{
+  "edition": "RACE46",
+  "build": "933a5fc2fd344706",
+  "url": "https://sknnnnnnn.github.io/f1m-game/",
+  "pagesCommit": "0c2e64293ea882f46864553210bfc155e7169255",
+  "pagesTree": "1e3d36a6d321fcf20c5551d40a035190e339c560",
+  "workflow": {
+    "id": 40723234111,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "browser": {
+    "badge": "RACE 46",
+    "state": "STARTING GRID",
+    "startButton": true,
+    "settingsBuild": "933a5fc2fd344706",
+    "offlineReady": true,
+    "passCaptionMounted": 1,
+    "passCaptionHiddenAtGrid": true,
+    "updatePath": "Check/apply update then reload; observed45→46",
+    "limitation": "Cloud CPU fallback ~1FPS; not a phone FPS/audio or full browser-race test"
+  },
+  "checks": {
+    "engineJobs": 65,
+    "exit": 0,
+    "launchMatrixCases": 22,
+    "launchFailures": 0,
+    "completeDefaultDryRaces": {
+      "bahrain": 5,
+      "suzuka": 4,
+      "shanghai": 3
+    },
+    "rainDevelopingBahrainLaps": 1,
+    "build": true,
+    "pwa": true
+  },
+  "regression": {
+    "bahrainExactScreenshotTime": "R45 reproduced CONTACT_GUARD13.833333s,tick830,cars4/5; R46 passes",
+    "suzuka": "Exact prior15.783s state not reproduced; broader launch matrix and full default race pass",
+    "collisionGuard": "retained unchanged"
+  },
+  "mainUntouched": true
+}
