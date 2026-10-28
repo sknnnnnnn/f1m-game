@@ -9,7 +9,7 @@ export function resourcePlan(agent,state,p){
  const order=agent.engineerOrder;if(order?.energy==='SAVE'){mode='ENGINEER_SAVE';reserve=.55;allowDeploy=false;}else if(order?.energy==='DEPLOY'){mode='ENGINEER_DEPLOY';reserve=.08;deploySpeed=40;allowDeploy=fraction>.08;}
  const next=circuit.turns.map(t=>({...t,distance:(t.s-p.own.s+circuit.length)%circuit.length})).filter(t=>Math.abs(t.k)>.018).sort((a,b)=>a.distance-b.distance)[0];
  if(next&&next.distance<Math.max(45,p.speed*2)&&Math.abs(p.own.k)<.006)allowDeploy=false;
- const bank40=circuit.key==='suzuka'&&typeof agent.drsZone40==='boolean'&&(order?.energy??'AUTO')==='AUTO'&&state.time>=6&&!agent.drsZone40&&mode!=='FINAL_PUSH';
+ const bank40=circuit.key==='suzuka'&&typeof agent.drsZone40==='boolean'&&(order?.energy??'AUTO')==='AUTO'&&state.time>=6&&!agent.drsZone40&&!agent.duel?.counter&&mode!=='FINAL_PUSH';
  if(bank40)allowDeploy=false;
  // Spend the finite battery on a battle, bank it on clear road.
  if((order?.energy??'AUTO')==='AUTO'&&mode==='BALANCED'&&fraction<.82)allowDeploy=false;

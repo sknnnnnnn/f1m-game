@@ -1,3 +1,4 @@
+import {armCounter47} from '../ai/pass-timing47.js';
 import {samplePassEvidence46,explainPass46} from './pass-evidence46.js';
 import {contactBrake42} from '../physics/contact-brake42.js';
 import {ACTION42} from './action42.js';
@@ -44,7 +45,7 @@ class Race {
    car.trace.push({tick:next.tick,x:next.X,y:next.Y,psi:next.psi,speed:Math.hypot(next.u,next.v),n:projected.d,s:projected.s,progress:car.progress,command:out.command,decision:car.agent.state,plan:car.agent.plan.id,rejection:out.trace.rejection});if(car.trace.length>900)car.trace.shift();
   }
   this.tick++;this.time=this.tick*c.dt;if(this.tick%15===0){this.highSpeedLog.push({tick:this.tick,time:this.time,cars:this.cars.map(v=>({id:v.id,s:v.projection.s,n:v.projection.d,speedKPH:Math.hypot(v.state.u,v.state.v)*3.6,gear:v.state.gear,brake:v.lastCommand.brake,throttle:v.lastCommand.throttle,decision:v.agent.state}))});if(this.highSpeedLog.length>1200)this.highSpeedLog.shift();}const now=this.ranking().map(x=>x.id);
-  for(let a=0;a<this.cars.length;a++)for(let b=a+1;b<this.cars.length;b++){const x=this.cars[a],y=this.cars[b],key=x.id+':'+y.id,diff=x.progress-y.progress;if(Math.abs(diff)<2)continue;const sign=Math.sign(diff),previous=this.orderStability.get(key);if(previous&&previous!==sign&&this.tick>120){const winner=sign>0?x:y,loser=sign>0?y:x;if(Math.abs(diff)<12&&this.isOnTrack(winner)&&this.isOnTrack(loser)&&winner.finishedAt===null&&loser.finishedAt===null){this.overtakes++;this.events.push({kind:'OVERTAKE',tick:this.tick,time:this.time,by:winner.id,of:loser.id,...explainPass46(winner,loser),gap:Math.abs(diff),decision:winner.agent.state,physical:true});}}this.orderStability.set(key,sign);}
+  for(let a=0;a<this.cars.length;a++)for(let b=a+1;b<this.cars.length;b++){const x=this.cars[a],y=this.cars[b],key=x.id+':'+y.id,diff=x.progress-y.progress;if(Math.abs(diff)<2)continue;const sign=Math.sign(diff),previous=this.orderStability.get(key);if(previous&&previous!==sign&&this.tick>120){const winner=sign>0?x:y,loser=sign>0?y:x;if(Math.abs(diff)<12&&this.isOnTrack(winner)&&this.isOnTrack(loser)&&winner.finishedAt===null&&loser.finishedAt===null){this.overtakes++;if((this.controlZone?.flag??'GREEN')==='GREEN')armCounter47(loser,winner,this.time);this.events.push({kind:'OVERTAKE',tick:this.tick,time:this.time,by:winner.id,of:loser.id,...explainPass46(winner,loser),gap:Math.abs(diff),decision:winner.agent.state,physical:true});}}this.orderStability.set(key,sign);}
   if(this.events.length>160)this.events.shift();this.order=now;if(this.cars.every(c=>c.finishedAt!==null))this.finished=true;return true;
  }
  physicsOptions(car){return {};}

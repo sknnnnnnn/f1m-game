@@ -6,13 +6,13 @@ import {clamp} from '../tracks/track.js';
 function duelTactics(agent,state,p,safeLane,decision){
  const memory=agent.duel??(agent.duel={gaps:new Map(),counter:null,exit:null,passesSuffered:0});
  let {choice,pace,mode,reason,turn,corner,ideal}=decision;
- for(const rival of p.cars){const old=memory.gaps.get(rival.id);if(rival.gap>3&&rival.gap<160&&old!==undefined&&old< -3&&old> -160){memory.counter={id:rival.id,until:state.time+22};memory.passesSuffered++;}if(Math.abs(rival.gap)>3)memory.gaps.set(rival.id,rival.gap);}
+ for(const rival of p.cars){const old=memory.gaps.get(rival.id);if(rival.gap>3&&rival.gap<160&&old!==undefined&&old< -3&&old> -160){if(memory.counter?.id!==rival.id||state.time-(memory.counter.event47??-100)>2){memory.counter={id:rival.id,until:state.time+22};memory.passesSuffered++;}}if(Math.abs(rival.gap)>3)memory.gaps.set(rival.id,rival.gap);}
  const rival=memory.counter&&p.cars.find(c=>c.id===memory.counter.id);
- if(memory.counter&&(state.time>memory.counter.until||!rival||rival.gap< -12||rival.gap>160))memory.counter=null;
+ if(memory.counter&&(state.time>memory.counter.until||!rival||rival.gap< -12||rival.gap>350||rival.pit))memory.counter=null;
  if(memory.counter&&rival&&rival.gap>8&&rival.gap<130){
   // Ask for racing effort, never add engine power. Traffic/braking limits still apply.
   pace=Math.max(pace,Math.min(94,rival.speed+6));
-  if(!corner&&rival.gap>36&&Math.abs(rival.lateral-p.own.d)<4.1&&safeLane(rival.lateral)){choice=rival.lateral;mode='COUNTER';reason=`REBUILD TOW / REATTACK CAR ${rival.id}`;}
+  if(!corner&&rival.gap>36&&Math.abs(rival.lateral-p.own.d)<4.1&&safeLane(rival.lateral)){choice=rival.lateral;mode='DRAFT';reason=`COUNTER / REBUILD TOW / REATTACK CAR ${rival.id}`;}
   else if(['SLINGSHOT','SWITCHBACK','CRUISE'].includes(mode)){mode='COUNTER';reason=`REATTACK CAR ${rival.id} / SPACE AND EXIT`;}
  }
  const front=p.leader,k=Math.abs(p.own.k);
@@ -32,9 +32,9 @@ function duelTactics(agent,state,p,safeLane,decision){
  if(['FEINT','OUTSIDE_SWITCH'].includes(mode))memory.pass=null;
  if(memory.pass){const pass=memory.pass,opponent=p.cars.find(c=>c.id===pass.id);
   const progress=passProgress26(pass,opponent,state.time,agent.config?.length??5.5);
-  if(progress!=='HOLD'){memory.lastPass={id:pass.id,result:progress,time:state.time};memory.pass=null;if(['STALLED','EXPIRED'].includes(progress)){memory.retryUntil38=state.time+Math.max(1.2,Math.min(2.5,agent.style?.patience??1.5));if(agent.racecraft){agent.racecraft.action='WAIT';agent.racecraft.cooldown=memory.retryUntil38;}agent.lastAbort={time:state.time,rival:pass.id,reason:'ช่องเดิมไม่คืบหน้า ตั้งรถแล้วเตรียมบุกใหม่'};}}
+  if(progress!=='HOLD'){const audit=agent.passAudit47??={resets:0,reasons:{}};audit.reasons[progress]=(audit.reasons[progress]??0)+1;memory.lastPass={id:pass.id,result:progress,time:state.time};memory.pass=null;if(['STALLED','EXPIRED'].includes(progress)){memory.retryUntil38=state.time+Math.max(1.2,Math.min(2.5,agent.style?.patience??1.5));if(agent.racecraft){agent.racecraft.action='WAIT';agent.racecraft.cooldown=memory.retryUntil38;}agent.lastAbort={time:state.time,rival:pass.id,reason:'ช่องเดิมไม่คืบหน้า ตั้งรถแล้วเตรียมบุกใหม่'};}}
   else if(safeLane(pass.lane,1.25)){choice=pass.lane;mode='PASS_COMMIT';reason=`COMPLETE PASS CAR ${pass.id} / HOLD CORRIDOR`;}
-  else {memory.pass=null;reason+=' / PASS SPACE CLOSED';}
+  else {const audit=agent.passAudit47??={resets:0,reasons:{}};audit.reasons.CORRIDOR_CLOSED=(audit.reasons.CORRIDOR_CLOSED??0)+1;memory.pass=null;reason+=' / PASS SPACE CLOSED';}
  }
  if(state.time<(memory.retryUntil38??0)&&!memory.pass&&['SLINGSHOT','PASS_COMMIT'].includes(mode)){choice=agent.targetLane;mode='DRAFT';reason='RESET ATTACK / REBUILD CLOSING SPEED';}
  // A third driver can exploit an actual side-by-side fight ahead. The same

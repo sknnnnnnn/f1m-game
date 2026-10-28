@@ -48,7 +48,7 @@ export function planBattle(agent,state,p,safeLane,decision){
    return {...decision,choice:agent.targetLane,mode:'ABORT_ATTACK',pace:Math.min(decision.pace,other.speed),reason:'PASS CORRIDOR CLOSED / WAIT'};
   }
  }
- if(protectedMode||memory||!rival||rival.gap<30||rival.gap>85||p.speed<25||Math.abs(p.own.k)>.008||report.window>380||report.window<70||state.time<agent.commitUntil||agent.duel?.pass||agent.duel?.exit||agent.racecraft?.action==='COMMIT')return decision;
+ if(protectedMode||memory||!rival||rival.gap<22||rival.gap>(state.time>30?45:85)||p.speed<25||Math.abs(p.own.k)>.008||report.window>380||report.window<70||state.time<agent.commitUntil||agent.duel?.pass||agent.duel?.exit||agent.racecraft?.action==='COMMIT')return decision;
  // Preserve an effective tow until the speed/transition gap warrants leaving it.
  if(decision.mode==='DRAFT'&&report.window>Math.max(100,p.speed*3)&&rival.gap>14+.18*p.speed+Math.max(0,-rival.relativeSpeed)*(agent.personality.commit+1.2))return decision;
  const candidate=report.candidates.find(c=>c.kind===report.selected);

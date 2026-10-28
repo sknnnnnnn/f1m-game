@@ -1,3 +1,4 @@
+import {preparePass47} from './pass-timing47.js';
 import {towAttack46,applyAttackEnergy46} from './tow-attack46.js';
 import {draftFactor} from './draft.js';
 import {battleWindow43} from './battle-window43.js';
@@ -24,10 +25,12 @@ class Agent {
  sense(self,field){const own=field.find(x=>x.id===this.id)?.projection??circuit.project(self.X,self.Y,self.psi),speed=Math.hypot(self.u,self.v);const cars=field.filter(x=>x.id!==this.id).map(o=>{const p=o.projection??circuit.project(o.state.X,o.state.Y,o.state.psi),gap=circuit.delta(p.s,own.s),relativeSpeed=Math.hypot(o.state.u,o.state.v)-speed,previous=this.opponentSpeeds.get(o.id),acceleration=previous&&self.time>previous.time?clamp((relativeSpeed+speed-previous.speed)/(self.time-previous.time),-8,4):0;this.opponentSpeeds.set(o.id,{speed:relativeSpeed+speed,time:self.time});return{id:o.id,s:p.s,pit:!!o.pit?.active,brake:o.state.brake??0,throttle:o.state.throttle??0,ax:o.state.lastAx??0,gap,lateral:p.d,speed:relativeSpeed+speed,relativeSpeed,acceleration,intent:o.intent??null,sideSpeed:o.state.v,yawRate:o.state.r,headingError:Math.atan2(Math.sin(o.state.psi-self.psi),Math.cos(o.state.psi-self.psi)),side:Math.abs(gap)<8&&Math.abs(p.d-own.d)<5.5,closingTime:gap>0&&relativeSpeed<-.1?gap/-relativeSpeed:Infinity};});return{own,speed,cars,edges:{left:circuit.width/2-own.d,right:circuit.width/2+own.d},leader:cars.filter(x=>x.gap>0&&x.gap<180&&Math.abs(x.lateral-own.d)<2.9).sort((a,b)=>a.gap-b.gap)[0]??null};}
  think(state,field){this.decisions++;this.lastThoughtTick=state.tick;const p=this.sense(state,field);this.perception=p;this.battle43=battleWindow43(this,state,p);this.tyreManagement=tyreDemand(this,state);observeRivals(this,state,p);this.resources=resourcePlan(this,state,p);this.tyreManagement.exitFactor=this.resources.exitFactor;this.tyreManagement.hybridReserve=this.resources.reserve;const personality=this.personality,ahead=p.leader,behind=p.cars.filter(o=>o.gap<0&&o.gap>-110).sort((a,b)=>b.gap-a.gap)[0];this.tow44=draftFactor({id:this.id,state,projection:p.own,pit:{active:!!this.pitApproach}},field,this.wetTow44);this.drafting=this.tow44>.08;let choice=this.targetLane,mode='CRUISE',reason='OPEN ROAD',pace=personality.pace;
   if(Number.isFinite(this.curve.racing?.lane40))this.curve=racingPath(this.curve,state,p.own,this.curve.racing.lane40);
+  preparePass47(this,state,p);
+  const reset47=state.time<(this.passReset47?.until??0);
   const now=p.own,preview=circuit.at(now.s+Math.max(80,p.speed*4)),corner=Math.abs(now.k)>.0005||Math.abs(preview.k)>.0005;
 
   const brakeReach40=o=>{const forecast=profileFollowing40(this,state,o);return 6.15+Math.max(0,-o.relativeSpeed)*(forecast&&forecast.minimumGap>(this.config?.length??5.5)+1?.35:1.4);};
-  const entryCommit=p.cars.some(o=>!o.pit&&Math.abs(o.gap)<16&&Math.abs(o.lateral-now.d)>1.8)?(this.entryCommit25=null):cornerCommit25(this,state,now);
+  const entryCommit=p.cars.some(o=>!o.pit&&Math.abs(o.gap)<16&&Math.abs(o.lateral-now.d)>1.8)?(this.entryCommit25=null):reset47?(this.entryCommit25=null):cornerCommit25(this,state,now);
   const launchLeadSpeed=o=>o.speed+(state.time<10&&p.speed<60&&Math.abs(now.k)<.003&&o.gap>(this.config?.length??5.5)+10&&o.brake<.02&&o.throttle>.8&&Math.abs(o.headingError)<.06?clamp(o.ax??o.acceleration??0,0,12)*.45:0);
   const bend=Math.abs(now.k)>.004?now:upcomingBend(now.s,600)??preview,turn=Math.sign(bend.k)||1;
   let ideal=clamp(racingOffset(now.s+Math.max(10,p.speed*.8)),p.own.d-4,p.own.d+4);
@@ -37,16 +40,16 @@ class Agent {
   const safeLane=(lane,horizon=3.5)=>{if(entryCommit&&Math.abs(lane-entryCommit.lane)>.15)return false;if(Math.abs(lane)>(circuit.key==='bahrain'?3.3:circuit.width/2-1.7))return false;const spatial40=!entryCommit&&!this.pitApproach&&!this.recovery&&Math.abs(now.k)<.003;const candidate=spatial40?racingPath(this.curve,state,now,lane):Math.abs(lane-this.targetLane)>.6?connectLane(this.curve,state.time,lane,personality.commit+1.2):this.curve;return p.cars.every(o=>{for(let j=0;j<=Math.ceil(horizon/.25);j++){const t=Math.min(horizon,j*.25),gap=o.gap+forecastDistance40(o.speed,o.ax,t)-forecastDistance40(p.speed,state.lastAx,t),uncertainty=Math.min(4,.35*t*t),space=trafficSpace(this,state,o),otherN=o.intent?.curve?laneAt(o.intent.curve,state.time+t).d:o.lateral,ownN=laneAt(candidate,state.time+t).d;if(Math.abs(gap)<space.longitudinal+uncertainty&&Math.abs(otherN-ownN)<space.lateral)return false;}return true;});};
   if(ahead&&ahead.gap<155){mode='FOLLOW';reason=`CAR ${ahead.id} / gap ${ahead.gap.toFixed(1)}m`;
    const candidates=passingLanes26(p.own.d,ahead.lateral,safeLane);
-   const closing=Math.max(0,-ahead.relativeSpeed),attackReach=ahead.gap<(this.drs40&&state.time>30?110:Math.min(65,Math.max(45,closing*6+25)));
+   const closing=Math.max(0,-ahead.relativeSpeed),straightWindow47=state.time<30||!reset47&&Math.abs(now.k)<.003&&(bend.distance??0)>Math.max(100,p.speed*2.5),attackReach=straightWindow47&&ahead.gap<(this.drs40&&state.time>30?Math.min(75,Math.max(40,closing*5+25)):Math.min(65,Math.max(45,closing*6+25)));
    // Hold the wake until enough speed is banked or a real pull-out deadline arrives.
    const pullOutGap=14+p.speed*.18+closing*(personality.commit+1.2);
-   const waitForTow=(this.teamTow23===ahead.id&&ahead.gap>12||this.drafting&&ahead.gap>pullOutGap&&(closing>.7||ahead.gap>55))&&(!corner||Math.abs(now.k)<.003)&&Math.abs(p.own.d-ahead.lateral)<2.4&&!(this.drs40&&state.time>30&&ahead.gap<110&&p.speed>55);
+   const waitForTow=(this.teamTow23===ahead.id&&ahead.gap>12||this.drafting&&ahead.gap>pullOutGap&&(closing>.7||ahead.gap>55))&&(!corner||Math.abs(now.k)<.003)&&Math.abs(p.own.d-ahead.lateral)<2.4&&!(this.drs40&&state.time>30&&ahead.gap<Math.max(35,p.speed*.25+closing*(personality.commit+1.8))&&p.speed>55);
    const switchback=personality.risk<.75&&corner&&ahead.gap>16&&ahead.gap<38&&Math.sign(ahead.lateral)===turn&&Math.abs(ahead.lateral)>2.5;
    const outside=-turn*2.6;
    if(switchback&&safeLane(outside)&&state.time>=this.commitUntil){choice=outside;mode='SWITCHBACK';pace=Math.min(pace,ahead.speed+2);reason=`OUTSIDE ENTRY / CROSS EXIT CAR ${ahead.id}`;this.crossExit=ahead.id;}
    else if(waitForTow){choice=Math.abs(ahead.lateral-p.own.d)<3&&safeLane(ahead.lateral)?ahead.lateral:this.targetLane;mode='DRAFT';reason=`BUILD TOW CAR ${ahead.id} / ${ahead.gap.toFixed(0)}m`;}
    else if(attackReach&&candidates.length&&state.time>=this.commitUntil){candidates.sort((a,b)=>Math.abs(a-p.own.d)-Math.abs(b-p.own.d)+(.08+.12*(1-personality.risk))*(Math.abs(a-ideal)-Math.abs(b-ideal))+.08*(Math.abs(a-personality.bias)-Math.abs(b-personality.bias)));choice=candidates[0];mode='SLINGSHOT';reason=`PASS CAR ${ahead.id} / ${choice>0?'INSIDE':'OUTSIDE'} SPACE`;}
-   else if(Math.abs(this.targetLane-ahead.lateral)>2.3&&safeLane(this.targetLane)){mode='SLINGSHOT';reason=`HOLD PASSING CORRIDOR / CAR ${ahead.id}`;}
+   else if(straightWindow47&&Math.abs(this.targetLane-ahead.lateral)>2.3&&safeLane(this.targetLane)){mode='SLINGSHOT';reason=`HOLD PASSING CORRIDOR / CAR ${ahead.id}`;}
    else pace=Math.min(pace,Math.max(3,ahead.speed+(ahead.gap-(7.8+(this.drafting?.3:personality.headway)*p.speed))*.75));
    if(ahead.gap<brakeReach40(ahead)){pace=Math.min(pace,Math.max(0,ahead.speed-3));mode='BRAKE';reason='FRONT COLLISION RISK / YIELD';}
   }else if(behind&&-behind.gap<80&&-behind.gap>20+Math.max(0,behind.relativeSpeed)*1.8&&(state.brake??0)<.12&&Math.abs(now.k)<.002&&behind.relativeSpeed>.3&&personality.defend>.5&&state.time>=this.commitUntil){const cover=clamp(Math.abs(behind.lateral-now.d)>1?behind.lateral:turn*3.6,-4,4);if(this.coveredOpponent!==behind.id&&Math.abs(cover-now.d)<4.3&&safeLane(cover)&&!p.cars.some(o=>o.side)){choice=cover;this.coveredOpponent=behind.id;this.coverLane=cover;mode='DEFEND';reason=`ONE EARLY COVER CAR ${behind.id}; LEAVE ROOM ALONGSIDE`;}}
@@ -56,9 +59,10 @@ class Agent {
   if(!behind||behind.gap < -100)this.coveredOpponent=null;
   const alongside40=p.cars.some(o=>!o.pit&&Math.abs(o.gap)<14&&Math.abs(o.lateral-now.d)>1.8);
   let runway40=600;for(let ds=0;ds<=600;ds+=20)if(Math.abs(circuit.at(now.s+ds).k)>.003){runway40=ds;break;}
+  this.runway47=runway40;
   const front40=p.cars.filter(o=>!o.pit&&o.gap>8&&o.gap<140).sort((a,b)=>a.gap-b.gap)[0];
-  const attack40=runway40>Math.max(state.time>30?150:180,p.speed*(state.time>30?2.25:3.5))&&p.speed>30&&front40&&(this.drs40&&state.time>30&&front40.gap<110||front40.relativeSpeed<1.5&&front40.gap<80||front40.gap<22);
-  const cornerBattle46=state.time>25&&p.speed>18&&p.cars.some(o=>!o.pit&&o.gap>15&&o.gap<75)&&bend.distance>60&&bend.distance<300||!!this.battleCommit||!!this.duel?.exit;
+  const attack40=!reset47&&runway40>Math.max(state.time>30?150:180,p.speed*(state.time>30?2.25:3.5))&&p.speed>30&&front40&&(this.drs40&&state.time>30&&front40.gap<75||front40.relativeSpeed<1.5&&front40.gap<80||front40.gap<22);
+  const cornerBattle46=!reset47&&state.time>25&&p.speed>18&&p.cars.some(o=>!o.pit&&o.gap>15&&o.gap<75)&&bend.distance>60&&bend.distance<300||!!this.battleCommit||!!this.duel?.exit;
   const hadPass40=!!this.duel?.pass;
   if(attack40||hadPass40||alongside40||cornerBattle46){
   ({choice,pace,mode,reason}=racecraft(this,state,p,safeLane,{choice,pace,mode,reason,turn,corner,ideal}));
@@ -70,6 +74,7 @@ class Agent {
    this.battleCommit=null;this.crossExit=null;if(this.racecraft)this.racecraft.action='PACE';if(this.duel){this.duel.exit=null;this.duel.pass=null;}
    if(!['BRAKE','RECOVER','BOXED_IN'].includes(mode)){choice=ideal;mode=ahead?'FOLLOW':'CRUISE';reason=ahead?`FOLLOW EXIT / BUILD TOW CAR ${ahead.id}`:'CLEAR RACING LINE';}
   }
+  if(reset47&&!alongside40&&!['BRAKE','RECOVER','BOXED_IN'].includes(mode)&&safeLane(ideal)){choice=ideal;mode='FOLLOW';reason='RESET BEFORE BRAKE / PRESERVE EXIT SPEED';this.battleCommit=null;if(this.duel)this.duel.pass=null;}
   // A tactical suggestion must never overwrite the immediate following brake.
   if(ahead&&ahead.gap<brakeReach40(ahead)){
    pace=Math.min(pace,Math.max(0,ahead.speed-3));mode='BRAKE';choice=this.targetLane;reason='FRONT COLLISION RISK / YIELD';

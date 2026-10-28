@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "beforeBrakeReset": true,
+  "nearbyAndLaunchPreserved": true,
+  "noBankWhenLosingGround": true,
+  "stagedFiniteERS": true,
+  "playerSave": true,
+  "eventArmedCounterAndCaption": true
+}
