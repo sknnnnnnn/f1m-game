@@ -5,7 +5,7 @@
 - Release: `gh-pages`, root `https://sknnnnnnn.github.io/f1m-game/`
 - `/preview49/` remains a compatible R50 mirror for existing preview installations.
 - Details/evidence: `reports/INTERFACE50_TH.md`, `reports/interface50/`.
-- Local presentation/session/PWA checks passed. Cloud browser: R49 in-game update, desktop/390×780 layout, cross-track one-click launch and Bahrain racing HUD verified. Root R48 update verification recorded in release evidence.
+- Local presentation/session/PWA checks passed. Cloud browser: R49 in-game update, desktop/390×780 layout, cross-track one-click launch and Bahrain racing HUD verified. Root R48 → R50 in-game update passed on the unchanged main URL. Bahrain selected car completed one lap (CHEQUERED FLAG / P1 / 01:55.116).
 - Android GPU/FPS and perception of graphics/animation remain user-device checks. No physics, AI, vehicle assets or race pit-system changes in R50.
 
 ---

@@ -27,3 +27,11 @@
 เครื่อง browser ทดสอบใช้ CPU fallback ภาพมี aliasing และ FPS ต่ำ จึงไม่ใช้เป็นหลักฐานภาพ WebGL/ความลื่นบน Android เครื่องจริง ไม่ได้ทดสอบเรซยาวทุกสภาพอากาศในรุ่น UI นี้
 
 R50 ไม่เปลี่ยน physics/AI/แรงดูด/DRS/ERS หรือโมเดลรถและระบบพิตระหว่างเรซ จุดมุ่งหมายของรุ่นนี้คือเมนู ภาพนำเสนอ HUD และการอัปเดต
+
+## ผลเผยแพร่จริง
+
+- gh-pages: `5e4abb090e55743af285d36f9b777eb7e7108cfa`
+- source: `work/interface50`
+- Root R48 → R50 กดตรวจอัปเดต/อัปเดตพร้อมแล้วในเกมสำเร็จ URL เดิมและ build `d57dcf642818c8db`
+- Bahrain Quick Race 1 รอบ รถที่เลือก KAEW P1 แสดง CHEQUERED FLAG ที่ 01:55.116 ใน cloud browser
+- ภาพหลักฐานใน `reports/interface50/` ใช้ CPU fallback จึงไม่ใช่ภาพความละเอียด/แสงสะท้อน WebGL บนมือถือ

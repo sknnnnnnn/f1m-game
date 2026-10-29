@@ -20,7 +20,21 @@
     "raceHUD": true,
     "cockpitView": true,
     "towTextBoxes": 0,
-    "scope": "Cloud CPU renderer, not Android GPU/FPS"
+    "scope": "Cloud CPU renderer, not Android GPU/FPS",
+    "R48MainLinkUpdate": true,
+    "liveURL": "https://sknnnnnnn.github.io/f1m-game/",
+    "selectedCarFinishedOneLap": {
+      "track": "bahrain",
+      "time": "01:55.116",
+      "position": "P1",
+      "phase": "CHEQUERED FLAG"
+    },
+    "screenshots": [
+      "f1m-r50-mobile-garage.jpg",
+      "f1m-r50-main-link.jpg"
+    ]
   },
-  "physicsAIAndVehicleAssetsChanged": false
+  "physicsAIAndVehicleAssetsChanged": false,
+  "releaseCommit": "5e4abb090e55743af285d36f9b777eb7e7108cfa",
+  "initialSourceCommit": "ecab3db02d9136315b45d3bd8a745448065c0e0b"
 }
