@@ -1,4 +1,4 @@
-import {step} from '../../racing/runtime/frozen/physics.js';
+import {step} from '../physics/solver53.js';
 import {surface32} from './physics-surface32.js';
 // Transport batching only: each car uses the same step, config and timestep.
 // All results are committed together by Race.commitAdvance after every job finishes.

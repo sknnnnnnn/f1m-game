@@ -17,6 +17,7 @@ export function contactBrake42(car,field,out,config){
   // the final body sweep. Clear-road pull-outs retain the body forecast only.
   const heading=car.projection.psi,side=s=>s.u*Math.sin(s.psi-heading)+(s.v??0)*Math.cos(s.psi-heading),lateral=other.projection.d-car.projection.d,sideRate=side(other.state)-side(car.state),shared=[0,.4,.8].some(t=>Math.abs(lateral+sideRate*t)<config.width+.6);
   const ownSpeed=Math.hypot(car.state.u,car.state.v),leadSpeed=Math.hypot(other.state.u,other.state.v),reserve=config.length+1.2+closing*.65+Math.max(0,(ownSpeed*ownSpeed-leadSpeed*leadSpeed)/20)+((other.state.brake??0)>.12?ownSpeed*.3:0);
+  if(Math.abs(lateral)>=config.width-.08&&closing<3&&Math.abs(sideRate)<.6&&Math.abs(other.state.psi-car.state.psi)<.08)continue;
   const brakingOrBend=(other.state.brake??0)>.12||(car.state.brake??0)>.12||Math.abs(car.projection.k)>.003;
   if(shared&&brakingOrBend&&gap<reserve||[.1,.25,.45,.7,1.0].some(t=>clearance(projected(car.state,t),projected(other.state,t),config)<margin)){
    return {...out,command:{...out.command,throttle:0,brake:Math.max(.8,out.command.brake??0),energy:false},trace:{...out.trace,contactBrake42:other.id}};

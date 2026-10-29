@@ -1,3 +1,7 @@
+# อัปเดต R53
+
+แก้ประสิทธิภาพรถ 22 คัน การออกตัว การถูด้านข้าง การ resize และจำกัดการคุม/กล้องเฉพาะสองคันในทีม ดูรายละเอียดและข้อจำกัดการทดสอบที่ [รายงาน R53](reports/grid53/README_TH.md)
+
 # R52 — F1 2026 / 22-car grid
 
 11 teams,22 real driver names,2026 team palettes,SC id23,shared team pit bays,22-car saves/standings and continuous contact response. Play/update at https://sknnnnnnn.github.io/f1m-game/ . Start a new 22-car session; previous six-car save files are preserved but incompatible. Details/validation limits: reports/GRID52_TH.md and reports/grid52/. Source branch work/grid52; main unchanged.

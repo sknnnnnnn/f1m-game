@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "actualGLB": true,
+  "cars": 22,
+  "sources": 2442,
+  "batches": 111,
+  "visibleParts": 2398,
+  "submissions": 111,
+  "savedSubmissions": 2287,
+  "savedFraction": 0.9537114261884904,
+  "trianglesPreserved": 1289992,
+  "animatedSteeringWheelDRSDamageAndVisibility": true,
+  "scope": "Actual Three.js scene and instance buffers; browser WebGL and Android GPU not measured."
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "preservedFiles": 20,
+  "tracks": 5,
+  "batchParity": {
+    "ticks": 180,
+    "cars": 6,
+    "stateAndTraceExact": true
+  }
+}

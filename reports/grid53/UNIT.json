@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "all11TeamsRestricted": true,
+  "all11TeamPlans": true,
+  "restartPreservesTeamWeatherLapsAndWeekendStage": true,
+  "instancing": {
+    "identicalParts": 22,
+    "drawSubmissions": 1,
+    "paintPreserved": true,
+    "worldTransformPreserved": true,
+    "visibilityAndDamagePreserved": true,
+    "capacityGrowth": true
+  }
+}

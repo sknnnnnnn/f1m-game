@@ -1,0 +1,8 @@
+{
+  "track": "suzuka",
+  "actors": 66,
+  "allFacingCar": true,
+  "maxHandReachError": 0,
+  "clearedBeforeLights": true,
+  "reversedStartingOrderFollowsActualCar": true
+}

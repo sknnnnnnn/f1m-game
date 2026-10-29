@@ -12,7 +12,7 @@ assert.equal(draftFactor(own,[lead]),1);assert(draftFactor(own,[lead],true)<.7,'
 lead.projection.d=3;assert(draftFactor(own,[lead])>.85);
 lead.projection.s=100;assert.equal(draftFactor(own,[lead]),0);
 lead.projection.s=150;lead.pit={active:true};assert.equal(draftFactor(own,[lead]),0);
-lead.pit.active=false;lead.id=7;assert.equal(draftFactor(own,[lead]),0);lead.id=2;
+lead.pit.active=false;lead.id=23;assert.equal(draftFactor(own,[lead]),0);lead.id=2;
 own.projection.k=.02;assert.equal(draftFactor(own,[lead]),0);own.projection.k=0;
 const c=highSpeedConfig(C0);
 function run(relief){const cfg={...c,CdA:c.CdA*(1-relief)},s=initial(cfg,{u:70,X:0,Y:0,psi:0,gear:7,shiftTarget:7});for(let i=0;i<120;i++)step(cfg,s,{tick:s.tick,expires:s.tick,throttle:1,brake:0,steer:0,gear:7,energy:false});return s.u;}

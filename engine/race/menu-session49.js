@@ -9,3 +9,12 @@ export function configureMenuSession49(session,input){
 }
 
 export function advanceMenuSession49(session,config=session.menu49){const ok=session.advanceStage();if(ok&&session.stage==='RACE'&&validateMenuSession49(config))session.race.laps=config.laps;return ok;}
+
+// Restart the current stage with the team/settings chosen at session entry.
+// Preserve Weekend progression settings without sending it back to Practice.
+export function resetMenuSession53(session){
+ const menu=session.menu49?{...session.menu49}:null,team=session.race.engineer.team,stage=session.stage,weather=session.race.weather.mode;
+ session.pause();
+ if(menu){configureMenuSession49(session,{...menu,mode:'QUICK',stage,team,weather});session.menu49={...menu,team};}
+ else{session.reset();session.race.selectTeam(team);}
+}

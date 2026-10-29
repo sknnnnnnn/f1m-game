@@ -10,7 +10,8 @@ import {coastBrakeTrim} from '../physics/attack-drive.js';
 import {intelligenceView} from '../ai/battle-planner.js';
 
 import {C0} from '../../racing/runtime/config.js';import {highSpeedConfig,gearCommand,prepareGearShift} from '../physics/vehicle-preset.js';
-import {initial,step} from '../../racing/runtime/frozen/physics.js';
+import {initial} from '../../racing/runtime/frozen/physics.js';
+import {step} from '../physics/solver53.js';
 import {validateConfig} from '../../racing/runtime/frozen/config.js';
 import {control} from '../../racing/runtime/frozen/controller.js';
 import {circuit,clamp} from '../tracks/track.js';

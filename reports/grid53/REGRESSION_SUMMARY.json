@@ -1,0 +1,353 @@
+{
+  "status": "PASS",
+  "execution": "Run in segments; passed tests were retained, failing 6-car fixtures were updated and rerun. No claim of one uninterrupted npm test run.",
+  "cases": 67,
+  "jobs": [
+    {
+      "file": "tests/draft48.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/battles47.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/race46.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/tow45.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/tow44.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/battle43.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/action42.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/action42.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/action42.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/energy-suzuka40.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/drs-suzuka40.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/recovery40.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/recovery40.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/racing40.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/reliability39.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/wet-render39.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/nose39.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/nose39.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/experience38.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/driver-rig38.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/rear-mirror37.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/pit-runtime37.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/crew-cache37.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/race-polish37.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/race-polish37.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/race-polish37.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/pit-model35.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/pit-continuity35.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/pit-continuity35.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/pit-continuity35.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/race-story34.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/race-story34.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/race-story34.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/race-package26.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/race-package26.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/race-package26.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/grid-walk-terrain.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/grid-walk-terrain.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/grid-walk-terrain.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/f125-driving.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/f125-driving.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/f125-driving.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/corner-speed-reference.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/corner-speed-reference.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/corner-speed-reference.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/route-spline.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/flow-fixes.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/driver-pedal.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/circuit-finish.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/circuit-finish.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/circuit-finish.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/sprint-straight.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/cpu-visibility.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/mobile-fixes.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/mobile-fixes.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/mobile-fixes.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/static-batch.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/engine-core.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/worker-transport.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/safety-policy.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/watch24.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/championship23.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/grid33.mjs",
+      "track": "bahrain",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/grid33.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/grid33.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/circuits33-geometry.mjs",
+      "track": "shanghai",
+      "status": "PASS"
+    },
+    {
+      "file": "tests/circuits33-geometry.mjs",
+      "track": "suzuka",
+      "status": "PASS"
+    }
+  ],
+  "additional": [
+    "grid52",
+    "grid53",
+    "car-instances53",
+    "solver53",
+    "menu49",
+    "interface50",
+    "pwa-static",
+    "service-worker"
+  ],
+  "browser": "Cadillac selection displayed only Perez/Bottas; CPU fallback only because WebGL disabled"
+}
