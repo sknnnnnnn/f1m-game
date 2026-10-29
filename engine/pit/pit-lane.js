@@ -1,9 +1,9 @@
 import {circuit,clamp,mod,wrap} from '../tracks/track.js';
 export const PIT={entry:circuit.data33?.pit.entry??circuit.length-420,limit:80/3.6,target:80/3.6-.025,mergeWait:circuit.data33?.pit.mergeWait??circuit.length+420,exit:circuit.data33?.pit.exit??circuit.length+560,serviceSeconds:3.2,width:7};
 const smooth=t=>{t=clamp(t,0,1);return t*t*t*(10+t*(-15+6*t));};
-export const stallStation=id=>circuit.length+70+(id-1)*23;
+export const stallStation=id=>circuit.length+60+Math.floor((id-1)/2)*18;
 export const pitStopStation=id=>stallStation(id)-1;
-export function pitBayOffset(S,id){if(id>6)return 0;const box=stallStation(id);return -6*smooth((S-(box-20))/18)*(1-smooth((S-(box+4))/18));}
+export function pitBayOffset(S,id){if(id>22)return 0;const box=stallStation(id);return -6*smooth((S-(box-20))/18)*(1-smooth((S-(box+4))/18));}
 export function pitOffset(S,id){const inBlend=smooth((S-(PIT.entry+35))/210),outBlend=smooth((S-(circuit.length+300))/260),lane=-16*inBlend*(1-outBlend),box=stallStation(id);return lane+pitBayOffset(S,id);}
 function importedPit33(S,id){const rows=circuit.data33.pit.samples,N=rows.length-1,z=clamp((S-PIT.entry)/(PIT.exit-PIT.entry)*N,0,N),i=Math.min(N-1,Math.floor(z)),t=z-i,a=rows[i],b=rows[i+1],prev=rows[Math.max(0,i-1)],next=rows[Math.min(N,i+2)],h0=2*t*t*t-3*t*t+1,h1=t*t*t-2*t*t+t,h2=-2*t*t*t+3*t*t,h3=t*t*t-t*t;
  const values=[1,2,3].map(k=>h0*a[k]+h1*(b[k]-prev[k])/(i===0?1:2)+h2*b[k]+h3*(next[k]-a[k])/(i===N-1?1:2)),dx=(6*t*t-6*t)*a[1]+(3*t*t-4*t+1)*(b[1]-prev[1])/(i===0?1:2)+(-6*t*t+6*t)*b[1]+(3*t*t-2*t)*(next[1]-a[1])/(i===N-1?1:2),dy=(6*t*t-6*t)*a[2]+(3*t*t-4*t+1)*(b[2]-prev[2])/(i===0?1:2)+(-6*t*t+6*t)*b[2]+(3*t*t-2*t)*(next[2]-a[2])/(i===N-1?1:2),len=Math.hypot(dx,dy)||1,box=stallStation(id),bay=pitBayOffset(S,id);return {x:values[0]-dy/len*bay,y:values[1]+dx/len*bay,height:values[2]};}

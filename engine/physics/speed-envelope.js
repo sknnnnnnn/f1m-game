@@ -30,7 +30,7 @@ export function brakingBudget(c,agent,tyre,k,v,curveV=v,caution=brakingTrafficCa
  const style=Math.max(.9,Math.min(1,(agent.personality.braking??6.3)/6.5));
  // Respect both fixed brake torque and the simultaneous tyre-force budget.
  // The old extra curvature multiplier penalised the friction circle twice.
- const racing40=isAttackConfig(c)&&agent.config?.driverBraking==='LATE_ENTRY'&&agent.id!==7&&!agent.recovery&&!['YELLOW','VSC'].includes(agent.state);
+ const racing40=isAttackConfig(c)&&agent.config?.driverBraking==='LATE_ENTRY'&&agent.id!==23&&!agent.recovery&&!['YELLOW','VSC'].includes(agent.state);
  const clear=racing40?1:agent.config?.driverBraking==='LATE_ENTRY'?1-trafficCaution(agent):0,torqueUse=.84+.06*clear,gripUse=.84+.04*clear;
  const next=Math.max(1,Math.min(torqueUse*mechanical*style,gripUse*grip*reserve));
  // Race cars share this physical reserve; following control owns spacing.
@@ -47,7 +47,7 @@ export function brakingBudget(c,agent,tyre,k,v,curveV=v,caution=brakingTrafficCa
 // reaches its braking envelope. Otherwise its negative feed-forward cancels
 // the positive speed error and produces a long, premature lift/coast phase.
 export function approachDemand(profileA,allowedSpeed,actualSpeed,agent,caution=trafficCaution(agent),curvature=0){
- if(isAttackConfig(agent.config??{})&&agent.id!==7&&!['YELLOW','VSC'].includes(agent.state)){
+ if(isAttackConfig(agent.config??{})&&agent.id!==23&&!['YELLOW','VSC'].includes(agent.state)){
   const margin=Math.max(.7,-Math.min(0,profileA)*(.1+1/(agent.config.pedalRate??16)));
   const drive=Math.max(0,Math.min(14,(allowedSpeed-actualSpeed-.1)*2));
   if(profileA>=-.05)return drive;
@@ -56,7 +56,7 @@ export function approachDemand(profileA,allowedSpeed,actualSpeed,agent,caution=t
   const x=Math.max(0,Math.min(1,(allowedSpeed-actualSpeed-margin)/.3)),blend=x*x*(3-2*x);
   return profileA+(drive-profileA)*blend;
  }
- if(agent.config?.driverBraking!=='LATE_ENTRY'||caution>.25||Math.abs(curvature)>(agent.config?.driverBraking==='LATE_ENTRY'&&agent.id!==7&&!['YELLOW','VSC'].includes(agent.state)?.004:.0012))return profileA<-.05?profileA:agent.acceleration;
+ if(agent.config?.driverBraking!=='LATE_ENTRY'||caution>.25||Math.abs(curvature)>(agent.config?.driverBraking==='LATE_ENTRY'&&agent.id!==23&&!['YELLOW','VSC'].includes(agent.state)?.004:.0012))return profileA<-.05?profileA:agent.acceleration;
  if(profileA>=-.05)return agent.acceleration;
  // Include the100ms planning cadence and the unchanged physical pedal slew.
  const reactionMargin=Math.max(.5,-profileA*(.1+1/(agent.config?.pedalRate??8)));

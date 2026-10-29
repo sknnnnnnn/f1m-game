@@ -25,14 +25,14 @@ export function pitScene28(scene,camera){
   for(const child of [...copy.children])if(child.isMesh&&child.geometry?.type==='PlaneGeometry'&&child.material?.transparent)copy.remove(child);
   const source=new T.Group();source.add(copy);const car=prepareCar(source);dynamic.add(car.root);const fronts=[];car.root.traverse(o=>{if(o.isMesh&&o.name.startsWith('FW_'))fronts.push(o);});for(const o of fronts)car.nose.attach(o);
   const api=racePitRuntime28(dynamic,car,garage.obstacles);profiles[id]={};for(const job of ['tyres','combined']){progress('เตรียมพิตรถ '+id+' / '+models.size+' · '+(job==='tyres'?'ยาง':'ยางและปีก'));await yieldUI();profiles[id][job]=api.prepare(job);}
-  mark(bay);mirrorLabels(dynamic,car.root);mirrorLabels(garage.room);bay.position.set(q.x,(q.height??0)+.045,-q.y);bay.rotation.y=q.psi-Math.PI/2;bay.scale.set(-v,v,v);scene.add(bay);dynamic.visible=false;
+  mark(bay);mirrorLabels(dynamic,car.root);mirrorLabels(garage.room);if(id%2===0)garage.room.visible=false;bay.position.set(q.x,(q.height??0)+.045,-q.y);bay.rotation.y=q.psi-Math.PI/2;bay.scale.set(-v,v,v);scene.add(bay);dynamic.visible=false;
   kits.set(id,{bay,work,dynamic,garage,craft,api,car,v,call:null,job:'tyres',lastService:null,returnAt:null,wasActive:false,completed:false});
  }return profiles;}
  function reset(){for(const k of kits.values()){k.call=null;k.job='tyres';k.lastService=null;k.returnAt=null;k.wasActive=false;k.completed=false;k.dynamic.visible=false;k.craft.sound.silence();k.work.position.set(0,0,0);k.work.quaternion.identity();k.work.scale.set(1,1,1);}}
  function restore(models){for(const m of models.values())for(const wheels of [m.wheels,m.low.wheels])for(const w of wheels)w.spin.visible=true;}
  function update(p,cars,models,time,cpu,replay,audio,running){const proofs=[];if(p.generation!==generation||time<lastTime){reset();generation=p.generation;}lastTime=time;
-  for(const [id,k] of kits){k.dynamic.visible=false;if(replay||p.ceremony26)continue;const c=cars.find(c=>c.id===id),m=models.get(id),pit=c?.pit,f=pit?.flow27;if(!c||!m)continue;
-   const call=f?(f.cycleId??f.calledAt):null,active=!!(f||pit.active);
+  for(const [id,k] of kits){k.garage.room.visible=id%2===1&&(!cpu||Math.hypot(k.bay.position.x-camera.position.x,k.bay.position.z-camera.position.z)<80);k.dynamic.visible=false;if(replay||p.ceremony26)continue;const c=cars.find(c=>c.id===id),m=models.get(id),pit=c?.pit,f=pit?.flow27;if(!c||!m)continue;
+   const call=f?(f.cycleId??f.calledAt):null,active=!!(f||pit.active);const mate=cars.find(o=>o.id!==id&&Math.floor((o.id-1)/2)===Math.floor((id-1)/2)&&o.pit?.active);if(mate&&!['SERVICE','RELEASE'].includes(pit.phase)&&(['SERVICE','RELEASE'].includes(mate.pit.phase)||(mate.pit.flow27?.calledAt??Infinity)<(f?.calledAt??Infinity)||mate.id<id&&(mate.pit.flow27?.calledAt??Infinity)===(f?.calledAt??Infinity)))continue;
    if(call!==null&&call!==k.call){k.call=call;k.job=f.nose?'combined':'tyres';k.lastService=null;k.returnAt=null;k.completed=false;k.work.position.set(0,0,0);k.work.quaternion.identity();k.work.scale.set(1,1,1);}
    if(!active&&k.wasActive)k.returnAt=time;k.wasActive=active;const job=k.job,profile=profiles[id][job];
    if(!active&&(k.returnAt===null||time-k.returnAt>profile.return))continue;

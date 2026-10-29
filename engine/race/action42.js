@@ -9,7 +9,7 @@ export function straightTarget42(agent){
 // Some sections suit each driver better. Only the requested cruising pace
 // changes; tyre limits, braking, finite ERS and collision checks still win.
 export function rhythmPace42(agent){
- if(agent.id===7||!Number.isFinite(agent.id))return 0;
+ if(agent.id===23||!Number.isFinite(agent.id))return 0;
  const progress=agent.raceContext?.progress??0,length=agent.raceContext?.length??5500;
  const phase=progress/length*Math.PI*3+agent.id*1.7+(agent.seed??1)*.17;
  return 3*(.5+.5*Math.sin(phase));

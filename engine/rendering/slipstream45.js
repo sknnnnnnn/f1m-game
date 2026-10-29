@@ -2,7 +2,7 @@ import {slipstreamCue45} from './slipstream-cue45.js';
 // Presentation only. Speed and wake come from the selected car's measured state.
 export function speedWind50(car,options={}){
  const cue=slipstreamCue45(car,options),speed=cue.speed;
- const moving=Number.isFinite(speed)&&options.running&&(options.phase??'RACE')==='RACE'&&(options.flag??'GREEN')==='GREEN'&&car&&car.id!==7&&!car.pit?.active&&!car.live26?.retired&&car.finishedAt==null;
+ const moving=Number.isFinite(speed)&&options.running&&(options.phase??'RACE')==='RACE'&&(options.flag??'GREEN')==='GREEN'&&car&&car.id!==23&&!car.pit?.active&&!car.live26?.retired&&car.finishedAt==null;
  const velocity=moving?Math.max(0,Math.min(1,(speed*3.6-140)/180)):0;
  return {active:options.camera!=='overview'&&!!moving&&(velocity>.015||cue.active),speed:velocity,wake:cue.strength,strength:Math.max(velocity*.58,cue.strength)};
 }

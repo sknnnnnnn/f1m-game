@@ -7,7 +7,7 @@ const car={id:1,state:{u:80,v:0},draft:0,pit:{active:false}};
 const fast=speedWind50(car,options);assert(fast.active);assert(fast.speed>.8);assert.equal(fast.wake,0);
 const tow=speedWind50({...car,draft:.9},options);assert(tow.active);assert.equal(tow.wake,.9);assert(tow.strength>fast.strength);
 for(const patch of [{running:false},{phase:'GRID'},{flag:'YELLOW'},{camera:'overview'}])assert.equal(speedWind50(car,{...options,...patch}).active,false);
-for(const patch of [{id:7},{pit:{active:true}},{live26:{retired:true}},{finishedAt:100},{state:{u:0,v:0}},{state:{u:NaN,v:0}}])assert.equal(speedWind50({...car,...patch},options).active,false);
+for(const patch of [{id:23},{pit:{active:true}},{live26:{retired:true}},{finishedAt:100},{state:{u:0,v:0}},{state:{u:NaN,v:0}}])assert.equal(speedWind50({...car,...patch},options).active,false);
 assert.equal(speedWind50(null,options).active,false);
 assert(speedWind50({...car,state:{u:35,v:0},draft:.8},options).active,'actual tow remains visible below the speed-only threshold');
 const markup=loadingCar50();assert(markup.includes('<svg'));assert(markup.includes('<progress'));assert(markup.includes('load50-wheel'));

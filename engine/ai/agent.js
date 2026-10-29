@@ -94,7 +94,7 @@ class Agent {
    const candidate=racingPath(this.curve,state,now),safe=p.cars.every(o=>{if(o.pit)return true;const space=trafficSpace(this,state,o);for(let j=0;j<=14;j++){const t=j*.25,gap=o.gap+o.relativeSpeed*t,other=o.intent?.curve?laneAt(o.intent.curve,state.time+t).d:o.lateral,own=laneAt(candidate,state.time+t).d;if(Math.abs(gap)<space.longitudinal+.35*t*t+3&&Math.abs(other-own)<space.lateral+.35)return false;}return true;});
    if(safe)flowPath=candidate;
   }
-  const followPath=!tactical40&&(!!entryCommit?.curve.racing||!entryCommit&&['bahrain','suzuka','shanghai'].includes(circuit.key)&&this.id!==7&&!this.pitApproach&&(!!flowPath||['CRUISE','FOLLOW','DRAFT'].includes(mode)||clearPath&&['COUNTER','ABORT_ATTACK','EXIT_DRIVE','EXIT_SETUP','HOLD_SPACE'].includes(mode))&&!this.recovery&&!p.cars.some(o=>!o.pit&&Math.abs(o.gap)<18&&Math.abs(o.lateral-now.d)>1.5));
+  const followPath=!tactical40&&(!!entryCommit?.curve.racing||!entryCommit&&['bahrain','suzuka','shanghai'].includes(circuit.key)&&this.id!==23&&!this.pitApproach&&(!!flowPath||['CRUISE','FOLLOW','DRAFT'].includes(mode)||clearPath&&['COUNTER','ABORT_ATTACK','EXIT_DRIVE','EXIT_SETUP','HOLD_SPACE'].includes(mode))&&!this.recovery&&!p.cars.some(o=>!o.pit&&Math.abs(o.gap)<18&&Math.abs(o.lateral-now.d)>1.5));
   if(this.pitApproach)this.freeLine=false;
   if(followPath){this.curve=flowPath??racingPath(this.curve,state,now,entryCommit?.curve.racing?.lane40??null);this.targetLane=Number.isFinite(this.curve.racing.lane40)?entryCommit.lane:racingOffset(now.s);this.freeLine=true;}
   else if(this.curve.racing&&!Number.isFinite(this.curve.racing.lane40)){this.curve=connectLane(this.curve,state.time,clamp(choice,-5.4,5.4),Math.max(3,personality.commit));this.targetLane=clamp(choice,-5.4,5.4);}

@@ -6,7 +6,7 @@ export class BroadcastDirector{
  constructor(){this.reset();}
  reset(id=1){this.focus=id;this.holdUntil=0;this.since=-Infinity;this.candidate=null;this.candidateSince=0;this.tracksideUntil=0;this.lastEventKey=null;this.story={kind:'GRID',shot:'grid',title:'รถที่เลือก · บนกริด'};}
  classify(frame,time,id){const car=frame.cars.find(c=>c.id===id);if(!car)return null;const s=car.state,at=circuit.project(s.X,s.Y,s.psi),speed=Math.hypot(s.u,s.v),k=Math.abs(at.k),brake=s.brake??0,gas=s.throttle??0;
- const peers=frame.cars.filter(c=>c.id!==id&&c.id!==7&&!!c.pit?.active===!!car.pit?.active).map(c=>({car:c,gap:Math.abs(circuit.delta(circuit.project(c.state.X,c.state.Y,c.state.psi).s,at.s)),distance:Math.hypot(c.state.X-s.X,c.state.Y-s.Y)})).filter(c=>c.gap<60&&c.distance<70).sort((a,b)=>a.distance-b.distance),near=peers[0];
+ const peers=frame.cars.filter(c=>c.id!==id&&c.id!==23&&!!c.pit?.active===!!car.pit?.active).map(c=>({car:c,gap:Math.abs(circuit.delta(circuit.project(c.state.X,c.state.Y,c.state.psi).s,at.s)),distance:Math.hypot(c.state.X-s.X,c.state.Y-s.Y)})).filter(c=>c.gap<60&&c.distance<70).sort((a,b)=>a.distance-b.distance),near=peers[0];
  if(['GRID','GRID_CLEAR','LIGHTS'].includes(frame.phase))return {kind:'GRID',shot:'grid',title:'รถที่เลือก · รอสัญญาณ'};
  if(frame.stop)return {kind:'STOPPED',shot:'chase',title:'การแข่งขันหยุด · รถที่เลือก',urgent:true};
  if(car.finishedAt!==null&&car.finishedAt!==undefined)return {kind:'FINISH',shot:'front',title:'เข้าเส้นชัย'};

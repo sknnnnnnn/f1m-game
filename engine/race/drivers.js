@@ -1,7 +1,8 @@
+import {TEAMS52} from './roster52.js';
 import {circuit} from '../tracks/track.js';
 import {RACE_STYLES} from '../ai/personality.js';
 
-const DRIVERS=[
+const LEGACY_DRIVERS=[
 {name:'KAEW',kind:'DEFENDER',colour:'#b8a3ff',traits:{pace:88.5,headway:.65,risk:.62,braking:6.3,corner:0.985,exit:6.2,defend:.95,bias:0,commit:1.8}},
 {name:'ARUN',kind:'ATTACKER',colour:'#ff655c',traits:{pace:91.5,headway:.55,risk:.9,braking:6.5,corner:0.965,exit:6.5,defend:.55,bias:.4,commit:1.5}},
 {name:'MALI',kind:'TACTICIAN',colour:'#55d9f4',traits:{pace:85.8,headway:.65,risk:.65,braking:6.2,corner:1.005,exit:6.35,defend:.7,bias:-.4,commit:1.9}},
@@ -26,4 +27,5 @@ export function closeFieldTraits(driver){
  ...profile,corner:profile.corner/(RACE_STYLES[driver.kind]?.cornerFactor??1)};
 }
 
+const DRIVERS=TEAMS52.flatMap((t,i)=>t.drivers.map((name,j)=>({...LEGACY_DRIVERS[(i*2+j)%6],name,colour:t.colour,team:t.id,traits:{...LEGACY_DRIVERS[(i*2+j)%6].traits,risk:.40+((i*7+j*3)%9)*.035}})));
 export {DRIVERS};

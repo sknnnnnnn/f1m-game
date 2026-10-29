@@ -17,7 +17,7 @@ export function strategyChoices38({oldLoss,newLoss,pitLoss,trafficPenalty,wear,r
  const stay=Math.max(0,oldLoss),box=newLoss+pitLoss+trafficPenalty,after=Math.max(0,laps-one),wait=(waitLoss??lapCost+newLoss*(laps?after/laps:0))+pitLoss+trafficPenalty;
  const rows=[{key:'STAY_OUT',label:'อยู่จนจบ',cost:stay},{key:'BOX_NOW',label:'BOX รอบนี้',cost:box},{key:'WAIT_ONE',label:'อยู่ต่อหนึ่งรอบ',cost:wait,unavailable:laps<1.75}];const best=rows.filter(r=>!r.unavailable).reduce((a,b)=>a.cost<=b.cost?a:b);return {best:best.key,rows:rows.map(r=>({...r,delta:r.cost-best.cost})),uncertainty:3+Math.min(7,laps*.8+trafficPenalty*.4),scope:'แบบจำลองเวลาที่อาจเสียจากยางและพิต รวมการจราจรปัจจุบัน ไม่ใช่เวลารอบหรือผลที่รับประกัน'};
 }
-export function raceRecord38(p,track){if(!p?.finished||p.stop||p.weekend?.stage&&p.weekend.stage!=='RACE'||!Array.isArray(p.results)||p.results.length!==6)return null;
+export function raceRecord38(p,track){if(!p?.finished||p.stop||p.weekend?.stage&&p.weekend.stage!=='RACE'||!Array.isArray(p.results)||p.results.length!==22)return null;
  const results=p.results.map(r=>({id:r.id,name:String(r.name??'').slice(0,40),position:r.position,time:r.finished&&Number.isFinite(r.time)?r.time:null,bestLap:Number.isFinite(r.bestLap)?r.bestLap:null,stops:r.stops??0,retired:!!r.retired}));if(results.some(r=>r.time===null&&!r.retired)||new Set(results.map(r=>r.id)).size!==6)return null;
  return {version:1,key:track+':'+p.tick+':'+results.map(r=>r.time).join('/'),track,laps:p.laps,overtakes:p.overtakes??0,results};
 }

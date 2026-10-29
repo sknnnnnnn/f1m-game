@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "teams": 11,
+  "cars": 22,
+  "uniqueNames": 22,
+  "safetyId": 23,
+  "allTeamsSelectable": true,
+  "sharedTeamStallsWithinPit": true,
+  "saveRoundTrip22": true,
+  "sideBrushRetainsForwardSpeed": true,
+  "normalMomentumConserved": true
+}

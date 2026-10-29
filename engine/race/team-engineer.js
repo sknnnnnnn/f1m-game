@@ -3,7 +3,8 @@ import {pitEstimate26} from '../pit/pit-estimate26.js';
 import {strategyForecast15,captureForecast} from './race-intelligence15.js';
 import {circuit,clamp} from '../tracks/track.js';
 import {connectLane,laneAt,makeReference} from '../physics/reference-adapter.js';
-export const TEAMS=[{id:1,name:'SCARLET',cars:[1,2],colour:'#d24d61'},{id:2,name:'OCEAN',cars:[3,4],colour:'#53b5ba'},{id:3,name:'AURORA',cars:[5,6],colour:'#b398ed'}];
+export {TEAMS52 as TEAMS} from './roster52.js';
+import {TEAMS52 as TEAMS} from './roster52.js';
 export const MODES={AUTO:'ให้นักขับเลือก',ATTACK:'บุก',BALANCED:'สมดุล',CONSERVE:'ถนอมยาง'};
 export function freshOrder(){return {pace:'AUTO',energy:'AUTO',attack:'AUTO',yieldTo:null,repair:'AUTO',pitPlan:null,stints:[]};}
 export function initEngineer(r){r.engineer={version:14,team:1,orders:Object.fromEntries(r.cars.map(c=>[c.id,freshOrder()])),commands:[],seen:[],ledger:Object.fromEntries(r.cars.map(c=>[c.id,{won:0,lost:0,pitPositionChange:0,queueSeconds:0}]))};r.sectors=Object.fromEntries(r.cars.map(c=>[c.id,{next:Math.max(1,Math.floor(c.progress/(circuit.length/3))+1),lastTime:r.time,partial:r.tick>0,rows:[],best:[null,null,null]}]));for(const c of r.cars){c.basePersonality={...c.agent.personality};c.baseStyle={...c.agent.style};c.directiveStatus='นักขับประเมินเอง';}}

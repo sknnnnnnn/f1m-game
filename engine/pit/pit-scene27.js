@@ -29,7 +29,7 @@ export function pitScene27(scene,camera){
   const k={root,crew,garage,craft,front,rear,wheels,tools,wingMeshes,oldWing,freshWing,lastService:null,returnAt:null};mark(root);kits.set(id,k);return k;
  }
  function update(p,cars,models,time,cpu,replay=false,audio=null,running=false){if(p.generation!==lastGeneration||time<lastTime){for(const k of kits.values()){k.returnAt=null;k.lastService=null;k.wasActive=false;k.craft.sound.silence();}lastGeneration=p.generation;}lastTime=time;for(const [id,k] of kits){k.root.visible=false;const old=scene.getObjectByName('Legacy_Garage_26_'+id);if(old)old.visible=true;}if(replay||p.ceremony26)return;
-  for(const car of cars){const m=models.get(car.id);if(!m||car.id>6)continue;const pit=car.pit,f=pit?.flow27;let k=kits.get(car.id);const needed=f||pit?.active||k?.wasActive||k?.returnAt&&time-k.returnAt<18;if(!needed)continue;
+  for(const car of cars){const m=models.get(car.id);if(!m||car.id>22)continue;const pit=car.pit,f=pit?.flow27;let k=kits.get(car.id);const needed=f||pit?.active||k?.wasActive||k?.returnAt&&time-k.returnAt<18;if(!needed)continue;
    if(!k){if(!deploy)continue;k=kit(car.id,m);}k.root.visible=true;const oldGarage=scene.getObjectByName('Legacy_Garage_26_'+car.id);if(oldGarage)oldGarage.visible=false;k.crew.setVisible(!cpu);k.craft.setVisible(!cpu);const clock=pitClock27(pit,time),servicing=!!clock&&['SERVICE','RELEASE','PIT_OUT','YIELD','MERGE'].includes(pit.phase),at=servicing?clock.t:0;
    if(servicing&&k.lastService!==f?.serviceAt){k.lastService=f?.serviceAt;k.returnAt=null;}
    if(!pit.active&&!f&&k.wasActive)k.returnAt=time;k.wasActive=!!(f||pit.active);

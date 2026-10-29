@@ -1,3 +1,4 @@
+import {TEAMS52} from '../race/roster52.js';
 import {triangleClearMain28} from '../tracks/track-layout28.js';
 import {circuit} from '../tracks/track.js';
 import {PIT,pitOffset,stallStation,pitStopStation,pitRoad} from './pit-lane.js';
@@ -14,11 +15,11 @@ export function buildPitScene(T,scene,roadMaterial=null){
  ribbon(S=>apron(S)?Math.min(-36,fast(S)-3.5):fast(S)-3.5,S=>fast(S)+3.5,'#343d43');
  for(const side of [-1,1])ribbon(S=>fast(S)+side*3.3,S=>fast(S)+side*3.45,'#ebe3cb',.038,PIT.entry+260,circuit.length+270);
  }else{
-  const pos=[],uv=[],ix=[];for(let S=PIT.entry;S<PIT.exit;S+=3){const base=pos.length/3;for(const v of [S,Math.min(S+3,PIT.exit)]){const q=pitRoad(1000).at(v),near=v>stallStation(1)-95&&v<stallStation(6)+85;for(const n of [near?-15:-3.5,3.5]){pos.push(q.x-Math.sin(q.psi)*n,(q.height??0)+.031,-q.y-Math.cos(q.psi)*n);uv.push(n/5,(v-PIT.entry)/5);}}ix.push(base,base+2,base+1,base+1,base+2,base+3);}
+  const pos=[],uv=[],ix=[];for(let S=PIT.entry;S<PIT.exit;S+=3){const base=pos.length/3;for(const v of [S,Math.min(S+3,PIT.exit)]){const q=pitRoad(1000).at(v),near=v>stallStation(1)-95&&v<stallStation(22)+85;for(const n of [near?-15:-3.5,3.5]){pos.push(q.x-Math.sin(q.psi)*n,(q.height??0)+.031,-q.y-Math.cos(q.psi)*n);uv.push(n/5,(v-PIT.entry)/5);}}ix.push(base,base+2,base+1,base+1,base+2,base+3);}
   const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('uv',new T.Float32BufferAttribute(uv,2));g.setIndex(ix);g.computeVertexNormals();const road=mesh(g,'#343d43');if(roadMaterial)road.material=roadMaterial;
  }
- const colours=['#b91735','#215d86','#26766a','#b6b4aa','#e2913e','#7b4d9c'];
- for(let id=1;id<=6;id++){
+ const colours=TEAMS52.flatMap(t=>[t.colour,t.colour]);
+ for(let id=1;id<=22;id+=2){
   const S=pitStopStation(id),q=pitRoad(id).at(S),root=new T.Group();root.position.set(q.x,q.height??0,-q.y);root.rotation.y=q.psi-Math.PI/2;scene.add(root);
   const front=mesh(new T.BoxGeometry(2.8,.012,.12),'#e7dfc5',root);front.position.set(0,.045,-3.05);
   for(const side of [-1,1]){const strip=mesh(new T.BoxGeometry(.07,.012,5.9),'#e7dfc5',root);strip.position.set(side*1.4,.045,-.10);}

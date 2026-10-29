@@ -1,3 +1,9 @@
+# R52 — F1 2026 / 22-car grid
+
+11 teams,22 real driver names,2026 team palettes,SC id23,shared team pit bays,22-car saves/standings and continuous contact response. Play/update at https://sknnnnnnn.github.io/f1m-game/ . Start a new 22-car session; previous six-car save files are preserved but incompatible. Details/validation limits: reports/GRID52_TH.md and reports/grid52/. Source branch work/grid52; main unchanged.
+
+---
+
 # F1M R50 — อินเทอร์เฟซเกมและอัปเดตผ่านลิงก์เดิม
 
 เล่นที่ https://sknnnnnnn.github.io/f1m-game/

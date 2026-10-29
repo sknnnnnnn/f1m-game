@@ -3,7 +3,7 @@ import {passingLanes26} from './tactical-lanes26.js';
 // Plan physical pedal/lane demand. No speed, position, rank or grip writes.
 export function towAttack46(agent,state,p,safeLane,decision,runway){
  const memory=agent.towAttack46??={phase:'IDLE',until:0,rival:null};
- const enabled=state.time>=(agent.passReset47?.until??0)&&agent.id!==7&&state.time>25&&!agent.pitApproach&&!agent.recovery&&agent.engineerOrder?.attack!=='ABORT'&&agent.engineerOrder?.pace!=='CONSERVE'&&agent.raceContext?.flag!=='YELLOW'&&agent.raceContext?.flag!=='VSC';
+ const enabled=state.time>=(agent.passReset47?.until??0)&&agent.id!==23&&state.time>25&&!agent.pitApproach&&!agent.recovery&&agent.engineerOrder?.attack!=='ABORT'&&agent.engineerOrder?.pace!=='CONSERVE'&&agent.raceContext?.flag!=='YELLOW'&&agent.raceContext?.flag!=='VSC';
  if(!enabled){memory.phase='IDLE';return decision;}
  const pass=agent.duel?.pass,rival=pass&&p.cars.find(c=>c.id===pass.id&&!c.pit);
  if(pass&&rival&&state.time-pass.started<22&&rival.gap>-(agent.config?.length??5.5)-6){memory.phase='COMMIT';memory.rival=rival.id;memory.until=state.time+.8;return decision;}

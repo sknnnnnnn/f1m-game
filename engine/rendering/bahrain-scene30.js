@@ -1,3 +1,4 @@
+import {TEAMS52} from '../race/roster52.js';
 import {clearMain28,clearPit28,triangleClearMain28,triangleClearPit30} from '../tracks/track-layout28.js';
 import {pitRoad,pitStopStation} from '../pit/pit-lane.js';
 import {brakingZones} from '../ai/braking-zones.js';
@@ -26,7 +27,7 @@ export function bahrainScene30(T,scene,track){
  }
  function place(name,s,n,build,{padding=1,detail=950}={}){const q=track.point(s,n),g=new T.Group();g.name=name;g.position.set(q.x,0,-q.y);g.rotation.y=q.psi-Math.PI/2;root.add(g);build(g);if(!safe(g,padding)){root.remove(g);g.traverse(o=>{if(o.isMesh){o.geometry.dispose();if(o.material.map){o.material.map.dispose();o.material.dispose();}}});return null;}batch(g);objects.push(g);lod.push({g,detail});return g;}
  function seek(name,s,n,build,options){for(const offset of [0,12,26,42]){const g=place(name,s,n+Math.sign(n||1)*offset,build,options);if(g)return g;}return null;}
- const teamColors=['red','teal','gold'],teamNames=['SCARLET','OCEAN','AURORA'];
+ const teamColors=['red','teal','gold'],teamNames=TEAMS52.map(t=>t.name);
  if(track.key==='bahrain'){
   // Rear hospitality buildings keep the original six Pit Flow garages unobstructed.
   for(let team=0;team<3;team++){
@@ -95,7 +96,7 @@ export function bahrainScene30(T,scene,track){
   for(const c of cars){const m=models.get(c.id);if(!m)continue;const lights=rearLights.get(m)??tail(m),lit=(c.state.brake??0)>.001;for(const l of lights){l.material.color.setHex(lit?0xff482e:0x3b1215);l.sprite.material.opacity=lit&&!cpu&&quality!=='LOW'?.85:0;l.sprite.visible=lit&&!cpu&&quality!=='LOW';}
   }
  }
- function brandGarages(kits){for(const [id,k] of kits){const team=Math.floor((id-1)/2),color=colors[teamColors[team]],g=k.garage.room;
+ function brandGarages(kits){for(const [id,k] of kits){const team=Math.floor((id-1)/2),color=parseInt(TEAMS52[team].colour.slice(1),16),g=k.garage.room;
   g.traverse(o=>{if(!o.isMesh)return;if(['Door pillar','Working apron boundary'].includes(o.name)){o.material=o.material.clone();o.material.color.setHex(color);}if(o.geometry?.type==='PlaneGeometry'&&o.geometry.parameters.width===7.5){const old=o.material.map,c=document.createElement('canvas');c.width=768;c.height=144;const x=c.getContext('2d');x.translate(c.width,0);x.scale(-1,1);x.fillStyle='#142a34';x.fillRect(0,0,768,144);x.fillStyle='#'+color.toString(16).padStart(6,'0');x.fillRect(0,0,768,12);x.fillStyle='#f2e9d7';x.font='600 54px sans-serif';x.textAlign='center';x.fillText(teamNames[team]+'  /  BAY '+id,384,94);const texture=new T.CanvasTexture(c);texture.colorSpace=T.SRGBColorSpace;o.material.map=texture;old?.dispose();}});
  }}
  return {root,objects,stats,update,brandGarages};

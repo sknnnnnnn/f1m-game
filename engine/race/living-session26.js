@@ -15,9 +15,9 @@ export class LivingSession26 extends Weekend2Session {
   let S,speed,distance,remaining,done,q,pit,stage;
   if(pre){
    // One shared convoy progress: followers cannot catch or pass the leader.
-   const leadStart=stallStation(6),leadEnd=2*L+circuit.gate-8,total=leadEnd-leadStart,motion=segment26(t,total,16),blend=smooth((motion.distance-(total-250))/250),gridOffset=Math.floor((rank-1)/2)*24+((rank-1)%2)*9,offset=(rank-1)*23*(1-blend)+gridOffset*blend;
+   const leadStart=stallStation(22),leadEnd=2*L+circuit.gate-8,total=leadEnd-leadStart,motion=segment26(t,total,16),blend=smooth((motion.distance-(total-250))/250),gridOffset=Math.floor((rank-1)/2)*16+((rank-1)%2)*8,offset=(rank-1)*23*(1-blend)+gridOffset*blend;
    S=leadStart+motion.distance-offset;distance=motion.distance;remaining=total-motion.distance;done=remaining<.001;speed=motion.speed;pit=S<PIT.exit;
-   if(pit){const road=pitRoad(7-rank),at=road.at(S);q=at;}else q=circuit.point(S,(rank%2?2.4:-2.4)*blend);
+   if(pit){const road=pitRoad(23-rank),at=road.at(S);q=at;}else q=circuit.point(S,(rank%2?2.4:-2.4)*blend);
    stage=pit?'GARAGE_ROLLOUT':remaining<250?'GRID_FORMING':'FORMATION';
   }else{const start=c.projection.s,entry=PIT.entry>=start?PIT.entry:PIT.entry+L,end=entry+stallStation(c.id)-PIT.entry,total=end-start,motion=segment26(Math.max(0,t-(rank-1)*2),total,12);distance=motion.distance;S=start+distance;remaining=total-distance;speed=motion.speed;done=remaining<.001;pit=S>=entry;q=pit?pitRoad(c.id).at(PIT.entry+S-entry):circuit.point(S,0);stage=pit?done?'PARC_FERME':'PIT_RETURN':'COOLDOWN';}
   const delta=pit?Math.atan((this.race.config.a+this.race.config.b)*(q.k??0)):Math.atan((this.race.config.a+this.race.config.b)*(circuit.at(S).k??0)),state={...c.state,X:q.x,Y:q.y,psi:q.psi,u:done?0:speed,v:0,r:speed*(q.k??0),delta,throttle:done?0:.3,brake:remaining<60?.4:0,time:(pre?0:this.race.time)+t,wheelAngles:c.state.wheels.map((_,i)=>(c.visualAngles?.[i]??0)+distance/this.race.config.R)};

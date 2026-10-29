@@ -28,7 +28,7 @@ export class Weekend2Race extends StrategyRace {
  caution(flag='YELLOW',station=this.cars[0].projection.s,seconds=25,scOverride=false){if(this.safetyCar&&(this.safetyCar.phase!=='PARKED'||this.safetyCar.restartProgress!==null)&&!scOverride&&flag!=='VSC')return false;if(!['GREEN','YELLOW','VSC'].includes(flag))return false;this.controlZone={flag,station,until:this.time+seconds,order:this.ranking().filter(c=>!c.pit.active).map(c=>c.id),violations:[]};for(const c of this.cars)c.agent.plan=null;this.radioCall(0,flag==='GREEN'?'ธงเขียว กลับมาแข่งได้':flag==='VSC'?'VSC ชะลอทั้งสนาม ห้ามแซง':'ธงเหลือง ชะลอในเขต ห้ามแซง','flag',0);return true;}
  inCaution(car){const z=this.controlZone;return z.flag==='VSC'||z.flag==='YELLOW'&&Math.abs(circuit.delta(car.projection.s,z.station))<220;}
  field(){return [...visiblePitTraffic23(super.field(),circuit),...safetyField(this)];}
- draftFor(car,field){return draftFactor(car,field.filter(c=>c.id!==7),this.weather.mode!=='DRY'||this.weather.water>.05);}
+ draftFor(car,field){return draftFactor(car,field.filter(c=>c.id!==23),this.weather.mode!=='DRY'||this.weather.water>.05);}
  callSafety(action){return callSafety(this,action);}
  advance(){safetyPrepare(this);const p=this.prepareAdvance();if(!p)return false;for(const q of p)q.result=step({...q.config,CdA:q.aeroCdA},q.next,q.out.command,this.physicsOptions(q.car));const sc=safetyProposal(this);if(!safetyGuard(this,sc,p))return false;const ok=this.commitAdvance(p);if(ok)safetyCommit(this,sc);return ok;}
  async advanceParallel32(run){safetyPrepare(this);const start=performance.now(),p=this.prepareAdvance();if(!p)return false;const prepared=performance.now();await run(p,{weather:this.weather,live:{drying:this.ensure26().drying,roads:this.ensure26().roads}});const physics=performance.now();const sc=safetyProposal(this);if(!safetyGuard(this,sc,p))return false;const ok=this.commitAdvance(p);if(ok)safetyCommit(this,sc);this.performance32={prepareMS:prepared-start,physicsMS:physics-prepared,commitMS:performance.now()-physics};return ok;}
@@ -36,7 +36,7 @@ export class Weekend2Race extends StrategyRace {
  commandCar(car,c){return recoverYaw23(car,gripSteering25(car,driverResponse(this,car,pressureCommand(this,car,super.commandCar(car,c)),c),c),c);}
  selectTeam(id){if(!TEAMS.some(t=>t.id===id))return false;ensureEngineer(this);this.engineer.team=id;return true;}
  issueOrder(id,patch){return commandEngineer(this,id,patch);}
- serviceAvailable(car){const team=TEAMS.find(t=>t.cars.includes(car.id));return !this.cars.some(c=>c.id!==car.id&&team.cars.includes(c.id)&&(c.pit.phase==='SERVICE'||c.repairUntil>this.time));}
+ serviceAvailable(car){const team=TEAMS.find(t=>t.cars.includes(car.id));return !this.cars.some(c=>c.id!==car.id&&team.cars.includes(c.id)&&(['SERVICE','RELEASE'].includes(c.pit.phase)||c.repairUntil>this.time));}
  thinkCar(car,field,c){
   car.agent.wetTow44=this.weather.mode!=='DRY'||this.weather.water>.05;car.agent.drs40=!!car.show22?.wing;car.agent.drsZone40=!!car.wing24?.zone;
   car.agent.newTyre22=car.tyres.sets>1&&car.distance-car.tyres.fittedDistance<450;beforeDriver(this,car);beforeControl23(this,car);thinkPressure(this,car,field);

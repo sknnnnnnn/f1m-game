@@ -15,7 +15,7 @@ assert.equal(mapHit24([{id:1,x:left[0],y:left[1]}],left[0],left[1],{width:372,he
 const car={id:1,draft:.8,state:{u:70,v:0},pit:{active:false},finishedAt:null};
 const opts={running:true,phase:'RACE'},cue=slipstreamCue45(car,opts);assert(cue.active);assert(Math.abs(cue.relief-.72)<1e-10);
 for(const options of [{running:false,phase:'RACE'},{running:true,phase:'GRID'},{...opts,flag:'YELLOW'}])assert(!slipstreamCue45(car,options).active);
-for(const patch of [{id:7},{pit:{active:true}},{finishedAt:100},{draft:NaN},{state:{u:0,v:0}},{live26:{retired:true}}])assert(!slipstreamCue45({...car,...patch},opts).active);
+for(const patch of [{id:23},{pit:{active:true}},{finishedAt:100},{draft:NaN},{state:{u:0,v:0}},{live26:{retired:true}}])assert(!slipstreamCue45({...car,...patch},opts).active);
 assert.equal(slipstreamCue45({...car,draft:0},opts).strength,0,'switching to a car outside the wake clears the effect');
 const self={id:1,state:{u:70,v:0},projection:{s:100,d:0,k:0}},front={id:2,projection:{s:500,d:0,k:0}};
 assert(draftFactor(self,[front])>0,'useful wake reaches beyond 400m');
