@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "track": "shanghai",
+  "cars": 22,
+  "ticks": 180,
+  "simulationSeconds": 3,
+  "wall": {
+    "reference56": 4030.141229999998,
+    "mobile57": 1433.1182739999979
+  },
+  "physics": {
+    "reference56": 2799.935988000001,
+    "mobile57": 195.8399080000014
+  },
+  "physicsSpeedup": 14.29706547860501,
+  "completeSimulationSpeedup": 2.8121483782014796,
+  "completeSimulationHostRealTimeRatio": 2.0933373430698468,
+  "metrics": {
+    "model57": "MOBILE57-FOUR-WHEEL-SEMI-IMPLICIT",
+    "workers": 0,
+    "inlineInRaceWorker": true,
+    "jobs": 3960,
+    "batches": 180,
+    "jobMS": 0.5429710000007617,
+    "roundTripMS": 0.5429710000007617,
+    "error": null
+  },
+  "scope": "Interleaved CPU timings of complete live race path on this host. Both integrators execute in process to compare cost; reference56 production parallel-worker IPC/GPU/Android are not measured. Different models, not exact state parity."
+}

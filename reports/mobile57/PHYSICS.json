@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "model": "MOBILE57-FOUR-WHEEL-SEMI-IMPLICIT",
+  "substepChecks": 2220,
+  "stationaryStable": true,
+  "launchKPH": 129.4092071470256,
+  "braking300toBelow4KPH": {
+    "dry": {
+      "seconds": 2.8166666666666615,
+      "speed": 0.6915134842002668,
+      "wear": 0.0006919554987004956
+    },
+    "wet": {
+      "seconds": 4.683333333333322,
+      "speed": 0.8143224738285331,
+      "wear": 0.0007532652565508397
+    }
+  },
+  "finiteHybridAffectsAcceleration": true,
+  "frictionCirclesBounded": true,
+  "energyAccountingBounded": true,
+  "steeringCreatesYawAndLateralMotion": true,
+  "repeatableStateAndRecords": true,
+  "invalidCommandRejected": true,
+  "scope": "Behavior/invariant checks for a new approximation; not exact parity with reference56, Android FPS or calibrated real F1 telemetry."
+}

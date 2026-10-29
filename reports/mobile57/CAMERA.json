@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "aspects": [
+    0.5,
+    1.5
+  ],
+  "movingCameraFrames": 240,
+  "pitFraming": true,
+  "physicalStateUnmodified": true,
+  "viewDistanceMetres": 1800
+}

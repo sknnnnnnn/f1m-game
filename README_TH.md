@@ -1,3 +1,17 @@
+# F1M RACE 57 — Mobile vehicle model experiment
+
+เปิดเล่น: https://sknnnnnnn.github.io/f1m-game/preview57/
+
+เปลี่ยน production เป็นแบบจำลองรถสี่ล้อ semi-implicit ที่เบากว่า พร้อมทำ physics ใน race worker เดียว และกล้องหลัก MANAGER ใหม่ คง reference56/frozen ไว้เทียบ ไม่อ้าง exact parity ของแบบจำลองใหม่
+
+ตรวจหนึ่งรอบต่อสนามครบ 22 คันทั้ง Shanghai/Suzuka/Bahrain, พิตครบ 22 ทั้งสามสนาม และ wet drive 30 วินาที ผ่าน CPU fixture ฟิสิกส์เร็วขึ้น ~14.3× / simulation รวม ~2.8× บน host ไม่ใช่ Android FPS
+
+รายละเอียด: [reports/mobile57/README_TH.md](reports/mobile57/README_TH.md)
+
+ยังไม่รับรอง 60 FPS/จอกระพริบ/การขับที่สอบเทียบจริงบนมือถือ
+
+---
+
 # F1M RACE 56 — Runtime CPU work
 
 เปิดเล่น: https://sknnnnnnn.github.io/f1m-game/preview56/

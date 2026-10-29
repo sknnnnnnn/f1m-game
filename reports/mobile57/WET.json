@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "track": "shanghai",
+  "cars": 22,
+  "seconds": 30,
+  "rain": 1,
+  "maximumStandingWater": 2.006466035485522,
+  "off": null,
+  "stop": null,
+  "rejections": 0,
+  "model": "MOBILE57-FOUR-WHEEL-SEMI-IMPLICIT"
+}

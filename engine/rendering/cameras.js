@@ -2,7 +2,7 @@ import {driveCues26} from './drive-cues26.js';
 import {roadPose33} from '../tracks/road-height33.js';
 import {CameraSafety30} from './camera-safety30.js';
 import {cameraDepth} from './render-policy.js';
-export const CAMERA_NAMES={chase:'FOLLOW / หมุนรอบรถ',cinema:'CINEMA / รถที่เลือก',trackside:'TRACKSIDE / ข้างสนาม',fps:'COCKPIT / คนขับ',nose:'NOSE / จมูกรถ',drone:'DRONE / เฉียงสูง',high:'HIGH / มุมสูง',overview:'MAP / แผนที่ทั้งสนาม',inspect:'INSPECT / หยุดภาพหมุนดู'};
+export const CAMERA_NAMES={manager:'MANAGER / จัดการเรซ',chase:'FOLLOW / หมุนรอบรถ',cinema:'CINEMA / รถที่เลือก',trackside:'TRACKSIDE / ข้างสนาม',fps:'COCKPIT / คนขับ',nose:'NOSE / จมูกรถ',drone:'DRONE / เฉียงสูง',high:'HIGH / มุมสูง',overview:'MAP / แผนที่ทั้งสนาม',inspect:'INSPECT / หยุดภาพหมุนดู'};
 const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));
 export class CameraDirector{
  constructor(T,circuit){this.T=T;this.circuit=circuit;this.safety=new CameraSafety30(T);this.mode='chase';this.distance=1;this.cut=true;this.shot='';this.stationKey=-1;this.anchor=null;this.orbitYaw=.14;this.orbitPitch=.29;this.camera=new T.PerspectiveCamera(50,1,.05,14000);this.target=new T.Vector3();}
@@ -31,6 +31,7 @@ export class CameraDirector{
  if(mode!=='inspect')look.addScaledVector(f,-2.4);look.y=.6;fov=portrait?64:50;
  }
  else if(mode==='front'){pos.addScaledVector(f,12*this.distance).addScaledVector(right,car.pit?.active?-5:5);pos.y=2.7;look=p.clone().addScaledVector(f,1);look.y=.6;fov=portrait?53:42;}
+ else if(mode==='manager'){if(this.cut||this.managerHeading57===undefined)this.managerHeading57=s.psi;this.managerHeading57+=wrap(s.psi-this.managerHeading57)*(1-Math.exp(-2.2*Math.min(dt,.1)));const heading57=this.managerHeading57+this.orbitYaw;f.set(Math.cos(heading57),0,-Math.sin(heading57));right.set(Math.sin(heading57),0,Math.cos(heading57));const zoom=car.pit?.active ? .8 : 1;pos.addScaledVector(f,-20*this.distance*zoom).addScaledVector(right,24*this.distance*zoom);pos.y=26*this.distance*zoom*(.71+this.orbitPitch);look=p.clone().addScaledVector(f,6);look.y=.4;fov=portrait?60:48;}
  else if(mode==='drone'){pos.addScaledVector(f,-13*this.distance).addScaledVector(right,12*this.distance);pos.y=10*this.distance;look=p.clone().addScaledVector(f,2);look.y=.3;fov=portrait?65:50;}
  else if(mode==='high'){pos.addScaledVector(f,-7*this.distance);pos.y=(this.mode==='cinema'?24:58)*this.distance;look=p.clone().addScaledVector(f,4);fov=portrait?66:55;}
  else if(mode==='overview'){const b=this.circuit.bounds;const span=Math.max(b.width/(2*Math.tan(67*Math.PI/360)*this.camera.aspect),b.height/(2*Math.tan(67*Math.PI/360)))*1.15;pos.set(b.cx,span,-b.cy+b.height*.25);look.set(b.cx,0,-b.cy);fov=67;}

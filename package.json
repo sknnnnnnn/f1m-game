@@ -50,7 +50,8 @@
     "test:release54": "node tests/release54.mjs && node tests/instances54.mjs",
     "test:acceptance54": "node tests/acceptance54.mjs",
     "test:assets55": "node tests/assets55.mjs && node tests/scenery55.mjs && F1M_TRACK23=suzuka node tests/scenery55.mjs && F1M_TRACK23=bahrain node tests/scenery55.mjs && node tests/service-worker.mjs",
-    "test:runtime56": "node tests/solver56.mjs && node tests/projection56.mjs && node tests/idle-crew56.mjs && node tests/pit-idle56.mjs && node tests/runtime56.mjs && F1M_TRACK23=suzuka node tests/runtime56.mjs && F1M_TRACK23=bahrain node tests/runtime56.mjs"
+    "test:runtime56": "node tests/solver56.mjs && node tests/projection56.mjs && node tests/idle-crew56.mjs && node tests/pit-idle56.mjs && node tests/runtime56.mjs && F1M_TRACK23=suzuka node tests/runtime56.mjs && F1M_TRACK23=bahrain node tests/runtime56.mjs",
+    "test:mobile57": "node tests/mobile57.mjs && node tests/camera57.mjs && node tests/runtime57.mjs"
   },
   "dependencies": {
     "esbuild": "0.25.0",

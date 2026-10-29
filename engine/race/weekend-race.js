@@ -10,7 +10,7 @@ import {beforeControl23,afterControl23,viewControl23} from '../ui/control23.js';
 import {wingEligibility22,battleBrief22,freshTyreFactor22,brushDamage22} from './showtime22.js';
 import {driverResponse,gripAwareDuel,responseView,orderEffect} from './driver-response21.js';
 import {initRace15,ensureRace15,thinkPressure,pressureCommand,tickRace15,viewRace15,compareCorners15} from './race-intelligence15.js';
-import {step} from '../physics/solver56.js';
+import {step} from '../physics/mobile57.js';
 import {newSafety,callSafety,safetyField,safetyPrepare,safetyProposal,safetyGuard,safetyCommit,safetyView,safetyVisual} from '../safety/safety-car.js';
 import {DIRTY_AIR_LOSS40,TEAMS,initEngineer,ensureEngineer,commandEngineer,dirtyAir,beforeDriver,afterDriver,engineerTick,engineerView,pitForecast} from './team-engineer.js';
 import {validSetupAdjust,tunedSetup} from '../ui/setup-controls.js';
