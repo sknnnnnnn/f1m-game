@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "track": "suzuka",
+  "frozenTransforms": {
+    "frozen": 218,
+    "dynamicBranches": 8
+  },
+  "staticMeshesChecked": 186,
+  "staticTransformCompositionsOver12Frames": 0,
+  "unchangedStaticWorldMatrices": true,
+  "unchangedStaticGeometry": true,
+  "animatedWheel": true,
+  "wavingFlags": 7,
+  "scope": "Actual authored scenery and Three.js matrix/geometry verification; no GPU/FPS claim."
+}

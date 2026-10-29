@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "cachedAssets": 18,
+  "immutableAssetsReusedAcrossReleaseScopes": 9,
+  "unchangedGLBAndEngineDownloadsOnSecondInstall": 0,
+  "offlineShellAndGLB": true,
+  "maxConcurrentRequests": 4,
+  "changedHashesRequireNewDownload": true,
+  "corruptAssetsBlockInstallation": true,
+  "explicitActivationOnly": true,
+  "otherScopesPreserved": true,
+  "scope": "Deterministic browser Cache/Response mocks and real build bytes/SHA256; device storage eviction and Android FPS not measured."
+}

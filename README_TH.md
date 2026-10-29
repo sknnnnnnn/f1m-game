@@ -1,3 +1,13 @@
+# F1M RACE 55 — Asset reuse and static scenery
+
+เปิดเล่น: https://sknnnnnnn.github.io/f1m-game/preview55/
+
+รุ่นนี้ใช้ไฟล์เดิมตาม SHA-256 ข้ามอัปเดต/preview บน origin เดียวกัน แปลงโมเดลรถร่วมกันครั้งเดียวต่อหน้า และหยุดคำนวณเมทริกซ์ฉากนิ่งซ้ำ รายละเอียด: [reports/assets55/README_TH.md](reports/assets55/README_TH.md)
+
+ยังไม่รับรอง 60 FPS บน Android และยังไม่แก้ความเร็ว simulation ที่พบในคลิป R54; การเก็บ asset เป็นงานคนละส่วนกับคอขวดฟิสิกส์และ GPU
+
+---
+
 # อัปเดต R54
 
 พร้อมเปิดเล่นชุด R54: พิต 22 คัน, ลดภาระข้อมูล/บัฟเฟอร์ภาพ, เซฟ 32 MB และรายงานเฟรมจริงของเครื่อง ดู [ผลตรวจและข้อจำกัด](reports/release54/README_TH.md) สถานะ Android FPS/จอดำยังรอเครื่องจริง

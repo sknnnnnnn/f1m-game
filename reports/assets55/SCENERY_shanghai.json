@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "track": "shanghai",
+  "frozenTransforms": {
+    "frozen": 219,
+    "dynamicBranches": 7
+  },
+  "staticMeshesChecked": 190,
+  "staticTransformCompositionsOver12Frames": 0,
+  "unchangedStaticWorldMatrices": true,
+  "unchangedStaticGeometry": true,
+  "animatedWheel": null,
+  "wavingFlags": 7,
+  "scope": "Actual authored scenery and Three.js matrix/geometry verification; no GPU/FPS claim."
+}

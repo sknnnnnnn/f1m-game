@@ -1,15 +1,13 @@
 {
   "status": "PASS",
   "cachedAssets": 18,
-  "offlineNavigation": true,
-  "binaryModelsAndNestedWorkerCached": true,
-  "updatesRequireExplicitMessage": true,
-  "versionedNetworkRequests": true,
-  "httpCacheBypassed": true,
-  "canonicalOfflineKeys": true,
-  "activeVersionCacheOnly": true,
-  "failedDownloadsBlockInstallation": true,
-  "otherCachesPreserved": true,
-  "otherSiteScopesPreserved": true,
-  "scope": "Service worker unit test with deterministic cache/fetch mocks; Android install/FPS remains separate."
+  "immutableAssetsReusedAcrossReleaseScopes": 9,
+  "unchangedGLBAndEngineDownloadsOnSecondInstall": 0,
+  "offlineShellAndGLB": true,
+  "maxConcurrentRequests": 4,
+  "changedHashesRequireNewDownload": true,
+  "corruptAssetsBlockInstallation": true,
+  "explicitActivationOnly": true,
+  "otherScopesPreserved": true,
+  "scope": "Deterministic browser Cache/Response mocks and real build bytes/SHA256; device storage eviction and Android FPS not measured."
 }

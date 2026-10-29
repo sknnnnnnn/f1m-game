@@ -1,9 +1,11 @@
+import {freezeScenery55} from './static-scene55.js';
 import {gridSlot28,clearPit28} from '../tracks/track-layout28.js';
 import {brakingZones} from '../ai/braking-zones.js';
 import {worldTextures} from './world-materials.js';
 import {clearOfRoad,CameraOcclusion} from './occlusion.js';
 // Visual scenery follows the Bahrain GP schematic centreline. Flat road physics is unchanged.
 export function buildTrack(T,scene,circuit){
+ const previous55=new Set(scene.children);
  const mats=new Map(),batches=new Map(),trees=[],structures=[],cameraBarriers=[],textures=worldTextures(T);
  function material(color){if(!mats.has(color)){const texture=color==='#343d43'?textures.asphalt:color==='#b8a17c'?textures.sand:color==='#998c72'?textures.gravel:color==='#69785b'?textures.grass:null;let m=color==='#fff2c4'?new T.MeshBasicMaterial({color}):new T.MeshStandardMaterial({color:texture?'#ffffff':color,map:texture??null,roughness:color==='#343d43'?.94:.82,metalness:color==='#284b58'?.35:0,side:T.DoubleSide});if(['#e8e4d8','#f0e7d5','#c34145','#c6c5b6'].includes(color)){m.polygonOffset=true;m.polygonOffsetFactor=-2;m.polygonOffsetUnits=-2;}if(color==='#343d43'){m.polygonOffset=true;m.polygonOffsetFactor=-1;m.polygonOffsetUnits=-1;}mats.set(color,m);}return mats.get(color);}
  function obstacle(parts,name){const root=new T.Group();root.name=name;for(const [g,color,position,rotation=0] of parts){const mesh=new T.Mesh(g,material(color));mesh.position.set(...position);mesh.rotation.y=rotation;mesh.userData.modelMesh=true;mesh.castShadow=true;root.add(mesh);}scene.add(root);structures.push(root);return root;}
@@ -43,5 +45,6 @@ export function buildTrack(T,scene,circuit){
  // Static batches keep draw calls low on phones.
  for(const [color,gs]of batches){const chunks=new Map();for(const g of gs){const p=g.attributes.position,n=g.attributes.normal,ix=g.index?.array,total=ix?.length??p.count;for(let j=0;j<total;j+=3){const ids=[0,1,2].map(k=>ix?ix[j+k]:j+k),cx=ids.reduce((v,i)=>v+p.getX(i),0)/3,cz=ids.reduce((v,i)=>v+p.getZ(i),0)/3,key=color==='#b8a17c'?'ground':Math.floor(cx/180)+':'+Math.floor(cz/180);let c=chunks.get(key);if(!c){c={p:[],n:[],uv:[]};chunks.set(key,c);}for(const i of ids){c.p.push(p.getX(i),p.getY(i),p.getZ(i));c.n.push(n.getX(i),n.getY(i),n.getZ(i));c.uv.push(p.getX(i)/(color==='#b8a17c'?28:5),p.getZ(i)/(color==='#b8a17c'?28:5));}}g.dispose();}for(const c of chunks.values()){const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(c.p,3));g.setAttribute('normal',new T.Float32BufferAttribute(c.n,3));g.setAttribute('uv',new T.Float32BufferAttribute(c.uv,2));g.computeBoundingSphere();const mesh=new T.Mesh(g,material(color));mesh.name='Circuit '+color;mesh.userData.modelMesh=true;mesh.frustumCulled=true;mesh.receiveShadow=true;scene.add(mesh);}}
 
- return {finishMaterials:{sand:mats.get('#b8a17c'),grass:mats.get('#69785b'),gravel:mats.get('#998c72')},cameraBarriers,structuresOcclusion:new CameraOcclusion(T,structures),structures:structures.length,roadMaterial:mats.get('#343d43'),length:circuit.length,width:circuit.width,staticBatches:batches.size,treeCount:trees.length,occlusion:new CameraOcclusion(T,trees)};
+ const staticTransforms55={frozen:0,dynamicBranches:0};for(const object of scene.children)if(!previous55.has(object)){const stats=freezeScenery55(object);staticTransforms55.frozen+=stats.frozen;}
+ return {staticTransforms55,finishMaterials:{sand:mats.get('#b8a17c'),grass:mats.get('#69785b'),gravel:mats.get('#998c72')},cameraBarriers,structuresOcclusion:new CameraOcclusion(T,structures),structures:structures.length,roadMaterial:mats.get('#343d43'),length:circuit.length,width:circuit.width,staticBatches:batches.size,treeCount:trees.length,occlusion:new CameraOcclusion(T,trees)};
 }

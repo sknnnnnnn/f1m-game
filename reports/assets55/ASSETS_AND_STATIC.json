@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "actualGLB": true,
+  "concurrentGarageAndRaceReads": 1,
+  "concurrentGLBParses": 1,
+  "cloneTransformsAndMaterialsIsolated": true,
+  "immutableGeometryShared": true,
+  "failedReadRetry": true,
+  "productionModelElementRemovalRetainsCache": true,
+  "frozen": {
+    "frozen": 3001,
+    "dynamicBranches": 1
+  },
+  "dynamicWheelAndChairFrames": 60,
+  "localTransformCompositions": {
+    "before": 180180,
+    "after": 120
+  },
+  "staticMatricesUnchanged": true,
+  "scope": "Exact Three.js CPU matrix checks, not Android FPS or GPU measurements."
+}

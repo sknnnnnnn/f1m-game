@@ -1,3 +1,12 @@
+# R55 — Asset cache and static transforms
+
+- Completed: content-addressed immutable cache with SHA-256 validation and four concurrent install tasks; GLB source decoding shared by garage/race; authored static scenery transforms frozen while wheel/flags remain animated.
+- Verified: exact static geometry/world matrices on Shanghai, Suzuka, Bahrain; offline shell/model; unchanged assets reuse across scopes; corrupt update rejected; independent model clones and retry after failed loading.
+- Existing: race renderer/scene initialization was already retained within one page in R54. R55 does not claim to eliminate previously continuous network loads; there were no per-frame model fetches.
+- Pending: Android FPS/frame pacing, wall-clock simulation throughput and black flicker. User R54 clip showed 8–16 FPS and about 42% real-time simulation; these are not fixed by cache alone.
+
+---
+
 # R54 — Release Candidate · 2026-10-29
 
 - ผ่าน: 22 คันครบหนึ่งรอบทั้ง Bahrain/Shanghai/Suzuka, พิต 22 คันทั้งสามสนาม, regression 67 คู่ test/สนาม, แผงคุม Cadillac และคำสั่ง Bottas

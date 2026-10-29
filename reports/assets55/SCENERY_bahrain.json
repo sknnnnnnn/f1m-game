@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "track": "bahrain",
+  "frozenTransforms": {
+    "frozen": 823,
+    "dynamicBranches": 0
+  },
+  "staticMeshesChecked": 718,
+  "staticTransformCompositionsOver12Frames": 0,
+  "unchangedStaticWorldMatrices": true,
+  "unchangedStaticGeometry": true,
+  "animatedWheel": null,
+  "wavingFlags": 0,
+  "scope": "Actual authored scenery and Three.js matrix/geometry verification; no GPU/FPS claim."
+}
