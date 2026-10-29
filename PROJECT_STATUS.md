@@ -1,3 +1,15 @@
+# F1M RACE 56 — Runtime CPU work
+
+เปิดเล่น: https://sknnnnnnn.github.io/f1m-game/preview56/
+
+ลดการสร้างข้อมูลใน Newton solver, physics worker records, การ project ถนนซ้ำ และงานช่างกริด/กิ่งพิตที่ไม่ active พร้อมแสดงสถานะแคชจริง ผ่าน exact state/trace comparison รถ 22 คันในทั้งสามสนาม ผล CPU บน host ลด 23–33% ในตัวทดสอบ ไม่ใช่ Android FPS
+
+รายละเอียดและข้อจำกัด: [reports/runtime56/README_TH.md](reports/runtime56/README_TH.md)
+
+ยังไม่รับรอง 60 FPS/จอกระพริบหรือความเร็ว simulation เทียบเวลาจริงบน Android
+
+---
+
 # R55 — Asset cache and static transforms
 
 - Completed: content-addressed immutable cache with SHA-256 validation and four concurrent install tasks; GLB source decoding shared by garage/race; authored static scenery transforms frozen while wheel/flags remain animated.

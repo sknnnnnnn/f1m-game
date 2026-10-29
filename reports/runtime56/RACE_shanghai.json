@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "track": "shanghai",
+  "cars": 22,
+  "ticks": 180,
+  "simulationSeconds": 3,
+  "stateTraceWheelRotationTyreHealthAndPitExact": true,
+  "diagnosticsAndEventsExact": true,
+  "transport": {
+    "fullBytes": 174906,
+    "compactBytes": 53564
+  },
+  "baselineMS": 4107.234669000003,
+  "newMS": 2766.6778420000014,
+  "speedup": 1.4845366549908563,
+  "scope": "22-car live simulation path CPU measurement on this host. No GPU/Android FPS claim."
+}

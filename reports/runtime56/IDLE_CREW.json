@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "actors": 66,
+  "raceFrames": 120,
+  "inactiveHideCalls": 0,
+  "inactiveFlushCalls": 0,
+  "extraBufferUploads": 0,
+  "gridReentryActors": 66
+}

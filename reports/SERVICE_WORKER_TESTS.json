@@ -4,6 +4,7 @@
   "immutableAssetsReusedAcrossReleaseScopes": 9,
   "unchangedGLBAndEngineDownloadsOnSecondInstall": 0,
   "offlineShellAndGLB": true,
+  "realInstallProgressReported": true,
   "maxConcurrentRequests": 4,
   "changedHashesRequireNewDownload": true,
   "corruptAssetsBlockInstallation": true,

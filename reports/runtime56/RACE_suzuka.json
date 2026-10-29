@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "track": "suzuka",
+  "cars": 22,
+  "ticks": 180,
+  "simulationSeconds": 3,
+  "stateTraceWheelRotationTyreHealthAndPitExact": true,
+  "diagnosticsAndEventsExact": true,
+  "transport": {
+    "fullBytes": 174487,
+    "compactBytes": 53511
+  },
+  "baselineMS": 5354.253047999998,
+  "newMS": 4026.490104000006,
+  "speedup": 1.329756912274778,
+  "scope": "22-car live simulation path CPU measurement on this host. No GPU/Android FPS claim."
+}

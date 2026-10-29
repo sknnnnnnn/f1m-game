@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "track": "bahrain",
+  "cars": 22,
+  "ticks": 180,
+  "simulationSeconds": 3,
+  "stateTraceWheelRotationTyreHealthAndPitExact": true,
+  "diagnosticsAndEventsExact": true,
+  "transport": {
+    "fullBytes": 175087,
+    "compactBytes": 53748
+  },
+  "baselineMS": 5678.440692999997,
+  "newMS": 4356.522764000007,
+  "speedup": 1.3034341837769376,
+  "scope": "22-car live simulation path CPU measurement on this host. No GPU/Android FPS claim."
+}

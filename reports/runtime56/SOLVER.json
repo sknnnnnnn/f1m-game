@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "steps": 245,
+  "matchedFailures": [
+    {
+      "speed": 0,
+      "rain": 0,
+      "step": 0,
+      "error": "WHEEL_BODY_SOLVE_NONCONVERGENCE:0.021292854940125804"
+    }
+  ],
+  "scenarios": 8,
+  "stateAndRecords": "bit-for-bit equal",
+  "originalMS": 1491.6700779999978,
+  "optimisedMS": 1007.0390210000025,
+  "speedup": 1.481243573380851
+}

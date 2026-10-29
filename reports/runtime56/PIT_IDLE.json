@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "actualGLB": true,
+  "bays": 2,
+  "nodes": 1040,
+  "frames": 30,
+  "baselineWorldMatrixVisits": 31200,
+  "inactiveWorldMatrixVisits": 0,
+  "activePitWakesHierarchy": true
+}

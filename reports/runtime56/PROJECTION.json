@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "track": "shanghai",
+      "queries": 2603,
+      "exactProjectionEquality": true,
+      "beforeMS": 24.931748000000027,
+      "afterMS": 7.624505999999997,
+      "speedup": 3.2699492924525257,
+      "cachedCells": 209
+    },
+    {
+      "track": "suzuka",
+      "queries": 3203,
+      "exactProjectionEquality": true,
+      "beforeMS": 27.948977999999983,
+      "afterMS": 11.766773,
+      "speedup": 2.3752457874389163,
+      "cachedCells": 252
+    }
+  ],
+  "scope": "Exact route projection comparison, including heading-aware Suzuka deck selection; CPU timing only."
+}
