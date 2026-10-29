@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "actualGLB": true,
+  "bays": 22,
+  "prepareMS": 9441.312386,
+  "plans": {
+    "built": 2,
+    "reused": 42
+  },
+  "nodes": 11440,
+  "frames": 30,
+  "baselineWorldMatrixVisits": 343200,
+  "inactiveWorldMatrixVisits": 0,
+  "activePitWakesHierarchy": true
+}

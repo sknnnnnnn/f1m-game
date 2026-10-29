@@ -1,0 +1,14 @@
+{
+  "track": "suzuka",
+  "seed": 7,
+  "menuDefaults": true,
+  "laps": 1,
+  "cars": 22,
+  "time": 132.48333333333332,
+  "stop": null,
+  "finished": true,
+  "peakYaw": 1.0079212758716918,
+  "retired": [],
+  "rejections": 0,
+  "finishedCars": 22
+}

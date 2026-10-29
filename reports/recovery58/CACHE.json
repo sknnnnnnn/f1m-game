@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "actualGLB": true,
+  "nativeStructuredCloneRoundTrip": true,
+  "sampleComparisons": 40,
+  "plansStored": 2,
+  "compressedBytes": 11400215,
+  "storageFailureFallsBack": true,
+  "cache": {
+    "hits": 2,
+    "misses": 3,
+    "writes": 2,
+    "errors": 2
+  },
+  "scope": "Mock IndexedDB transport with actual complete generated pit motion; vector and class restoration, service/deploy/return/turnaround samples. Browser quota and Android loading time remain device checks."
+}

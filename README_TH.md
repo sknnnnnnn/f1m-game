@@ -1,3 +1,13 @@
+# F1M RACE 58 — Race recovery and prepared pit cache
+
+เปิดเล่น: https://sknnnnnnn.github.io/f1m-game/preview58/
+
+แก้แรงยางอิ่มตัวที่ทำให้ Bahrain seed ปกติหยุดตรง 13.650 วินาที และเก็บผลคำนวณท่าช่างแบบ gzip ใน IndexedDB เพื่อใช้ซ้ำหลังเปิดเกมใหม่ ผ่าน 22 คันหนึ่งรอบทั้งสามสนาม / multi-pit ทั้งสามสนาม / wet drive และ cache round trip ยังไม่ยืนยัน FPS/เวลาโหลดบน Android
+
+รายละเอียด: [reports/recovery58/README_TH.md](reports/recovery58/README_TH.md)
+
+---
+
 # F1M RACE 57 — Mobile vehicle model experiment
 
 เปิดเล่น: https://sknnnnnnn.github.io/f1m-game/preview57/

@@ -1,3 +1,4 @@
+import {planCacheStats58} from './crew/plan-cache58.js';
 import * as T from 'three';
 import {pitHandoff35} from './pit-handoff35.js';
 import {prepareCar} from './crew/car-assembly.js';
@@ -24,7 +25,7 @@ export function pitScene28(scene,camera){
   for(const [left,right] of [['FL_Tire','FR_Tire'],['RL_Tire','RR_Tire']]){const a=copy.getObjectByName(left),b=copy.getObjectByName(right);if(a&&b){a.name=right;b.name=left;}}
   for(const child of [...copy.children])if(child.isMesh&&child.geometry?.type==='PlaneGeometry'&&child.material?.transparent)copy.remove(child);
   const source=new T.Group();source.add(copy);const car=prepareCar(source);dynamic.add(car.root);const fronts=[];car.root.traverse(o=>{if(o.isMesh&&o.name.startsWith('FW_'))fronts.push(o);});for(const o of fronts)car.nose.attach(o);
-  const api=racePitRuntime28(dynamic,car,garage.obstacles);profiles[id]={};for(const job of ['tyres','combined']){progress('เตรียมพิตรถ '+id+' / '+models.size+' · '+(job==='tyres'?'ยาง':'ยางและปีก'));await yieldUI();profiles[id][job]=api.prepare(job);}
+  const api=racePitRuntime28(dynamic,car,garage.obstacles);profiles[id]={};for(const job of ['tyres','combined']){progress('เตรียมพิตรถ '+id+' / '+models.size+' · '+(job==='tyres'?'ยาง':'ยางและปีก'));await yieldUI();const hits=planCacheStats58.hits;profiles[id][job]=await api.prepareAsync58(job);if(planCacheStats58.hits>hits)progress('อ่านข้อมูลพิตที่เตรียมไว้แล้ว · รถ '+id);}
   mark(bay);mirrorLabels(dynamic,car.root);mirrorLabels(garage.room);if(id%2===0)garage.room.visible=false;bay.position.set(q.x,(q.height??0)+.045,-q.y);bay.rotation.y=q.psi-Math.PI/2;bay.scale.set(-v,v,v);scene.add(bay);dynamic.visible=false;
   kits.set(id,{bay,work,dynamic,garage,craft,api,car,v,call:null,job:'tyres',lastService:null,returnAt:null,wasActive:false,completed:false});
  }return profiles;}

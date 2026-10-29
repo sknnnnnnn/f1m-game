@@ -1,0 +1,14 @@
+{
+  "track": "bahrain",
+  "seed": 7,
+  "menuDefaults": true,
+  "laps": 1,
+  "cars": 22,
+  "time": 132.15,
+  "stop": null,
+  "finished": true,
+  "peakYaw": 1.2179497551229441,
+  "retired": [],
+  "rejections": 0,
+  "finishedCars": 22
+}

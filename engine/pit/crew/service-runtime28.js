@@ -1,3 +1,4 @@
+import {readPlan58,writePlan58} from './plan-cache58.js';
 import * as T from 'three';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
 import {PitLoads} from './pit-loads.js';
@@ -13,7 +14,7 @@ import {CrewBatch} from './crew-rig.js';
 import {CrewMotion,outside,obstruction,propGap} from './crew-motion.js';
 import {MODES,sampleProcedure as baseProcedure,ramp,clamp} from './procedure.js';
 const V=(x=0,y=0,z=0)=>new T.Vector3(x,y,z);
-const geometryPlans29=new Map();
+const geometryPlans29=new Map();export const pitPlanStats58={built:0,reused:0};
 // Source: Pit Flow 06.2 app.js. Original layout, IK motion gates, loads and
 // deployment/return choreography are retained; browser/demo controls removed.
 export function racePitRuntime28(scene,car,props=[]){
@@ -227,21 +228,25 @@ export function racePitRuntime28(scene,car,props=[]){
   crew.flush();return state;
  }
 
+ function signature58(job){
+   const box=o=>{const b=new T.Box3().setFromObject(o);return [b.min.toArray(),b.max.toArray()];};
+   return job+':'+(rigSignature29??=JSON.stringify([car.wheels.map(w=>[w.center.toArray(),box(w.root)]),car.noseGrips,car.rearGrips,car.panelGrips,box(car.nose),box(car.rear.root),box(car.panels.root),presentationProps],(key,value)=>typeof value==='number'?Math.round(value*1e6)/1e6:value));
+ }
+ async function prepareAsync58(job){const signature=signature58(job);if(!geometryPlans29.has(signature)){const cached=await readPlan58(signature);if(cached)geometryPlans29.set(signature,cached);}const existed=geometryPlans29.has(signature),profile=prepare(job);if(!existed)await writePlan58(signature,geometryPlans29.get(signature));return profile;}
  function prepare(job){flowCombined=job==='combined';mode=flowCombined?'nose':'tyres';const key=mode+':'+traffic+':'+fault+':'+flowCombined;
   if(!motionCache.has(key)){
    // Only share generated motion when all contact geometry and obstacles match.
-   const box=o=>{const b=new T.Box3().setFromObject(o);return [b.min.toArray(),b.max.toArray()];};
-   const signature=job+':'+(rigSignature29??=JSON.stringify([car.wheels.map(w=>[w.center.toArray(),box(w.root)]),car.noseGrips,car.rearGrips,car.panelGrips,box(car.nose),box(car.rear.root),box(car.panels.root),presentationProps]));
-   let e=geometryPlans29.get(signature);if(!e){e=buildMotion();
+   const signature=signature58(job);
+   let e=geometryPlans29.get(signature);if(!e){pitPlanStats58.built++;e=buildMotion();
     const clearIndex=e.motion.frames.findIndex(f=>f.state.phase>=e.timing.releasePermitAt&&f.state.phase>=f.state.serviceEnd&&f.state.jacksClear&&workReleased(f)&&departureClear(f));
     if(clearIndex<0)e.blocked=true;
     e.flowEnd=Math.max(wallAt(e.timing.releasePermitAt,e.holds)+.45,Math.max(0,clearIndex)*e.motion.dt+.2);
     activeHolds=e.holds;activeTiming=e.timing;e.presentation=new CrewPresentation(flowWorkStart(e),e.motion.sample(e.flowEnd),presentationProps,job);geometryPlans29.set(signature,e);
-   }motionCache.set(key,e);
+   }else pitPlanStats58.reused++;motionCache.set(key,e);
   }
   const e=motionCache.get(key);
   if(!e.bounds37){const b=new T.Box3();for(const motion of [e.motion,e.presentation.deploy,e.presentation.returning,e.presentation.turnaround])for(const frame of motion.frames)for(const actor of frame.actors)if(actor)b.expandByPoint(actor.pos);e.bounds37=b.expandByScalar(3);}
   if(!boundedPlans37.has(e)){crew.setBounds37(e.bounds37);boundedPlans37.add(e);}activeHolds=e.holds;activeTiming=e.timing;return {start:wallAt(2.05,e.holds),release:wallAt(e.timing.releasePermitAt,e.holds),end:e.flowEnd,deploy:e.presentation.readyAt,return:e.presentation.returnAt,blocked:e.blocked};
  }
- return {prepare,render(job,t,pose){prepare(job);time=t;externalPose={...pose,skipRender:true};return renderPose();},releaseClear(){return !!current&&current.jacksClear===true&&workReleased({actors:posed})&&departureClear({actors:posed});},frame(){return {actors:posed,tools,state:current,loads:logistics.report,crewMode:externalPose?.crewMode};},crew,car,logistics};
+ return {prepare,prepareAsync58,render(job,t,pose){prepare(job);time=t;externalPose={...pose,skipRender:true};return renderPose();},releaseClear(){return !!current&&current.jacksClear===true&&workReleased({actors:posed})&&departureClear({actors:posed});},frame(){return {actors:posed,tools,state:current,loads:logistics.report,crewMode:externalPose?.crewMode};},crew,car,logistics};
 }

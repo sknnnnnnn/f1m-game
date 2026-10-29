@@ -1,0 +1,14 @@
+{
+  "track": "shanghai",
+  "seed": 7,
+  "menuDefaults": true,
+  "laps": 1,
+  "cars": 22,
+  "time": 143.4,
+  "stop": null,
+  "finished": true,
+  "peakYaw": 1.5099139444349834,
+  "retired": [],
+  "rejections": 0,
+  "finishedCars": 22
+}
