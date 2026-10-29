@@ -34,7 +34,7 @@ let root;globalThis.document={head:{append(){}},body:{append(n){root=n;}},create
 globalThis.matchMedia=()=>({get matches(){return reduced;}});globalThis.innerWidth=1200;globalThis.innerHeight=800;
 try{
  const {mountSlipstream45}=await import('../engine/rendering/slipstream45.js');const ui=mountSlipstream45();
- ui.update(car,{...opts,now:100,camera:'chase'});assert.equal(root.hidden,false);assert(!root.innerHTML.includes('tow-readout'));assert.equal(vars['--wake50'],'0.104');assert.equal(canvas.width,720);assert(strokes>0);
+ ui.update(car,{...opts,now:100,camera:'chase'});assert.equal(root.hidden,false);assert(!root.innerHTML.includes('tow-readout'));assert.equal(vars['--wake50'],'0.000','entry starts with a smooth fade');assert.equal(canvas.width,720);assert(strokes>0);
  ui.update({...car,draft:0},{...opts,now:200,camera:'chase'});assert.equal(root.hidden,false,'high-speed rays remain after leaving the tow');assert.equal(vars['--wake50'],'0.000');
  reduced=true;const oldStrokes=strokes;ui.update(car,{...opts,now:300,camera:'chase'});assert.equal(root.hidden,false);assert.equal(strokes,oldStrokes,'reduced motion retains the edge tint without moving rays');
  ui.update(car,{...opts,now:400,camera:'overview'});assert.equal(root.hidden,true);

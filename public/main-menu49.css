@@ -23,3 +23,14 @@ body:not(.menu49-open) .top{gap:10px;padding-top:max(12px,env(safe-area-inset-to
 
 #home49[data-page=title] .menu49-shade{background:linear-gradient(90deg,#080e17ed,#080e1790 35%,#080e1720 75%),linear-gradient(0deg,#080e17cc,transparent 55%)}
 #hud #race-interval38{font-size:9px;margin-top:5px;color:#a3b5c5}
+
+/* R51: racing tiles, strong silhouettes, visible press feedback. */
+#home49 .menu49-main-buttons>button{border-radius:4px 18px 4px 18px!important;min-height:80px!important;overflow:hidden;isolation:isolate;background:linear-gradient(115deg,#233b51f5,#0d1727f5)!important;border:1px solid #8baac04d!important;border-left:5px solid #b1c8df!important;box-shadow:0 8px 0 #02081380,0 14px 30px #0005;transform:skewX(-3deg)}
+#home49 .menu49-main-buttons>button:before{content:'';position:absolute;inset:0 0 0 auto;width:34%;background:repeating-linear-gradient(120deg,transparent 0 14px,#d1e6f517 14px 22px);z-index:-1}
+#home49 .menu49-main-buttons>.menu49-play{background:linear-gradient(110deg,#ba1336,#ff523d 65%,#ff9a53)!important;border-left-color:#ffd7a3!important;box-shadow:0 7px 0 #6b152a,0 14px 35px #fa3e3830}
+#home49 .menu49-main-buttons>button strong{font-weight:850;font-size:23px;text-shadow:0 2px 5px #0004}
+#home49 .menu49-main-buttons>button small{font-weight:800;letter-spacing:.13em}#home49 .menu49-main-buttons>button>span{display:grid;place-items:center;width:37px;height:37px;border:1px solid #ffffff4d;border-radius:50%;background:#ffffff12}
+#home49 .menu49-main-buttons{gap:15px}#home49 .menu49-main-buttons>button:active,#home49 .menu49-primary:active{transform:translateY(4px);box-shadow:0 2px 0 #030914}
+#home49 .menu49-main-buttons>div button{border-radius:6px;background:#182b3ce8;border-bottom:3px solid #566e85;text-align:center;font-weight:700}
+#home49 .menu49-title-actions .menu49-primary{font-size:20px;font-weight:850!important;min-height:64px;border-radius:4px 18px 4px 18px;border-bottom:4px solid #9c2337!important;box-shadow:0 12px 35px #e9363b33}
+@media(max-height:560px){#home49 .menu49-main-buttons>button{min-height:55px!important}#home49 .menu49-main-buttons{gap:10px}#home49 .menu49-main-buttons>button strong{font-size:18px}}
