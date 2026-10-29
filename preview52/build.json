@@ -1,7 +1,7 @@
 {
   "edition": "F1M RACE 52",
-  "version": "83f93f40a448756b",
-  "sourceRevision": "83f93f40a448756bf6552f378ddacfe88559a3a2a9412a76e886536bd2bc6b6e",
+  "version": "087f485346dc21cc",
+  "sourceRevision": "087f485346dc21cc2e49b2f5015af90330990e3e6e681fa35dc8454e2e078988",
   "inputs": {
     "build.mjs": "82849166e665d5c1af383ba617ee0c3f3556c5e3dc350ba9e7eed29a6f9c9318",
     "engine/ai/agent.js": "5a543afb04ee97e382703deef7c2a51e86b79147c476d0f60168136b34fd6913",
@@ -39,7 +39,7 @@
     "engine/physics/grip-steering25.js": "3a60919063c03b6bc67e195da7d1340bb528d5c1457c542f5bff5cfc6fa7b7f9",
     "engine/physics/hybrid-recovery47.js": "3d40f6a67b58c02eb5ac3c7987706f94448d1d07a831630e420924a968832dcc",
     "engine/physics/pose-buffer.js": "d41fa8ac6d63fc17c7fb2e8c1f4af872c98f05f386ed74cd14ac05f767b09b09",
-    "engine/physics/reference-adapter.js": "4ec195d1eb3d0344234282f1e6b3901c4a3741315c2a38b8a4c8f1c0558e5712",
+    "engine/physics/reference-adapter.js": "574df59baab3f2a184d0ad7df95de4de036309e2cc737c7587c2b63a30bd81fb",
     "engine/physics/route-spline.js": "51358071d4179e9b3363536fb4c46652789c8e8b8a39b9b1688eac3bd98f04e0",
     "engine/physics/speed-envelope.js": "e555e693fc118aa11df97408d42202114b93c4bcd3f42b80aa33ff6bb466d35d",
     "engine/physics/speed-limit47.js": "93b6d154fb987aa962b6396c98db00f3fd97bc3c13c9a308cba22a6b1900519e",
