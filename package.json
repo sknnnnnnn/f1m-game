@@ -46,7 +46,9 @@
     "test:e2e": "playwright test",
     "test:race": "node tests/run-drive.mjs",
     "test:grid52": "node tests/grid52.mjs && node tests/menu49.mjs && node tests/interface50.mjs && node tests/tow45.mjs",
-    "test:grid53": "node tests/grid53.mjs && node tests/car-instances53.mjs && node tests/solver53.mjs && node tests/worker-transport.mjs"
+    "test:grid53": "node tests/grid53.mjs && node tests/car-instances53.mjs && node tests/solver53.mjs && node tests/worker-transport.mjs",
+    "test:release54": "node tests/release54.mjs && node tests/instances54.mjs",
+    "test:acceptance54": "node tests/acceptance54.mjs"
   },
   "dependencies": {
     "esbuild": "0.25.0",

@@ -1,0 +1,1298 @@
+{
+  "track": "suzuka",
+  "time": 89.4,
+  "stop": null,
+  "rejections": 0,
+  "simultaneousServiceCars": 11,
+  "occupancyErrors": [],
+  "exitCount": 22,
+  "cars": [
+    {
+      "id": 1,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 1,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 573.8268259335891,
+          "Y": 47.88664874398573
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.000019166579439953144,
+        "compoundAfter": "H",
+        "positionAfter": 11,
+        "exitedAt": 58.56666666666666,
+        "totalSeconds": 58.56666666666666
+      }
+    },
+    {
+      "id": 2,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 2,
+        "stoppedAt": 30.866666666666667,
+        "stopPose": {
+          "X": 573.8571532571499,
+          "Y": 47.92709338232322
+        },
+        "serviceSeconds": 8.216666666666669,
+        "wearBefore": 0.00001974599960913929,
+        "compoundAfter": "H",
+        "positionAfter": 18,
+        "exitedAt": 71.83333333333333,
+        "totalSeconds": 71.83333333333333
+      }
+    },
+    {
+      "id": 3,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "S",
+        "requested": "H",
+        "positionBefore": 3,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 592.4662001356204,
+          "Y": 25.42843389480831
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.00003199055928352763,
+        "compoundAfter": "H",
+        "positionAfter": 10,
+        "exitedAt": 57.25,
+        "totalSeconds": 57.25
+      }
+    },
+    {
+      "id": 4,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "S",
+        "requested": "H",
+        "positionBefore": 4,
+        "stoppedAt": 30.866666666666667,
+        "stopPose": {
+          "X": 592.4901414703635,
+          "Y": 25.460284574610117
+        },
+        "serviceSeconds": 8.216666666666669,
+        "wearBefore": 0.00003156337177025554,
+        "compoundAfter": "H",
+        "positionAfter": 17,
+        "exitedAt": 70.7,
+        "totalSeconds": 70.7
+      }
+    },
+    {
+      "id": 5,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "H",
+        "requested": "H",
+        "positionBefore": 5,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 611.0777581142193,
+          "Y": 3.128037966424956
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.000011524033898429584,
+        "compoundAfter": "H",
+        "positionAfter": 9,
+        "exitedAt": 55.93333333333333,
+        "totalSeconds": 55.93333333333333
+      }
+    },
+    {
+      "id": 6,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 6,
+        "stoppedAt": 30.866666666666667,
+        "stopPose": {
+          "X": 611.1059350379709,
+          "Y": 3.149533792356389
+        },
+        "serviceSeconds": 8.216666666666669,
+        "wearBefore": 0.00001950411080691579,
+        "compoundAfter": "H",
+        "positionAfter": 16,
+        "exitedAt": 69.56666666666666,
+        "totalSeconds": 69.56666666666666
+      }
+    },
+    {
+      "id": 7,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 7,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 629.230269961814,
+          "Y": -19.47710991563174
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.000019157070429356354,
+        "compoundAfter": "H",
+        "positionAfter": 8,
+        "exitedAt": 54.63333333333333,
+        "totalSeconds": 54.63333333333333
+      }
+    },
+    {
+      "id": 8,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 8,
+        "stoppedAt": 30.866666666666667,
+        "stopPose": {
+          "X": 629.2478530898493,
+          "Y": -19.43580448286939
+        },
+        "serviceSeconds": 8.216666666666669,
+        "wearBefore": 0.000019681163559182257,
+        "compoundAfter": "H",
+        "positionAfter": 15,
+        "exitedAt": 68.43333333333334,
+        "totalSeconds": 68.43333333333334
+      }
+    },
+    {
+      "id": 9,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "S",
+        "requested": "H",
+        "positionBefore": 9,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 647.3301298087619,
+          "Y": -42.23118032145783
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.00003227284626296304,
+        "compoundAfter": "H",
+        "positionAfter": 7,
+        "exitedAt": 53.31666666666666,
+        "totalSeconds": 53.31666666666666
+      }
+    },
+    {
+      "id": 10,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "S",
+        "requested": "H",
+        "positionBefore": 10,
+        "stoppedAt": 30.866666666666667,
+        "stopPose": {
+          "X": 647.365607857979,
+          "Y": -42.21856018166805
+        },
+        "serviceSeconds": 8.216666666666669,
+        "wearBefore": 0.00003083229685085824,
+        "compoundAfter": "H",
+        "positionAfter": 14,
+        "exitedAt": 67.3,
+        "totalSeconds": 67.3
+      }
+    },
+    {
+      "id": 11,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "H",
+        "requested": "H",
+        "positionBefore": 11,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 665.4534592143891,
+          "Y": -65.01890616983525
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.000010899718731755574,
+        "compoundAfter": "H",
+        "positionAfter": 6,
+        "exitedAt": 52,
+        "totalSeconds": 52
+      }
+    },
+    {
+      "id": 12,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 12,
+        "stoppedAt": 30.866666666666667,
+        "stopPose": {
+          "X": 665.4676151951737,
+          "Y": -64.97749877753387
+        },
+        "serviceSeconds": 8.216666666666669,
+        "wearBefore": 0.000019666422601067423,
+        "compoundAfter": "H",
+        "positionAfter": 13,
+        "exitedAt": 66.15,
+        "totalSeconds": 66.15
+      }
+    },
+    {
+      "id": 13,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 13,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 683.5534988772058,
+          "Y": -87.77772997159491
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.000019154852204454445,
+        "compoundAfter": "H",
+        "positionAfter": 5,
+        "exitedAt": 50.7,
+        "totalSeconds": 50.7
+      }
+    },
+    {
+      "id": 14,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 14,
+        "stoppedAt": 30.866666666666667,
+        "stopPose": {
+          "X": 683.5704373320397,
+          "Y": -87.73794096523675
+        },
+        "serviceSeconds": 8.216666666666669,
+        "wearBefore": 0.00001971194282662563,
+        "compoundAfter": "H",
+        "positionAfter": 20,
+        "exitedAt": 79.28333333333333,
+        "totalSeconds": 79.28333333333333
+      }
+    },
+    {
+      "id": 15,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "S",
+        "requested": "H",
+        "positionBefore": 15,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 701.653422106212,
+          "Y": -110.53425812304718
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.00003224875436143572,
+        "compoundAfter": "H",
+        "positionAfter": 4,
+        "exitedAt": 49.38333333333333,
+        "totalSeconds": 49.38333333333333
+      }
+    },
+    {
+      "id": 16,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "S",
+        "requested": "H",
+        "positionBefore": 16,
+        "stoppedAt": 30.866666666666667,
+        "stopPose": {
+          "X": 701.688825737553,
+          "Y": -110.52139725188201
+        },
+        "serviceSeconds": 8.216666666666669,
+        "wearBefore": 0.00003083327007338376,
+        "compoundAfter": "H",
+        "positionAfter": 21,
+        "exitedAt": 83.63333333333333,
+        "totalSeconds": 83.63333333333333
+      }
+    },
+    {
+      "id": 17,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "H",
+        "requested": "H",
+        "positionBefore": 17,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 719.7809624422562,
+          "Y": -133.29863391531666
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.000011377232727988309,
+        "compoundAfter": "H",
+        "positionAfter": 3,
+        "exitedAt": 48.06666666666666,
+        "totalSeconds": 48.06666666666666
+      }
+    },
+    {
+      "id": 18,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 18,
+        "stoppedAt": 30.866666666666667,
+        "stopPose": {
+          "X": 719.8014198076874,
+          "Y": -133.26779599727325
+        },
+        "serviceSeconds": 8.216666666666669,
+        "wearBefore": 0.000019745099904135384,
+        "compoundAfter": "H",
+        "positionAfter": 22,
+        "exitedAt": 89.4,
+        "totalSeconds": 89.4
+      }
+    },
+    {
+      "id": 19,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 19,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 737.7933088454315,
+          "Y": -156.07986545815044
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.000019875671639786544,
+        "compoundAfter": "H",
+        "positionAfter": 2,
+        "exitedAt": 46.766666666666666,
+        "totalSeconds": 46.766666666666666
+      }
+    },
+    {
+      "id": 20,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "M",
+        "requested": "H",
+        "positionBefore": 20,
+        "stoppedAt": 30.866666666666667,
+        "stopPose": {
+          "X": 737.8184421854992,
+          "Y": -156.0564070482974
+        },
+        "serviceSeconds": 8.216666666666669,
+        "wearBefore": 0.000020245957338330737,
+        "compoundAfter": "H",
+        "positionAfter": 12,
+        "exitedAt": 64.65,
+        "totalSeconds": 64.65
+      }
+    },
+    {
+      "id": 21,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "S",
+        "requested": "H",
+        "positionBefore": 21,
+        "stoppedAt": 18,
+        "stopPose": {
+          "X": 755.3890271852109,
+          "Y": -179.09934596817035
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.000039859493847749084,
+        "compoundAfter": "H",
+        "positionAfter": 1,
+        "exitedAt": 45.416666666666664,
+        "totalSeconds": 45.416666666666664
+      }
+    },
+    {
+      "id": 22,
+      "phase": "RACING",
+      "stops": 1,
+      "lastStop": {
+        "enteredAt": 0,
+        "compoundBefore": "S",
+        "requested": "H",
+        "positionBefore": 22,
+        "stoppedAt": 30.849999999999998,
+        "stopPose": {
+          "X": 755.4115574444875,
+          "Y": -179.066790835564
+        },
+        "serviceSeconds": 8.2,
+        "wearBefore": 0.00003560931629962158,
+        "compoundAfter": "H",
+        "positionAfter": 19,
+        "exitedAt": 77.93333333333334,
+        "totalSeconds": 77.93333333333334
+      }
+    }
+  ],
+  "snapshots": [
+    {
+      "time": 0.016666666666666666,
+      "exitCount": 0,
+      "cars": [
+        {
+          "id": 1,
+          "phase": "PIT_IN",
+          "s": 5832.139433362562,
+          "u": 7.999030789364206,
+          "rejection": null
+        },
+        {
+          "id": 2,
+          "phase": "PIT_IN",
+          "s": 5819.139558055461,
+          "u": 7.972921751181834,
+          "rejection": null
+        },
+        {
+          "id": 3,
+          "phase": "PIT_IN",
+          "s": 5862.138984017565,
+          "u": 7.99952894182955,
+          "rejection": null
+        },
+        {
+          "id": 4,
+          "phase": "PIT_IN",
+          "s": 5849.138659837194,
+          "u": 7.972715850321871,
+          "rejection": null
+        },
+        {
+          "id": 5,
+          "phase": "PIT_IN",
+          "s": 5892.139005349003,
+          "u": 7.999535457488823,
+          "rejection": null
+        },
+        {
+          "id": 6,
+          "phase": "PIT_IN",
+          "s": 5879.138680626981,
+          "u": 7.972912599900544,
+          "rejection": null
+        },
+        {
+          "id": 7,
+          "phase": "PIT_IN",
+          "s": 5922.138995227859,
+          "u": 7.999533386029654,
+          "rejection": null
+        },
+        {
+          "id": 8,
+          "phase": "PIT_IN",
+          "s": 5909.138679444051,
+          "u": 7.972920259049305,
+          "rejection": null
+        },
+        {
+          "id": 9,
+          "phase": "PIT_IN",
+          "s": 5952.138983451954,
+          "u": 7.999535843039487,
+          "rejection": null
+        },
+        {
+          "id": 10,
+          "phase": "PIT_IN",
+          "s": 5939.138658646743,
+          "u": 7.972813577085306,
+          "rejection": null
+        },
+        {
+          "id": 11,
+          "phase": "PIT_IN",
+          "s": 5982.138983438274,
+          "u": 7.99953568011744,
+          "rejection": null
+        },
+        {
+          "id": 12,
+          "phase": "PIT_IN",
+          "s": 5969.138660608946,
+          "u": 7.972920251140885,
+          "rejection": null
+        },
+        {
+          "id": 13,
+          "phase": "PIT_IN",
+          "s": 6012.138983434695,
+          "u": 7.999535751704811,
+          "rejection": null
+        },
+        {
+          "id": 14,
+          "phase": "PIT_IN",
+          "s": 5999.138660610941,
+          "u": 7.9729202946866415,
+          "rejection": null
+        },
+        {
+          "id": 15,
+          "phase": "PIT_IN",
+          "s": 6042.138983436705,
+          "u": 7.999535852708084,
+          "rejection": null
+        },
+        {
+          "id": 16,
+          "phase": "PIT_IN",
+          "s": 6029.138658642664,
+          "u": 7.972815081412994,
+          "rejection": null
+        },
+        {
+          "id": 17,
+          "phase": "PIT_IN",
+          "s": 6072.138983433493,
+          "u": 7.999535680344915,
+          "rejection": null
+        },
+        {
+          "id": 18,
+          "phase": "PIT_IN",
+          "s": 6059.138660614085,
+          "u": 7.972920294637889,
+          "rejection": null
+        },
+        {
+          "id": 19,
+          "phase": "PIT_IN",
+          "s": 6102.138983436208,
+          "u": 7.999535680129723,
+          "rejection": null
+        },
+        {
+          "id": 20,
+          "phase": "PIT_IN",
+          "s": 6089.138660616265,
+          "u": 7.97292023194027,
+          "rejection": null
+        },
+        {
+          "id": 21,
+          "phase": "PIT_IN",
+          "s": 6132.1389835608115,
+          "u": 7.9995352133384365,
+          "rejection": null
+        },
+        {
+          "id": 22,
+          "phase": "PIT_IN",
+          "s": 6119.1386586653525,
+          "u": 7.972814951800377,
+          "rejection": null
+        }
+      ]
+    },
+    {
+      "time": 20.016666666666666,
+      "exitCount": 0,
+      "cars": [
+        {
+          "id": 1,
+          "phase": "SERVICE",
+          "s": 5865.922552915978,
+          "u": -3.019171737619963e-7,
+          "rejection": null
+        },
+        {
+          "id": 2,
+          "phase": "PIT_IN",
+          "s": 5855.164178747771,
+          "u": 0.0002311392835526801,
+          "rejection": null
+        },
+        {
+          "id": 3,
+          "phase": "SERVICE",
+          "s": 5895.907972018872,
+          "u": -7.785714877727143e-7,
+          "rejection": null
+        },
+        {
+          "id": 4,
+          "phase": "PIT_IN",
+          "s": 5885.155810330238,
+          "u": 0.0002304259433660404,
+          "rejection": null
+        },
+        {
+          "id": 5,
+          "phase": "SERVICE",
+          "s": 5925.9140625777445,
+          "u": -1.4121257434194646e-7,
+          "rejection": null
+        },
+        {
+          "id": 6,
+          "phase": "PIT_IN",
+          "s": 5915.166112108665,
+          "u": 0.00023048528171926757,
+          "rejection": null
+        },
+        {
+          "id": 7,
+          "phase": "SERVICE",
+          "s": 5955.91707013237,
+          "u": -1.6089853982163457e-7,
+          "rejection": null
+        },
+        {
+          "id": 8,
+          "phase": "PIT_IN",
+          "s": 5945.180832565637,
+          "u": 0.00023070005466837827,
+          "rejection": null
+        },
+        {
+          "id": 9,
+          "phase": "SERVICE",
+          "s": 5985.901416076414,
+          "u": -8.710173674997111e-7,
+          "rejection": null
+        },
+        {
+          "id": 10,
+          "phase": "PIT_IN",
+          "s": 5975.162706602092,
+          "u": 0.00023038186653395414,
+          "rejection": null
+        },
+        {
+          "id": 11,
+          "phase": "SERVICE",
+          "s": 6015.926230243427,
+          "u": 3.3196112273994825e-7,
+          "rejection": null
+        },
+        {
+          "id": 12,
+          "phase": "PIT_IN",
+          "s": 6005.1853831352055,
+          "u": 0.00023072746311686697,
+          "rejection": null
+        },
+        {
+          "id": 13,
+          "phase": "SERVICE",
+          "s": 6045.91491474169,
+          "u": -1.7316327363373476e-7,
+          "rejection": null
+        },
+        {
+          "id": 14,
+          "phase": "PIT_IN",
+          "s": 6035.177257152816,
+          "u": 0.0002307439519330875,
+          "rejection": null
+        },
+        {
+          "id": 15,
+          "phase": "SERVICE",
+          "s": 6075.901665967881,
+          "u": -8.709689262870992e-7,
+          "rejection": null
+        },
+        {
+          "id": 16,
+          "phase": "PIT_IN",
+          "s": 6065.162521778894,
+          "u": 0.00023038399577622316,
+          "rejection": null
+        },
+        {
+          "id": 17,
+          "phase": "SERVICE",
+          "s": 6105.911949944418,
+          "u": -9.847251032069515e-8,
+          "rejection": null
+        },
+        {
+          "id": 18,
+          "phase": "PIT_IN",
+          "s": 6095.174704038958,
+          "u": 0.00023050021579815516,
+          "rejection": null
+        },
+        {
+          "id": 19,
+          "phase": "SERVICE",
+          "s": 6135.902377021649,
+          "u": -1.318059871452697e-7,
+          "rejection": null
+        },
+        {
+          "id": 20,
+          "phase": "PIT_IN",
+          "s": 6125.1660555336,
+          "u": 0.00022925455677168802,
+          "rejection": null
+        },
+        {
+          "id": 21,
+          "phase": "SERVICE",
+          "s": 6165.916706004199,
+          "u": -8.283914836222051e-7,
+          "rejection": null
+        },
+        {
+          "id": 22,
+          "phase": "PIT_IN",
+          "s": 6155.184731336498,
+          "u": 0.00022662961446460103,
+          "rejection": null
+        }
+      ]
+    },
+    {
+      "time": 40.016666666666666,
+      "exitCount": 0,
+      "cars": [
+        {
+          "id": 1,
+          "phase": "PIT_OUT",
+          "s": 6065.145737557465,
+          "u": 22.197195651086545,
+          "rejection": null
+        },
+        {
+          "id": 2,
+          "phase": "PIT_OUT",
+          "s": 5866.47876855698,
+          "u": 1.5999679209604383,
+          "rejection": null
+        },
+        {
+          "id": 3,
+          "phase": "PIT_OUT",
+          "s": 6095.528886809051,
+          "u": 22.19719278909894,
+          "rejection": null
+        },
+        {
+          "id": 4,
+          "phase": "PIT_OUT",
+          "s": 5896.465998089749,
+          "u": 1.5993693700468372,
+          "rejection": null
+        },
+        {
+          "id": 5,
+          "phase": "PIT_OUT",
+          "s": 6125.443133379667,
+          "u": 22.197188254170797,
+          "rejection": null
+        },
+        {
+          "id": 6,
+          "phase": "PIT_OUT",
+          "s": 5926.4826802314265,
+          "u": 1.5994729178219833,
+          "rejection": null
+        },
+        {
+          "id": 7,
+          "phase": "PIT_OUT",
+          "s": 6155.230910355854,
+          "u": 22.197008993968417,
+          "rejection": null
+        },
+        {
+          "id": 8,
+          "phase": "PIT_OUT",
+          "s": 5956.45852813925,
+          "u": 1.5991632062938486,
+          "rejection": null
+        },
+        {
+          "id": 9,
+          "phase": "PIT_OUT",
+          "s": 6185.536228052379,
+          "u": 22.197142714188544,
+          "rejection": null
+        },
+        {
+          "id": 10,
+          "phase": "PIT_OUT",
+          "s": 5986.477865960489,
+          "u": 1.5991644977917139,
+          "rejection": null
+        },
+        {
+          "id": 11,
+          "phase": "PIT_OUT",
+          "s": 6215.394441621996,
+          "u": 22.196829359639754,
+          "rejection": null
+        },
+        {
+          "id": 12,
+          "phase": "PIT_OUT",
+          "s": 6016.466019680673,
+          "u": 1.5991915208181453,
+          "rejection": null
+        },
+        {
+          "id": 13,
+          "phase": "PIT_OUT",
+          "s": 6245.245245753934,
+          "u": 22.1960462094075,
+          "rejection": null
+        },
+        {
+          "id": 14,
+          "phase": "RELEASE",
+          "s": 6045.893522484391,
+          "u": -0.000005592867018663931,
+          "rejection": null
+        },
+        {
+          "id": 15,
+          "phase": "PIT_OUT",
+          "s": 6275.578848452272,
+          "u": 22.19634708923415,
+          "rejection": null
+        },
+        {
+          "id": 16,
+          "phase": "RELEASE",
+          "s": 6075.91373903906,
+          "u": -3.150288281645456e-7,
+          "rejection": null
+        },
+        {
+          "id": 17,
+          "phase": "PIT_OUT",
+          "s": 6305.526826702141,
+          "u": 22.19698434621507,
+          "rejection": null
+        },
+        {
+          "id": 18,
+          "phase": "RELEASE",
+          "s": 6105.900050367479,
+          "u": -0.000005352203603958963,
+          "rejection": null
+        },
+        {
+          "id": 19,
+          "phase": "PIT_OUT",
+          "s": 6335.562532740176,
+          "u": 22.197127218173616,
+          "rejection": null
+        },
+        {
+          "id": 20,
+          "phase": "RELEASE",
+          "s": 6135.899212528641,
+          "u": -0.0000054416099058687225,
+          "rejection": null
+        },
+        {
+          "id": 21,
+          "phase": "PIT_OUT",
+          "s": 6366.223474804026,
+          "u": 22.197133068730793,
+          "rejection": null
+        },
+        {
+          "id": 22,
+          "phase": "RELEASE",
+          "s": 6165.903472652488,
+          "u": -0.0000011769447215788683,
+          "rejection": null
+        }
+      ]
+    },
+    {
+      "time": 60.016666666666666,
+      "exitCount": 11,
+      "cars": [
+        {
+          "id": 1,
+          "phase": "RACING",
+          "s": 6512.060466267421,
+          "u": 32.984132221198465,
+          "rejection": null
+        },
+        {
+          "id": 2,
+          "phase": "PIT_OUT",
+          "s": 6219.45001898402,
+          "u": 22.19683727661534,
+          "rejection": null
+        },
+        {
+          "id": 3,
+          "phase": "RACING",
+          "s": 6512.060466267421,
+          "u": 41.338241134097665,
+          "rejection": null
+        },
+        {
+          "id": 4,
+          "phase": "PIT_OUT",
+          "s": 6245.4387090075625,
+          "u": 22.196022422936785,
+          "rejection": null
+        },
+        {
+          "id": 5,
+          "phase": "RACING",
+          "s": 6512.060466267421,
+          "u": 41.06914185969393,
+          "rejection": null
+        },
+        {
+          "id": 6,
+          "phase": "PIT_OUT",
+          "s": 6271.40734787179,
+          "u": 22.196606468592726,
+          "rejection": null
+        },
+        {
+          "id": 7,
+          "phase": "RACING",
+          "s": 6512.060466267421,
+          "u": 41.65766249467485,
+          "rejection": null
+        },
+        {
+          "id": 8,
+          "phase": "PIT_OUT",
+          "s": 6297.26927072503,
+          "u": 22.196933400182534,
+          "rejection": null
+        },
+        {
+          "id": 9,
+          "phase": "RACING",
+          "s": 6512.060466267421,
+          "u": 45.71831034915269,
+          "rejection": null
+        },
+        {
+          "id": 10,
+          "phase": "PIT_OUT",
+          "s": 6323.174833064913,
+          "u": 22.19710514382686,
+          "rejection": null
+        },
+        {
+          "id": 11,
+          "phase": "RACING",
+          "s": 6381.557792572505,
+          "u": 53.429082030452456,
+          "rejection": null
+        },
+        {
+          "id": 12,
+          "phase": "PIT_OUT",
+          "s": 6349.688551025679,
+          "u": 22.197178594284093,
+          "rejection": null
+        },
+        {
+          "id": 13,
+          "phase": "RACING",
+          "s": 6315.594600197982,
+          "u": 54.80778028175648,
+          "rejection": null
+        },
+        {
+          "id": 14,
+          "phase": "PIT_OUT",
+          "s": 6093.019432915906,
+          "u": 14.798628023306721,
+          "rejection": null
+        },
+        {
+          "id": 15,
+          "phase": "RACING",
+          "s": 6253.424843001169,
+          "u": 56.62027453236078,
+          "rejection": null
+        },
+        {
+          "id": 16,
+          "phase": "RELEASE",
+          "s": 6075.913739040401,
+          "u": -5.1699823093245945e-11,
+          "rejection": null
+        },
+        {
+          "id": 17,
+          "phase": "RACING",
+          "s": 6205.640728200078,
+          "u": 51.901732417527995,
+          "rejection": null
+        },
+        {
+          "id": 18,
+          "phase": "RELEASE",
+          "s": 6105.900050390612,
+          "u": 1.6517671619611598e-9,
+          "rejection": null
+        },
+        {
+          "id": 19,
+          "phase": "RACING",
+          "s": 6135.076556620658,
+          "u": 53.417835979867654,
+          "rejection": null
+        },
+        {
+          "id": 20,
+          "phase": "PIT_OUT",
+          "s": 6384.032503511774,
+          "u": 22.19507680571889,
+          "rejection": null
+        },
+        {
+          "id": 21,
+          "phase": "RACING",
+          "s": 6059.054423833983,
+          "u": 51.309652933922784,
+          "rejection": null
+        },
+        {
+          "id": 22,
+          "phase": "PIT_OUT",
+          "s": 6167.236482762665,
+          "u": 2.465422919103032,
+          "rejection": null
+        }
+      ]
+    },
+    {
+      "time": 80.01666666666667,
+      "exitCount": 20,
+      "cars": [
+        {
+          "id": 1,
+          "phase": "RACING",
+          "s": 5830.060466267421,
+          "u": 49.244794247981226,
+          "rejection": null
+        },
+        {
+          "id": 2,
+          "phase": "RACING",
+          "s": 6375.880504718604,
+          "u": 53.98834987512902,
+          "rejection": null
+        },
+        {
+          "id": 3,
+          "phase": "RACING",
+          "s": 5672.546284623893,
+          "u": 53.492587682120686,
+          "rejection": null
+        },
+        {
+          "id": 4,
+          "phase": "RACING",
+          "s": 6314.412376222783,
+          "u": 54.342438598489984,
+          "rejection": null
+        },
+        {
+          "id": 5,
+          "phase": "RACING",
+          "s": 5606.546870643275,
+          "u": 54.44730794639178,
+          "rejection": null
+        },
+        {
+          "id": 6,
+          "phase": "RACING",
+          "s": 6262.513556844529,
+          "u": 54.58026485227273,
+          "rejection": null
+        },
+        {
+          "id": 7,
+          "phase": "RACING",
+          "s": 5532.90534678525,
+          "u": 55.39780748076065,
+          "rejection": null
+        },
+        {
+          "id": 8,
+          "phase": "RACING",
+          "s": 6231.207165162995,
+          "u": 51.44947164147657,
+          "rejection": null
+        },
+        {
+          "id": 9,
+          "phase": "RACING",
+          "s": 5434.060466267421,
+          "u": 57.695750504332324,
+          "rejection": null
+        },
+        {
+          "id": 10,
+          "phase": "RACING",
+          "s": 6191.35956239315,
+          "u": 51.39385135668334,
+          "rejection": null
+        },
+        {
+          "id": 11,
+          "phase": "RACING",
+          "s": 5407.166547500839,
+          "u": 62.67864259635419,
+          "rejection": null
+        },
+        {
+          "id": 12,
+          "phase": "RACING",
+          "s": 6102.606685988895,
+          "u": 52.54135021546935,
+          "rejection": null
+        },
+        {
+          "id": 13,
+          "phase": "RACING",
+          "s": 5392.060466267421,
+          "u": 67.73397883504688,
+          "rejection": null
+        },
+        {
+          "id": 14,
+          "phase": "RACING",
+          "s": 6511.259139415833,
+          "u": 27.34672826526494,
+          "rejection": null
+        },
+        {
+          "id": 15,
+          "phase": "RACING",
+          "s": 5392.060466267421,
+          "u": 71.57729754731292,
+          "rejection": null
+        },
+        {
+          "id": 16,
+          "phase": "MERGE",
+          "s": 6407.488871222832,
+          "u": 22.19060199522784,
+          "rejection": null
+        },
+        {
+          "id": 17,
+          "phase": "RACING",
+          "s": 5392.060466267421,
+          "u": 56.19984681722754,
+          "rejection": null
+        },
+        {
+          "id": 18,
+          "phase": "PIT_OUT",
+          "s": 6275.218748038345,
+          "u": 22.19596180967912,
+          "rejection": null
+        },
+        {
+          "id": 19,
+          "phase": "RACING",
+          "s": 5392.060466267421,
+          "u": 41.515947515551154,
+          "rejection": null
+        },
+        {
+          "id": 20,
+          "phase": "RACING",
+          "s": 6026.321627254764,
+          "u": 48.96912313375007,
+          "rejection": null
+        },
+        {
+          "id": 21,
+          "phase": "RACING",
+          "s": 5392.060466267421,
+          "u": 37.163533224709525,
+          "rejection": null
+        },
+        {
+          "id": 22,
+          "phase": "RACING",
+          "s": 6512.060466267421,
+          "u": 39.35643312290618,
+          "rejection": null
+        }
+      ]
+    }
+  ],
+  "scope": "22-car synthetic arrival fixture, 11 shared team stalls; physical integration after initialization. Crew release-clear proof supplied by fixture; rendered crew not verified by this test."
+}

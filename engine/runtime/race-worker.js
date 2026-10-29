@@ -1,3 +1,4 @@
+import {compactFrame54} from './presentation54.js';
 import {ownsCar53,allowTeamMessage53} from '../race/team-access53.js';
 import {configureMenuSession49,advanceMenuSession49,resetMenuSession53} from '../race/menu-session49.js';
 import {validPitProof39} from '../pit/release-proof39.js';
@@ -10,7 +11,7 @@ import {LivingSession26 as Weekend2Session} from '../race/living-session26.js';
 import {saveWeekend,loadWeekend} from '../race/weekend-save.js';
 const physics32=physicsPool32(PHYSICS_WORKER_SOURCE32,circuit.key);let busy32=false;
 let campaign23=null,session=new Weekend2Session(),generation=0,last=performance.now(),heartbeat=last,lastPublish=last;
-function publish(){postMessage({type:'FRAME',generation,...session.presentation(),menu49:session.menu49??null,performance32:{...physics32.metrics,...session.race.performance32}});lastPublish=performance.now();}
+function publish(){let frame;session.race.presentationTeam54=true;try{frame=compactFrame54(session.presentation());}finally{delete session.race.presentationTeam54;}postMessage({type:'FRAME',generation,...frame,menu49:session.menu49??null,performance32:{...physics32.metrics,...session.race.performance32}});lastPublish=performance.now();}
 const pending32=[];self.onmessage=e=>{const m=e.data;if(busy32&&m.type!=='HEARTBEAT'&&m.type!=='PIT_READY29'){pending32.push(m);return;}if(m.type==='RESET'){generation=m.generation;resetMenuSession53(session);if(campaign23){session.stage='RACE';session.race.laps=campaign23.laps===0?raceLaps31(circuit.key):campaign23.laps;session.race.selectTeam(campaign23.team);if(campaign23.plans?.length===2)applyPlans23(session.race,campaign23.plans);}last=heartbeat=performance.now();publish();return;}if(m.generation!==generation)return;if(!allowTeamMessage53(session.race,m)){postMessage({type:'CONTROL_RESULT23',generation,ok:false,reason:'จัดการได้เฉพาะรถสองคันในทีมที่เลือก'});return;}
 
  if(m.type==='RESUME_CONTACT32'){if(session.race.resumeContact32()){session.phase='RACE';session.running=true;session.clock.reset();session.notice='ขับต่อจากจุดปลอดภัย · คู่กรณีเบรกเพื่อเว้นระยะ';last=heartbeat=performance.now();}else session.notice='ยังไม่ปลอดภัยที่จะขับต่อ · เก็บเซฟหรือลองเริ่มเรซใหม่';publish();return;}

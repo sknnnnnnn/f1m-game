@@ -1,3 +1,4 @@
+import {RACE_CAR_COUNT52} from '../race/roster52.js';
 import {pitRoad,PIT,stallStation,pitStopStation,pitRouteSpeedCap,pitSpeedLimitLines,pitMergeStop35} from './pit-lane.js';
 import {clamp,circuit} from '../tracks/track.js';
 export function makePitPlan(c,s,car,field){
@@ -12,7 +13,7 @@ export function makePitPlan(c,s,car,field){
  return p;
 }
 export function validatePitPlan(c,s,p){
- if(p.schema!=='P1-Trajectory/1.0'||p.routeVersion!=='PIT-09/1'||p.modelVersion!==c.version||!Number.isInteger(p.stallId)||p.stallId<1||p.stallId>7)return'VERSION_MISMATCH';
+ if(p.schema!=='P1-Trajectory/1.0'||p.routeVersion!=='PIT-09/1'||p.modelVersion!==c.version||!Number.isInteger(p.stallId)||p.stallId<1||p.stallId>RACE_CAR_COUNT52)return'VERSION_MISMATCH';
  if(p.inputTick>s.tick||p.expires<s.tick||s.time-p.createdTime>.5)return'EXPIRED_PLAN';
  const road=pitRoad(p.stallId);let previous=-Infinity;
  for(const q of p.knots){if(!Object.values(q).every(Number.isFinite)||q.t<=previous||q.v<0||q.v>pitRouteSpeedCap(road.project(q.x,q.y).s)+.05)return'INVALID_PIT_KNOT';previous=q.t;if(Math.abs(road.project(q.x,q.y).d)+c.width/2+.3>road.width/2)return'OUTSIDE_PIT_CORRIDOR';if(Math.abs(q.k)*q.v*q.v>.9*c.mu*(c.g+.5*c.rho*c.ClA*q.v*q.v/c.m))return'PIT_LATERAL_BUDGET';}
@@ -30,7 +31,7 @@ export function pitApproachSpeed(c){
 // Preserve the gentle bay manoeuvre; the separated exit uses the actual
 // aero/grip budget rather than a blanket half-static-grip corner speed.
 export function pitCornerSpeed35(c,k,S){
- const reserve=S>stallStation(6)+35?.85:.5;
+ const reserve=S>stallStation(RACE_CAR_COUNT52)+35?.85:.5;
  const divisor=Math.abs(k)-reserve*c.mu*.5*c.rho*c.ClA/c.m;
  return divisor>0?Math.sqrt(reserve*c.mu*c.g/divisor):60;
 }

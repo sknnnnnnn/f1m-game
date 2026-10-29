@@ -1,3 +1,9 @@
+# R54 — Release Candidate · 2026-10-29
+
+- ผ่าน: 22 คันครบหนึ่งรอบทั้ง Bahrain/Shanghai/Suzuka, พิต 22 คันทั้งสามสนาม, regression 67 คู่ test/สนาม, แผงคุม Cadillac และคำสั่ง Bottas
+- รอยืนยัน: 60 FPS/จอดำ/ภาพ GPU ในฝนและกลางคืนบน Android จริง
+- ดู `reports/release54/ACCEPTANCE.json` และ `reports/release54/README_TH.md`
+
 # R53 — 2026-10-29
 
 - ผ่าน: Shanghai 22 คันครบหนึ่งรอบ; ทีมครบ 11 ทีม; instancing scene buffers; solver parity; การเลือกกล้องสองคันของ Cadillac ใน browser

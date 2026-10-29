@@ -1,3 +1,4 @@
+import {SAVE_MAX_BYTES54} from '../race/save-limits54.js';
 import {teamCars53} from '../race/team-access53.js';
 import {circuit} from '../tracks/track.js';
 import {SETUPS} from '../race/weekend-environment.js';
@@ -8,7 +9,7 @@ export function bindWeekendUI({post,pause,clearView,quality}){
  $('weekend-next').onclick=()=>{clearView();post('NEXT_STAGE');};
  $('weather-mode').onchange=e=>post('WEATHER',{mode:e.target.value});$('setup-apply').onclick=()=>post('SETUP',{id:Number($('setup-car').value),name:$('setup-name').value,adjust:Object.fromEntries(['wing','ratio','bias','stiffness','pressure'].map(k=>[k,Number($('setup-'+k).value)]))});$('setup-name').onchange=()=>fillSetup(SETUPS[$('setup-name').value]);$('setup-car').onchange=()=>{const c=latest?.snapshot.cars.find(c=>c.id===Number($('setup-car').value));if(c){$('setup-name').value=c.setup;fillSetup(c.setupValues);}};fillSetup(SETUPS.BALANCED);for(const k of ['wing','ratio','bias','stiffness','pressure'])$('setup-'+k).oninput=e=>{$('value-'+k).textContent=Number(e.target.value).toFixed(k==='pressure'?1:2);};
  $('flag-mode').onchange=e=>post('FLAG',{flag:e.target.value});$('quality-mode').onchange=e=>quality(e.target.value);
- $('save-game').onclick=()=>post('SAVE');$('load-game').onclick=()=>{pause();$('load-file').click();};$('load-file').onchange=async e=>{const f=e.target.files[0];if(!f)return;if(f.size>8000000){$('save-message').textContent='ไฟล์ใหญ่เกิน 8 MB';return;}post('LOAD',{data:await f.text()});e.target.value='';};$('resume-local').onclick=()=>{try{const data=localStorage.getItem('F1M-WEEKEND-12');if(!data)throw Error('ยังไม่มีสถานะบันทึก');pause();post('LOAD',{data});}catch(e){$('save-message').textContent=String(e);}};
+ $('save-game').onclick=()=>post('SAVE');$('load-game').onclick=()=>{pause();$('load-file').click();};$('load-file').onchange=async e=>{const f=e.target.files[0];if(!f)return;if(f.size>SAVE_MAX_BYTES54){$('save-message').textContent='ไฟล์ใหญ่เกิน 32 MB';return;}post('LOAD',{data:await f.text()});e.target.value='';};$('resume-local').onclick=()=>{try{const data=localStorage.getItem('F1M-WEEKEND-12');if(!data)throw Error('ยังไม่มีสถานะบันทึก');pause();post('LOAD',{data});}catch(e){$('save-message').textContent=String(e);}};
  $('analysis-open').onclick=()=>post('ANALYSIS');
  for(const id of ['analysis-car','analysis-lap','analysis-compare','analysis-metric'])$(id).onchange=drawAnalysis;
 }

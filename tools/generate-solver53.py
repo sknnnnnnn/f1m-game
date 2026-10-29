@@ -16,4 +16,5 @@ s=s.replace('const rolling=(i', 'const rolling=(i') # retain solver guess order
 # use one evaluation, without changing numerical order or result
 s=s.replace('guesses=[y0,','predictor53=evaluate(y0).derivative,guesses=[y0,').replace(a,'y0.map((z,i)=>z+h*predictor53[i])')
 s='// R53 exact solver optimisation. Original stays in racing/runtime/frozen/physics.js.\n// Hoist invariants across the load iteration; Newton equations/tolerances are unchanged.\n'+s
+s=s.replace('const old=structuredClone(s),q=substep','const old=options.wallX!==undefined?structuredClone(s):null,q=substep')
 Path('engine/physics/solver53.js').write_text(s)

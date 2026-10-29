@@ -1,9 +1,9 @@
 {
-  "edition": "F1M RACE 53",
-  "version": "28445628b932aeaf",
-  "sourceRevision": "28445628b932aeaf7d0c849ddc15ace791f8d686ace5f29ece273540db024bd6",
+  "edition": "F1M RACE 54",
+  "version": "cce8161ff1180e34",
+  "sourceRevision": "cce8161ff1180e34b5443e72ac334353043fd39541db3aaca6f4c42b6d2f063e",
   "inputs": {
-    "build.mjs": "9efb98c32693cc6caf49df3dc451409f7ea7c59d95b910f475aa2d0861b96ced",
+    "build.mjs": "cccea269b3f392014470681422b07bdfe0862642fc9989149cbec872a0e50ac5",
     "engine/ai/agent.js": "52a120a090f7334529e328868e10ba4d311858c62085468ec38e9a2f001aeb09",
     "engine/ai/battle-camera.js": "78e583678411f244786fbd09fed4e9a75ddba56a8a3592545b6dbfda795346b0",
     "engine/ai/battle-planner.js": "8a754e8b7836cc99653c96243722ab96d55c57ce519f73df809539643ada979e",
@@ -42,7 +42,7 @@
     "engine/physics/pose-buffer.js": "d41fa8ac6d63fc17c7fb2e8c1f4af872c98f05f386ed74cd14ac05f767b09b09",
     "engine/physics/reference-adapter.js": "574df59baab3f2a184d0ad7df95de4de036309e2cc737c7587c2b63a30bd81fb",
     "engine/physics/route-spline.js": "51358071d4179e9b3363536fb4c46652789c8e8b8a39b9b1688eac3bd98f04e0",
-    "engine/physics/solver53.js": "a7d030049eb356b576aa15aa3c649294b1d591d0a4182f50a4affa4102f25585",
+    "engine/physics/solver53.js": "647e83b8fcd5f97c526ed07f1e06fb9842eb34c46bd4522d093e2ce6a2bd3561",
     "engine/physics/speed-envelope.js": "e555e693fc118aa11df97408d42202114b93c4bcd3f42b80aa33ff6bb466d35d",
     "engine/physics/speed-limit47.js": "93b6d154fb987aa962b6396c98db00f3fd97bc3c13c9a308cba22a6b1900519e",
     "engine/physics/tyres.js": "cbe87f9551ded3e8da729908638d28a4e987b427397db4cb44ccb781f9c7b38c",
@@ -69,7 +69,7 @@
     "engine/pit/pit-estimate26.js": "9a15c3aa7249f3b31556842dea3ebffd70fbd48568c7c9707d9dcef5deaf4c82",
     "engine/pit/pit-handoff35.js": "0c90327bd19ba1cf4e32aba404537ea84c3ca3d6d04caa81b850a30f6f67b7d5",
     "engine/pit/pit-lane.js": "024a808ebb071bdec181dd0ff050620f05af204a09d88d328d5d108188791efc",
-    "engine/pit/pit-reference.js": "54727f042cb8f2479bd297018edeb4fccf16d48ded92ddd1efc51039d7be7916",
+    "engine/pit/pit-reference.js": "ec3b466e995dbae92c5f54a1d8783156fabcece52e77680c87650b30f74d51c1",
     "engine/pit/pit-scene.js": "ddb4cab774d85a8bc95e9216262fc5ec8c285c695b299a6ae708f040e44e5880",
     "engine/pit/pit-scene27.js": "51fdbc3f81cde283e76f2a03a6d0bf491e73c51ef102df14d99801e4a2e43ce7",
     "engine/pit/pit-scene28.js": "10649bab9c32439876f7e0d8346c153aafa7feeace157a376cc87cfae11849ac",
@@ -92,25 +92,27 @@
     "engine/race/race-intelligence15.js": "3526cd42167f5242dfc494da5bb3f2573e80689711fdd0caa9d762c17f4cb419",
     "engine/race/race-resources.js": "6f600b410fbd1af888ed17402bd5345a092353edad9f793191bf284d75a6cb23",
     "engine/race/roster52.js": "2907d48f32d2f80926db450ec8c9a77b814c0a94aca0a80ed8e6bfef17afdddf",
+    "engine/race/save-limits54.js": "040df7f9e93979cf6d700845cf0d1e47160da3ff23ebaeac1eed2bed84a08972",
     "engine/race/showtime22.js": "515bcf5a29d918675e87d58389031613f71b9cba9dfc137da61f045f05549dbc",
     "engine/race/stability23.js": "5158f1e23898481b1eff7e70746f6a65f8a6760e74c7f0e4d26f774ecab211c6",
     "engine/race/start-strategy40.js": "0767e11c5d79aadecd12b21ca725ee7c1977762d1bfcdb9ab7d0162a97bb0f64",
     "engine/race/strategy-race.js": "11de4a01cbc71d0db91416ad3c973a6c6cc41c896534de289f0981204e893f8f",
     "engine/race/strategy.js": "4e3097d8176229c121bd6c87ab59db407ed501ff9a72f9469eae95b118b22c91",
     "engine/race/team-access53.js": "c1108c54a8e904e67624e44d23cccd5796629f51aa08dc6ad3e5cf550f74b4ab",
-    "engine/race/team-engineer.js": "02385d6c87edfcd75e677e95e5f81a3bb46e4e1db074fddaed766b8e982bedf1",
+    "engine/race/team-engineer.js": "61e352fb25cdab7e79609738469702f777607a89777e384fa0a4dea6578cb01e",
     "engine/race/weekend-environment.js": "49ddc51d3f685534b9bd73d94299c3699cd220b5faba3b5e2078a674b003baf6",
     "engine/race/weekend-race.js": "b6137987b77169d6f2d1f41e5f484e2793ccd7d1d75563989b66fd06da65addb",
-    "engine/race/weekend-save.js": "d0304f18e6830eed358dee2adea747b0a47a91a5e14bd83a14f670d2118637ea",
+    "engine/race/weekend-save.js": "cea1af02475bdd2a9c74efd3f5b649454b28c694aa3b4b27e235e866211a40b2",
     "engine/race/weekend-session.js": "aea5e7eac74ef453d08fec763e31107425fe7467100448b1a1618fbbbd4a36fb",
     "engine/race/weekend.js": "3018a26efab43476bae8a7c06ec919837444a20521389de10ca59bef33279c7a",
     "engine/rendering/alpha-instances39.js": "9bc589d01cf9dd6f79f48884bc293832c6dd2c0923d37dae9de7bd31384257d6",
-    "engine/rendering/app.js": "3976c3fa53a092778722f1182da5bfe912a0dbbbf5578bc546bfe31fdac72c82",
+    "engine/rendering/app.js": "b39257f358be6ef1f96afecc7e3cd54a0ba843a5e3ecfa374593f724e315c363",
     "engine/rendering/bahrain-scene30.js": "cf77b1828c5e179e0e0e09f8c5faac563cf3197b8a71722963d8844310f735fe",
     "engine/rendering/broadcast.js": "d0b3c0bbc72774c8aeaad0a05f49e32f9521a2ef89d606bc9d81fb67c2fa7640",
+    "engine/rendering/buffer-lease54.js": "e79418c1c35811430a58eba76634668ea3d64ea17decf7d2a2cf9b1cc278960a",
     "engine/rendering/camera-safety30.js": "32d1c6af6c08ad9658a8eac5f1ad0b8c9dc32f5e0a7ca26b363513dee2075321",
     "engine/rendering/cameras.js": "8952a0029a41f0f8f6ede597d7cb6062c14e562a3dccfc3efdd15309c6b0800d",
-    "engine/rendering/car-instances53.js": "e98d8e7ad46e6690d86ab0ac7023fd8a7f5573256ff4a2a15fc6c63f0dbb1f30",
+    "engine/rendering/car-instances53.js": "17244359e465532691cd121a0c9677ea0fc7bd994f493f824dcd6341c5d11bc1",
     "engine/rendering/circuit-finish.js": "3d6d9c9c9cd431f53562a731b74c388cc4f4d6ecaedb092b921f490b543e556f",
     "engine/rendering/cpu-track-renderer.js": "93d7b83675a165f7d7897a1b37982d84afe364f319f595b43673c6efcd8a4f63",
     "engine/rendering/drive-cues26.js": "47cadf999cdba9b9b3669925d9d1e7816b5ad0faa2edb9dc5d6b7a40b0503e2c",
@@ -118,7 +120,7 @@
     "engine/rendering/dynamics.js": "2a93d9cda2d2317653015690b555fcf3415ddc21dafe46147268935c1fe68732",
     "engine/rendering/engine-entry.js": "5ae2aa6ea669a2ceda124dfe5877afcfb2a1ac1fe4de2c0ffc4554e9598f5e10",
     "engine/rendering/frame-budget37.js": "f8bdc6e5de3ff84558539365ead9921b6e9112628ceb01fa69e5a1509e3450e5",
-    "engine/rendering/garage-menu49.js": "24ceee05c9dbde4aba5366d01353813239f4e763a7684e2023b58ab989093d43",
+    "engine/rendering/garage-menu49.js": "0127b56696b33d4fd5f11587aa8cb47c833f1952aac5d9aebab162b8bd0c18ad",
     "engine/rendering/grid-crew33.js": "9f9c5511bd26b238a4610ea4f70343a3e0ea90195851621a877c153d77a288ce",
     "engine/rendering/grid-footsteps33.js": "a15d43f8bdb293292630585246f1c8bc8ab05b4f369f4593f4911158b221a708",
     "engine/rendering/grip-hand.js": "ed97b8308af35b9454855a0b8e01f9342c89e2e3e3319b8ac58d6c41289e85a6",
@@ -129,12 +131,13 @@
     "engine/rendering/occlusion.js": "a3526d6fa1bffcc4e17a3aace77aca92e3fa79a27b8ba2770cb6613b3bd5deb4",
     "engine/rendering/particles23.js": "4d22aac24f76a6e3c2a058c2350e0458fc130c419c92a18b4f39afff88dbe674",
     "engine/rendering/particles24.js": "1eaad239927ea4b7097b7d77ccceaf9de80ced6429816e1bd72bffe731d5fad3",
-    "engine/rendering/presentation.js": "aa76bc6bf78dfa5a60bb4f2e19219d8b71a61db8db90e0a10e6bf9e539e46873",
-    "engine/rendering/race-view32.js": "1472b9fe1383afa00677a765bfaabb301ed8425e874ad24ab94983cfb93f90bf",
+    "engine/rendering/presentation.js": "6644e46f599716b14ca63c524e81c273761bee66389f43bbd0f4a37ef5c9d800",
+    "engine/rendering/race-performance54.js": "fc5e39f356c2ed6071101b396519a807234b19b5b027c18d0b84efb0c1b139de",
+    "engine/rendering/race-view32.js": "d1bb6410eeafbcf3b5cfc5d21c72571ff6d1e2c098c52f2c4ae8b0aaa5a87708",
     "engine/rendering/rear-mirror37.js": "28075932a57ac724a45d1ebaaab620c4390f498c5df869293353fe333f763599",
     "engine/rendering/render-policy.js": "3ae7327a2d03c0cdcc97add63c462d71c33b894389b6b323c17be2e680b186c2",
     "engine/rendering/render-recovery.js": "e2b922acf3d145ce4f463a978a16fb830df6d94bb490d25f3b19d19db85c1b6e",
-    "engine/rendering/replay.js": "344ef2603ad85370f05041398a1803ecf173cb6d2c516012f006d367d54914b6",
+    "engine/rendering/replay.js": "a3dd168c0db110d74b4b01cffe204f256ecda9fdc706a8c8858d8c3e50a0e09f",
     "engine/rendering/showtime-scene22.js": "cb83492740b6ae13cb2f30def6470ef78808fc2c247ccfd2fcafd02ec391d26d",
     "engine/rendering/slipstream-cue45.js": "804ef297f9e3da50bc8c17f4e662fd67a1283cda6c0c5c7372b639ff679d0464",
     "engine/rendering/slipstream45.js": "66bb1d849b7dc5e8edb3564f14fa296ab59b4988026f63fa5df41337ff1d3f6d",
@@ -150,7 +153,8 @@
     "engine/runtime/physics-pool32.js": "b8a4313b39be13ef30fb40be693df42007c40e2c8bc4b7edbcd4a177ccb89502",
     "engine/runtime/physics-surface32.js": "293405cd5292a02abafd985874dc01d34f90ff881f862011760866188292bfa1",
     "engine/runtime/physics-worker32.js": "b2314e91ab4b086763192001c6573b593c31d7c3a3c520e0ee2992b0415c1c8a",
-    "engine/runtime/race-worker.js": "80656d6314eaf823ba804615624fe5bd8ca7e38e3c995bab6e15749b1f20a3df",
+    "engine/runtime/presentation54.js": "7d0e3d53a77f55aac9ac5cdcc7ce2be3be0e834359ab86cb888b477766f6b3da",
+    "engine/runtime/race-worker.js": "1951d0c12f07e443f051f0b81ef460b895b6a9f7cf558559789303bd6faf0778",
     "engine/runtime/render-health.js": "08a4efdae5b0743d96b91ff56be8f7ba3f1d4b2842e507a61431a740b396237f",
     "engine/safety/safety-car-visual.js": "d83fe0b8eeb32a619cf3e8e2c449d48474185647b247ceb223e43c910d433822",
     "engine/safety/safety-car.js": "17b5c74c9cf07880b90f16448d7da6d9e08b10836786d287085939b58ed0633a",
@@ -180,14 +184,14 @@
     "engine/tracks/terrain-clearance.js": "deb0738103cf8d5cb49bf3743d8a218a9e190647e20b1d1c6f7755380e8fe69e",
     "engine/tracks/track-layout28.js": "b5774f52daa95a33cafaac1020bf2644348c1b479349a0b58342c4dca5399972",
     "engine/tracks/track.js": "31e93873cf9c513f4af3ecf6ce768c1f4b68e5f61e65792d09ffb9424761a905",
-    "engine/ui/championship-ui23.js": "740e990e907d93844f94f217270ce1bdfa437a2674ddcdcc4bcc445e4e52f020",
+    "engine/ui/championship-ui23.js": "d042ab9cbb9813fb0ddba266f077799396ca7bec9266d9d2c34e5d924002974e",
     "engine/ui/circuit-maps50.js": "ad2c96b768e98bc3aca03ef37ff8cab5c3d9a38ff160ca2facbe85abaaf6a88b",
     "engine/ui/control23.js": "5416495bc205165fafb733e4e0ae9b8d5471a2f2c427ad2d7e284c53238ff9cf",
     "engine/ui/engineer-ui.js": "291388825ffe5eb864737cc01a3e23747efbb832d0955e7bb7d50c1ac2ad6cc7",
     "engine/ui/experience38.js": "f2fd1a855227b0c815fbae4df72a953211f34eac0b0dccc28056e41e595d12c5",
     "engine/ui/living-ui26.js": "2a1cef7e003c96b37e2e0875366a90400d9a4fe81bd0aac12381649bf0c52d6a",
     "engine/ui/loading50.js": "ef3d75aca75b12ad1dcaeaf84c3ab4f3dd57a4a973022cbbc6cc60feed0ea461",
-    "engine/ui/main-menu49.js": "dfa06fa690689f30d1fda78909a2498536dddc5e2514d280e06c3ab00a157d2e",
+    "engine/ui/main-menu49.js": "9646aaba10189cc6e18b238da05dafe62ada9cf24e87f6e98450f668d1275c55",
     "engine/ui/pass-caption46.js": "14ef1d4ca88427c06e0685dd93c842d831cd059e9e3b02696263d3acf2b7b5eb",
     "engine/ui/race-digest34.js": "5872c079caddd27cd756a6bb880aa622a51b29afe67b2f70d8d3b2c9494970fc",
     "engine/ui/race-polish37.js": "d619bf5be9fc79ffc930b550bdcfe6eec18aa4c9121145da3031ef4c588b0657",
@@ -199,7 +203,7 @@
     "engine/ui/showtime-ui22.js": "928b938aac57f7e027219d5366565509112259ffb9c532ce74aa5fee6da550d8",
     "engine/ui/watch-ui24.css": "6c87f061896753c9dabbf06c9affc9de89695a48a6765f23c7c9cb0d9f65d465",
     "engine/ui/watch-ui24.js": "2cf896f24d2ab969c42e3d1f76f91e281ea4bfe206416843b705ea5553962a10",
-    "engine/ui/weekend-ui.js": "d90a557c80ed2383005aea1f53000b1ed9fdba46e25eca82b0cc24722458d9e6",
+    "engine/ui/weekend-ui.js": "bbd52e0384a2930448840b0fd0e9d9a305bd49b41fd79617881ed1ff10955cca",
     "frozen/config/C0.json": "2fa2e34d7ced2a8effc80bc476131e9caf920eeba44741952b606e6dcb2608d2",
     "frozen/config/P1Criteria-R1.json": "49768bf3f1e3658730bf66ae95e207c473a4f4953f6286516d970d302095e918",
     "frozen/src/config.ts": "f0a3e31cb6f35bcc4c11442d50e3c8b84f283f78a074a17d1014f44f13fb2d29",
@@ -209,11 +213,11 @@
     "frozen/src/physics.ts": "0f30f31738aa17d97729c99d1e0c099dc08c2ae77c4dd4d7a6006a881542faeb",
     "frozen/src/reference.ts": "acdb61341bf4e771ca038a1268760e7605307ed68927b1eb396acafe9acde787",
     "frozen/src/snapshot.ts": "806da8bdaac82ed69504db13d255c1857a446ed558687a3f9b0ffe3b438f8838",
-    "index.template.html": "ff8065b53f7215f65e9cc157dc63b0b3b3f8194a55177de3c20c773530c80e65",
+    "index.template.html": "f409fa2e16efbc53c3806e9c7032d9f5439aabc26a5c09c7ec320028a434b060",
     "models/F1M_SafetyCar_SC1.glb": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
     "models/car163.glb": "c1fdbd7fcdf937ecef9a5229134e8d584dd633a65843d90ecaa923586b0bf1f8",
     "package-lock.json": "f0c2716306310682ef71061f24be9f64a278c594d3827148a6c55f2f77274342",
-    "package.json": "f270173b40e8ed46f6ef9c4f9766434446e5b46ee012f2d75e70c8fa5603f680",
+    "package.json": "0e455a64ca4582deec77061097c7398c3a38a711e4954ba5fabe3b470ea084a6",
     "public/icons/icon-192.png": "02682aa399f8b52d09ffe65681779e78a8df4516e03813e74961f6430fd6edba",
     "public/icons/icon-512.png": "5daa2ce2fe0e3fc78b08084d05dd898e2f5808ee3a0743486f036014c4c854d7",
     "public/icons/maskable-512.png": "5daa2ce2fe0e3fc78b08084d05dd898e2f5808ee3a0743486f036014c4c854d7",
@@ -242,8 +246,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 1133425,
-      "sha256": "2161cec61b1973b74e0d4068638b5cc303546ec1e42c1ea667d8e29a173c241c"
+      "bytes": 1135836,
+      "sha256": "e376a076d0357fd06428a58acc147d92cdd1d52b84f5600a0d769a44fbddf225"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -270,8 +274,8 @@
       "sha256": "b239c0dedb75388a8a36ac7913e7a12f175e8cd06a0cc20fb78f550520636b79"
     },
     "build.json": {
-      "bytes": 24639,
-      "sha256": "0c43769013c7a3e0438e67b3b973073952f27662f6a669a2467885d042ea2c30"
+      "bytes": 25075,
+      "sha256": "13e1406519267dd9cdc53f112aec96fd937c8e55783ef5c05173fa2ebecc9d45"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -287,7 +291,7 @@
     },
     "index.html": {
       "bytes": 16997,
-      "sha256": "f602b518d035336753eebc1b162e66b2c7e7fd72d044acd6681f880f8a9a0dd9"
+      "sha256": "c355f081c1a4e145a93089ae338814bf2f3de0ffba4e04e93ec49bcc520fbb47"
     },
     "manifest.webmanifest": {
       "bytes": 584,
@@ -306,16 +310,16 @@
       "sha256": "c1fdbd7fcdf937ecef9a5229134e8d584dd633a65843d90ecaa923586b0bf1f8"
     },
     "workers/physics-worker.js": {
-      "bytes": 534107,
-      "sha256": "6d547b3dcb3e2e03708d9da7130e1b2066323446491e7a2eab0d334ef1c5134d"
+      "bytes": 534129,
+      "sha256": "ebe4a502c0b42c8588f9dea1ea3d77c6fd4bd5902dd452faaf2960a6712eb1b0"
     },
     "workers/race-worker.js": {
-      "bytes": 829814,
-      "sha256": "36ecc1ca108297bdbcc66259fc2569b9e6965b29ac1e316266af75ca5d9744b6"
+      "bytes": 830347,
+      "sha256": "b83e728ca91604da0fc7cf587f41d97562e05de4688a79355c307bf300accf77"
     },
     "sw.js": {
       "bytes": 2021,
-      "sha256": "ce5bdbc5598e3773c24e31e3bb165bf5263503f9a28bac1e1cdc646f1affee46"
+      "sha256": "d67ecca501caf590a3add6018546dbbb2ad708104befde513923d86a6309f8ba"
     }
   }
 }

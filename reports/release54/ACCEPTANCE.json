@@ -1,0 +1,73 @@
+{
+  "release": "R54",
+  "date": "2026-10-29",
+  "sourceBase": "a3169337a04aea38654ae1ff7c72ecfab39d06eb",
+  "deliveryStatus": "RELEASE_CANDIDATE",
+  "regression": {
+    "status": "PASS",
+    "command": "node tests/run-engine.mjs",
+    "exitCode": 0,
+    "testTrackPairs": 67
+  },
+  "races": [
+    {
+      "track": "bahrain",
+      "laps": 1,
+      "cars": 22,
+      "finished": true,
+      "simulatedFinishSeconds": 131.3,
+      "positionChanges": 20,
+      "offTrack": null,
+      "rejections": 0,
+      "pitExitCars": 22,
+      "pitSimulatedSeconds": 85,
+      "sharedBayConflicts": 0
+    },
+    {
+      "track": "shanghai",
+      "laps": 1,
+      "cars": 22,
+      "finished": true,
+      "simulatedFinishSeconds": 137.55,
+      "positionChanges": 26,
+      "offTrack": null,
+      "rejections": 0,
+      "pitExitCars": 22,
+      "pitSimulatedSeconds": 84.91666666666667,
+      "sharedBayConflicts": 0
+    },
+    {
+      "track": "suzuka",
+      "laps": 1,
+      "cars": 22,
+      "finished": true,
+      "simulatedFinishSeconds": 132.38333333333333,
+      "positionChanges": 23,
+      "offTrack": null,
+      "rejections": 0,
+      "pitExitCars": 22,
+      "pitSimulatedSeconds": 89.4,
+      "sharedBayConflicts": 0
+    }
+  ],
+  "unit": "PASS",
+  "browserUI": {
+    "status": "PASS_WITH_CPU_LIMIT",
+    "team": "Cadillac",
+    "cars": [
+      21,
+      22
+    ],
+    "selectedDriver": "Valtteri Bottas",
+    "order": "ATTACK acknowledged",
+    "webgl": "Disabled by cloud browser; CPU fallback stopped on 2-second guard"
+  },
+  "androidAcceptance": {
+    "status": "PENDING_DEVICE_VERIFICATION",
+    "targetFPS": 60,
+    "measuredAndroidFPS": null,
+    "blackFlickerResolvedOnAndroid": null,
+    "nightWetGPUVerified": false
+  },
+  "pitProofScope": "Crew-clear proof supplied by physics fixtures. Separate accepted-GLB crew buffer test passed; simultaneous rendered crews on an Android GPU were not measured."
+}

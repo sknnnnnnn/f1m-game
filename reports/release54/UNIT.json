@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "transport": {
+    "fullBytes": 227251,
+    "compactBytes": 125305
+  },
+  "poseComparisons": 105,
+  "all22PitPlans": true,
+  "all22BaySpeedBudgets": true,
+  "inactiveBufferParking": true,
+  "passiveLiveFPS": true,
+  "cpuNotAcceptedAsGPUProof": true,
+  "teamSaveResetAndWetWeekend": true,
+  "saveLimitBytes": 32000000
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "parts": 2200,
+  "transformAndColourComparisons": 20,
+  "samePaintedBuffers": true,
+  "visibilityRoundTrips": 8,
+  "recreatedBatchesDuringRoundTrips": 0,
+  "oldMS": 210.69031199999995,
+  "newMS": 69.85267899999997,
+  "speedup": 3.016209471364728,
+  "scope": "CPU submission preparation, synthetic shared parts; not GPU FPS."
+}
