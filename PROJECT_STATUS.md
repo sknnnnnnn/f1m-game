@@ -1,3 +1,15 @@
+# R50 — Main-link interface release
+
+- Build: `d57dcf642818c8db` (`F1M RACE 50`)
+- Source: `work/interface50` (main unchanged)
+- Release: `gh-pages`, root `https://sknnnnnnn.github.io/f1m-game/`
+- `/preview49/` remains a compatible R50 mirror for existing preview installations.
+- Details/evidence: `reports/INTERFACE50_TH.md`, `reports/interface50/`.
+- Local presentation/session/PWA checks passed. Cloud browser: R49 in-game update, desktop/390×780 layout, cross-track one-click launch and Bahrain racing HUD verified. Root R48 update verification recorded in release evidence.
+- Android GPU/FPS and perception of graphics/animation remain user-device checks. No physics, AI, vehicle assets or race pit-system changes in R50.
+
+---
+
 # GARAGE MAIN MENU 49 — 2026-10-29 (isolated preview)
 
 - Build `8cd0fd02ba97254c`; source work/main-menu49; preview /preview49/; R48 root retained.

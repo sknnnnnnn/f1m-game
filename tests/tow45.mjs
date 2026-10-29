@@ -29,14 +29,14 @@ console.log('PASS minimap handedness and hit selection, telemetry-bound wake cue
 // selection changes and reduced motion without a synthetic physics wake.
 const globals=['document','matchMedia','innerWidth','innerHeight'],saved=new Map(globals.map(k=>[k,Object.getOwnPropertyDescriptor(globalThis,k)]));
 let strokes=0,reduced=false;const ctx={clearRect(){},beginPath(){},moveTo(){},lineTo(){},stroke(){strokes++;}};
-const canvas={width:0,height:0,getContext:()=>ctx},title={},detail={},bar={style:{}};
-let root;globalThis.document={head:{append(){}},body:{append(n){root=n;}},createElement(tag){return tag==='style'?{}:{hidden:true,setAttribute(){},querySelector(q){return {'canvas':canvas,'span':title,'small':detail,'i':bar}[q];}};}};
+const canvas={width:0,height:0,getContext:()=>ctx};const vars={};
+let root;globalThis.document={head:{append(){}},body:{append(n){root=n;}},createElement(tag){return tag==='style'?{}:{hidden:true,style:{setProperty(k,v){vars[k]=v;}},setAttribute(){},querySelector(q){return q==='canvas'?canvas:null;}};}};
 globalThis.matchMedia=()=>({get matches(){return reduced;}});globalThis.innerWidth=1200;globalThis.innerHeight=800;
 try{
  const {mountSlipstream45}=await import('../engine/rendering/slipstream45.js');const ui=mountSlipstream45();
- ui.update(car,{...opts,now:100,camera:'chase'});assert.equal(root.hidden,false);assert(detail.textContent.includes('72%'));assert.equal(bar.style.width,'80%');assert.equal(canvas.width,700);assert(strokes>0);
- ui.update({...car,draft:0},{...opts,now:200,camera:'chase'});assert.equal(root.hidden,true);
- reduced=true;const oldStrokes=strokes;ui.update(car,{...opts,now:300,camera:'chase'});assert.equal(root.hidden,false);assert.equal(strokes,oldStrokes,'reduced motion retains the useful readout without moving rays');
+ ui.update(car,{...opts,now:100,camera:'chase'});assert.equal(root.hidden,false);assert(!root.innerHTML.includes('tow-readout'));assert.equal(vars['--wake50'],'0.104');assert.equal(canvas.width,720);assert(strokes>0);
+ ui.update({...car,draft:0},{...opts,now:200,camera:'chase'});assert.equal(root.hidden,false,'high-speed rays remain after leaving the tow');assert.equal(vars['--wake50'],'0.000');
+ reduced=true;const oldStrokes=strokes;ui.update(car,{...opts,now:300,camera:'chase'});assert.equal(root.hidden,false);assert.equal(strokes,oldStrokes,'reduced motion retains the edge tint without moving rays');
  ui.update(car,{...opts,now:400,camera:'overview'});assert.equal(root.hidden,true);
- console.log('PASS actual overlay visibility, real relief text, bounded canvas, selected-car change and reduced-motion rendering');
+ console.log('PASS actual overlay visibility, text-free wind, bounded canvas, wake exit, speed continuity and reduced-motion rendering');
 }finally{for(const [key,descriptor]of saved)if(descriptor)Object.defineProperty(globalThis,key,descriptor);else delete globalThis[key];}

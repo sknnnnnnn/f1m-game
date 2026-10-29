@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "speedBasedWind": true,
+  "wakeIncreasesEffect": true,
+  "noSlipstreamTextBox": true,
+  "pausedGridFlagsPitRetiredSafetyCarOverviewSuppressed": true,
+  "reducedMotionSupported": true,
+  "sideProfileCarLoader": true,
+  "progressClamped": true,
+  "scope": "Pure presentation-state tests; Android visual performance remains device dependent."
+}

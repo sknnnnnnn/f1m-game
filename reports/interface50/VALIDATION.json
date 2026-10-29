@@ -1,0 +1,26 @@
+{
+  "build": "d57dcf642818c8db",
+  "status": "PASS",
+  "tests": [
+    "interface50",
+    "tow45",
+    "menu49",
+    "race-story34",
+    "watch24 (Bahrain)",
+    "grid33 Bahrain/Shanghai/Suzuka",
+    "build",
+    "pwa-static",
+    "service-worker"
+  ],
+  "browser": {
+    "R49InGameUpdate": true,
+    "desktopGarage": true,
+    "mobileViewport": "390x780 CSS px",
+    "crossTrackSingleLaunch": "Shanghai to Bahrain, Quick Race 1 lap",
+    "raceHUD": true,
+    "cockpitView": true,
+    "towTextBoxes": 0,
+    "scope": "Cloud CPU renderer, not Android GPU/FPS"
+  },
+  "physicsAIAndVehicleAssetsChanged": false
+}
