@@ -1,3 +1,4 @@
+import {packAttack59,packEnergy59} from './pack-attack59.js';
 import {launchDecision53} from './launch53.js';
 import {preparePass47} from './pass-timing47.js';
 import {towAttack46,applyAttackEnergy46} from './tow-attack46.js';
@@ -77,6 +78,7 @@ class Agent {
    if(!['BRAKE','RECOVER','BOXED_IN'].includes(mode)){choice=ideal;mode=ahead?'FOLLOW':'CRUISE';reason=ahead?`FOLLOW EXIT / BUILD TOW CAR ${ahead.id}`:'CLEAR RACING LINE';}
   }
   if(reset47&&!alongside40&&!['BRAKE','RECOVER','BOXED_IN'].includes(mode)&&safeLane(ideal)){choice=ideal;mode='FOLLOW';reason='RESET BEFORE BRAKE / PRESERVE EXIT SPEED';this.battleCommit=null;if(this.duel)this.duel.pass=null;}
+  ({choice,pace,mode,reason}=packAttack59(this,state,p,safeLane,{choice,pace,mode,reason},runway40));
   // A tactical suggestion must never overwrite the immediate following brake.
   if(ahead&&ahead.gap<brakeReach40(ahead)){
    pace=Math.min(pace,Math.max(0,ahead.speed-3));mode='BRAKE';choice=this.targetLane;reason='FRONT COLLISION RISK / YIELD';
@@ -124,7 +126,7 @@ class Agent {
 
   for(const o of p.cars){const geometricThreat=corridorThreat(this,state,o),profile40=profileLimits40.get(o.id);if(profile40&&!geometricThreat){this.trafficLimit=Math.min(this.trafficLimit,profile40.limit);continue;}if(o.gap>0&&o.gap<120&&(geometricThreat||sharesLane40(o))){const caution=Math.max(clamp(Math.abs(now.k)/.004,0,1),clamp(-o.acceleration/4,0,1)),reserve=trafficSpace(this,state,o).reserve,available=Math.max(0,o.gap-reserve);const predictedSpeed=Math.max(0,launchLeadSpeed(o)+Math.min(0,o.acceleration??0)*(.25+.4*caution)),limit=o.gap<reserve?Math.max(0,predictedSpeed+(o.gap-reserve)*.7):Math.sqrt(predictedSpeed*predictedSpeed+2*followBrake40*available);if(geometricThreat)this.corridorDecel=-Math.min(18,.8*(this.config?.mu??1.55)*9.81);this.trafficLimit=Math.min(this.trafficLimit,limit,geometricThreat?Math.max(0,o.speed+(o.gap-reserve)*.75):Infinity);}}
   this.maneuverLimit=mode==='RECOVER'?9:mode==='EXIT_SETUP'?Math.min(pace,p.speed+2):['BRAKE','BOXED_IN','ABORT_ATTACK'].includes(mode)?Math.max(0,pace):Infinity;
-  applyAttackEnergy46(this,state);this.tyreManagement.hybridReserve=this.resources.reserve;
+  applyAttackEnergy46(this,state);packEnergy59(this,state);this.tyreManagement.hybridReserve=this.resources.reserve;
   const old=this.targetSpeed;const speedCeiling40=straightTarget42(this),freeRoadPace=speedCeiling40;this.targetSpeed+=clamp(freeRoadPace-this.targetSpeed,-personality.braking*.1,personality.exit*.1);this.targetSpeed=clamp(this.targetSpeed,0,speedCeiling40);this.acceleration+=clamp(clamp((this.targetSpeed-old)*10,-personality.braking,personality.exit)-this.acceleration,-1.0,1.0);this.state=mode;this.reason=reason;
   const entry={tick:state.tick,time:state.time,state:mode,reason,lane:this.targetLane,targetSpeed:this.targetSpeed,front:ahead?.id??null,gap:ahead?.gap??null,strategicPlan:this.battle?.selected??null,energy:this.resources.mode,perceivedCars:p.cars.map(o=>({id:o.id,gap:o.gap,lateral:o.lateral,relativeSpeed:o.relativeSpeed}))};this.history.push(entry);if(this.history.length>180)this.history.shift();return entry;
  }

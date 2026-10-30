@@ -1,3 +1,4 @@
+import {flagForCar59} from '../race/flags59.js';
 import {circuit as defaultCircuit,mod} from '../tracks/track.js';
 // Game DRS zones: this is a documented game mechanic, not a ruleset for a
 // specific championship year. Detection grants one zone permit; it is not
@@ -22,7 +23,7 @@ export function inDRSZone24(s,z,track=defaultCircuit){return mod(s-z.start,track
 function detection(r,car,track){let closest=null;const s=car.projection.s;for(const other of r.cars){if(other.id===car.id||other.pit?.active||other.finishedAt!==null)continue;const station=other.projection?.s??mod(other.progress,track.length),gap=mod(station-s,track.length);if(gap<=0||closest&&gap>=closest.metres)continue;closest={id:other.id,metres:gap,seconds:gap/Math.max(15,other.state?.u??car.state.u)};}return {allowed:!!closest&&closest.seconds<=DRS_GAP_SECONDS,gap:closest?.seconds??null,target:closest?.id??null};}
 export function wingEligibility24(r,car,track=defaultCircuit){
  const s=car.state,station=car.projection?.s??mod(car.progress,track.length),zones=zonesFor24(track);const q=car.wing24??={permits:{},active:false,status:'LOCKED',reason:'รอเริ่มแข่ง',lastS:station};
- const emergency=car.pit?.active?'เข้าพิต':car.finishedAt!==null?'เข้าเส้นชัยแล้ว':r.controlZone?.flag!=='GREEN'?'ธงจำกัดความเร็ว':r.safetyCar?.phase!=='PARKED'?'Safety Car':r.time<8?'รอช่วงออกตัว':Math.abs(s.delta??0)>.045||Math.abs(car.projection.k??0)>.0035?'ปิดก่อนเข้าโค้ง':car.response21?.phase&&car.response21.phase!=='NORMAL'?'กำลังคืนแรงเกาะ':null;
+ const emergency=car.pit?.active?'เข้าพิต':car.finishedAt!==null?'เข้าเส้นชัยแล้ว':flagForCar59(r,car)!=='GREEN'?'ธงจำกัดความเร็ว':r.safetyCar?.phase!=='PARKED'?'Safety Car':r.time<8?'รอช่วงออกตัว':Math.abs(s.delta??0)>.045||Math.abs(car.projection.k??0)>.0035?'ปิดก่อนเข้าโค้ง':car.response21?.phase&&car.response21.phase!=='NORMAL'?'กำลังคืนแรงเกาะ':null;
  const stamp=[r.tick??s.tick??r.time,station,s.brake,s.u,emergency].join(':');if(q.stamp===stamp)return q.active;q.stamp=stamp;
  const progress=car.progress??station,delta=mod(station-q.lastS,track.length);for(const z of zones){const crossed=delta>0&&delta<250&&mod(z.detect-q.lastS,track.length)>0&&mod(z.detect-q.lastS,track.length)<=delta;if(crossed&&!emergency){const cycle=Math.floor((progress-z.detect)/track.length),key=z.id+':'+cycle;q.permits[z.id]={key,...detection(r,car,track)};}}
  q.lastS=station;const zone=zones.find(z=>inDRSZone24(station,z,track));q.zone=zone?.id??null;q.zoneName=zone?.name??null;q.active=false;

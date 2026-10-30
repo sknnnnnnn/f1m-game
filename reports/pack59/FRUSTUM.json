@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "cars": 22,
+  "offscreenCarsExcluded": 11,
+  "onScreenCarsRetained": 11,
+  "reentryRestoresOriginalCar": true,
+  "conservativeCarAndGroundShadowEnvelope": true,
+  "viewDistanceUnchanged": 1800,
+  "scope": "Conservative view-frustum rejection with unchanged geometry, scene visibility, DPR and view distance. Actual GPU/Android gain depends on camera and pack."
+}

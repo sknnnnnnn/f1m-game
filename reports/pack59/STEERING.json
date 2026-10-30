@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "actualGLB": true,
+  "cars": 22,
+  "exactPoseComparisons": 176,
+  "driverPoseRoadDegreeStep": 0.5,
+  "maxDriverPoseRoadDegreeError": 0.25,
+  "physicalSteeringAndRoadWheelsUnchanged": true,
+  "uncachedMS": 206.91884700000003,
+  "cachedMS": 7.2933120000000145,
+  "speedup": 28.371040070683883,
+  "cache": {
+    "solves": 11,
+    "hits": 429,
+    "repeats": 0,
+    "bytes": 562496,
+    "poses": 11
+  },
+  "scope": "CPU driver pose computation and actual geometry equality at sample angles; no Android FPS or GPU time."
+}

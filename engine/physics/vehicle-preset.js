@@ -5,7 +5,7 @@ import {isAttackConfig,attackBrake} from './attack-drive.js';
 function highSpeedConfig(base){return {...structuredClone(base),version:'F1M-ATTACK-BRAKE/6-ACTION42',Cs:12000,Cc:60000,Hsc:120,Hst:55,Hca:5,Ky:.9,Kpsi:1,Kr:.18,mu:2.7,steerRate:1.1,steerLag:.05,brakeF:6200,brakeR:2000,deployW:ACTION42.deployW,motorTorque:ACTION42.motorTorque,capacity:8000000,CdA:.65,ratios:[3.3,2.9,2.5,2.15,1.85,1.59,1.37,1.18],pedalRate:16};}
 function selectGear(c,s){
   if(s.shiftRemaining>0)return s.shiftTarget;
-  const omega=Math.max(0,(s.wheels[2].omega+s.wheels[3].omega)/2);
+  const rear=Math.max(0,(s.wheels[2].omega+s.wheels[3].omega)/2),omega=(s.brake??0)>.1&&s.u>8?Math.max(rear,.9*s.u/c.R):rear;
   const rpm=omega*c.ratios[s.gear-1]*c.finalRatio*60/(2*Math.PI);
   if(rpm>10500&&s.gear<8)return s.gear+1;
   if(rpm<6000&&s.gear>1)return s.gear-1;
@@ -24,7 +24,7 @@ function gearCommand(c,s,requested,box){
  if(tractionLimit<requested.throttle-.001)box.tractionCuts=(box.tractionCuts??0)+1;const gear=selectGear(c,s);if(gear!==s.gear&&s.shiftRemaining<=0)box.lastShift=s.tick;
  // Deploy the existing finite hybrid store on hard acceleration; braking still
  // regenerates through the original physical energy model.
- const stableTraction=slip<.1&&tractionLimit>=requested.throttle-.03&&Math.abs(s.delta??0)<.035&&Math.abs(s.r??0)<.12;
+ const stableTraction=slip<.1&&tractionLimit>=requested.throttle-.03&&Math.abs(s.delta??0)<(box.allowExitDeploy59?.08:.035)&&Math.abs(s.r??0)<(box.allowExitDeploy59?.45:.12);
  const energy=stableTraction&&box.allowDeploy!==false&&requested.throttle>.75&&requested.brake<.02&&speed>(box.deploySpeed??12)&&s.E>c.capacity*(box.hybridReserve??.12);
  return {...requested,gear,energy,brake:attackBrake(c,s,requested.brake??0,box),throttle:Math.min(requested.throttle,tractionLimit)};
 }

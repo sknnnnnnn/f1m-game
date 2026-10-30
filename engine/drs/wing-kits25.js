@@ -46,7 +46,7 @@ export function buildWings(T,car,options={}){
  const actuator=rod([0,1.055,2.16],[0,1.26,2.55],.012,metal,root,'RW_Actuator'),crank=rod([0,0,0],[0,.07,.07],.014,carbon,rear,'RW_Crank');
  const base=new T.Vector3(0,1.055,2.16),pin=new T.Vector3(0,.07,.07),v=new T.Vector3(),q=new T.Vector3(),axis=new T.Vector3(0,1,0);
  function update(value){const a=Math.max(0,Math.min(1,value));rear.rotation.x=openAngle*a;front.rotation.x=(rb?.25:.27)*a;
-  q.copy(pin).applyEuler(rear.rotation).add(rear.position);v.copy(q).sub(base);actuator.position.copy(q).add(base).multiplyScalar(.5);actuator.scale.y=v.length()/Math.hypot(.205,.39);actuator.quaternion.setFromUnitVectors(axis,v.normalize());car.updateMatrixWorld(true);
+  q.copy(pin).applyEuler(rear.rotation).add(rear.position);v.copy(q).sub(base);actuator.position.copy(q).add(base).multiplyScalar(.5);actuator.scale.y=v.length()/Math.hypot(.205,.39);actuator.quaternion.setFromUnitVectors(axis,v.normalize());if(!car.userData.deferWorld59)car.updateMatrixWorld(true);
   return {opening:a,rearAngle:rear.rotation.x,frontAngle:front.rotation.x};}
  update(0);return {variant,openAngle,durationMs:WING_DESIGNS[variant].durationMs,root,front,rear,moving,fixed,update};
 }

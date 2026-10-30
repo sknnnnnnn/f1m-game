@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "cars": 22,
+  "lapsPerTrack": 1,
+  "seed": 7,
+  "tracks": [
+    {
+      "track": "shanghai",
+      "time": 141.36666666666667,
+      "changes": 27,
+      "after30": 17,
+      "after60": 2
+    },
+    {
+      "track": "suzuka",
+      "time": 131.38333333333333,
+      "changes": 26,
+      "after30": 17,
+      "after60": 17
+    },
+    {
+      "track": "bahrain",
+      "time": 131.68333333333334,
+      "changes": 29,
+      "after30": 8,
+      "after60": 6
+    }
+  ],
+  "scope": "Physical rank changes, including repasses. No Android FPS claim."
+}

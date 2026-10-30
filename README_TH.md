@@ -1,3 +1,13 @@
+# F1M RACE 59 — Pack performance, passing and livery
+
+เปิดเล่น: https://sknnnnnnn.github.io/f1m-game/preview59/
+
+ลดงาน IK ของรถรวมกลุ่มด้วย shared driver poses และข้ามการส่งรถนอกมุมกล้อง เพิ่มลายรถ 11 ทีมจาก atlas เดียว ปรับ early pull-out / braking duel / เกียร์ตอนล้อล็อก และแก้ขอบเขตธงเหลืองเฉพาะจุด ผ่านหนึ่งรอบครบ 22 คันทั้งสามสนาม ยังไม่ยืนยัน FPS หรือภาพ WebGL บน Android
+
+รายละเอียด: [reports/pack59/README_TH.md](reports/pack59/README_TH.md)
+
+---
+
 # F1M RACE 58 — Race recovery and prepared pit cache
 
 เปิดเล่น: https://sknnnnnnn.github.io/f1m-game/preview58/

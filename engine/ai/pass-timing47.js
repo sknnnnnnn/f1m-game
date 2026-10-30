@@ -13,6 +13,10 @@ export function preparePass47(agent,state,p){
  if(!pass||!rival||state.time<30||agent.pitApproach||agent.recovery||Math.abs(p.own.k)>.003||(state.brake??0)>.08||rival.gap<22||p.cars.some(c=>!c.pit&&Math.abs(c.gap)<18))return false;
  const bend=upcomingBend(p.own.s,600);if(!bend)return false;
  const closing=Math.max(0,-rival.relativeSpeed),timeToBend=bend.distance/Math.max(10,p.speed),timeToReach=(rival.gap-8)/Math.max(1,closing);
+ // A car already established in a separate corridor may complete the
+ // braking duel. Do not merge it back merely because the noses are not level.
+ const established59=Math.abs(p.own.d-rival.lateral)>(agent.config?.width??1.9)+.5&&rival.gap<80&&timeToReach<timeToBend+2;
+ if(established59){pass.entry59=true;return false;}
  if(bend.distance>Math.max(130,p.speed*3)||timeToReach+.6<timeToBend)return false;
  agent.passAudit47??={resets:0,reasons:{}};agent.passAudit47.resets++;agent.passAudit47.reasons.BRAKE_WINDOW=(agent.passAudit47.reasons.BRAKE_WINDOW??0)+1;
  agent.duel.lastPass={id:pass.id,result:'RESET_FOR_EXIT',time:state.time};agent.duel.pass=null;agent.battleCommit=null;agent.crossExit=null;agent.entryCommit25=null;

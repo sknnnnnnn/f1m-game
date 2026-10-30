@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "checks": 11,
+  "pitRecoveryFlagsConserveAndAbortRespected": true,
+  "noSpaceOrClosingNoAttack": true,
+  "physicalStateAndLeaderPaceUnmodified": true,
+  "finiteEnergyNotRefilled": true,
+  "lockedWheelRPMDoesNotCauseLowGearCascade": true
+}

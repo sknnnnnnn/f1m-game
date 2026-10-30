@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "localYellowStillBlocksAttackAndDRS": true,
+  "outsideLocalYellowAllowsRacingAndDRS": true,
+  "VSCAndRedRemainGlobal": true,
+  "defaultWithoutZoneQueryRemainsConservative": true,
+  "DRSDetectionSeconds": 5
+}
