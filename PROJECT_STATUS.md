@@ -1,3 +1,15 @@
+# F1M RACE 60 — Continuous overtaking
+
+เกมหลัก: https://sknnnnnnn.github.io/f1m-game/
+
+แผนดวลเริ่มในรอบ 2: ถือช่องแซงต่อเนื่อง แยกรถข้าง ๆ ออกจากคิวเบรกตาม และเก็บ ERS ไว้ใช้ตอนบุก/ป้องกัน พร้อม motor map สั้นบนทางตรงที่มีระยะเบรกเพียงพอ ใช้แบตเตอรี่จริง
+
+ผลเปรียบเทียบ 22 คัน / 3 รอบ / dry seed 7: การแซงธงเขียวหลังรอบแรก Shanghai 5→19, Suzuka 24→30, Bahrain 8→13 ทุกคันจบ ไม่มี stop/retire/controller rejection ในชุดที่รับเข้ารุ่นนี้
+
+รายละเอียดและขอบเขต: [reports/race60/README_TH.md](reports/race60/README_TH.md)
+
+---
+
 # F1M RACE 59 — Pack performance, passing and livery
 
 เปิดเล่น: https://sknnnnnnn.github.io/f1m-game/preview59/

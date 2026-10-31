@@ -1,3 +1,9 @@
+# F1M RACE 60
+
+เล่นเกมหลัก: https://sknnnnnnn.github.io/f1m-game/
+
+รอบ 2 เป็นต้นไปใช้แผนแซงต่อเนื่องและ ERS สำหรับดวล ตรวจเรซ 22 คัน 3 รอบครบ Shanghai / Suzuka / Bahrain รายละเอียดและข้อจำกัด: [รายงาน R60](reports/race60/README_TH.md)
+
 # F1M Attack 1.1
 
 F1 Manager R33 reorganized into a mobile-oriented engine. This is the existing game, retaining all five circuits, six race cars, AI, physics, pit service, DRS, Safety Car, replay and team management.

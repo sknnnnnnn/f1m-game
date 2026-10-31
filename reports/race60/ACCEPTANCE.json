@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "edition": "F1M RACE 60",
+  "build": "afb606ca17aae0a2",
+  "seed": 7,
+  "cars": 22,
+  "dryLaps": 3,
+  "rows": [
+    {
+      "track": "shanghai",
+      "before": 5,
+      "after": 19,
+      "after60Before": 10,
+      "after60After": 24,
+      "contacts": 0,
+      "sampledEdgeExcess": 0
+    },
+    {
+      "track": "suzuka",
+      "before": 24,
+      "after": 30,
+      "after60Before": 39,
+      "after60After": 45,
+      "contacts": 17,
+      "sampledEdgeExcess": 1
+    },
+    {
+      "track": "bahrain",
+      "before": 8,
+      "after": 13,
+      "after60Before": 14,
+      "after60After": 19,
+      "contacts": 0,
+      "sampledEdgeExcess": 0
+    }
+  ],
+  "totalBefore": 37,
+  "totalAfter": 62,
+  "wetBahrain": {
+    "laps": 1,
+    "finishedCars": 22,
+    "rejections": 0,
+    "pitReleaseFixture": true
+  },
+  "checks": [
+    "attack60",
+    "overtake60",
+    "pack59",
+    "flags59",
+    "draft48/suzuka",
+    "battles47",
+    "menu49",
+    "interface50",
+    "worker-transport",
+    "build",
+    "pwa-static",
+    "service-worker"
+  ],
+  "limits": "Dry seed 7 comparisons, counts include repasses. Suzuka has contact response and one sampled edge excursion. Android GPU/FPS and all other seeds unverified."
+}
