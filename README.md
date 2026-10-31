@@ -1,3 +1,15 @@
+# F1M RACE 61
+
+เกมหลัก: https://sknnnnnnn.github.io/f1m-game/
+
+R61 เพิ่มการแซงในรอบแรกของ Shanghai/Bahrain หลังเวลาแข่ง 30 วินาที เก็บพลังงานส่วนหนึ่งไว้สะสมความเร็วในลมดูดก่อนเบี่ยง และถือแผนแซงที่กำลังดำเนินอยู่ใน Shanghai เลือกแผนเปิดเรซของ Suzuka จากผลทดสอบเดิม
+
+รายละเอียด: [reports/race61/README_TH.md](reports/race61/README_TH.md)
+
+ลิงก์ติดตั้งเดิม /preview54/ ต้องเผยแพร่ build ชุดเดียวกับ root ทุกครั้ง ป้ายรุ่นอ่าน BUILD.edition อัตโนมัติ
+
+---
+
 # F1M RACE 60
 
 เล่นเกมหลัก: https://sknnnnnnn.github.io/f1m-game/

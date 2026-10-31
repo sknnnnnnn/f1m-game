@@ -1,11 +1,12 @@
 {
-  "edition": "F1M RACE 60",
-  "version": "fbc35e8ac1085ef8",
-  "sourceRevision": "fbc35e8ac1085ef895cb36050b85f7dad8e3b8f087d50296837d1f239f359089",
+  "edition": "F1M RACE 61",
+  "version": "061f55e2b94dc17a",
+  "sourceRevision": "061f55e2b94dc17adb647e275666c1b97a618c7a44c7b636c8459aa0e948468d",
   "inputs": {
-    "build.mjs": "c93d55ab5883b92f7af2e5f73ac1150f46c1a5930dc8b7c923bab8f92a3cfb30",
+    "build.mjs": "ed4a541e3aa7317225a07b74a53dda04454344472cf1683e4797801b7417f1d0",
     "engine/ai/agent.js": "1b5bfc7d366bb5aa6f6d3fe5bc545c338ac4cea4d642a65c29c46212444cb7d6",
-    "engine/ai/attack60.js": "ea5aa4036fec26e96358d4da5798e9b99dc06f17c0913c9157e3b35116f8345c",
+    "engine/ai/attack-wet61.js": "7768a85f7ecb59f7cbe9b8594869ec08317e38aae99bb0aa1925ffed3d6502ae",
+    "engine/ai/attack60.js": "8a6080f31f6304974b5441b131914c98d2f698ceca90e73e6115bd3acbfe02f2",
     "engine/ai/battle-camera.js": "78e583678411f244786fbd09fed4e9a75ddba56a8a3592545b6dbfda795346b0",
     "engine/ai/battle-planner.js": "8a754e8b7836cc99653c96243722ab96d55c57ce519f73df809539643ada979e",
     "engine/ai/battle-window43.js": "e636c58da5cd3ad88a529efc4a06bb91484a4d0d16496a64c43a153d1b140ebb",
@@ -92,7 +93,7 @@
     "engine/race/living-race26.js": "5d5609e51d516eea98bdaf46821c2b157e3d72e9fcd5b91e022a174d5ea6d11d",
     "engine/race/living-session26.js": "d4f39f0b9264e69cb58852e199ffb531bd49bea8dd5e7b01cb75e9cf7424d2fd",
     "engine/race/menu-session49.js": "6bd2baa47eaa0c3a17ee9d76c7dc43437772ab04ab1694fec7a70a97e3c7798d",
-    "engine/race/overtake60.js": "a78f3cb644c387e2c348a53fb014d783a1be7cf160f55540367f96cd66461784",
+    "engine/race/overtake60.js": "7ee516491516a186be2ffc4e6cc9143cdfbf46d9d7679159759b7ed4bc848bf4",
     "engine/race/pass-evidence46.js": "6b0606692d98d7b40b48ad5abe50d866f95f3bb0aef03fb2a7c2dd8a0f498512",
     "engine/race/race-clock.js": "b0df59e6ad4b55d9aa7f7a8c44c0b55549d4bb9e332c986b3f1ba49b513a960a",
     "engine/race/race-format31.js": "b6c98e1bcddeebed2e526dc0ea12b710ec1da6129c8a01873d7d7d26f7e83729",
@@ -258,8 +259,8 @@
   "safetyCarAsset": "73a79a6a655c01c18e40228b4aa0661866b9b236f2afba378496630e3c0afef3",
   "outputs": {
     "assets/app.js": {
-      "bytes": 1151654,
-      "sha256": "d3c64b3d049f36e7f37e8a4a799cfd83530d59c3394069754f8a94bb95c662dc"
+      "bytes": 1151749,
+      "sha256": "6acf0b9b9405dea3d1a92893e7b20716f812ae8354a7e0974d589f5bed792722"
     },
     "assets/cpu.js": {
       "bytes": 13731,
@@ -286,8 +287,8 @@
       "sha256": "0a9aa1525c4fd9574cd3851e6601a5626cb578345cd955b07823ab7959f4554a"
     },
     "build.json": {
-      "bytes": 26390,
-      "sha256": "eab73036384f7f9be702413fb9804bab6241d47767ac8c57b3b315ea15365bce"
+      "bytes": 26491,
+      "sha256": "93c03ec7af0b051c31f87b9c850005c8ec6a47d330a68fbdb878f9429a169f8f"
     },
     "icons/icon-192.png": {
       "bytes": 2882,
@@ -303,7 +304,7 @@
     },
     "index.html": {
       "bytes": 17064,
-      "sha256": "cab5f5eea18a3f8b03dfb897b72f9c5f32ee85d43efd934d57185e6555263330"
+      "sha256": "44c6e6a6ae204c4b64d4711f288ed2c20c633f9473cd0a83040a7aba8ebad780"
     },
     "manifest.webmanifest": {
       "bytes": 584,
@@ -326,12 +327,12 @@
       "sha256": "d80c8a700a7c840eb89ff46a1f0faff548de6fcd23e70990bba6d3c7bee852b1"
     },
     "workers/race-worker.js": {
-      "bytes": 842498,
-      "sha256": "d676bbde925bb624dd7e546c43a0ae83b1209285c4ca9dde99caac03b38c96a3"
+      "bytes": 845903,
+      "sha256": "8f2727702cee1dbaefffe20be6189e19b9a41b9f27b6a82669834983cb0f749f"
     },
     "sw.js": {
       "bytes": 5829,
-      "sha256": "c2947b17e95bff151ae9c0f912a05c5a476cd5585a401ef856e506dc48e0b715"
+      "sha256": "106323df1a9403b68398d0e5bb985849a0860dd4ff9d7c618265e0cb38a6fd7d"
     }
   }
 }

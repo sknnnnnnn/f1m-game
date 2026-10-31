@@ -1,3 +1,11 @@
+# F1M RACE 61 — Earlier overtaking
+
+เกมหลักและ preview54 ใช้รุ่นเดียวกัน แผนใหม่เปิดในรอบแรกสำหรับ Shanghai/Bahrain หลังเวลาแข่ง 30 วินาที Suzuka รักษาแผนเปิดเรซเดิม แล้วใช้แผนใหม่หลังรอบแรก
+
+ตรวจ dry 22 คัน 1 รอบต่อสนาม เปรียบเทียบ R60 กับ R61 โดยนับเฉพาะการแซงธงเขียวหลังเวลาแข่ง 60 วินาที รวมการแซงคืน รายงาน: [reports/race61/README_TH.md](reports/race61/README_TH.md)
+
+---
+
 # F1M RACE 60 — Continuous overtaking
 
 เกมหลัก: https://sknnnnnnn.github.io/f1m-game/

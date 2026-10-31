@@ -1,3 +1,4 @@
+import {circuit} from '../engine/tracks/track.js';
 import assert from 'node:assert/strict';
 import {attack60,attackEnergy60,followWidth60} from '../engine/ai/attack60.js';
 const agent=()=>({id:2,config:{length:5.5,width:1.9},raceContext:{flag:'GREEN',remaining:4000,progress:7000,length:5500},resources:{fraction:.5,allowDeploy:false,reserve:.3},personality:{commit:2}});
@@ -19,3 +20,10 @@ assert.equal(followWidth60(agent(),s,{...p.own,k:.01},{headingError:0}),2.9);
 assert.equal(followWidth60(agent(),s,p.own,{headingError:.2}),2.9);
 const bank=agent();bank.perception=p;attackEnergy60(bank,s,'FOLLOW');assert.equal(bank.resources.allowDeploy,false);assert.equal(bank.resources.mode,'OVERTAKE_BANK');
 const defence=agent();defence.perception={...p,cars:[{id:1,gap:-7,relativeSpeed:3,pit:false}]};attackEnergy60(defence,s,'DEFEND');assert(defence.resources.allowDeploy);assert.equal(defence.resources.reserve,.35);
+
+const firstLap=agent();firstLap.raceContext.progress=1000;const firstState={...s,time:45};const firstOut=attack60(firstLap,firstState,p,()=>true,d,300);assert.equal(firstOut.mode,circuit.key==='suzuka'?'FOLLOW':'PASS_COMMIT');firstLap.perception=p;attackEnergy60(firstLap,firstState,firstOut.mode);assert.equal(firstLap.resources.allowDeploy,circuit.key!=='suzuka');assert.equal(followWidth60(firstLap,firstState,p.own,{headingError:0}),2.9);
+
+const building=agent();building.perception={...p,cars:[{...p.cars[0],gap:100}]};building.tow44=.9;building.runway47=500;attackEnergy60(building,s,'DRAFT');assert(building.resources.allowDeploy);assert.equal(building.resources.mode,'TOW_ACCEL');assert.equal(building.resources.reserve,.24);
+const existing=agent();existing.duel={pass:{id:1,lane:3.3,started:70}};if(circuit.key==='shanghai')assert.deepEqual(attack60(existing,s,p,()=>true,{...d,choice:3.3,mode:'PASS_COMMIT'},300),{...d,choice:3.3,mode:'PASS_COMMIT'});
+
+const wetFirst=agent();wetFirst.wetTow44=true;wetFirst.raceContext.progress=1000;assert.deepEqual(attack60(wetFirst,firstState,p,()=>true,d,300),d);wetFirst.perception=p;attackEnergy60(wetFirst,firstState,'DRAFT');assert.equal(wetFirst.resources.allowDeploy,false);

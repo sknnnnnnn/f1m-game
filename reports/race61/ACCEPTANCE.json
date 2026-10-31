@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "edition": "F1M RACE 61",
+  "build": "061f55e2b94dc17a",
+  "cars": 22,
+  "laps": 1,
+  "seed": 7,
+  "rows": [
+    {
+      "track": "shanghai",
+      "greenAfter60Before": 2,
+      "greenAfter60After": 12,
+      "fullRaceGreenBefore": 27,
+      "fullRaceGreenAfter": 27,
+      "contacts": 0,
+      "sampledEdgeExcess": 0
+    },
+    {
+      "track": "suzuka",
+      "greenAfter60Before": 17,
+      "greenAfter60After": 17,
+      "fullRaceGreenBefore": 26,
+      "fullRaceGreenAfter": 26,
+      "contacts": 0,
+      "sampledEdgeExcess": 0
+    },
+    {
+      "track": "bahrain",
+      "greenAfter60Before": 6,
+      "greenAfter60After": 11,
+      "fullRaceGreenBefore": 29,
+      "fullRaceGreenAfter": 37,
+      "contacts": 7,
+      "sampledEdgeExcess": 0
+    }
+  ],
+  "lateGreenBefore": 25,
+  "lateGreenAfter": 40,
+  "fullRaceGreenBefore": 82,
+  "fullRaceGreenAfter": 90,
+  "wetBahrain": {
+    "finishedCars": 22,
+    "laps": 1,
+    "rejections": 0,
+    "pitReleaseFixture": true
+  },
+  "scope": "One-lap dry seed 7 per track; passes include repasses. Not an Android FPS benchmark or all-seed/multi-lap guarantee.",
+  "rejectedExperiments": [
+    "Wider wake reduced passes and was not retained",
+    "Uniform first-lap tactics reduced Suzuka passes; retained R60 opening policy",
+    "New wet first-lap policy produced controller rejections; restored exact R60 wet policy"
+  ],
+  "checks": [
+    "attack60/default/suzuka",
+    "overtake60/default/suzuka",
+    "draft48/suzuka",
+    "pack59",
+    "flags59",
+    "battles47",
+    "menu49",
+    "interface50",
+    "worker-transport",
+    "build",
+    "PWA/service-worker"
+  ]
+}
