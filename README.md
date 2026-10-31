@@ -2,6 +2,8 @@
 
 เล่นเกมหลัก: https://sknnnnnnn.github.io/f1m-game/
 
+ลิงก์ติดตั้งเดิม `/preview54/` เป็น compatibility alias ของเกมหลัก ต้องอัปเดตทั้งชุดพร้อม root ทุกครั้ง เพื่อให้ PWA ที่ติดตั้งจาก R54 ตรวจพบรุ่นใหม่
+
 รอบ 2 เป็นต้นไปใช้แผนแซงต่อเนื่องและ ERS สำหรับดวล ตรวจเรซ 22 คัน 3 รอบครบ Shanghai / Suzuka / Bahrain รายละเอียดและข้อจำกัด: [รายงาน R60](reports/race60/README_TH.md)
 
 # F1M Attack 1.1
