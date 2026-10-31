@@ -9,3 +9,9 @@ URL ภายในเป็น relative paths และ service worker ใช�
 กฎเผยแพร่ต่อไป: root และ preview54 ต้องชี้ไฟล์ build เดียวกันทั้งชุด อย่าอัปเดตเฉพาะป้ายเลขรุ่นหรือ build.json
 
 ไม่ได้อ่านหรือแก้ข้อมูลเซฟบนเครื่องผู้เล่น
+
+## Footer correction
+
+พบ main-menu49.js เขียน RACE / 59, ชื่อหน้าต่าง และ brand เป็นค่าคงที่ แม้ BUILD เป็น R60 แก้ทุกจุดให้อ่าน BUILD.edition และให้ HTML title อ่าน identity.edition จาก build เดียวกัน
+
+เผยแพร่ hotfix R60 build fbc35e8ac1085ef8 พร้อมกันทั้ง root และ preview54 ตรวจ menu49/interface50, build/PWA และตรวจข้อความใน bundle โดยตรง ไม่เปลี่ยน AI หรือฟิสิกส์
