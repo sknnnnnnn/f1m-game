@@ -1,9 +1,9 @@
 {
   "edition": "F1M RACE 60",
-  "version": "afb606ca17aae0a2",
-  "sourceRevision": "afb606ca17aae0a2b37cd9ca10ad99cef5f0ceb2ff9f3b779085d3e4d486f762",
+  "version": "fbc35e8ac1085ef8",
+  "sourceRevision": "fbc35e8ac1085ef895cb36050b85f7dad8e3b8f087d50296837d1f239f359089",
   "inputs": {
-    "build.mjs": "f147660adb82253f7448ce685df1a8ded373e2c83174f73912b518074b98cb44",
+    "build.mjs": "c93d55ab5883b92f7af2e5f73ac1150f46c1a5930dc8b7c923bab8f92a3cfb30",
     "engine/ai/agent.js": "1b5bfc7d366bb5aa6f6d3fe5bc545c338ac4cea4d642a65c29c46212444cb7d6",
     "engine/ai/attack60.js": "ea5aa4036fec26e96358d4da5798e9b99dc06f17c0913c9157e3b35116f8345c",
     "engine/ai/battle-camera.js": "78e583678411f244786fbd09fed4e9a75ddba56a8a3592545b6dbfda795346b0",
@@ -203,7 +203,7 @@
     "engine/ui/experience38.js": "f2fd1a855227b0c815fbae4df72a953211f34eac0b0dccc28056e41e595d12c5",
     "engine/ui/living-ui26.js": "2a1cef7e003c96b37e2e0875366a90400d9a4fe81bd0aac12381649bf0c52d6a",
     "engine/ui/loading50.js": "ef3d75aca75b12ad1dcaeaf84c3ab4f3dd57a4a973022cbbc6cc60feed0ea461",
-    "engine/ui/main-menu49.js": "f3ee9df864f67c11b15e26e056e6ba90e181886627c2204470f44c94a99c2c7c",
+    "engine/ui/main-menu49.js": "8a36ca7e3c65f2603b231ffdf4a735aa0e24bcbde26e3614d26f4121796aeb48",
     "engine/ui/pass-caption46.js": "14ef1d4ca88427c06e0685dd93c842d831cd059e9e3b02696263d3acf2b7b5eb",
     "engine/ui/race-digest34.js": "5872c079caddd27cd756a6bb880aa622a51b29afe67b2f70d8d3b2c9494970fc",
     "engine/ui/race-polish37.js": "8eaa16eee26d5b5c072aa12b708854d23552febcecc76f3b5900ec19f6784eb6",
